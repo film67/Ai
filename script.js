@@ -266,7 +266,7 @@ document.querySelectorAll('[data-program]').forEach(link => {
    email as a reliable, dependency-free fallback.
    Swap this for a Formspree/Getform action for a nicer flow.
    ============================================================ */
-const APPLY_EMAIL = 'info@thinklikeai.uz'; // TODO: замени на реальную почту
+const APPLY_EMAIL = 'thinklikeaiuz@gmail.com';
 
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
