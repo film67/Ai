@@ -79,10 +79,10 @@ const translations = {
       name:"Имя", contact:"Телефон или Telegram", program:"Направление", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
       hint:"Заявка откроется в вашей почте — просто нажмите «Отправить» ещё раз в почтовом клиенте.",
-      sideLead:"Не готовы писать? Свяжитесь напрямую.",
-      tg:"Telegram — скоро добавим ссылку",
+      sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
+    contact: { emailLabel:"Почта", cityLabel:"Город" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
     foot: { city:"Ташкент.", contact:"Контакты" }
   },
@@ -141,10 +141,10 @@ const translations = {
       name:"Ism", contact:"Telefon yoki Telegram", program:"Yo\u2018nalish", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
       hint:"Ariza pochta orqali ochiladi — pochta ilovasida «Yuborish»ni yana bir marta bosing.",
-      sideLead:"Yozishga tayyor emasmisiz? To\u2018g\u2018ridan-to\u2018g\u2018ri bog\u2018laning.",
-      tg:"Telegram — havolani tez orada qo\u2018shamiz",
+      sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
+    contact: { emailLabel:"Pochta", cityLabel:"Shahar" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Aloqa" }
   },
@@ -203,10 +203,10 @@ const translations = {
       name:"Name", contact:"Phone or Telegram", program:"Track", message:"Message (optional)",
       submit:"Send application",
       hint:"This opens your email app — just hit send again from there.",
-      sideLead:"Not ready to write? Reach out directly.",
-      tg:"Telegram — link coming soon",
+      sideLead:"Leave a request — we\u2019ll reach out to you.",
       note:"We reply within a business day."
     },
+    contact: { emailLabel:"Email", cityLabel:"City" },
     cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
     foot: { city:"Tashkent.", contact:"Contact" }
   }

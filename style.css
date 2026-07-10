@@ -544,6 +544,34 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
 .apply-tg{ align-self:flex-start; }
 .apply-note{ color:var(--ink-soft); font-size:14px; }
 
+.contact-list{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:0;
+  margin:0;
+}
+.contact-list li{
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  font-size:15px;
+}
+.contact-list a{
+  color:var(--ink);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+.contact-k{
+  font-family:var(--mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--ink-soft);
+  min-width:64px;
+}
+
 /* ============================================================
    CTA / FOOTER
    ============================================================ */
