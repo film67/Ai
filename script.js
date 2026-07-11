@@ -26,9 +26,9 @@ if ('IntersectionObserver' in window) {
    ============================================================ */
 const translations = {
   ru: {
-    nav: { philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", cta:"Оставить заявку" },
+    nav: { philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
     hero: {
-      eyebrow:"Академия мышления в эпоху ИИ · Ташкент",
+      eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
       title:'Мы не учим <mark>пользоваться ИИ</mark>. Мы учим <mark>мыслить</mark>.',
       sub:"ThinkLike AI — образовательный проект для тех, кто хочет не бояться искусственного интеллекта, а работать с ним на равных: ставить задачи, задавать вопросы и создавать свои продукты.",
       ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
@@ -78,7 +78,7 @@ const translations = {
       h2:"Оставить заявку", num:"06 — Заявка",
       name:"Имя", contact:"Телефон или Telegram", program:"Направление", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
-      hint:"Заявка откроется в вашей почте — просто нажмите «Отправить» ещё раз в почтовом клиенте.",
+      hint:"Заявка придёт нам напрямую на почту — просто дождитесь подтверждения ниже.",
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
@@ -88,9 +88,9 @@ const translations = {
   },
 
   uz: {
-    nav: { philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", cta:"Ariza qoldirish" },
+    nav: { philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
     hero: {
-      eyebrow:"Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
+      eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
       title:'Biz <mark>SIdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz.',
       sub:"ThinkLike AI — sun'iy intellektdan qo\u2018rqmasdan, u bilan teng huquqli ishlashni istaganlar uchun ta'lim loyihasi: vazifa qo\u2018yish, savol berish va o\u2018z mahsulotlarini yaratish.",
       ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
@@ -140,7 +140,7 @@ const translations = {
       h2:"Ariza qoldirish", num:"06 — Ariza",
       name:"Ism", contact:"Telefon yoki Telegram", program:"Yo\u2018nalish", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
-      hint:"Ariza pochta orqali ochiladi — pochta ilovasida «Yuborish»ni yana bir marta bosing.",
+      hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri pochtamizga keladi — pastdagi tasdiqni kuting.",
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
@@ -150,9 +150,9 @@ const translations = {
   },
 
   en: {
-    nav: { philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", cta:"Apply now" },
+    nav: { philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
     hero: {
-      eyebrow:"A thinking academy for the AI era · Tashkent",
+      eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
       title:'We don\u2019t teach you to <mark>use AI</mark>. We teach you to <mark>think</mark>.',
       sub:"ThinkLike AI is an education project for people who want to stop fearing artificial intelligence and start working with it as an equal: setting tasks, asking questions, and building their own products.",
       ctaPrimary:"Enroll in a course", ctaGhost:"Our philosophy ↓",
@@ -202,7 +202,7 @@ const translations = {
       h2:"Apply now", num:"06 — Application",
       name:"Name", contact:"Phone or Telegram", program:"Track", message:"Message (optional)",
       submit:"Send application",
-      hint:"This opens your email app — just hit send again from there.",
+      hint:"Your request goes straight to our inbox — just wait for the confirmation below.",
       sideLead:"Leave a request — we\u2019ll reach out to you.",
       note:"We reply within a business day."
     },
@@ -262,34 +262,47 @@ document.querySelectorAll('[data-program]').forEach(link => {
 
 /* ============================================================
    APPLICATION FORM
-   No backend on GitHub Pages, so this builds a pre-filled
-   email as a reliable, dependency-free fallback.
-   Swap this for a Formspree/Getform action for a nicer flow.
+   Submits directly to the inbox via FormSubmit (no backend,
+   no signup) — https://formsubmit.co
+   IMPORTANT: the very first submission triggers a one-time
+   confirmation email to APPLY_EMAIL. Someone must open that
+   email and click "Confirm" once — after that, every future
+   submission arrives straight in the inbox automatically.
    ============================================================ */
 const APPLY_EMAIL = 'thinklikeaiuz@gmail.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${APPLY_EMAIL}`;
 
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
-  applyForm.addEventListener('submit', (e) => {
+  applyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const data = new FormData(applyForm);
-    const name = (data.get('name') || '').toString().trim();
-    const contact = (data.get('contact') || '').toString().trim();
     const program = (data.get('program') || '').toString();
-    const message = (data.get('message') || '').toString().trim();
 
-    const subject = `Заявка ThinkLike AI — ${program}`;
-    const bodyLines = [
-      `Имя: ${name}`,
-      `Контакт: ${contact}`,
-      `Направление: ${program}`,
-      message ? `Комментарий: ${message}` : null
-    ].filter(Boolean);
+    data.append('_subject', `Заявка ThinkLike AI — ${program}`);
+    data.append('_template', 'table');
+    data.append('_captcha', 'false');
 
-    const mailto = `mailto:${APPLY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`;
-    window.location.href = mailto;
+    const submitBtn = applyForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…'; }
+    applyForm.classList.remove('is-sent', 'is-error');
 
-    applyForm.classList.add('is-sent');
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (!res.ok) throw new Error('Request failed');
+
+      applyForm.classList.add('is-sent');
+      applyForm.reset();
+    } catch (err) {
+      applyForm.classList.add('is-error');
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+    }
   });
 }
