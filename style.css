@@ -16,8 +16,67 @@
   --body:    'IBM Plex Sans', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', 'Courier New', monospace;
 
+  --core-muted:  #B9BDB4;
+  --core-muted2: #cfd2c8;
+  --core-line:   #3a3d38;
+
   --max: 1120px;
   --pad: clamp(20px, 4vw, 64px);
+}
+
+/* ============================================================
+   TEMPORARY — THEME PROTOTYPES FOR TESTING
+   Remove this block + the theme-switcher widget in script.js
+   once a direction is chosen. Default (no attribute) = current
+   live theme ("Ink & Paper").
+   ============================================================ */
+
+/* Prototype 2 — "Chalkboard": deep classroom green, chalk white, amber */
+html[data-theme="chalkboard"]{
+  --paper:      #1E2B25;
+  --paper-dim:  #16211C;
+  --ink:        #F1EDE1;
+  --ink-soft:   #A9B8AE;
+  --line:       #35443B;
+  --marker:     #E2735C;
+  --marker-ink: #1E2B25;
+  --signal:     #E8B33D;
+  --signal-2:   #C99530;
+  --core-muted:  #7C8A81;
+  --core-muted2: #C7D0C9;
+  --core-line:   #3A4A40;
+}
+
+/* Prototype 3 — "Dawn": cool morning light, slate ink, sunrise coral */
+html[data-theme="dawn"]{
+  --paper:      #EAF0F3;
+  --paper-dim:  #DCE6EA;
+  --ink:        #1B2A33;
+  --ink-soft:   #5C6E77;
+  --line:       #C3D2D8;
+  --marker:     #FFC857;
+  --marker-ink: #1B2A33;
+  --signal:     #E4572E;
+  --signal-2:   #C24422;
+  --core-muted:  #A9B7BD;
+  --core-muted2: #DCE6EA;
+  --core-line:   #34434B;
+}
+
+/* Prototype 4 — "Terminal": near-black lab, steel-blue signal, amber marker */
+html[data-theme="terminal"]{
+  --paper:      #14181B;
+  --paper-dim:  #0D1012;
+  --ink:        #ECE8DE;
+  --ink-soft:   #8A9089;
+  --line:       #2B3134;
+  --marker:     #D9A94E;
+  --marker-ink: #14181B;
+  --signal:     #6FA9C0;
+  --signal-2:   #5890A5;
+  --core-muted:  #8A9089;
+  --core-muted2: #C7C2B4;
+  --core-line:   #383E42;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -398,8 +457,8 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
 .program.is-core{ background:var(--ink); color:var(--paper); }
 .program.is-core .tag,
 .program.is-core p,
-.program.is-core .who{ color:#B9BDB4; }
-.program.is-core .who{ border-top-color:#3a3d38; }
+.program.is-core .who{ color:var(--core-muted); }
+.program.is-core .who{ border-top-color:var(--core-line); }
 
 /* pricing */
 .price-note{
@@ -427,7 +486,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   font-size:13px;
   color:var(--ink-soft);
 }
-.program.is-core .price-cur{ color:#B9BDB4; }
+.program.is-core .price-cur{ color:var(--core-muted); }
 .price-list{
   list-style:none;
   margin:20px 0 24px;
@@ -440,7 +499,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   border-top:1px solid var(--line);
 }
 .price-list li:first-child{ border-top:none; }
-.program.is-core .price-list li{ border-top-color:#3a3d38; color:#cfd2c8; }
+.program.is-core .price-list li{ border-top-color:var(--core-line); color:var(--core-muted2); }
 .price-grid .btn-primary,
 .price-grid .btn-ghost{ align-self:flex-start; }
 
@@ -529,6 +588,9 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   margin-top:-6px;
 }
 .apply-form.is-sent .apply-hint{ color:var(--signal); font-weight:600; }
+.apply-form.is-sent .apply-hint::after{ content:" Готово — заявка отправлена, мы скоро свяжемся."; }
+.apply-form.is-error .apply-hint{ color:#c0392b; font-weight:600; }
+.apply-form.is-error .apply-hint::after{ content:" Не получилось отправить — попробуйте ещё раз или напишите нам напрямую."; }
 
 .apply-side{
   display:flex;
@@ -571,6 +633,54 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   color:var(--ink-soft);
   min-width:64px;
 }
+
+/* ============================================================
+   TEMPORARY — THEME TEST WIDGET (remove with the block in
+   index.html and the data-theme overrides above)
+   ============================================================ */
+body, header, section, footer, .card, .program, .apply-form{
+  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+}
+#themeTester{
+  position:fixed;
+  bottom:18px;
+  right:18px;
+  z-index:999;
+  display:flex;
+  align-items:center;
+  gap:6px;
+  background:var(--ink);
+  color:var(--paper);
+  padding:8px 10px;
+  border-radius:999px;
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  box-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
+#themeTester span{ padding-left:4px; opacity:0.7; }
+#themeTester button{
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  background:transparent;
+  color:var(--paper);
+  border:1px solid rgba(255,255,255,0.3);
+  border-radius:999px;
+  padding:5px 10px;
+  cursor:pointer;
+}
+#themeTester button.is-active{
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--paper);
+}
+@media (max-width:560px){
+  #themeTester{ left:12px; right:12px; justify-content:center; flex-wrap:wrap; }
+}
+
 
 /* ============================================================
    CTA / FOOTER

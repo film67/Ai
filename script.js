@@ -306,3 +306,35 @@ if (applyForm) {
     }
   });
 }
+
+/* ============================================================
+   TEMPORARY — THEME TEST WIDGET
+   Remove this whole block, the #themeTester markup in index.html,
+   and the [data-theme="..."] overrides in style.css once you've
+   picked a final direction.
+   ============================================================ */
+(function () {
+  const THEME_KEY = 'thinklike-theme-preview';
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll('#themeTester [data-theme-choice]');
+
+  function setTheme(name) {
+    if (name === 'default') {
+      root.removeAttribute('data-theme');
+    } else {
+      root.setAttribute('data-theme', name);
+    }
+    buttons.forEach(btn => {
+      btn.classList.toggle('is-active', btn.getAttribute('data-theme-choice') === name);
+    });
+    try { localStorage.setItem(THEME_KEY, name); } catch (e) { /* ignore */ }
+  }
+
+  let saved = null;
+  try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* ignore */ }
+  if (saved) setTheme(saved);
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-choice')));
+  });
+})();
