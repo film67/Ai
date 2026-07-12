@@ -51,11 +51,14 @@ const translations = {
     },
     prog: {
       h2:"Курсы", num:"03 — Программы",
-      kidsDesc:"Первое знакомство с ИИ через игру и творчество: как устроены нейросети, как задавать им вопросы и как отличать факт от выдумки.",
+      kidsDesc:"Первое знакомство с ИИ через игру и творчество: как устроены нейросети, как задавать им вопросы и как отличать факт от выдумки. Работаем с ChatGPT и генерацией изображений в безопасном формате.",
+      kidsObj:"Думаете, это рано? Мы не учим детей заменять мышление ИИ — учим проверять и спорить с ним. Итог курса: своя иллюстрированная история, сделанная вместе с нейросетью.",
       kidsWho:"Для школьников · без опыта программирования",
-      proDesc:"Базовый практический курс: работа с ИИ-инструментами, создание сайтов и приложений, автоматизация задач, первый проект в портфолио.",
+      proDesc:"Базовый практический курс: ChatGPT и Claude для работы и учёбы, генерация изображений, сборка сайта и простого бота без кода, автоматизация рутинных задач.",
+      proObj:"Думаете, для этого нужно уметь программировать? Не нужно — курс рассчитан на полный ноль. К концу — сайт, бот и рабочий процесс с ИИ, которые вы сделали сами.",
       proWho:"Для взрослых и студентов · с нуля до первого проекта",
-      expDesc:"Продвинутый трек для тех, кто хочет строить AI-продукты и сервисы на заказ: агенты, интеграции, коммерческие решения.",
+      expDesc:"Продвинутый трек: AI-агенты, интеграции через API, автоматизация бизнес-процессов, коммерческие AI-продукты на заказ.",
+      expObj:"Думаете, рынок уже перегрет джунами на ИИ? Именно поэтому важно уметь больше, чем «уметь пользоваться чат-ботом» — здесь учат строить то, что продаётся.",
       expWho:"Для практикующих специалистов и предпринимателей"
     },
     price: {
@@ -113,11 +116,14 @@ const translations = {
     },
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
-      kidsDesc:"O\u2018yin va ijod orqali SI bilan birinchi tanishuv: neyron tarmoqlar qanday ishlaydi, savol berish va faktni to\u2018qimadan ajratish.",
+      kidsDesc:"O\u2018yin va ijod orqali SI bilan birinchi tanishuv: neyron tarmoqlar qanday ishlaydi, savol berish va faktni to\u2018qimadan ajratish. ChatGPT va rasm generatsiyasi bilan xavfsiz formatda ishlaymiz.",
+      kidsObj:"Erta deb o\u2018ylaysizmi? Biz bolalarni fikrlashni SI bilan almashtirishga emas, tekshirish va bahslashishga o\u2018rgatamiz. Kurs natijasi — neyron tarmoq bilan birga yaratilgan o\u2018z hikoyasi.",
       kidsWho:"Maktab o\u2018quvchilari uchun · dasturlash tajribasi shart emas",
-      proDesc:"Amaliy asosiy kurs: SI vositalari bilan ishlash, sayt va ilovalar yaratish, vazifalarni avtomatlashtirish, portfoliodagi birinchi loyiha.",
+      proDesc:"Amaliy asosiy kurs: ish va o\u2018qish uchun ChatGPT va Claude, rasm generatsiyasi, koddan sayt va oddiy bot yig\u2018ish, kundalik vazifalarni avtomatlashtirish.",
+      proObj:"Dasturlashni bilish kerak deb o\u2018ylaysizmi? Kerak emas — kurs noldan boshlaganlar uchun. Oxirida — o\u2018zingiz yaratgan sayt, bot va SI bilan ish jarayoni.",
       proWho:"Kattalar va talabalar uchun · noldan birinchi loyihagacha",
-      expDesc:"Buyurtma asosida AI mahsulot va xizmatlarini qurishni istaganlar uchun ilg\u2018or yo\u2018nalish: agentlar, integratsiyalar, tijorat yechimlari.",
+      expDesc:"Ilg\u2018or yo\u2018nalish: AI-agentlar, API orqali integratsiyalar, biznes-jarayonlarni avtomatlashtirish, buyurtma asosidagi tijorat AI-mahsulotlari.",
+      expObj:"Bozor SI bilan ishlaydigan yangi mutaxassislardan to\u2018lib ketgan deb o\u2018ylaysizmi? Aynan shuning uchun «chat-botdan foydalana olish»dan ko\u2018proq narsa kerak — bu yerda sotiladigan narsani qurishga o\u2018rgatamiz.",
       expWho:"Amaliyotchi mutaxassislar va tadbirkorlar uchun"
     },
     price: {
@@ -175,11 +181,14 @@ const translations = {
     },
     prog: {
       h2:"Courses", num:"03 — Programs",
-      kidsDesc:"A first, playful introduction to AI: how neural networks work, how to ask them good questions, and how to tell fact from fabrication.",
+      kidsDesc:"A first, playful introduction to AI: how neural networks work, how to ask them good questions, and how to tell fact from fabrication. We work with ChatGPT and image generation in a safe format.",
+      kidsObj:"Think it's too early? We don't teach kids to replace thinking with AI — we teach them to check it and argue with it. End result: their own illustrated story, made together with a neural network.",
       kidsWho:"For school students · no coding experience needed",
-      proDesc:"A hands-on core course: working with AI tools, building sites and apps, automating tasks, and finishing a first portfolio project.",
+      proDesc:"A hands-on core course: ChatGPT and Claude for work and study, image generation, building a site and a simple bot with no code, automating routine tasks.",
+      proObj:"Think you need to know how to code? You don't — this course starts from zero. By the end: a site, a bot, and an AI workflow you built yourself.",
       proWho:"For adults and students · from zero to a first project",
-      expDesc:"An advanced track for those who want to build AI products and services for clients: agents, integrations, commercial solutions.",
+      expDesc:"An advanced track: AI agents, API integrations, business process automation, commercial AI products built for clients.",
+      expObj:"Think the market's already flooded with AI-assisted juniors? That's exactly why it matters to do more than \u201cknow how to use a chatbot\u201d — here you learn to build what actually sells.",
       expWho:"For practicing specialists and entrepreneurs"
     },
     price: {

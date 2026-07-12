@@ -418,6 +418,21 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   font-weight:700;
 }
 .program p{ margin-top:14px; color:var(--ink-soft); flex-grow:1; }
+.program p.objection{
+  flex-grow:0;
+  margin-top:12px;
+  padding:12px 14px;
+  border-left:2px solid var(--signal);
+  background:var(--paper-dim);
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.5;
+}
+.program.is-core p.objection{
+  border-left-color:var(--marker);
+  background:rgba(255,255,255,0.06);
+  color:var(--paper);
+}
 .program .who{
   margin-top:20px;
   font-family:var(--mono);
