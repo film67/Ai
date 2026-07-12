@@ -1,41 +1,37 @@
 /* ============================================================
    THINKLIKE AI — design tokens
+   Default theme = "Red" palette (252422 / F24B4B / F2F0D8)
    ============================================================ */
 :root{
-  --paper:      #F1EEE2;
-  --paper-dim:  #E7E2D2;
-  --ink:        #15181C;
-  --ink-soft:   #4A4E45;
-  --line:       #C9C2A7;
-  --marker:     #FFD23F;
-  --marker-ink: #16181B;
-  --signal:     #1D3557;
-  --signal-2:   #2E5077;
+  --paper:      #252422;
+  --paper-dim:  #1A1918;
+  --ink:        #F2F0D8;
+  --ink-soft:   #A8A695;
+  --line:       #3A3835;
+  --marker:     #F24B4B;
+  --marker-ink: #252422;
+  --signal:     #F24B4B;
+  --signal-2:   #C93A3A;
 
   --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
   --body:    'IBM Plex Sans', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', 'Courier New', monospace;
 
-  --core-muted:  #B9BDB4;
-  --core-muted2: #cfd2c8;
-  --core-line:   #3a3d38;
+  --core-muted:  #8A887A;
+  --core-muted2: #DAD8C2;
+  --core-line:   #3A3835;
 
   --max: 1120px;
   --pad: clamp(20px, 4vw, 64px);
 }
 
 /* ============================================================
-   TEMPORARY — THEME PROTOTYPE FOR TESTING
+   TEMPORARY — ALTERNATE THEME FOR TESTING
    Remove this block + the theme-switcher widget in script.js
-   once a direction is chosen. Default (no attribute) = current
-   live theme ("Ink & Paper").
+   once a direction is chosen.
    ============================================================ */
 
-/* Prototype — "Horizon": deep midnight indigo canvas, warm sunrise-amber
-   signal, editorial serif body. Built around the devise Think Like
-   Tomorrow — the signature element is a horizon-line gradient rule
-   used under the hero headline and as section dividers. */
-/* Palette 1 — "Navy" (E5E5E5 / 14213D / FCA311) */
+/* Palette — "Navy" (E5E5E5 / 14213D / FCA311) */
 html[data-theme="navy"]{
   --paper:      #E5E5E5;
   --paper-dim:  #D7D7D7;
@@ -49,46 +45,6 @@ html[data-theme="navy"]{
   --core-muted:  #8892AC;
   --core-muted2: #D7DAE4;
   --core-line:   #2A3B63;
-
-  --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
-  --body:    'IBM Plex Sans', system-ui, sans-serif;
-  --mono:    'IBM Plex Mono', 'Courier New', monospace;
-}
-
-/* Palette 2 — "Red" (252422 / F24B4B / F2F0D8) */
-html[data-theme="red"]{
-  --paper:      #252422;
-  --paper-dim:  #1A1918;
-  --ink:        #F2F0D8;
-  --ink-soft:   #A8A695;
-  --line:       #3A3835;
-  --marker:     #F24B4B;
-  --marker-ink: #252422;
-  --signal:     #F24B4B;
-  --signal-2:   #C93A3A;
-  --core-muted:  #8A887A;
-  --core-muted2: #DAD8C2;
-  --core-line:   #3A3835;
-
-  --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
-  --body:    'IBM Plex Sans', system-ui, sans-serif;
-  --mono:    'IBM Plex Mono', 'Courier New', monospace;
-}
-
-/* Palette 3 — "Purple" (8686E2 / 2B2B2B / AACB36 / 6161AC / F3F5FF) */
-html[data-theme="purple"]{
-  --paper:      #F3F5FF;
-  --paper-dim:  #E6E9FA;
-  --ink:        #2B2B2B;
-  --ink-soft:   #5C5C66;
-  --line:       #D6D9F2;
-  --marker:     #AACB36;
-  --marker-ink: #2B2B2B;
-  --signal:     #6161AC;
-  --signal-2:   #4E4E8C;
-  --core-muted:  #A9ACC9;
-  --core-muted2: #E6E9FA;
-  --core-line:   #4E4E8C;
 
   --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
   --body:    'IBM Plex Sans', system-ui, sans-serif;

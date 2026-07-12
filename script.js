@@ -332,7 +332,12 @@ if (applyForm) {
 
   let saved = null;
   try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* ignore */ }
-  if (saved) setTheme(saved);
+  const allowed = ['default', 'navy'];
+  if (saved && allowed.includes(saved)) {
+    setTheme(saved);
+  } else if (saved) {
+    try { localStorage.removeItem(THEME_KEY); } catch (e) { /* ignore */ }
+  }
 
   buttons.forEach(btn => {
     btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-choice')));
