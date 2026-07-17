@@ -181,7 +181,7 @@ body::before{
 /* signature highlighter-mark treatment */
 mark{
   background:transparent;
-  color:var(--ink);
+  color:var(--marker-ink);
   position:relative;
   white-space:nowrap;
 }
