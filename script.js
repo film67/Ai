@@ -117,14 +117,14 @@ const translations = {
     },
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
-      kidsDesc:"O\u2018yin va ijod orqali SI bilan birinchi tanishuv: neyron tarmoqlar qanday ishlaydi, savol berish va faktni to\u2018qimadan ajratish. ChatGPT va rasm generatsiyasi bilan xavfsiz formatda ishlaymiz.",
-      kidsObj:"Erta deb o\u2018ylaysizmi? Biz bolalarni fikrlashni SI bilan almashtirishga emas, tekshirish va bahslashishga o\u2018rgatamiz. Kurs natijasi — neyron tarmoq bilan birga yaratilgan o\u2018z hikoyasi.",
+      kidsDesc:"O\u2018yin va ijod orqali sun'iy intellekt bilan birinchi tanishuv: neyron tarmoqlar qanday ishlaydi, savol berish va faktni to\u2018qimadan ajratish. ChatGPT va rasm generatsiyasi bilan xavfsiz formatda ishlaymiz.",
+      kidsObj:"Erta deb o\u2018ylaysizmi? Biz bolalarni fikrlashni sun'iy intellekt bilan almashtirishga emas, tekshirish va bahslashishga o\u2018rgatamiz. Kurs natijasi — neyron tarmoq bilan birga yaratilgan o\u2018z hikoyasi.",
       kidsWho:"Maktab o\u2018quvchilari uchun · dasturlash tajribasi shart emas",
       proDesc:"Amaliy asosiy kurs: ish va o\u2018qish uchun ChatGPT va Claude, rasm generatsiyasi, koddan sayt va oddiy bot yig\u2018ish, kundalik vazifalarni avtomatlashtirish.",
-      proObj:"Dasturlashni bilish kerak deb o\u2018ylaysizmi? Kerak emas — kurs noldan boshlaganlar uchun. Oxirida — o\u2018zingiz yaratgan sayt, bot va SI bilan ish jarayoni.",
+      proObj:"Dasturlashni bilish kerak deb o\u2018ylaysizmi? Kerak emas — kurs noldan boshlaganlar uchun. Oxirida — o\u2018zingiz yaratgan sayt, bot va sun'iy intellekt bilan ish jarayoni.",
       proWho:"Kattalar va talabalar uchun · noldan birinchi loyihagacha",
       expDesc:"Ilg\u2018or yo\u2018nalish: AI-agentlar, API orqali integratsiyalar, biznes-jarayonlarni avtomatlashtirish, buyurtma asosidagi tijorat AI-mahsulotlari.",
-      expObj:"Bozor SI bilan ishlaydigan yangi mutaxassislardan to\u2018lib ketgan deb o\u2018ylaysizmi? Aynan shuning uchun «chat-botdan foydalana olish»dan ko\u2018proq narsa kerak — bu yerda sotiladigan narsani qurishga o\u2018rgatamiz.",
+      expObj:"Bozor sun'iy intellekt bilan ishlaydigan yangi mutaxassislardan to\u2018lib ketgan deb o\u2018ylaysizmi? Aynan shuning uchun «chat-botdan foydalana olish»dan ko\u2018proq narsa kerak — bu yerda sotiladigan narsani qurishga o\u2018rgatamiz.",
       expWho:"Amaliyotchi mutaxassislar va tadbirkorlar uchun"
     },
     price: {
