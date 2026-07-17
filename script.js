@@ -63,7 +63,7 @@ const translations = {
     },
     price: {
       h2:"Цены", num:"04 — Тарифы",
-      note:"Цены указаны за полный курс. Точную стоимость и рассрочку уточняем на бесплатной консультации — замени плейсхолдеры на актуальные цифры.",
+      note:"Цены указаны за полный курс. Точную стоимость и рассрочку уточняем на бесплатной консультации.",
       currency:"сум / мес",
       kids1:"2 занятия в неделю", kids2:"Группы до 8 человек", kids3:"Итоговый мини-проект",
       pro1:"3 занятия в неделю", pro2:"Личная проверка работ", pro3:"Проект в портфолио",
@@ -75,7 +75,8 @@ const translations = {
       s1h:"Бесплатная консультация", s1p:"Рассказываем о направлении, программе и помогаем выбрать подходящий трек — Kids, Pro или Expert.",
       s2h:"Практические занятия", s2p:"Разбираем инструменты и задачи на практике, каждое занятие закрепляется домашним заданием.",
       s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
-      s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса."
+      s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса.",
+      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — ориентир станция метро «Дружба народов»."
     },
     apply: {
       h2:"Оставить заявку", num:"06 — Заявка",
@@ -85,7 +86,7 @@ const translations = {
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
-    contact: { emailLabel:"Почта", cityLabel:"Город" },
+    contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (м. «Дружба народов»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
     foot: { city:"Ташкент.", contact:"Контакты" }
   },
@@ -128,7 +129,7 @@ const translations = {
     },
     price: {
       h2:"Narxlar", num:"04 — Tariflar",
-      note:"Narxlar to\u2018liq kurs uchun ko\u2018rsatilgan. Aniq narx va muddatli to\u2018lovni bepul konsultatsiyada aniqlaymiz — raqamlarni real qiymatlarga almashtiring.",
+      note:"Narxlar to\u2018liq kurs uchun ko\u2018rsatilgan. Aniq narx va muddatli to\u2018lovni bepul konsultatsiyada aniqlaymiz.",
       currency:"so\u2018m / oy",
       kids1:"Haftasiga 2 dars", kids2:"8 kishigacha guruh", kids3:"Yakuniy mini-loyiha",
       pro1:"Haftasiga 3 dars", pro2:"Ishlarni shaxsiy tekshirish", pro3:"Portfoliodagi loyiha",
@@ -140,7 +141,8 @@ const translations = {
       s1h:"Bepul konsultatsiya", s1p:"Yo\u2018nalish va dastur haqida gapiramiz, Kids, Pro yoki Expert tarkidan tanlashga yordam beramiz.",
       s2h:"Amaliy darslar", s2p:"Vositalar va vazifalarni amalda o\u2018rganamiz, har bir dars uyga vazifa bilan mustahkamlanadi.",
       s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
-      s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi."
+      s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi.",
+      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — mo\u2018ljal «Do\u2018stlik» metro bekati."
     },
     apply: {
       h2:"Ariza qoldirish", num:"06 — Ariza",
@@ -150,7 +152,7 @@ const translations = {
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
-    contact: { emailLabel:"Pochta", cityLabel:"Shahar" },
+    contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Do\u2018stlik» metro bekati)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Aloqa" }
   },
@@ -193,7 +195,7 @@ const translations = {
     },
     price: {
       h2:"Pricing", num:"04 — Plans",
-      note:"Prices are for the full course. Exact cost and installment options are confirmed at a free consultation — replace these placeholders with your real numbers.",
+      note:"Prices are for the full course. Exact cost and installment options are confirmed at a free consultation.",
       currency:"UZS / mo",
       kids1:"2 classes a week", kids2:"Groups of up to 8", kids3:"Final mini-project",
       pro1:"3 classes a week", pro2:"Personal feedback on work", pro3:"Portfolio project",
@@ -205,7 +207,8 @@ const translations = {
       s1h:"Free consultation", s1p:"We walk you through the tracks and help you choose between Kids, Pro, and Expert.",
       s2h:"Hands-on classes", s2p:"We work through tools and tasks in practice; every class comes with homework.",
       s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
-      s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course."
+      s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
+      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — near \u201cDo\u2018stlik\u201d metro station."
     },
     apply: {
       h2:"Apply now", num:"06 — Application",
@@ -215,7 +218,7 @@ const translations = {
       sideLead:"Leave a request — we\u2019ll reach out to you.",
       note:"We reply within a business day."
     },
-    contact: { emailLabel:"Email", cityLabel:"City" },
+    contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (near \u201cDo\u2018stlik\u201d metro)" },
     cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
     foot: { city:"Tashkent.", contact:"Contact" }
   }
@@ -315,40 +318,3 @@ if (applyForm) {
     }
   });
 }
-
-/* ============================================================
-   TEMPORARY — THEME TEST WIDGET
-   Remove this whole block, the #themeTester markup in index.html,
-   and the [data-theme="..."] overrides in style.css once you've
-   picked a final direction.
-   ============================================================ */
-(function () {
-  const THEME_KEY = 'thinklike-theme-preview';
-  const root = document.documentElement;
-  const buttons = document.querySelectorAll('#themeTester [data-theme-choice]');
-
-  function setTheme(name) {
-    if (name === 'default') {
-      root.removeAttribute('data-theme');
-    } else {
-      root.setAttribute('data-theme', name);
-    }
-    buttons.forEach(btn => {
-      btn.classList.toggle('is-active', btn.getAttribute('data-theme-choice') === name);
-    });
-    try { localStorage.setItem(THEME_KEY, name); } catch (e) { /* ignore */ }
-  }
-
-  let saved = null;
-  try { saved = localStorage.getItem(THEME_KEY); } catch (e) { /* ignore */ }
-  const allowed = ['default', 'navy'];
-  if (saved && allowed.includes(saved)) {
-    setTheme(saved);
-  } else if (saved) {
-    try { localStorage.removeItem(THEME_KEY); } catch (e) { /* ignore */ }
-  }
-
-  buttons.forEach(btn => {
-    btn.addEventListener('click', () => setTheme(btn.getAttribute('data-theme-choice')));
-  });
-})();

@@ -1,54 +1,29 @@
 /* ============================================================
    THINKLIKE AI — design tokens
-   Default theme = "Red" palette (252422 / F24B4B / F2F0D8)
+   Official brand palette: Mulled Wine / Woodland / Antique Marble /
+   Charcoal Smoke / Sandlight / Goat Milk
    ============================================================ */
 :root{
-  --paper:      #252422;
-  --paper-dim:  #1A1918;
-  --ink:        #F2F0D8;
-  --ink-soft:   #A8A695;
-  --line:       #3A3835;
-  --marker:     #F24B4B;
-  --marker-ink: #252422;
-  --signal:     #F24B4B;
-  --signal-2:   #C93A3A;
+  --paper:      #E7E5DB; /* Goat Milk */
+  --paper-dim:  #C8C2B7; /* Antique Marble */
+  --ink:        #191A1E; /* Charcoal Smoke */
+  --ink-soft:   #56483B; /* Woodland */
+  --line:       #AD9E89; /* Sandlight */
+  --marker:     #49110B; /* Mulled Wine */
+  --marker-ink: #E7E5DB; /* Goat Milk */
+  --signal:     #49110B; /* Mulled Wine */
+  --signal-2:   #6A1D14; /* Mulled Wine, lightened for hover */
 
   --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
   --body:    'IBM Plex Sans', system-ui, sans-serif;
   --mono:    'IBM Plex Mono', 'Courier New', monospace;
 
-  --core-muted:  #8A887A;
-  --core-muted2: #DAD8C2;
-  --core-line:   #3A3835;
+  --core-muted:  #AD9E89;
+  --core-muted2: #C8C2B7;
+  --core-line:   #56483B;
 
   --max: 1120px;
   --pad: clamp(20px, 4vw, 64px);
-}
-
-/* ============================================================
-   TEMPORARY — ALTERNATE THEME FOR TESTING
-   Remove this block + the theme-switcher widget in script.js
-   once a direction is chosen.
-   ============================================================ */
-
-/* Palette — "Navy" (E5E5E5 / 14213D / FCA311) */
-html[data-theme="navy"]{
-  --paper:      #E5E5E5;
-  --paper-dim:  #D7D7D7;
-  --ink:        #14213D;
-  --ink-soft:   #4C5878;
-  --line:       #C6C6C6;
-  --marker:     #FCA311;
-  --marker-ink: #14213D;
-  --signal:     #14213D;
-  --signal-2:   #2A3B63;
-  --core-muted:  #8892AC;
-  --core-muted2: #D7DAE4;
-  --core-line:   #2A3B63;
-
-  --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
-  --body:    'IBM Plex Sans', system-ui, sans-serif;
-  --mono:    'IBM Plex Mono', 'Courier New', monospace;
 }
 
 *{ box-sizing:border-box; margin:0; padding:0; }
@@ -456,6 +431,14 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   border-left:2px solid var(--marker);
   padding-left:14px;
 }
+.location-note{
+  color:var(--ink-soft);
+  max-width:60ch;
+  margin-top:32px;
+  font-size:15px;
+  border-left:2px solid var(--marker);
+  padding-left:14px;
+}
 .price-grid .program{ min-height:auto; }
 .price{
   display:flex;
@@ -621,51 +604,9 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   min-width:64px;
 }
 
-/* ============================================================
-   TEMPORARY — THEME TEST WIDGET (remove with the block in
-   index.html and the data-theme overrides above)
-   ============================================================ */
+/* smooth color transitions (kept as a small polish touch) */
 body, header, section, footer, .card, .program, .apply-form{
   transition: background-color .25s ease, color .25s ease, border-color .25s ease;
-}
-#themeTester{
-  position:fixed;
-  bottom:18px;
-  right:18px;
-  z-index:999;
-  display:flex;
-  align-items:center;
-  gap:6px;
-  background:var(--ink);
-  color:var(--paper);
-  padding:8px 10px;
-  border-radius:999px;
-  font-family:var(--mono);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:0.04em;
-  box-shadow:0 6px 20px rgba(0,0,0,0.25);
-}
-#themeTester span{ padding-left:4px; opacity:0.7; }
-#themeTester button{
-  font-family:var(--mono);
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:0.04em;
-  background:transparent;
-  color:var(--paper);
-  border:1px solid rgba(255,255,255,0.3);
-  border-radius:999px;
-  padding:5px 10px;
-  cursor:pointer;
-}
-#themeTester button.is-active{
-  background:var(--paper);
-  color:var(--ink);
-  border-color:var(--paper);
-}
-@media (max-width:560px){
-  #themeTester{ left:12px; right:12px; justify-content:center; flex-wrap:wrap; }
 }
 
 
