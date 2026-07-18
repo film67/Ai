@@ -285,6 +285,32 @@ const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
 const TG_CHAT_ID = '-1004462776226';
 const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
+/* modern toast notification */
+const toast = document.getElementById('toast');
+const toastText = document.getElementById('toastText');
+let toastTimer = null;
+
+const TOAST_MESSAGES = {
+  ru: { sent: 'Заявка отправлена — мы скоро свяжемся с вами', error: 'Не получилось отправить — попробуйте ещё раз' },
+  uz: { sent: 'Ariza yuborildi — tez orada bog\u2018lanamiz', error: 'Yuborib bo\u2018lmadi — qayta urinib ko\u2018ring' },
+  en: { sent: 'Application sent — we\u2019ll be in touch soon', error: 'Couldn\u2019t send it — please try again' }
+};
+
+function showToast(kind, isError) {
+  if (!toast || !toastText) return;
+  const lang = document.documentElement.lang || 'ru';
+  const msgs = TOAST_MESSAGES[lang] || TOAST_MESSAGES.ru;
+  toastText.textContent = isError ? msgs.error : msgs.sent;
+  toast.classList.toggle('is-error', !!isError);
+  toast.querySelector('.toast-icon').textContent = isError ? '!' : '✓';
+  toast.classList.add('is-visible');
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove('is-visible');
+  }, 4000);
+}
+
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
   applyForm.addEventListener('submit', async (e) => {
@@ -323,8 +349,10 @@ if (applyForm) {
 
       applyForm.classList.add('is-sent');
       applyForm.reset();
+      showToast('sent', false);
     } catch (err) {
       applyForm.classList.add('is-error');
+      showToast('error', true);
     } finally {
       if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
     }
