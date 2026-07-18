@@ -32,7 +32,8 @@ const translations = {
       title:'Мы не учим <mark>пользоваться ИИ</mark>. Мы учим <mark>мыслить</mark>.',
       sub:"ThinkLike AI — образовательный проект для тех, кто хочет не бояться искусственного интеллекта, а работать с ним на равных: ставить задачи, задавать вопросы и создавать свои продукты.",
       ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
-      meta1:"направления обучения", meta2:"языки преподавания", meta3:"страха перед ИИ"
+      meta1:"направления обучения", meta2:"языки преподавания", meta3:"страха перед ИИ",
+      word1:"почему?", word2:"как?", word3:"зачем?", word4:"что если?", word5:"а если иначе?"
     },
     phil: {
       h2:"Во что мы верим", num:"01 — Философия",
@@ -98,7 +99,8 @@ const translations = {
       title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz.',
       sub:"ThinkLike AI — sun'iy intellektdan qo\u2018rqmasdan, u bilan teng huquqli ishlashni istaganlar uchun ta'lim loyihasi: vazifa qo\u2018yish, savol berish va o\u2018z mahsulotlarini yaratish.",
       ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
-      meta1:"ta'lim yo\u2018nalishi", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish"
+      meta1:"ta'lim yo\u2018nalishi", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish",
+      word1:"nega?", word2:"qanday?", word3:"nima uchun?", word4:"agar-chi?", word5:"boshqacha bo\u2018lsa-chi?"
     },
     phil: {
       h2:"Biz nimaga ishonamiz", num:"01 — Falsafa",
@@ -164,7 +166,8 @@ const translations = {
       title:'We don\u2019t teach you to <mark>use AI</mark>. We teach you to <mark>think</mark>.',
       sub:"ThinkLike AI is an education project for people who want to stop fearing artificial intelligence and start working with it as an equal: setting tasks, asking questions, and building their own products.",
       ctaPrimary:"Enroll in a course", ctaGhost:"Our philosophy ↓",
-      meta1:"course tracks", meta2:"languages taught", meta3:"fear of AI"
+      meta1:"course tracks", meta2:"languages taught", meta3:"fear of AI",
+      word1:"why?", word2:"how?", word3:"what for?", word4:"what if?", word5:"what if not?"
     },
     phil: {
       h2:"What we believe", num:"01 — Philosophy",
