@@ -76,7 +76,7 @@ const translations = {
       s2h:"Практические занятия", s2p:"Разбираем инструменты и задачи на практике, каждое занятие закрепляется домашним заданием.",
       s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
       s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса.",
-      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — ориентир станция метро «Дружба народов»."
+      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka», напротив «Самарканд Дарвоза»."
     },
     apply: {
       h2:"Оставить заявку", num:"06 — Заявка",
@@ -86,7 +86,7 @@ const translations = {
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
-    contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (м. «Дружба народов»)" },
+    contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
     foot: { city:"Ташкент.", contact:"Контакты" }
   },
@@ -142,7 +142,7 @@ const translations = {
       s2h:"Amaliy darslar", s2p:"Vositalar va vazifalarni amalda o\u2018rganamiz, har bir dars uyga vazifa bilan mustahkamlanadi.",
       s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
       s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi.",
-      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — mo\u2018ljal «Do\u2018stlik» metro bekati."
+      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — «Korzinka» binosining 2-qavati, «Samarqand Darvoza»ning ro\u2018parasida."
     },
     apply: {
       h2:"Ariza qoldirish", num:"06 — Ariza",
@@ -152,7 +152,7 @@ const translations = {
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
-    contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Do\u2018stlik» metro bekati)" },
+    contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Aloqa" }
   },
@@ -208,7 +208,7 @@ const translations = {
       s2h:"Hands-on classes", s2p:"We work through tools and tasks in practice; every class comes with homework.",
       s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
       s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
-      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — near \u201cDo\u2018stlik\u201d metro station."
+      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d."
     },
     apply: {
       h2:"Apply now", num:"06 — Application",
@@ -218,7 +218,7 @@ const translations = {
       sideLead:"Leave a request — we\u2019ll reach out to you.",
       note:"We reply within a business day."
     },
-    contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (near \u201cDo\u2018stlik\u201d metro)" },
+    contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (2nd floor, \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d)" },
     cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
     foot: { city:"Tashkent.", contact:"Contact" }
   }
