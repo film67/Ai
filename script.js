@@ -80,7 +80,7 @@ const translations = {
     },
     apply: {
       h2:"Оставить заявку", num:"06 — Заявка",
-      name:"Имя", contact:"Телефон или Telegram", program:"Направление", message:"Комментарий (необязательно)",
+      name:"Имя", phone:"Номер телефона", telegram:"Telegram (необязательно)", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
       hint:"Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.",
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
@@ -146,7 +146,7 @@ const translations = {
     },
     apply: {
       h2:"Ariza qoldirish", num:"06 — Ariza",
-      name:"Ism", contact:"Telefon yoki Telegram", program:"Yo\u2018nalish", message:"Izoh (ixtiyoriy)",
+      name:"Ism", phone:"Telefon raqami", telegram:"Telegram (ixtiyoriy)", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
       hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri bizning Telegramimizga keladi — odatda bir kun ichida javob beramiz.",
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
@@ -212,7 +212,7 @@ const translations = {
     },
     apply: {
       h2:"Apply now", num:"06 — Application",
-      name:"Name", contact:"Phone or Telegram", program:"Track", message:"Message (optional)",
+      name:"Name", phone:"Phone number", telegram:"Telegram (optional)", message:"Message (optional)",
       submit:"Send application",
       hint:"Your request goes straight to our Telegram — we usually reply within a day.",
       sideLead:"Leave a request — we\u2019ll reach out to you.",
@@ -263,16 +263,6 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
 });
 
 /* ============================================================
-   PRICING CTA → prefill program in the form
-   ============================================================ */
-document.querySelectorAll('[data-program]').forEach(link => {
-  link.addEventListener('click', () => {
-    const select = document.querySelector('#applyForm select[name="program"]');
-    if (select) select.value = link.getAttribute('data-program');
-  });
-});
-
-/* ============================================================
    APPLICATION FORM
    Submits directly to a Telegram supergroup via the Bot API.
    NOTE: this bot token lives in public client-side code (no
@@ -311,6 +301,22 @@ function showToast(kind, isError) {
   }, 4000);
 }
 
+/* phone input — force +998 prefix, digits only */
+const phoneInput = document.getElementById('phoneInput');
+if (phoneInput) {
+  phoneInput.addEventListener('input', () => {
+    let digits = phoneInput.value.replace(/\D/g, '');
+    if (!digits.startsWith('998')) {
+      digits = '998' + digits.replace(/^9?9?8?/, '');
+    }
+    digits = digits.slice(0, 12); // 998 + 9 local digits
+    phoneInput.value = '+' + digits;
+  });
+  phoneInput.addEventListener('focus', () => {
+    if (!phoneInput.value) phoneInput.value = '+998';
+  });
+}
+
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
   applyForm.addEventListener('submit', async (e) => {
@@ -318,15 +324,15 @@ if (applyForm) {
 
     const data = new FormData(applyForm);
     const name = (data.get('name') || '').toString().trim();
-    const contact = (data.get('contact') || '').toString().trim();
-    const program = (data.get('program') || '').toString();
+    const phone = (data.get('phone') || '').toString().trim();
+    const telegram = (data.get('telegram') || '').toString().trim();
     const message = (data.get('message') || '').toString().trim();
 
     const lines = [
       '📩 Новая заявка — ThinkLike AI',
       `Имя: ${name}`,
-      `Контакт: ${contact}`,
-      `Направление: ${program}`,
+      `Телефон: ${phone}`,
+      telegram ? `Telegram: ${telegram}` : null,
       message ? `Комментарий: ${message}` : null
     ].filter(Boolean);
 

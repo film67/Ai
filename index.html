@@ -259,17 +259,15 @@
         </label>
 
         <label>
-          <span data-i18n="apply.contact">Телефон или Telegram</span>
-          <input type="text" name="contact" required autocomplete="tel" placeholder="+998 ·· ··· ·· ·· / @username">
+          <span data-i18n="apply.phone">Номер телефона</span>
+          <input type="tel" name="phone" id="phoneInput" required inputmode="numeric"
+                 pattern="\+998[0-9]{9}" maxlength="13"
+                 autocomplete="tel" placeholder="+998 ·· ··· ·· ··" value="+998">
         </label>
 
         <label>
-          <span data-i18n="apply.program">Направление</span>
-          <select name="program">
-            <option value="Kids">ThinkLike AI Kids</option>
-            <option value="Pro" selected>ThinkLike AI Pro</option>
-            <option value="Expert">ThinkLike AI Expert</option>
-          </select>
+          <span data-i18n="apply.telegram">Telegram (необязательно)</span>
+          <input type="text" name="telegram" autocomplete="off" placeholder="@username">
         </label>
 
         <label>
