@@ -432,6 +432,14 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   border-left:2px solid var(--marker);
   padding-left:14px;
 }
+.map-embed{
+  margin-top:20px;
+  border-radius:8px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  max-width:640px;
+}
+.map-embed iframe{ display:block; }
 .price-grid .program{ min-height:auto; }
 .price{
   display:flex;
