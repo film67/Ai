@@ -173,7 +173,7 @@ body::before{
   font-family:var(--display);
   font-weight:700;
   font-size:clamp(38px, 6.4vw, 84px);
-  line-height:1.03;
+  line-height:1.18;
   letter-spacing:-0.01em;
   max-width:16ch;
 }
@@ -182,7 +182,7 @@ body::before{
 mark{
   background:var(--marker);
   color:var(--marker-ink);
-  padding:0.02em 0.28em;
+  padding:0.06em 0.28em 0.1em;
   border-radius:4px;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
