@@ -1,657 +1,332 @@
+document.getElementById('year').textContent = new Date().getFullYear();
+
 /* ============================================================
-   THINKLIKE AI — design tokens
-   Official brand palette: Mulled Wine / Woodland / Antique Marble /
-   Charcoal Smoke / Sandlight / Goat Milk
+   REVEAL ON SCROLL
    ============================================================ */
-:root{
-  --paper:      #E7E5DB; /* Goat Milk */
-  --paper-dim:  #C8C2B7; /* Antique Marble */
-  --ink:        #191A1E; /* Charcoal Smoke */
-  --ink-soft:   #56483B; /* Woodland */
-  --line:       #AD9E89; /* Sandlight */
-  --marker:     #49110B; /* Mulled Wine */
-  --marker-ink: #E7E5DB; /* Goat Milk */
-  --signal:     #49110B; /* Mulled Wine */
-  --signal-2:   #6A1D14; /* Mulled Wine, lightened for hover */
+const revealEls = document.querySelectorAll('.reveal');
 
-  --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
-  --body:    'IBM Plex Sans', system-ui, sans-serif;
-  --mono:    'IBM Plex Mono', 'Courier New', monospace;
+if ('IntersectionObserver' in window) {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-  --core-muted:  #AD9E89;
-  --core-muted2: #C8C2B7;
-  --core-line:   #56483B;
-
-  --max: 1120px;
-  --pad: clamp(20px, 4vw, 64px);
-}
-
-*{ box-sizing:border-box; margin:0; padding:0; }
-
-html{ scroll-behavior:smooth; }
-
-body{
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--body);
-  font-size:17px;
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  *{ animation-duration:0.01ms !important; transition-duration:0.01ms !important; }
-}
-
-a{ color:inherit; }
-img{ max-width:100%; display:block; }
-
-.wrap{
-  max-width:var(--max);
-  margin:0 auto;
-  padding-left:var(--pad);
-  padding-right:var(--pad);
-}
-
-/* subtle paper texture */
-body::before{
-  content:"";
-  position:fixed; inset:0;
-  pointer-events:none;
-  z-index:0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(20,22,20,0.05) 1px, transparent 1px);
-  background-size: 22px 22px;
-  opacity:0.5;
+  revealEls.forEach(el => io.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('in'));
 }
 
 /* ============================================================
-   NAV
+   I18N — RU / UZ / EN
+   Правь текст ниже, чтобы изменить формулировки на любом языке.
    ============================================================ */
-.nav{
-  position:sticky; top:0; z-index:50;
-  background:rgba(241,238,226,0.86);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-}
-.nav .wrap{
-  display:flex; align-items:center; justify-content:space-between;
-  height:72px;
-}
-.nav-mark{
-  font-family:var(--display);
-  font-weight:700;
-  font-size:20px;
-  letter-spacing:-0.01em;
-  display:flex; align-items:center; gap:8px;
-}
-.nav-mark span.dot{
-  width:9px;height:9px;border-radius:50%;
-  background:var(--signal);
-  display:inline-block;
-}
-.nav-links{
-  display:flex; gap:28px;
-  font-family:var(--mono);
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-}
-.nav-links a{ text-decoration:none; opacity:0.75; transition:opacity .15s; }
-.nav-links a:hover{ opacity:1; }
-.nav-cta{
-  font-family:var(--mono);
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  background:var(--ink);
-  color:var(--paper);
-  padding:10px 18px;
-  border-radius:2px;
-  text-decoration:none;
-  white-space:nowrap;
-}
-.nav-toggle{ display:none; }
+const translations = {
+  ru: {
+    nav: { philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
+    hero: {
+      eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
+      title:'Мы не учим <mark>пользоваться ИИ</mark>. Мы учим <mark>мыслить</mark>.',
+      sub:"ThinkLike AI — образовательный проект для тех, кто хочет не бояться искусственного интеллекта, а работать с ним на равных: ставить задачи, задавать вопросы и создавать свои продукты.",
+      ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
+      meta1:"направления обучения", meta2:"языки преподавания", meta3:"страха перед ИИ"
+    },
+    phil: {
+      h2:"Во что мы верим", num:"01 — Философия",
+      n1:"Мысль 01", t1a:"Не бойся искусственного интеллекта.", t1b:"Бойся остаться без навыков.",
+      n2:"Мысль 02", t2a:"Мы не заменяем человека.", t2b:"Мы усиливаем человека.",
+      n3:"Мысль 03", t3a:"Мы не учим пользоваться ИИ.", t3b:"Мы учим мыслить.",
+      n4:"Мысль 04", t4a:"Будущее принадлежит тем,", t4b:"кто умеет задавать вопросы."
+    },
+    about: {
+      h2:"Кто такой выпускник ThinkLike AI", num:"02 — О нас",
+      lead:"Мы создаём не курс, а культуру мышления — с собственной методологией, стандартами и кодексом для учеников и преподавателей.",
+      b1:"Ставит задачи ИИ", d1:", а не боится его — умеет формулировать промпты и оценивать результат критически.",
+      b2:"Понимает принципы", d2:", стоящие за инструментами, а не просто нажимает кнопки в интерфейсе.",
+      b3:"Создаёт свои продукты", d3:" — сайты, приложения, автоматизации — и доводит их до готового результата.",
+      b4:"Мыслит системно", d4:": не копирует чужие решения, а собирает собственный подход."
+    },
+    prog: {
+      h2:"Курсы", num:"03 — Программы",
+      kidsDesc:"Первое знакомство с ИИ через игру и творчество: как устроены нейросети, как задавать им вопросы и как отличать факт от выдумки. Работаем с ChatGPT и генерацией изображений в безопасном формате.",
+      kidsObj:"Думаете, это рано? Мы не учим детей заменять мышление ИИ — учим проверять и спорить с ним. Итог курса: своя иллюстрированная история, сделанная вместе с нейросетью.",
+      kidsWho:"Для школьников · без опыта программирования",
+      proDesc:"Базовый практический курс: ChatGPT и Claude для работы и учёбы, генерация изображений, сборка сайта и простого бота без кода, автоматизация рутинных задач.",
+      proObj:"Думаете, для этого нужно уметь программировать? Не нужно — курс рассчитан на полный ноль. К концу — сайт, бот и рабочий процесс с ИИ, которые вы сделали сами.",
+      proWho:"Для взрослых и студентов · с нуля до первого проекта",
+      expDesc:"Продвинутый трек: AI-агенты, интеграции через API, автоматизация бизнес-процессов, коммерческие AI-продукты на заказ.",
+      expObj:"Думаете, рынок уже перегрет джунами на ИИ? Именно поэтому важно уметь больше, чем «уметь пользоваться чат-ботом» — здесь учат строить то, что продаётся.",
+      expWho:"Для практикующих специалистов и предпринимателей"
+    },
+    price: {
+      h2:"Цены", num:"04 — Тарифы",
+      note:"Цены указаны за полный курс. Точную стоимость и рассрочку уточняем на бесплатной консультации.",
+      currency:"сум / мес",
+      kids1:"2 занятия в неделю", kids2:"Группы до 8 человек", kids3:"Итоговый мини-проект",
+      pro1:"3 занятия в неделю", pro2:"Личная проверка работ", pro3:"Проект в портфолио",
+      exp1:"Индивидуальный трек", exp2:"Разбор коммерческих кейсов", exp3:"Помощь с первыми клиентами",
+      cta:"Записаться"
+    },
+    proc: {
+      h2:"Как проходит обучение", num:"05 — Процесс",
+      s1h:"Бесплатная консультация", s1p:"Рассказываем о направлении, программе и помогаем выбрать подходящий трек — Kids, Pro или Expert.",
+      s2h:"Практические занятия", s2p:"Разбираем инструменты и задачи на практике, каждое занятие закрепляется домашним заданием.",
+      s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
+      s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса.",
+      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka», напротив «Самарканд Дарвоза»."
+    },
+    apply: {
+      h2:"Оставить заявку", num:"06 — Заявка",
+      name:"Имя", contact:"Телефон или Telegram", program:"Направление", message:"Комментарий (необязательно)",
+      submit:"Отправить заявку",
+      hint:"Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.",
+      sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
+      note:"Отвечаем в течение дня в будни."
+    },
+    contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
+    cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
+    foot: { city:"Ташкент.", contact:"Контакты" }
+  },
 
-.nav-right{ display:flex; align-items:center; gap:18px; }
+  uz: {
+    nav: { philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
+    hero: {
+      eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
+      title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz.',
+      sub:"ThinkLike AI — sun'iy intellektdan qo\u2018rqmasdan, u bilan teng huquqli ishlashni istaganlar uchun ta'lim loyihasi: vazifa qo\u2018yish, savol berish va o\u2018z mahsulotlarini yaratish.",
+      ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
+      meta1:"ta'lim yo\u2018nalishi", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish"
+    },
+    phil: {
+      h2:"Biz nimaga ishonamiz", num:"01 — Falsafa",
+      n1:"1-fikr", t1a:"Sun'iy intellektdan qo\u2018rqma.", t1b:"Ko\u2018nikmasiz qolishdan qo\u2018rq.",
+      n2:"2-fikr", t2a:"Biz odamni almashtirmaymiz.", t2b:"Biz odamni kuchaytiramiz.",
+      n3:"3-fikr", t3a:"Biz sun\u2018iy intellektdan foydalanishni o\u2018rgatmaymiz.", t3b:"Biz fikrlashni o\u2018rgatamiz.",
+      n4:"4-fikr", t4a:"Kelajak — savol bera oladiganlarniki", t4b:"bo\u2018ladi."
+    },
+    about: {
+      h2:"ThinkLike AI bitiruvchisi kim", num:"02 — Biz haqimizda",
+      lead:"Biz shunchaki kurs emas, balki fikrlash madaniyatini yaratamiz — o\u2018z metodologiyamiz, standartlarimiz va o\u2018quvchi/o\u2018qituvchi kodeksi bilan.",
+      b1:"Sun\u2018iy intellektga vazifa qo\u2018yadi", d1:" — undan qo\u2018rqmaydi, promptlarni to\u2018g\u2018ri tuzadi va natijani tanqidiy baholaydi.",
+      b2:"Tamoyillarni tushunadi", d2:" — shunchaki tugmalarni bosmaydi, vositalar ortidagi mantiqni biladi.",
+      b3:"O\u2018z mahsulotlarini yaratadi", d3:" — sayt, ilova, avtomatlashtirish — va ularni yakuniga yetkazadi.",
+      b4:"Tizimli fikrlaydi", d4:" — boshqalarni nusxalamaydi, o\u2018z yondashuvini shakllantiradi."
+    },
+    prog: {
+      h2:"Kurslar", num:"03 — Dasturlar",
+      kidsDesc:"O\u2018yin va ijod orqali sun'iy intellekt bilan birinchi tanishuv: neyron tarmoqlar qanday ishlaydi, savol berish va faktni to\u2018qimadan ajratish. ChatGPT va rasm generatsiyasi bilan xavfsiz formatda ishlaymiz.",
+      kidsObj:"Erta deb o\u2018ylaysizmi? Biz bolalarni fikrlashni sun'iy intellekt bilan almashtirishga emas, tekshirish va bahslashishga o\u2018rgatamiz. Kurs natijasi — neyron tarmoq bilan birga yaratilgan o\u2018z hikoyasi.",
+      kidsWho:"Maktab o\u2018quvchilari uchun · dasturlash tajribasi shart emas",
+      proDesc:"Amaliy asosiy kurs: ish va o\u2018qish uchun ChatGPT va Claude, rasm generatsiyasi, koddan sayt va oddiy bot yig\u2018ish, kundalik vazifalarni avtomatlashtirish.",
+      proObj:"Dasturlashni bilish kerak deb o\u2018ylaysizmi? Kerak emas — kurs noldan boshlaganlar uchun. Oxirida — o\u2018zingiz yaratgan sayt, bot va sun'iy intellekt bilan ish jarayoni.",
+      proWho:"Kattalar va talabalar uchun · noldan birinchi loyihagacha",
+      expDesc:"Ilg\u2018or yo\u2018nalish: AI-agentlar, API orqali integratsiyalar, biznes-jarayonlarni avtomatlashtirish, buyurtma asosidagi tijorat AI-mahsulotlari.",
+      expObj:"Bozor sun'iy intellekt bilan ishlaydigan yangi mutaxassislardan to\u2018lib ketgan deb o\u2018ylaysizmi? Aynan shuning uchun «chat-botdan foydalana olish»dan ko\u2018proq narsa kerak — bu yerda sotiladigan narsani qurishga o\u2018rgatamiz.",
+      expWho:"Amaliyotchi mutaxassislar va tadbirkorlar uchun"
+    },
+    price: {
+      h2:"Narxlar", num:"04 — Tariflar",
+      note:"Narxlar to\u2018liq kurs uchun ko\u2018rsatilgan. Aniq narx va muddatli to\u2018lovni bepul konsultatsiyada aniqlaymiz.",
+      currency:"so\u2018m / oy",
+      kids1:"Haftasiga 2 dars", kids2:"8 kishigacha guruh", kids3:"Yakuniy mini-loyiha",
+      pro1:"Haftasiga 3 dars", pro2:"Ishlarni shaxsiy tekshirish", pro3:"Portfoliodagi loyiha",
+      exp1:"Individual yo\u2018nalish", exp2:"Tijorat keyslarini tahlil qilish", exp3:"Birinchi mijozlar topishda yordam",
+      cta:"Yozilish"
+    },
+    proc: {
+      h2:"O\u2018qish qanday o\u2018tadi", num:"05 — Jarayon",
+      s1h:"Bepul konsultatsiya", s1p:"Yo\u2018nalish va dastur haqida gapiramiz, Kids, Pro yoki Expert tarkidan tanlashga yordam beramiz.",
+      s2h:"Amaliy darslar", s2p:"Vositalar va vazifalarni amalda o\u2018rganamiz, har bir dars uyga vazifa bilan mustahkamlanadi.",
+      s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
+      s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi.",
+      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — «Korzinka» binosining 2-qavati, «Samarqand Darvoza»ning ro\u2018parasida."
+    },
+    apply: {
+      h2:"Ariza qoldirish", num:"06 — Ariza",
+      name:"Ism", contact:"Telefon yoki Telegram", program:"Yo\u2018nalish", message:"Izoh (ixtiyoriy)",
+      submit:"Arizani yuborish",
+      hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri bizning Telegramimizga keladi — odatda bir kun ichida javob beramiz.",
+      sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
+      note:"Ish kunlari davomida javob beramiz."
+    },
+    contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
+    cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
+    foot: { city:"Toshkent.", contact:"Aloqa" }
+  },
 
-.lang-switch{
-  display:flex;
-  border:1px solid var(--line);
-  border-radius:2px;
-  overflow:hidden;
-}
-.lang-btn{
-  font-family:var(--mono);
-  font-size:12px;
-  letter-spacing:0.04em;
-  background:transparent;
-  border:none;
-  color:var(--ink-soft);
-  padding:8px 10px;
-  cursor:pointer;
-  transition:background .15s, color .15s;
-}
-.lang-btn + .lang-btn{ border-left:1px solid var(--line); }
-.lang-btn:hover{ color:var(--ink); }
-.lang-btn.is-active{ background:var(--ink); color:var(--paper); }
-
-@media (max-width:820px){
-  .nav-links{ display:none; }
-}
-@media (max-width:560px){
-  .nav-cta{ display:none; }
-}
+  en: {
+    nav: { philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
+    hero: {
+      eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
+      title:'We don\u2019t teach you to <mark>use AI</mark>. We teach you to <mark>think</mark>.',
+      sub:"ThinkLike AI is an education project for people who want to stop fearing artificial intelligence and start working with it as an equal: setting tasks, asking questions, and building their own products.",
+      ctaPrimary:"Enroll in a course", ctaGhost:"Our philosophy ↓",
+      meta1:"course tracks", meta2:"languages taught", meta3:"fear of AI"
+    },
+    phil: {
+      h2:"What we believe", num:"01 — Philosophy",
+      n1:"Thought 01", t1a:"Don\u2019t fear artificial intelligence.", t1b:"Fear being left without skills.",
+      n2:"Thought 02", t2a:"We don\u2019t replace people.", t2b:"We make people stronger.",
+      n3:"Thought 03", t3a:"We don\u2019t teach how to use AI.", t3b:"We teach how to think.",
+      n4:"Thought 04", t4a:"The future belongs to those", t4b:"who know how to ask questions."
+    },
+    about: {
+      h2:"Who is a ThinkLike AI graduate", num:"02 — About us",
+      lead:"We\u2019re not building a course — we\u2019re building a culture of thinking, with its own methodology, standards, and code of conduct for students and teachers.",
+      b1:"Sets tasks for AI", d1:" instead of fearing it — writes clear prompts and evaluates results critically.",
+      b2:"Understands the principles", d2:" behind the tools, not just the buttons in an interface.",
+      b3:"Builds real products", d3:" — websites, apps, automations — and takes them all the way to done.",
+      b4:"Thinks systemically", d4:": doesn\u2019t copy other people\u2019s solutions, but builds their own approach."
+    },
+    prog: {
+      h2:"Courses", num:"03 — Programs",
+      kidsDesc:"A first, playful introduction to AI: how neural networks work, how to ask them good questions, and how to tell fact from fabrication. We work with ChatGPT and image generation in a safe format.",
+      kidsObj:"Think it's too early? We don't teach kids to replace thinking with AI — we teach them to check it and argue with it. End result: their own illustrated story, made together with a neural network.",
+      kidsWho:"For school students · no coding experience needed",
+      proDesc:"A hands-on core course: ChatGPT and Claude for work and study, image generation, building a site and a simple bot with no code, automating routine tasks.",
+      proObj:"Think you need to know how to code? You don't — this course starts from zero. By the end: a site, a bot, and an AI workflow you built yourself.",
+      proWho:"For adults and students · from zero to a first project",
+      expDesc:"An advanced track: AI agents, API integrations, business process automation, commercial AI products built for clients.",
+      expObj:"Think the market's already flooded with AI-assisted juniors? That's exactly why it matters to do more than \u201cknow how to use a chatbot\u201d — here you learn to build what actually sells.",
+      expWho:"For practicing specialists and entrepreneurs"
+    },
+    price: {
+      h2:"Pricing", num:"04 — Plans",
+      note:"Prices are for the full course. Exact cost and installment options are confirmed at a free consultation.",
+      currency:"UZS / mo",
+      kids1:"2 classes a week", kids2:"Groups of up to 8", kids3:"Final mini-project",
+      pro1:"3 classes a week", pro2:"Personal feedback on work", pro3:"Portfolio project",
+      exp1:"Individual track", exp2:"Real commercial case reviews", exp3:"Help landing first clients",
+      cta:"Enroll"
+    },
+    proc: {
+      h2:"How the course runs", num:"05 — Process",
+      s1h:"Free consultation", s1p:"We walk you through the tracks and help you choose between Kids, Pro, and Expert.",
+      s2h:"Hands-on classes", s2p:"We work through tools and tasks in practice; every class comes with homework.",
+      s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
+      s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
+      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d."
+    },
+    apply: {
+      h2:"Apply now", num:"06 — Application",
+      name:"Name", contact:"Phone or Telegram", program:"Track", message:"Message (optional)",
+      submit:"Send application",
+      hint:"Your request goes straight to our Telegram — we usually reply within a day.",
+      sideLead:"Leave a request — we\u2019ll reach out to you.",
+      note:"We reply within a business day."
+    },
+    contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (2nd floor, \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d)" },
+    cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
+    foot: { city:"Tashkent.", contact:"Contact" }
+  }
+};
 
 /* ============================================================
-   HERO
+   APPLY TRANSLATIONS
    ============================================================ */
-.hero{
-  position:relative;
-  padding-top:clamp(64px,10vw,120px);
-  padding-bottom:clamp(56px,8vw,96px);
-  overflow:hidden;
-}
-.eyebrow{
-  font-family:var(--mono);
-  font-size:13px;
-  text-transform:uppercase;
-  letter-spacing:0.12em;
-  color:var(--ink-soft);
-  display:flex; align-items:center; gap:10px;
-  margin-bottom:22px;
-}
-.eyebrow::before{
-  content:"";
-  width:26px; height:1px;
-  background:var(--ink-soft);
-  display:inline-block;
+function getPath(obj, path) {
+  return path.split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : null), obj);
 }
 
-.hero h1{
-  font-family:var(--display);
-  font-weight:700;
-  font-size:clamp(38px, 6.4vw, 84px);
-  line-height:1.18;
-  letter-spacing:-0.01em;
-  max-width:16ch;
+function applyLanguage(lang) {
+  const dict = translations[lang] || translations.ru;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const value = getPath(dict, el.getAttribute('data-i18n'));
+    if (value !== null) el.textContent = value;
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const value = getPath(dict, el.getAttribute('data-i18n-html'));
+    if (value !== null) el.innerHTML = value;
+  });
+
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('is-active', btn.getAttribute('data-lang') === lang);
+  });
+
+  try { localStorage.setItem('thinklike-lang', lang); } catch (e) { /* ignore */ }
 }
 
-/* signature highlighter-mark treatment */
-mark{
-  background:var(--marker);
-  color:var(--marker-ink);
-  padding:0.06em 0.28em 0.1em;
-  border-radius:4px;
-  box-decoration-break:clone;
-  -webkit-box-decoration-break:clone;
-}
+const savedLang = (() => {
+  try { return localStorage.getItem('thinklike-lang'); } catch (e) { return null; }
+})();
 
-.hero-sub{
-  margin-top:28px;
-  max-width:56ch;
-  font-size:19px;
-  color:var(--ink-soft);
-}
+applyLanguage(savedLang && translations[savedLang] ? savedLang : 'ru');
 
-.hero-row{
-  margin-top:44px;
-  display:flex;
-  align-items:center;
-  gap:24px;
-  flex-wrap:wrap;
-}
-
-.btn-primary{
-  font-family:var(--mono);
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  background:var(--signal);
-  color:var(--paper);
-  padding:16px 26px;
-  border-radius:2px;
-  text-decoration:none;
-  border:1px solid var(--signal);
-  transition:background .15s, color .15s;
-}
-.btn-primary:hover{ background:transparent; color:var(--signal); }
-
-.btn-ghost{
-  font-family:var(--mono);
-  font-size:14px;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  text-decoration:none;
-  border-bottom:1px solid var(--ink);
-  padding-bottom:2px;
-}
-
-.hero-meta{
-  margin-top:56px;
-  display:grid;
-  grid-template-columns:repeat(3,auto);
-  gap:clamp(24px,5vw,64px);
-  font-family:var(--mono);
-  font-size:13px;
-  color:var(--ink-soft);
-  border-top:1px solid var(--line);
-  padding-top:20px;
-}
-.hero-meta b{
-  display:block;
-  font-family:var(--display);
-  font-size:26px;
-  color:var(--ink);
-  font-weight:700;
-}
-@media (max-width:600px){
-  .hero-meta{ grid-template-columns:1fr 1fr; }
-}
+document.querySelectorAll('.lang-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+});
 
 /* ============================================================
-   SECTION helpers
+   PRICING CTA → prefill program in the form
    ============================================================ */
-section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-end;
-  gap:24px;
-  margin-bottom:clamp(36px,6vw,64px);
-  border-bottom:1px solid var(--line);
-  padding-bottom:22px;
-}
-.section-head h2{
-  font-family:var(--display);
-  font-weight:700;
-  font-size:clamp(28px,4vw,44px);
-  letter-spacing:-0.01em;
-}
-.section-num{
-  font-family:var(--mono);
-  font-size:13px;
-  color:var(--ink-soft);
-  white-space:nowrap;
-}
+document.querySelectorAll('[data-program]').forEach(link => {
+  link.addEventListener('click', () => {
+    const select = document.querySelector('#applyForm select[name="program"]');
+    if (select) select.value = link.getAttribute('data-program');
+  });
+});
 
 /* ============================================================
-   PHILOSOPHY — index cards
+   APPLICATION FORM
+   Submits directly to a Telegram supergroup via the Bot API.
+   NOTE: this bot token lives in public client-side code (no
+   backend on GitHub Pages) — anyone viewing page source can see
+   it. Accepted trade-off per project decision. If this bot is
+   ever misused, regenerate the token via @BotFather (/revoke)
+   and drop the new one in here.
    ============================================================ */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:20px;
-}
-@media (max-width:960px){ .cards{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:560px){ .cards{ grid-template-columns:1fr; } }
+const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
+const TG_CHAT_ID = '-1004462776226';
+const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
-.card{
-  background:var(--paper-dim);
-  border:1px solid var(--line);
-  border-radius:2px;
-  padding:26px 22px 28px;
-  position:relative;
-  transition:transform .2s ease;
-}
-.card:nth-child(odd){ transform:rotate(-0.6deg); }
-.card:nth-child(even){ transform:rotate(0.5deg); }
-.card:hover{ transform:rotate(0deg) translateY(-3px); }
+const applyForm = document.getElementById('applyForm');
+if (applyForm) {
+  applyForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-.card .pin{
-  position:absolute; top:14px; right:16px;
-  width:8px; height:8px; border-radius:50%;
-  background:var(--signal);
-}
-.card .num{
-  font-family:var(--mono);
-  font-size:13px;
-  color:var(--ink-soft);
-  display:block;
-  margin-bottom:14px;
-}
-.card p{
-  font-family:var(--display);
-  font-size:19px;
-  font-weight:500;
-  line-height:1.3;
-}
-.card p.no{ color:var(--ink-soft); font-weight:400; font-size:16px; margin-top:8px; font-family:var(--body); }
+    const data = new FormData(applyForm);
+    const name = (data.get('name') || '').toString().trim();
+    const contact = (data.get('contact') || '').toString().trim();
+    const program = (data.get('program') || '').toString();
+    const message = (data.get('message') || '').toString().trim();
 
-/* ============================================================
-   ABOUT / VALUES row
-   ============================================================ */
-.split{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(32px,6vw,80px);
-  align-items:start;
-}
-@media (max-width:820px){ .split{ grid-template-columns:1fr; } }
+    const lines = [
+      '📩 Новая заявка — ThinkLike AI',
+      `Имя: ${name}`,
+      `Контакт: ${contact}`,
+      `Направление: ${program}`,
+      message ? `Комментарий: ${message}` : null
+    ].filter(Boolean);
 
-.split .lead{
-  font-family:var(--display);
-  font-size:clamp(22px,2.6vw,30px);
-  line-height:1.3;
-  font-weight:500;
-}
-.list-plain{ list-style:none; }
-.list-plain li{
-  padding:18px 0;
-  border-top:1px solid var(--line);
-  display:grid;
-  grid-template-columns:2em 1fr;
-  gap:14px;
-}
-.list-plain li:last-child{ border-bottom:1px solid var(--line); }
-.list-plain span.k{
-  font-family:var(--mono);
-  color:var(--ink-soft);
-  font-size:13px;
-  padding-top:3px;
-}
-.list-plain strong{ font-family:var(--display); font-weight:600; }
+    const submitBtn = applyForm.querySelector('button[type="submit"]');
+    const originalBtnText = submitBtn ? submitBtn.textContent : '';
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…'; }
+    applyForm.classList.remove('is-sent', 'is-error');
 
-/* ============================================================
-   PROGRAMS
-   ============================================================ */
-.programs{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-}
-@media (max-width:820px){ .programs{ grid-template-columns:1fr; } }
+    try {
+      const res = await fetch(TG_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TG_CHAT_ID,
+          text: lines.join('\n')
+        })
+      });
+      const result = await res.json();
+      if (!res.ok || !result.ok) throw new Error('Request failed');
 
-.program{
-  background:var(--paper);
-  padding:34px 28px;
-  display:flex;
-  flex-direction:column;
-  min-height:340px;
+      applyForm.classList.add('is-sent');
+      applyForm.reset();
+    } catch (err) {
+      applyForm.classList.add('is-error');
+    } finally {
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+    }
+  });
 }
-.program .tag{
-  font-family:var(--mono);
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:0.08em;
-  color:var(--ink-soft);
-}
-.program h3{
-  font-family:var(--display);
-  font-size:26px;
-  margin-top:10px;
-  font-weight:700;
-}
-.program p{ margin-top:14px; color:var(--ink-soft); flex-grow:1; }
-.program p.objection{
-  flex-grow:0;
-  margin-top:12px;
-  padding:12px 14px;
-  border-left:2px solid var(--signal);
-  background:var(--paper-dim);
-  color:var(--ink);
-  font-size:14px;
-  line-height:1.5;
-}
-.program.is-core p.objection{
-  border-left-color:var(--marker);
-  background:rgba(255,255,255,0.06);
-  color:var(--paper);
-}
-.program .who{
-  margin-top:20px;
-  font-family:var(--mono);
-  font-size:12.5px;
-  border-top:1px solid var(--line);
-  padding-top:14px;
-  color:var(--ink-soft);
-}
-.program.is-core{ background:var(--ink); color:var(--paper); }
-.program.is-core .tag,
-.program.is-core p,
-.program.is-core .who{ color:var(--core-muted); }
-.program.is-core .who{ border-top-color:var(--core-line); }
-
-/* pricing */
-.price-note{
-  color:var(--ink-soft);
-  max-width:60ch;
-  margin-bottom:32px;
-  font-size:15px;
-  border-left:2px solid var(--marker);
-  padding-left:14px;
-}
-.location-note{
-  color:var(--ink-soft);
-  max-width:60ch;
-  margin-top:32px;
-  font-size:15px;
-  border-left:2px solid var(--marker);
-  padding-left:14px;
-}
-.map-embed{
-  margin-top:20px;
-  border-radius:8px;
-  overflow:hidden;
-  border:1px solid var(--line);
-  max-width:640px;
-}
-.map-embed iframe{ display:block; }
-.price-grid .program{ min-height:auto; }
-.price{
-  display:flex;
-  align-items:baseline;
-  gap:8px;
-  margin-top:16px;
-}
-.price-num{
-  font-family:var(--display);
-  font-size:30px;
-  font-weight:700;
-}
-.price-cur{
-  font-family:var(--mono);
-  font-size:13px;
-  color:var(--ink-soft);
-}
-.program.is-core .price-cur{ color:var(--core-muted); }
-.price-list{
-  list-style:none;
-  margin:20px 0 24px;
-  flex-grow:1;
-}
-.price-list li{
-  font-size:14.5px;
-  color:var(--ink-soft);
-  padding:8px 0;
-  border-top:1px solid var(--line);
-}
-.price-list li:first-child{ border-top:none; }
-.program.is-core .price-list li{ border-top-color:var(--core-line); color:var(--core-muted2); }
-.price-grid .btn-primary,
-.price-grid .btn-ghost{ align-self:flex-start; }
-
-/* ============================================================
-   PROCESS steps (real sequence → numbering justified)
-   ============================================================ */
-.steps{ display:flex; flex-direction:column; }
-.step{
-  display:grid;
-  grid-template-columns:80px 1fr;
-  gap:24px;
-  padding:26px 0;
-  border-top:1px solid var(--line);
-}
-.step:last-child{ border-bottom:1px solid var(--line); }
-.step .n{
-  font-family:var(--mono);
-  font-size:14px;
-  color:var(--ink-soft);
-  padding-top:4px;
-}
-.step h4{
-  font-family:var(--display);
-  font-size:20px;
-  font-weight:600;
-  margin-bottom:6px;
-}
-.step p{ color:var(--ink-soft); max-width:60ch; }
-
-/* ============================================================
-   APPLY FORM
-   ============================================================ */
-.apply-grid{
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:clamp(28px,5vw,64px);
-  margin-bottom:clamp(48px,7vw,88px);
-}
-@media (max-width:820px){ .apply-grid{ grid-template-columns:1fr; } }
-
-.apply-form{
-  background:var(--paper-dim);
-  border:1px solid var(--line);
-  padding:clamp(24px,4vw,40px);
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-.apply-form label{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  font-family:var(--mono);
-  font-size:12.5px;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  color:var(--ink-soft);
-}
-.apply-form input,
-.apply-form select,
-.apply-form textarea{
-  font-family:var(--body);
-  font-size:16px;
-  color:var(--ink);
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:2px;
-  padding:12px 14px;
-  text-transform:none;
-  letter-spacing:normal;
-}
-.apply-form input:focus,
-.apply-form select:focus,
-.apply-form textarea:focus{
-  outline:2px solid var(--signal);
-  outline-offset:1px;
-}
-.apply-form textarea{ resize:vertical; }
-.apply-form button{ margin-top:6px; cursor:pointer; align-self:flex-start; }
-.apply-hint{
-  font-family:var(--body);
-  font-size:13px;
-  color:var(--ink-soft);
-  text-transform:none;
-  letter-spacing:normal;
-  margin-top:-6px;
-}
-.apply-form.is-sent .apply-hint{ color:var(--signal); font-weight:600; }
-.apply-form.is-sent .apply-hint::after{ content:" Готово — заявка отправлена, мы скоро свяжемся."; }
-.apply-form.is-error .apply-hint{ color:#c0392b; font-weight:600; }
-.apply-form.is-error .apply-hint::after{ content:" Не получилось отправить — попробуйте ещё раз или напишите нам напрямую."; }
-
-.apply-side{
-  display:flex;
-  flex-direction:column;
-  gap:14px;
-  padding-top:6px;
-}
-.apply-side .lead{
-  font-family:var(--display);
-  font-size:20px;
-  font-weight:600;
-}
-.apply-tg{ align-self:flex-start; }
-.apply-note{ color:var(--ink-soft); font-size:14px; }
-
-.contact-list{
-  list-style:none;
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-  padding:0;
-  margin:0;
-}
-.contact-list li{
-  display:flex;
-  align-items:baseline;
-  gap:10px;
-  font-size:15px;
-}
-.contact-list a{
-  color:var(--ink);
-  text-decoration:underline;
-  text-underline-offset:3px;
-}
-.contact-k{
-  font-family:var(--mono);
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:0.05em;
-  color:var(--ink-soft);
-  min-width:64px;
-}
-
-/* smooth color transitions (kept as a small polish touch) */
-body, header, section, footer, .card, .program, .apply-form{
-  transition: background-color .25s ease, color .25s ease, border-color .25s ease;
-}
-
-
-/* ============================================================
-   CTA / FOOTER
-   ============================================================ */
-.cta{
-  background:var(--ink);
-  color:var(--paper);
-  border-radius:2px;
-  padding:clamp(40px,7vw,80px) clamp(28px,6vw,64px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:32px;
-  flex-wrap:wrap;
-}
-.cta h2{
-  font-family:var(--display);
-  font-size:clamp(26px,3.6vw,42px);
-  max-width:16ch;
-  font-weight:700;
-}
-.cta .btn-primary{ background:var(--marker); color:var(--marker-ink); border-color:var(--marker); }
-.cta .btn-primary:hover{ background:transparent; color:var(--marker); }
-
-footer{ padding:48px 0 60px; }
-.foot-row{
-  display:flex; justify-content:space-between; align-items:center;
-  flex-wrap:wrap; gap:16px;
-  font-family:var(--mono);
-  font-size:12.5px;
-  color:var(--ink-soft);
-  padding-top:24px;
-  border-top:1px solid var(--line);
-}
-.foot-links{ display:flex; gap:20px; }
-.foot-links a{ text-decoration:none; }
-.foot-links a:hover{ text-decoration:underline; }
-
-/* fade-in on scroll */
-.reveal{
-  opacity:0;
-  transform:translateY(14px);
-  transition:opacity .6s ease, transform .6s ease;
-}
-.reveal.in{ opacity:1; transform:translateY(0); }
