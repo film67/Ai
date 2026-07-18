@@ -82,7 +82,7 @@ const translations = {
       h2:"Оставить заявку", num:"06 — Заявка",
       name:"Имя", contact:"Телефон или Telegram", program:"Направление", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
-      hint:"Заявка придёт нам напрямую на почту — просто дождитесь подтверждения ниже.",
+      hint:"Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.",
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
@@ -148,7 +148,7 @@ const translations = {
       h2:"Ariza qoldirish", num:"06 — Ariza",
       name:"Ism", contact:"Telefon yoki Telegram", program:"Yo\u2018nalish", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
-      hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri pochtamizga keladi — pastdagi tasdiqni kuting.",
+      hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri bizning Telegramimizga keladi — odatda bir kun ichida javob beramiz.",
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
@@ -214,7 +214,7 @@ const translations = {
       h2:"Apply now", num:"06 — Application",
       name:"Name", contact:"Phone or Telegram", program:"Track", message:"Message (optional)",
       submit:"Send application",
-      hint:"Your request goes straight to our inbox — just wait for the confirmation below.",
+      hint:"Your request goes straight to our Telegram — we usually reply within a day.",
       sideLead:"Leave a request — we\u2019ll reach out to you.",
       note:"We reply within a business day."
     },
@@ -274,15 +274,16 @@ document.querySelectorAll('[data-program]').forEach(link => {
 
 /* ============================================================
    APPLICATION FORM
-   Submits directly to the inbox via FormSubmit (no backend,
-   no signup) — https://formsubmit.co
-   IMPORTANT: the very first submission triggers a one-time
-   confirmation email to APPLY_EMAIL. Someone must open that
-   email and click "Confirm" once — after that, every future
-   submission arrives straight in the inbox automatically.
+   Submits directly to a Telegram supergroup via the Bot API.
+   NOTE: this bot token lives in public client-side code (no
+   backend on GitHub Pages) — anyone viewing page source can see
+   it. Accepted trade-off per project decision. If this bot is
+   ever misused, regenerate the token via @BotFather (/revoke)
+   and drop the new one in here.
    ============================================================ */
-const APPLY_EMAIL = 'thinklikeaiuz@gmail.com';
-const FORM_ENDPOINT = `https://formsubmit.co/ajax/${APPLY_EMAIL}`;
+const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
+const TG_CHAT_ID = '-1004462776226';
+const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
@@ -290,11 +291,18 @@ if (applyForm) {
     e.preventDefault();
 
     const data = new FormData(applyForm);
+    const name = (data.get('name') || '').toString().trim();
+    const contact = (data.get('contact') || '').toString().trim();
     const program = (data.get('program') || '').toString();
+    const message = (data.get('message') || '').toString().trim();
 
-    data.append('_subject', `Заявка ThinkLike AI — ${program}`);
-    data.append('_template', 'table');
-    data.append('_captcha', 'false');
+    const lines = [
+      '📩 Новая заявка — ThinkLike AI',
+      `Имя: ${name}`,
+      `Контакт: ${contact}`,
+      `Направление: ${program}`,
+      message ? `Комментарий: ${message}` : null
+    ].filter(Boolean);
 
     const submitBtn = applyForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn ? submitBtn.textContent : '';
@@ -302,12 +310,16 @@ if (applyForm) {
     applyForm.classList.remove('is-sent', 'is-error');
 
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(TG_ENDPOINT, {
         method: 'POST',
-        body: data,
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: TG_CHAT_ID,
+          text: lines.join('\n')
+        })
       });
-      if (!res.ok) throw new Error('Request failed');
+      const result = await res.json();
+      if (!res.ok || !result.ok) throw new Error('Request failed');
 
       applyForm.classList.add('is-sent');
       applyForm.reset();
