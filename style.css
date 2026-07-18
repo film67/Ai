@@ -180,19 +180,12 @@ body::before{
 
 /* signature highlighter-mark treatment */
 mark{
-  background:transparent;
-  color:var(--marker-ink);
-  position:relative;
-  white-space:nowrap;
-}
-mark::before{
-  content:"";
-  position:absolute;
-  left:-4px; right:-4px; bottom:0.05em; top:0.32em;
   background:var(--marker);
-  z-index:-1;
-  transform:rotate(-0.6deg);
-  border-radius:2px 6px 3px 5px / 4px 2px 5px 3px;
+  color:var(--marker-ink);
+  padding:0.02em 0.28em;
+  border-radius:4px;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
 }
 
 .hero-sub{
