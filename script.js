@@ -304,6 +304,14 @@ function showToast(kind, isError) {
   }, 4000);
 }
 
+/* hero background video — graceful fallback if it fails to load */
+const heroVideo = document.querySelector('.hero-video');
+if (heroVideo) {
+  heroVideo.addEventListener('error', () => {
+    heroVideo.style.display = 'none';
+  });
+}
+
 /* phone input — force +998 prefix, digits only */
 const phoneInput = document.getElementById('phoneInput');
 if (phoneInput) {

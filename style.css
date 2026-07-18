@@ -162,22 +162,24 @@ body::before{
   z-index:0;
   pointer-events:none;
 }
-.hero-dots{
+.hero-video{
   position:absolute;
   inset:0;
-  background-image:radial-gradient(var(--line) 1px, transparent 1px);
-  background-size:28px 28px;
-  opacity:0.35;
-  mask-image:radial-gradient(ellipse 70% 60% at 60% 40%, black 30%, transparent 75%);
-  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 60% 40%, black 30%, transparent 75%);
-  animation:heroDotsDrift 24s ease-in-out infinite;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
 }
-@keyframes heroDotsDrift{
-  0%,100%{ transform:translate(0,0); }
-  50%{ transform:translate(-10px,8px); }
+.hero-scrim{
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(180deg, var(--paper) 0%, rgba(231,229,219,0.88) 55%, var(--paper) 100%);
+  opacity:0.9;
 }
 .hero-word{
   position:absolute;
+  z-index:2;
   font-family:var(--mono);
   font-size:clamp(20px, 3vw, 34px);
   color:var(--ink-soft);
