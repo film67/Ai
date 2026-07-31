@@ -50,6 +50,13 @@ const translations = {
       b3:"Создаёт свои продукты", d3:" — сайты, приложения, автоматизации — и доводит их до готового результата.",
       b4:"Мыслит системно", d4:": не копирует чужие решения, а собирает собственный подход."
     },
+    formats: {
+      h2:"Как проходит обучение", num:"03.5 — Форматы",
+      f1h:"Офлайн в Ташкенте", f1p:"Занятия проходят очно, в аудитории — не запись, не самостоятельное прохождение видео.",
+      f2h:"Небольшие группы", f2p:"До 12 человек в группе — у преподавателя есть время разобрать вопрос каждого.",
+      f3h:"15 занятий по 2 часа", f3p:"Уровень идёт от 3 месяцев — без спешки, с практикой между занятиями.",
+      f4h:"Капстоун + тест", f4p:"В конце уровня — свой рабочий проект и сертификационный тест, а не просто посещаемость."
+    },
     prog: {
       h2:"Курсы", num:"03 — Программы",
       dir1Name:"ИИ для автоматизации", dir1Desc:"Zapier, Make, AI-агенты, MCP — от первого сценария до production-системы.",
@@ -109,7 +116,7 @@ const translations = {
     },
     contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
-    foot: { city:"Ташкент.", contact:"Контакты" }
+    foot: { city:"Ташкент.", contact:"Оставить заявку", tagline:"Think Like Tomorrow · Академия мышления в эпоху ИИ", navTitle:"Навигация", contactTitle:"Контакты", address:"Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»" }
   },
 
   uz: {
@@ -136,6 +143,13 @@ const translations = {
       b2:"Tamoyillarni tushunadi", d2:" — shunchaki tugmalarni bosmaydi, vositalar ortidagi mantiqni biladi.",
       b3:"O\u2018z mahsulotlarini yaratadi", d3:" — sayt, ilova, avtomatlashtirish — va ularni yakuniga yetkazadi.",
       b4:"Tizimli fikrlaydi", d4:" — boshqalarni nusxalamaydi, o\u2018z yondashuvini shakllantiradi."
+    },
+    formats: {
+      h2:"O\u2018qish qanday o\u2018tadi", num:"03.5 — Formatlar",
+      f1h:"Toshkentda oflayn", f1p:"Darslar auditoriyada o\u2018tadi — video yozuv yoki mustaqil o\u2018rganish emas.",
+      f2h:"Kichik guruhlar", f2p:"Guruhda 12 kishigacha — o\u2018qituvchida har birining savolini ko\u2018rib chiqishga vaqt bor.",
+      f3h:"2 soatdan 15 ta dars", f3p:"Daraja kamida 3 oy davom etadi — shoshilmasdan, darslar orasida amaliyot bilan.",
+      f4h:"Capstone + test", f4p:"Daraja oxirida — o\u2018z ishchi loyihangiz va sertifikatlash testi, shunchaki davomat emas."
     },
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
@@ -196,7 +210,7 @@ const translations = {
     },
     contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
-    foot: { city:"Toshkent.", contact:"Aloqa" }
+    foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" }
   },
 
   en: {
@@ -223,6 +237,13 @@ const translations = {
       b2:"Understands the principles", d2:" behind the tools, not just the buttons in an interface.",
       b3:"Builds real products", d3:" — websites, apps, automations — and takes them all the way to done.",
       b4:"Thinks systemically", d4:": doesn\u2019t copy other people\u2019s solutions, but builds their own approach."
+    },
+    formats: {
+      h2:"How the learning works", num:"03.5 — Formats",
+      f1h:"In-person in Tashkent", f1p:"Classes happen face to face in the classroom — not pre-recorded, not self-paced video.",
+      f2h:"Small groups", f2p:"Up to 12 people per group — the instructor has time to work through everyone's questions.",
+      f3h:"15 lessons, 2 hours each", f3p:"Each level runs at least 3 months — no rush, with practice between sessions.",
+      f4h:"Capstone + test", f4p:"Every level ends with your own working project and a certification test, not just attendance."
     },
     prog: {
       h2:"Courses", num:"03 — Programs",
@@ -283,7 +304,7 @@ const translations = {
     },
     contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (2nd floor, \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d)" },
     cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
-    foot: { city:"Tashkent.", contact:"Contact" }
+    foot: { city:"Tashkent.", contact:"Apply now", tagline:"Think Like Tomorrow · An academy for thinking in the age of AI", navTitle:"Navigation", contactTitle:"Contact", address:"Tashkent, Shaykhantahur district, Qorataosh massif 2, 2nd floor of the Korzinka building" }
   }
 };
 
