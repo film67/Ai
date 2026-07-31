@@ -29,7 +29,7 @@ const translations = {
     nav: { philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
-      title:'Мы не учим <mark>пользоваться ИИ</mark>. Мы учим <mark>мыслить</mark>.',
+      title:'Мы не учим <mark>пользоваться ИИ</mark> Мы учим <mark>мыслить</mark>',
       sub:"ThinkLike AI — образовательный проект для тех, кто хочет не бояться искусственного интеллекта, а работать с ним на равных: ставить задачи, задавать вопросы и создавать свои продукты.",
       ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
       meta1:"направления · 6 уровней", meta2:"языки преподавания", meta3:"страха перед ИИ",
@@ -123,7 +123,7 @@ const translations = {
     nav: { philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
-      title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz.',
+      title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz',
       sub:"ThinkLike AI — sun'iy intellektdan qo\u2018rqmasdan, u bilan teng huquqli ishlashni istaganlar uchun ta'lim loyihasi: vazifa qo\u2018yish, savol berish va o\u2018z mahsulotlarini yaratish.",
       ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
       meta1:"yo\u2018nalish · 6 daraja", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish",
@@ -217,7 +217,7 @@ const translations = {
     nav: { philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
     hero: {
       eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
-      title:'We don\u2019t teach you to <mark>use AI</mark>. We teach you to <mark>think</mark>.',
+      title:'We don\u2019t teach you to <mark>use AI</mark> We teach you to <mark>think</mark>',
       sub:"ThinkLike AI is an education project for people who want to stop fearing artificial intelligence and start working with it as an equal: setting tasks, asking questions, and building their own products.",
       ctaPrimary:"Enroll in a course", ctaGhost:"Our philosophy ↓",
       meta1:"directions · 6 levels", meta2:"languages taught", meta3:"fear of AI",
