@@ -488,6 +488,16 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
 .direction{ margin-bottom:48px; }
 .direction:last-child{ margin-bottom:0; }
 .direction-head{ margin-bottom:20px; }
+.direction-photo{
+  display:block;
+  width:100%;
+  max-width:640px;
+  height:220px;
+  object-fit:cover;
+  border-radius:8px;
+  margin-bottom:20px;
+  filter:grayscale(30%);
+}
 .direction-head h3{
   font-family:var(--display);
   font-size:24px;
