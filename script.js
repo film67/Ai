@@ -105,6 +105,9 @@ const translations = {
       s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
       s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса.",
       location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka», напротив «Самарканд Дарвоза».",
+      locTitle:"ThinkLike AI на Караташ",
+      landmarks:"Ориентиры: ТЦ «Самарканд Дарвоза», супермаркет Korzinka, университет TESOL.",
+      viewMap:"Посмотреть на карте →",
       photoCredit:"Фото здания — Google Maps"
     },
     apply: {
@@ -200,6 +203,9 @@ const translations = {
       s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
       s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi.",
       location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — «Korzinka» binosining 2-qavati, «Samarqand Darvoza»ning ro\u2018parasida.",
+      locTitle:"Qorataoshdagi ThinkLike AI",
+      landmarks:"Mo\u2018ljallar: «Samarqand Darvoza» savdo markazi, Korzinka supermarketi, TESOL universiteti.",
+      viewMap:"Xaritada ko\u2018rish →",
       photoCredit:"Bino fotosi — Google Maps"
     },
     apply: {
@@ -295,6 +301,9 @@ const translations = {
       s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
       s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
       location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d.",
+      locTitle:"ThinkLike AI at Qorataosh",
+      landmarks:"Landmarks: Samarkand Darvoza mall, Korzinka supermarket, TESOL University.",
+      viewMap:"View on map →",
       photoCredit:"Building photos — Google Maps"
     },
     apply: {
