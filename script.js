@@ -104,7 +104,8 @@ const translations = {
       s2h:"Практические занятия", s2p:"Разбираем инструменты и задачи на практике, каждое занятие закрепляется домашним заданием.",
       s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
       s4h:"Проект и диплом", s4p:"Финальная работа становится частью портфолио и защищается перед завершением курса.",
-      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka», напротив «Самарканд Дарвоза»."
+      location:"Занятия проходят офлайн: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka», напротив «Самарканд Дарвоза».",
+      photoCredit:"Фото здания — Google Maps"
     },
     apply: {
       h2:"Оставить заявку", num:"06 — Заявка",
@@ -198,7 +199,8 @@ const translations = {
       s2h:"Amaliy darslar", s2p:"Vositalar va vazifalarni amalda o\u2018rganamiz, har bir dars uyga vazifa bilan mustahkamlanadi.",
       s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
       s4h:"Loyiha va diplom", s4p:"Yakuniy ish portfolio qismiga aylanadi va kurs oxirida himoya qilinadi.",
-      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — «Korzinka» binosining 2-qavati, «Samarqand Darvoza»ning ro\u2018parasida."
+      location:"Darslar oflayn o\u2018tadi: Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent — «Korzinka» binosining 2-qavati, «Samarqand Darvoza»ning ro\u2018parasida.",
+      photoCredit:"Bino fotosi — Google Maps"
     },
     apply: {
       h2:"Ariza qoldirish", num:"06 — Ariza",
@@ -292,7 +294,8 @@ const translations = {
       s2h:"Hands-on classes", s2p:"We work through tools and tasks in practice; every class comes with homework.",
       s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
       s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
-      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d."
+      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d.",
+      photoCredit:"Building photos — Google Maps"
     },
     apply: {
       h2:"Apply now", num:"06 — Application",
