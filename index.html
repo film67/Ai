@@ -27,6 +27,7 @@
   <div class="wrap">
     <div class="nav-mark"><span class="dot"></span> ThinkLike AI</div>
     <div class="nav-links">
+      <a href="#ai-test" data-i18n="nav.test">AI-тест</a>
       <a href="#philosophy" data-i18n="nav.philosophy">Философия</a>
       <a href="#programs" data-i18n="nav.programs">Курсы</a>
       <a href="#pricing" data-i18n="nav.pricing">Цены</a>
@@ -43,6 +44,8 @@
     </div>
   </div>
 </nav>
+
+<a href="#apply" class="float-cta" data-i18n="nav.cta">Оставить заявку</a>
 
 <header class="hero">
   <div class="hero-bg" aria-hidden="true">
@@ -73,6 +76,32 @@
     </div>
   </div>
 </header>
+
+<section id="ai-test">
+  <div class="wrap">
+    <div class="quiz-card reveal">
+      <div id="quizIntro">
+        <h2 data-i18n="quiz.h2">Не знаете, с чего начать?</h2>
+        <p data-i18n="quiz.p">Короткий тест из 3 вопросов — подскажем, какое направление и уровень подойдут именно вам.</p>
+        <button class="btn-primary" id="quizStart" data-i18n="quiz.start">Пройти AI-тест</button>
+      </div>
+      <div id="quizBody" hidden>
+        <div class="quiz-progress"><span id="quizStep">1</span>/3</div>
+        <h3 id="quizQText"></h3>
+        <div class="quiz-options" id="quizOptions"></div>
+      </div>
+      <div id="quizResult" hidden>
+        <span class="quiz-tag" id="quizResultTag"></span>
+        <h3 id="quizResultTitle"></h3>
+        <p id="quizResultDesc"></p>
+        <div class="quiz-result-row">
+          <a class="btn-primary" id="quizResultCta" href="#pricing" data-i18n="quiz.cta">Смотреть в ценах</a>
+          <button class="btn-ghost" id="quizRestart" data-i18n="quiz.restart">Пройти заново</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section id="philosophy">
   <div class="wrap">
@@ -129,7 +158,13 @@
       <span class="section-num" data-i18n="prog.num">03 — Программы</span>
     </div>
 
-    <div class="direction reveal">
+    <div class="filter-tabs" role="group" aria-label="Course filter">
+      <button class="filter-tab is-active" data-filter="all" data-i18n="prog.filterAll">Все</button>
+      <button class="filter-tab" data-filter="automation" data-i18n="prog.filterAuto">Автоматизация</button>
+      <button class="filter-tab" data-filter="marketing" data-i18n="prog.filterMkt">Маркетинг</button>
+    </div>
+
+    <div class="direction reveal" data-track="automation">
       <div class="direction-head">
         <h3 data-i18n="prog.dir1Name">ИИ для автоматизации</h3>
         <p data-i18n="prog.dir1Desc">Zapier, Make, AI-агенты, MCP — от первого сценария до production-системы.</p>
@@ -159,7 +194,7 @@
       </div>
     </div>
 
-    <div class="direction reveal">
+    <div class="direction reveal" data-track="marketing">
       <div class="direction-head">
         <h3 data-i18n="prog.dir2Name">ИИ для маркетинга</h3>
         <p data-i18n="prog.dir2Desc">От промптинга до полной омниканальной AI-маркетинговой системы.</p>

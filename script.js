@@ -26,7 +26,7 @@ if ('IntersectionObserver' in window) {
    ============================================================ */
 const translations = {
   ru: {
-    nav: { philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
+    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
       title:'Мы не учим <mark>пользоваться ИИ</mark> Мы учим <mark>мыслить</mark>',
@@ -50,6 +50,34 @@ const translations = {
       b3:"Создаёт свои продукты", d3:" — сайты, приложения, автоматизации — и доводит их до готового результата.",
       b4:"Мыслит системно", d4:": не копирует чужие решения, а собирает собственный подход."
     },
+    quiz: {
+      h2:"Не знаете, с чего начать?", p:"Короткий тест из 3 вопросов — подскажем, какое направление и уровень подойдут именно вам.",
+      start:"Пройти AI-тест", cta:"Смотреть в ценах", restart:"Пройти заново",
+      questions:[
+        { text:"Что вам ближе?", options:[
+          {label:"Автоматизация процессов и AI-боты", value:"automation"},
+          {label:"Маркетинг, контент и продвижение", value:"marketing"}
+        ]},
+        { text:"Какой у вас опыт?", options:[
+          {label:"Совсем новичок, ещё не пробовал(а)", value:"beginner"},
+          {label:"Пробовал(а) базовые вещи (ChatGPT, простые сценарии)", value:"intermediate"},
+          {label:"Работал(а) с API, кодом, интеграциями", value:"advanced"}
+        ]},
+        { text:"Что хотите получить в результате?", options:[
+          {label:"Первый рабочий проект с нуля", value:"beginner"},
+          {label:"Систему из нескольких инструментов", value:"intermediate"},
+          {label:"Готовое production-решение", value:"advanced"}
+        ]}
+      ],
+      results:{
+        "automation-beginner":{tag:"Automation · Beginner", title:"Вам подходит: ИИ для автоматизации, уровень Beginner", desc:"С нуля — Zapier, Make и первый AI-чат-бот. Идеально, если вы ещё не пробовали автоматизацию."},
+        "automation-intermediate":{tag:"Automation · Intermediate", title:"Вам подходит: ИИ для автоматизации, уровень Intermediate", desc:"Webhooks, реальный AI-агент и протокол MCP — для тех, кто уже знаком с базовыми инструментами."},
+        "automation-advanced":{tag:"Automation · Advanced", title:"Вам подходит: ИИ для автоматизации, уровень Advanced", desc:"Свой код, автономные агенты и деплой в прод — для тех, кто готов строить production-системы."},
+        "marketing-beginner":{tag:"Marketing · Beginner", title:"Вам подходит: ИИ для маркетинга, уровень Beginner", desc:"Промптинг, AI-контент и основы SEO — если вы делаете первые шаги в AI-маркетинге."},
+        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Вам подходит: ИИ для маркетинга, уровень Intermediate", desc:"Техническое SEO, email-кампании и AI-агенты — для тех, кто уже строит маркетинг-процессы."},
+        "marketing-advanced":{tag:"Marketing · Advanced", title:"Вам подходит: ИИ для маркетинга, уровень Advanced", desc:"Агентные системы, NIST AI RMF и омниканальные стратегии — для опытных маркетологов."}
+      }
+    },
     formats: {
       h2:"Как проходит обучение", num:"03.5 — Форматы",
       f1h:"Офлайн в Ташкенте", f1p:"Занятия проходят очно, в аудитории — не запись, не самостоятельное прохождение видео.",
@@ -59,6 +87,7 @@ const translations = {
     },
     prog: {
       h2:"Курсы", num:"03 — Программы",
+      filterAll:"Все", filterAuto:"Автоматизация", filterMkt:"Маркетинг",
       dir1Name:"ИИ для автоматизации", dir1Desc:"Zapier, Make, AI-агенты, MCP — от первого сценария до production-системы.",
       a1Desc:"С нуля — мышление в триггерах и действиях, первый рабочий сценарий в Zapier и Make, подключение ИИ к автоматизации, первый AI-чат-бот.",
       a1Tools:"Zapier · Make · AI-чат-боты",
@@ -124,7 +153,7 @@ const translations = {
   },
 
   uz: {
-    nav: { philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
+    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
       title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz',
@@ -148,6 +177,34 @@ const translations = {
       b3:"O\u2018z mahsulotlarini yaratadi", d3:" — sayt, ilova, avtomatlashtirish — va ularni yakuniga yetkazadi.",
       b4:"Tizimli fikrlaydi", d4:" — boshqalarni nusxalamaydi, o\u2018z yondashuvini shakllantiradi."
     },
+    quiz: {
+      h2:"Qayerdan boshlashni bilmayapsizmi?", p:"3 ta savoldan iborat qisqa test — qaysi yo\u2018nalish va daraja sizga mos kelishini aytamiz.",
+      start:"AI-testdan o\u2018ting", cta:"Narxlarda ko\u2018rish", restart:"Qayta topshirish",
+      questions:[
+        { text:"Sizga nima yaqinroq?", options:[
+          {label:"Jarayonlarni avtomatlashtirish va AI-botlar", value:"automation"},
+          {label:"Marketing, kontent va targ\u2018ib", value:"marketing"}
+        ]},
+        { text:"Tajribangiz qanday?", options:[
+          {label:"Butunlay yangiman, hali urinib ko\u2018rmaganman", value:"beginner"},
+          {label:"Asosiy narsalarni sinab ko\u2018rganman (ChatGPT, oddiy ssenariylar)", value:"intermediate"},
+          {label:"API, kod, integratsiyalar bilan ishlaganman", value:"advanced"}
+        ]},
+        { text:"Natijada nima olishni xohlaysiz?", options:[
+          {label:"Noldan birinchi ishchi loyiha", value:"beginner"},
+          {label:"Bir nechta vositadan iborat tizim", value:"intermediate"},
+          {label:"Tayyor production-yechim", value:"advanced"}
+        ]}
+      ],
+      results:{
+        "automation-beginner":{tag:"Automation · Beginner", title:"Sizga mos: SI avtomatlashtirish, Beginner darajasi", desc:"Noldan — Zapier, Make va birinchi AI-chatbot. Avtomatlashtirishni hali sinab ko\u2018rmagan bo\u2018lsangiz, aynan shu."},
+        "automation-intermediate":{tag:"Automation · Intermediate", title:"Sizga mos: SI avtomatlashtirish, Intermediate darajasi", desc:"Webhooklar, haqiqiy AI-agent va MCP protokoli — asosiy vositalarni bilganlar uchun."},
+        "automation-advanced":{tag:"Automation · Advanced", title:"Sizga mos: SI avtomatlashtirish, Advanced darajasi", desc:"O\u2018z kodi, avtonom agentlar va production'ga joylash — production-tizim qurishga tayyor bo\u2018lganlar uchun."},
+        "marketing-beginner":{tag:"Marketing · Beginner", title:"Sizga mos: SI marketing, Beginner darajasi", desc:"Prompting, AI-kontent va SEO asoslari — AI-marketingda birinchi qadamlar uchun."},
+        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Sizga mos: SI marketing, Intermediate darajasi", desc:"Texnik SEO, email-kampaniyalar va AI-agentlar — marketing jarayonlarini quruvchilar uchun."},
+        "marketing-advanced":{tag:"Marketing · Advanced", title:"Sizga mos: SI marketing, Advanced darajasi", desc:"Agentli tizimlar, NIST AI RMF va ko\u2018p kanalli strategiyalar — tajribali marketologlar uchun."}
+      }
+    },
     formats: {
       h2:"O\u2018qish qanday o\u2018tadi", num:"03.5 — Formatlar",
       f1h:"Toshkentda oflayn", f1p:"Darslar auditoriyada o\u2018tadi — video yozuv yoki mustaqil o\u2018rganish emas.",
@@ -157,6 +214,7 @@ const translations = {
     },
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
+      filterAll:"Barchasi", filterAuto:"Avtomatlashtirish", filterMkt:"Marketing",
       dir1Name:"SI bilan avtomatlashtirish", dir1Desc:"Zapier, Make, AI-agentlar, MCP — birinchi ssenariydan production-tizimgacha.",
       a1Desc:"Noldan — trigger va harakatlarda fikrlash, Zapier va Make'da birinchi ishchi ssenariy, avtomatlashtirishga SI ulash, birinchi AI-chatbot.",
       a1Tools:"Zapier · Make · AI-chatbotlar",
@@ -222,7 +280,7 @@ const translations = {
   },
 
   en: {
-    nav: { philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
+    nav: { test:"AI Test", philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
     hero: {
       eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
       title:'We don\u2019t teach you to <mark>use AI</mark> We teach you to <mark>think</mark>',
@@ -246,6 +304,34 @@ const translations = {
       b3:"Builds real products", d3:" — websites, apps, automations — and takes them all the way to done.",
       b4:"Thinks systemically", d4:": doesn\u2019t copy other people\u2019s solutions, but builds their own approach."
     },
+    quiz: {
+      h2:"Not sure where to start?", p:"A short 3-question test — we'll tell you which direction and level fit you.",
+      start:"Take the AI test", cta:"See it in pricing", restart:"Retake the test",
+      questions:[
+        { text:"What's closer to you?", options:[
+          {label:"Process automation and AI bots", value:"automation"},
+          {label:"Marketing, content and promotion", value:"marketing"}
+        ]},
+        { text:"What's your experience level?", options:[
+          {label:"Complete beginner, haven't tried it yet", value:"beginner"},
+          {label:"Tried the basics (ChatGPT, simple scenarios)", value:"intermediate"},
+          {label:"Worked with APIs, code, integrations", value:"advanced"}
+        ]},
+        { text:"What do you want to get out of it?", options:[
+          {label:"A first working project from scratch", value:"beginner"},
+          {label:"A system built from several tools", value:"intermediate"},
+          {label:"A ready production solution", value:"advanced"}
+        ]}
+      ],
+      results:{
+        "automation-beginner":{tag:"Automation · Beginner", title:"Best fit: AI for Automation, Beginner level", desc:"From scratch — Zapier, Make, and your first AI chatbot. Perfect if you haven't tried automation yet."},
+        "automation-intermediate":{tag:"Automation · Intermediate", title:"Best fit: AI for Automation, Intermediate level", desc:"Webhooks, a real AI agent, and the MCP protocol — for those already familiar with the basic tools."},
+        "automation-advanced":{tag:"Automation · Advanced", title:"Best fit: AI for Automation, Advanced level", desc:"Your own code, autonomous agents, and production deploys — for those ready to build production systems."},
+        "marketing-beginner":{tag:"Marketing · Beginner", title:"Best fit: AI for Marketing, Beginner level", desc:"Prompting, AI content, and SEO basics — for your first steps in AI marketing."},
+        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Best fit: AI for Marketing, Intermediate level", desc:"Technical SEO, email campaigns, and AI agents — for those already building marketing processes."},
+        "marketing-advanced":{tag:"Marketing · Advanced", title:"Best fit: AI for Marketing, Advanced level", desc:"Agentic systems, the NIST AI RMF, and omnichannel strategy — for experienced marketers."}
+      }
+    },
     formats: {
       h2:"How the learning works", num:"03.5 — Formats",
       f1h:"In-person in Tashkent", f1p:"Classes happen face to face in the classroom — not pre-recorded, not self-paced video.",
@@ -255,6 +341,7 @@ const translations = {
     },
     prog: {
       h2:"Courses", num:"03 — Programs",
+      filterAll:"All", filterAuto:"Automation", filterMkt:"Marketing",
       dir1Name:"AI for Automation", dir1Desc:"Zapier, Make, AI agents, MCP — from your first scenario to a production system.",
       a1Desc:"From zero — thinking in triggers and actions, your first working scenario in Zapier and Make, connecting AI to automation, your first AI chatbot.",
       a1Tools:"Zapier · Make · AI chatbots",
@@ -468,3 +555,127 @@ if (applyForm) {
     }
   });
 }
+
+/* ============================================================
+   AI-TEST QUIZ
+   Client-side only: 3 questions → recommends a direction (automation
+   / marketing) + level (beginner / intermediate / advanced) from
+   real course content. No fake stats, just a routing tool.
+   ============================================================ */
+(function initQuiz() {
+  const intro = document.getElementById('quizIntro');
+  const body = document.getElementById('quizBody');
+  const result = document.getElementById('quizResult');
+  const startBtn = document.getElementById('quizStart');
+  const restartBtn = document.getElementById('quizRestart');
+  const stepEl = document.getElementById('quizStep');
+  const qText = document.getElementById('quizQText');
+  const qOptions = document.getElementById('quizOptions');
+  const resTag = document.getElementById('quizResultTag');
+  const resTitle = document.getElementById('quizResultTitle');
+  const resDesc = document.getElementById('quizResultDesc');
+  const resCta = document.getElementById('quizResultCta');
+  if (!intro || !startBtn) return;
+
+  const levelRank = { beginner: 1, intermediate: 2, advanced: 3 };
+  let step = 0;
+  let direction = null;
+  let levelVotes = [];
+
+  function currentLang() {
+    return document.documentElement.lang && translations[document.documentElement.lang]
+      ? document.documentElement.lang : 'ru';
+  }
+
+  function renderQuestion() {
+    const dict = translations[currentLang()];
+    const q = dict.quiz.questions[step];
+    stepEl.textContent = String(step + 1);
+    qText.textContent = q.text;
+    qOptions.innerHTML = '';
+    q.options.forEach(opt => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quiz-option';
+      btn.textContent = opt.label;
+      btn.addEventListener('click', () => answer(opt.value));
+      qOptions.appendChild(btn);
+    });
+  }
+
+  function answer(value) {
+    if (step === 0) {
+      direction = value; // 'automation' | 'marketing'
+    } else {
+      levelVotes.push(value);
+    }
+    step++;
+    if (step >= 3) {
+      showResult();
+    } else {
+      renderQuestion();
+    }
+  }
+
+  function showResult() {
+    const dict = translations[currentLang()];
+    const level = levelVotes.reduce((best, v) => (levelRank[v] > levelRank[best] ? v : best), 'beginner');
+    const key = `${direction}-${level}`;
+    const r = dict.quiz.results[key];
+    resTag.textContent = r.tag;
+    resTitle.textContent = r.title;
+    resDesc.textContent = r.desc;
+
+    const dataProgram = `${direction === 'automation' ? 'Automation' : 'Marketing'}-${level.charAt(0).toUpperCase() + level.slice(1)}`;
+    const targetCard = document.querySelector(`#pricing [data-program="${dataProgram}"]`);
+    resCta.onclick = () => {
+      if (targetCard) {
+        setTimeout(() => {
+          const card = targetCard.closest('.level');
+          if (card) {
+            card.style.outline = '2px solid var(--marker)';
+            card.style.outlineOffset = '2px';
+            setTimeout(() => { card.style.outline = ''; card.style.outlineOffset = ''; }, 2000);
+          }
+        }, 400);
+      }
+    };
+
+    body.hidden = true;
+    result.hidden = false;
+  }
+
+  startBtn.addEventListener('click', () => {
+    step = 0; direction = null; levelVotes = [];
+    intro.hidden = true;
+    body.hidden = false;
+    renderQuestion();
+  });
+
+  if (restartBtn) {
+    restartBtn.addEventListener('click', () => {
+      result.hidden = true;
+      intro.hidden = false;
+    });
+  }
+})();
+
+/* ============================================================
+   COURSE CATALOG FILTER TABS
+   ============================================================ */
+(function initFilters() {
+  const tabs = document.querySelectorAll('.filter-tab');
+  const directions = document.querySelectorAll('#programs .direction[data-track]');
+  if (!tabs.length) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('is-active'));
+      tab.classList.add('is-active');
+      const filter = tab.getAttribute('data-filter');
+      directions.forEach(dir => {
+        dir.style.display = (filter === 'all' || dir.getAttribute('data-track') === filter) ? '' : 'none';
+      });
+    });
+  });
+})();
