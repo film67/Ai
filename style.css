@@ -88,9 +88,12 @@ body::before{
   display:flex; align-items:center; gap:8px;
 }
 .nav-logo{
-  height:26px;
+  height:30px;
   width:auto;
   display:inline-block;
+}
+@media (max-width:480px){
+  .nav-logo{ height:24px; }
 }
 .nav-links{
   display:flex; gap:28px;
@@ -116,8 +119,8 @@ body::before{
 .nav-toggle{
   display:none;
   position:relative;
-  width:32px;
-  height:32px;
+  width:40px;
+  height:40px;
   background:none;
   border:none;
   cursor:pointer;
@@ -126,18 +129,18 @@ body::before{
 }
 .nav-toggle span{
   position:absolute;
-  left:5px;
-  width:22px;
+  left:7px;
+  width:26px;
   height:2px;
   background:var(--ink);
   transition:transform .2s ease, opacity .2s ease;
 }
-.nav-toggle span:nth-child(1){ top:11px; }
-.nav-toggle span:nth-child(2){ top:15px; }
-.nav-toggle span:nth-child(3){ top:19px; }
-.nav-toggle.is-open span:nth-child(1){ transform:translateY(4px) rotate(45deg); }
+.nav-toggle span:nth-child(1){ top:13px; }
+.nav-toggle span:nth-child(2){ top:19px; }
+.nav-toggle span:nth-child(3){ top:25px; }
+.nav-toggle.is-open span:nth-child(1){ transform:translateY(6px) rotate(45deg); }
 .nav-toggle.is-open span:nth-child(2){ opacity:0; }
-.nav-toggle.is-open span:nth-child(3){ transform:translateY(-4px) rotate(-45deg); }
+.nav-toggle.is-open span:nth-child(3){ transform:translateY(-6px) rotate(-45deg); }
 
 .float-cta{
   position:fixed;
