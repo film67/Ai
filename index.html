@@ -26,7 +26,7 @@
 <nav class="nav">
   <div class="wrap">
     <div class="nav-mark"><span class="dot"></span> ThinkLike AI</div>
-    <div class="nav-links">
+    <div class="nav-links" id="navLinks">
       <a href="#ai-test" data-i18n="nav.test">AI-тест</a>
       <a href="#philosophy" data-i18n="nav.philosophy">Философия</a>
       <a href="#programs" data-i18n="nav.programs">Курсы</a>
@@ -41,6 +41,9 @@
         <button data-lang="en" class="lang-btn">EN</button>
       </div>
       <a class="nav-cta" href="#apply" data-i18n="nav.cta">Оставить заявку</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </nav>
@@ -389,6 +392,10 @@
       <span class="section-num" data-i18n="apply.num">06 — Заявка</span>
     </div>
 
+    <div class="cta reveal" id="contact">
+      <h2 data-i18n="cta.h2">Начни думать иначе — уже на этой неделе.</h2>
+    </div>
+
     <div class="apply-grid">
       <form id="applyForm" class="apply-form" novalidate>
         <label>
@@ -434,11 +441,6 @@
 
         <p class="apply-note" data-i18n="apply.note">Отвечаем в течение дня в будни.</p>
       </div>
-    </div>
-
-    <div class="cta reveal" id="contact">
-      <h2 data-i18n="cta.h2">Начни думать иначе — уже на этой неделе.</h2>
-      <a class="btn-primary" href="#applyForm" data-i18n="cta.btn">Оставить заявку выше ↑</a>
     </div>
   </div>
 </section>

@@ -679,3 +679,26 @@ if (applyForm) {
     });
   });
 })();
+
+/* ============================================================
+   MOBILE NAV TOGGLE
+   ============================================================ */
+(function initMobileNav() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = links.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
