@@ -154,7 +154,7 @@ const translations = {
       q6:"Сколько стоит обучение и есть ли рассрочка?",
       a6:"Цены за месяц указаны в разделе «Цены». Точную стоимость и возможность рассрочки уточняем на бесплатной консультации — индивидуально под ваш уровень и направление.",
       q7:"На каких языках проходят занятия?",
-      a7:"Русский, узбекский и английский — можно выбрать язык прямо на сайте вверху страницы.",
+      a7:"Русский и узбекский — можно выбрать язык прямо на сайте вверху страницы.",
       q8:"Где проходят занятия и как записаться?",
       a8:"Офлайн в Ташкенте, на массиве Караташ, 2 этаж здания Korzinka. Запись начинается с бесплатной консультации — оставьте заявку в форме ниже, и мы свяжемся с вами."
     },
@@ -300,7 +300,7 @@ const translations = {
       q6:"O‘qish qancha turadi va muddatli to‘lov bormi?",
       a6:"Oylik narxlar «Narxlar» bo‘limida ko‘rsatilgan. Aniq narx va muddatli to‘lov imkoniyati yo‘nalishingiz va darajangizga qarab bepul konsultatsiyada aniqlanadi.",
       q7:"Darslar qaysi tillarda o‘tadi?",
-      a7:"Rus, o‘zbek va ingliz tillarida — tilni sahifa yuqorisida almashtirishingiz mumkin.",
+      a7:"Rus va o‘zbek tillarida — tilni sahifa yuqorisida almashtirishingiz mumkin.",
       q8:"Darslar qayerda o‘tadi va qanday yozilaman?",
       a8:"Toshkentda oflayn, Qorataosh massivida, «Korzinka» binosining 2-qavatida. Yozilish bepul konsultatsiyadan boshlanadi — quyidagi formada ariza qoldiring, biz bog‘lanamiz."
     },
@@ -315,152 +315,6 @@ const translations = {
     contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" }
-  },
-
-  en: {
-    nav: { test:"AI Test", philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", faq:"FAQ", contact:"Contact", cta:"Apply now" },
-    hero: {
-      eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
-      title:'We don\u2019t teach you to <mark>use AI</mark> We teach you to <mark>think</mark>',
-      sub:"ThinkLike AI is an education project for people who want to stop fearing artificial intelligence and start working with it as an equal: setting tasks, asking questions, and building their own products.",
-      ctaPrimary:"Enroll in a course", ctaGhost:"Our philosophy ↓",
-      meta1:"directions · 6 levels", meta2:"languages taught", meta3:"fear of AI",
-      word1:"why?", word2:"how?", word3:"what for?", word4:"what if?", word5:"what if not?"
-    },
-    phil: {
-      h2:"What we believe", num:"01 — Philosophy",
-      n1:"Thought 01", t1a:"Don\u2019t fear artificial intelligence.", t1b:"Fear being left without skills.",
-      n2:"Thought 02", t2a:"We don\u2019t replace people.", t2b:"We make people stronger.",
-      n3:"Thought 03", t3a:"We don\u2019t teach how to use AI.", t3b:"We teach how to think.",
-      n4:"Thought 04", t4a:"The future belongs to those", t4b:"who know how to ask questions."
-    },
-    about: {
-      h2:"Who is a ThinkLike AI graduate", num:"02 — About us",
-      lead:"We\u2019re not building a course — we\u2019re building a culture of thinking, with its own methodology, standards, and code of conduct for students and teachers.",
-      b1:"Sets tasks for AI", d1:" instead of fearing it — writes clear prompts and evaluates results critically.",
-      b2:"Understands the principles", d2:" behind the tools, not just the buttons in an interface.",
-      b3:"Builds real products", d3:" — websites, apps, automations — and takes them all the way to done.",
-      b4:"Thinks systemically", d4:": doesn\u2019t copy other people\u2019s solutions, but builds their own approach."
-    },
-    quiz: {
-      h2:"Not sure where to start?", p:"A short 3-question test — we'll tell you which direction and level fit you.",
-      start:"Take the AI test", cta:"See it in pricing", restart:"Retake the test",
-      questions:[
-        { text:"What's closer to you?", options:[
-          {label:"Process automation and AI bots", value:"automation"},
-          {label:"Marketing, content and promotion", value:"marketing"}
-        ]},
-        { text:"What's your experience level?", options:[
-          {label:"Complete beginner, haven't tried it yet", value:"beginner"},
-          {label:"Tried the basics (ChatGPT, simple scenarios)", value:"intermediate"},
-          {label:"Worked with APIs, code, integrations", value:"advanced"}
-        ]},
-        { text:"What do you want to get out of it?", options:[
-          {label:"A first working project from scratch", value:"beginner"},
-          {label:"A system built from several tools", value:"intermediate"},
-          {label:"A ready production solution", value:"advanced"}
-        ]}
-      ],
-      results:{
-        "automation-beginner":{tag:"Automation · Beginner", title:"Best fit: AI for Automation, Beginner level", desc:"From scratch — Zapier, Make, and your first AI chatbot. Perfect if you haven't tried automation yet."},
-        "automation-intermediate":{tag:"Automation · Intermediate", title:"Best fit: AI for Automation, Intermediate level", desc:"Webhooks, a real AI agent, and the MCP protocol — for those already familiar with the basic tools."},
-        "automation-advanced":{tag:"Automation · Advanced", title:"Best fit: AI for Automation, Advanced level", desc:"Your own code, autonomous agents, and production deploys — for those ready to build production systems."},
-        "marketing-beginner":{tag:"Marketing · Beginner", title:"Best fit: AI for Marketing, Beginner level", desc:"Prompting, AI content, and SEO basics — for your first steps in AI marketing."},
-        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Best fit: AI for Marketing, Intermediate level", desc:"Technical SEO, email campaigns, and AI agents — for those already building marketing processes."},
-        "marketing-advanced":{tag:"Marketing · Advanced", title:"Best fit: AI for Marketing, Advanced level", desc:"Agentic systems, the NIST AI RMF, and omnichannel strategy — for experienced marketers."}
-      }
-    },
-    formats: {
-      h2:"How the learning works", num:"03.5 — Formats",
-      f1h:"In-person in Tashkent", f1p:"Classes happen face to face in the classroom — not pre-recorded, not self-paced video.",
-      f2h:"Small groups", f2p:"Up to 12 people per group — the instructor has time to work through everyone's questions.",
-      f3h:"15 lessons, 2 hours each", f3p:"Each level runs at least 3 months — no rush, with practice between sessions.",
-      f4h:"Capstone + test", f4p:"Every level ends with your own working project and a certification test, not just attendance."
-    },
-    prog: {
-      h2:"Courses", num:"03 — Programs",
-      filterAll:"All", filterAuto:"Automation", filterMkt:"Marketing",
-      dir1Name:"AI for Automation", dir1Desc:"Zapier, Make, AI agents, MCP — from your first scenario to a production system.",
-      a1Desc:"From zero — thinking in triggers and actions, your first working scenario in Zapier and Make, connecting AI to automation, your first AI chatbot.",
-      a1Tools:"Zapier · Make · AI chatbots",
-      a1Obj:"Think automation is only for programmers? It's all no-code here. Level outcome: a working AI automation you build and present yourself.",
-      a1Who:"at least 3 months · 15 lessons · age 14+ · no experience needed",
-      a2Desc:"Routers, webhooks, working with JSON, building a real AI agent with tools, the MCP protocol in practice.",
-      a2Tools:"Webhooks · AI agents · MCP",
-      a2Obj:"Think one level is already enough? This is where automation becomes a system — several tools and an agent working together.",
-      a2Who:"at least 3 months · 15 lessons · after Beginner",
-      a3Desc:"Your own code inside no-code (JavaScript, Python), autonomous agents on the Claude Agent SDK, your own MCP server, deploying an AI app to a live URL.",
-      a3Tools:"Python/JS · Claude Agent SDK · Production deploy",
-      a3Obj:"Think you need a CS degree for the next step? This isn't coding from scratch — it's taking an AI system to production, with documentation and launch.",
-      a3Who:"at least 3 months · 15 lessons · after Intermediate",
-      dir2Name:"AI for Marketing", dir2Desc:"From prompting to a full omnichannel AI marketing system.",
-      m1Desc:"What AI actually gives a marketer, prompting, AI content for email/social/website, SEO and ad basics, AI chatbots for customers.",
-      m1Tools:"Prompting · AI content · SEO basics",
-      m1Obj:"Think AI marketing is just asking a chatbot for text? Here you build a process — from customer segmentation to a full plan you present in 10 minutes.",
-      m1Who:"at least 3 months · 15 lessons · age 14+ · no experience needed",
-      m2Desc:"Advanced prompting, technical SEO and structured data for AI search, email campaigns, AI agents for customer engagement.",
-      m2Tools:"Technical SEO · Email campaigns · AI agents",
-      m2Obj:"Think it's just more complex prompts? In practice it's already strategy and ROI measurement, not just text generation.",
-      m2Who:"at least 3 months · 15 lessons · after Beginner",
-      m3Desc:"Agentic systems for martech, AI risk management via the NIST AI RMF, international marketing, a full omnichannel AI system.",
-      m3Tools:"MCP for martech · NIST AI RMF · Omnichannel systems",
-      m3Obj:"Think this is the ceiling for a marketer without an AI background? Here you learn to run an entire AI marketing function — usually a whole team's job.",
-      m3Who:"at least 3 months · 15 lessons · after Intermediate"
-    },
-    price: {
-      h2:"Pricing", num:"04 — Plans",
-      note:"Prices are per month of study (each level runs at least 3 months). Exact cost and installment options are confirmed at a free consultation.",
-      currency:"UZS / mo",
-      a1_1:"15 lessons, 2 hours each", a1_2:"Groups of up to 12", a1_3:"Capstone project + test",
-      a2_1:"15 lessons, 2 hours each", a2_2:"Personal feedback on work", a2_3:"Multi-tool system",
-      a3_1:"15 lessons, 2 hours each", a3_2:"Production case reviews", a3_3:"Deploying a finished system",
-      m1_1:"15 lessons, 2 hours each", m1_2:"Groups of up to 12", m1_3:"Marketing plan + defense",
-      m2_1:"15 lessons, 2 hours each", m2_2:"Personal feedback on work", m2_3:"Updated marketing plan",
-      m3_1:"15 lessons, 2 hours each", m3_2:"Enterprise case reviews", m3_3:"Omnichannel system",
-      cta:"Enroll"
-    },
-    proc: {
-      h2:"How the course runs", num:"05 — Process",
-      s1h:"Free consultation", s1p:"We walk you through the directions and levels and help you find the right starting point.",
-      s2h:"Hands-on classes", s2p:"We work through tools and tasks in practice; every class comes with homework.",
-      s3h:"Feedback", s3p:"A teacher personally reviews every piece of work and helps with the hard parts.",
-      s4h:"Project and diploma", s4p:"The final project becomes part of your portfolio and is presented at the end of the course.",
-      location:"Classes are held in person: Qorataosh massif, 2, Shaykhantahur district, Tashkent — 2nd floor of the \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d.",
-      locTitle:"ThinkLike AI at Qorataosh",
-      landmarks:"Landmarks: Samarkand Darvoza mall, Korzinka supermarket, TESOL University.",
-      viewMap:"View on map →",
-      photoCredit:"Building photos — Google Maps"
-    },
-    faq: {
-      h2:"Frequently asked questions", num:"06 — FAQ",
-      q1:"Do I need experience to start?",
-      a1:"No. The Beginner level in both directions is built for complete beginners — age 14+, no experience required. Not sure which direction and level fit you? Take the short AI test at the top of the page.",
-      q2:"Can I start directly at Intermediate or Advanced?",
-      a2:"No — levels run in sequence: Intermediate comes after completing Beginner, Advanced after Intermediate. This keeps every group at the same level and protects the quality of practice.",
-      q3:"Do I need to buy any paid tools or subscriptions?",
-      a3:"No. Every tool and platform used in the program runs on a free tier with no card required — from the first lesson through the capstone project.",
-      q4:"How long does one level take?",
-      a4:"At least 3 months: 15 lessons, 2 hours each, in groups of up to 12, with practice between sessions and a capstone project at the end.",
-      q5:"What do I get at the end of a level?",
-      a5:"A working project you build and present yourself, plus a certification test — not just an attendance mark.",
-      q6:"How much does it cost, and is there an installment plan?",
-      a6:"Monthly prices are listed in the Pricing section. Exact cost and installment options are confirmed individually at a free consultation, based on your direction and level.",
-      q7:"What languages are classes taught in?",
-      a7:"Russian, Uzbek, and English — you can switch the language right at the top of this page.",
-      q8:"Where are classes held, and how do I sign up?",
-      a8:"In person in Tashkent, at Qorataosh massif, 2nd floor of the Korzinka building. Signing up starts with a free consultation — leave a request in the form below and we'll reach out."
-    },
-    apply: {
-      h2:"Apply now", num:"07 — Application",
-      name:"Name", phone:"Phone number", telegram:"Telegram (optional)", message:"Message (optional)",
-      submit:"Send application",
-      hint:"Your request goes straight to our Telegram — we usually reply within a day.",
-      sideLead:"Leave a request — we\u2019ll reach out to you.",
-      note:"We reply within a business day."
-    },
-    contact: { emailLabel:"Email", addressLabel:"Address", address:"Qorataosh massif, 2, Shaykhantahur district, Tashkent (2nd floor, \u201cKorzinka\u201d building, across from \u201cSamarkand Darvoza\u201d)" },
-    cta: { h2:"Start thinking differently — this week.", btn:"Apply above ↑" },
-    foot: { city:"Tashkent.", contact:"Apply now", tagline:"Think Like Tomorrow · An academy for thinking in the age of AI", navTitle:"Navigation", contactTitle:"Contact", address:"Tashkent, Shaykhantahur district, Qorataosh massif 2, 2nd floor of the Korzinka building" }
   }
 };
 
@@ -522,8 +376,7 @@ let toastTimer = null;
 
 const TOAST_MESSAGES = {
   ru: { sent: 'Заявка отправлена — мы скоро свяжемся с вами', error: 'Не получилось отправить — попробуйте ещё раз' },
-  uz: { sent: 'Ariza yuborildi — tez orada bog\u2018lanamiz', error: 'Yuborib bo\u2018lmadi — qayta urinib ko\u2018ring' },
-  en: { sent: 'Application sent — we\u2019ll be in touch soon', error: 'Couldn\u2019t send it — please try again' }
+  uz: { sent: 'Ariza yuborildi — tez orada bog\u2018lanamiz', error: 'Yuborib bo\u2018lmadi — qayta urinib ko\u2018ring' }
 };
 
 function showToast(kind, isError) {
