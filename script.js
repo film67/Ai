@@ -26,7 +26,7 @@ if ('IntersectionObserver' in window) {
    ============================================================ */
 const translations = {
   ru: {
-    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", contact:"Контакты", cta:"Оставить заявку" },
+    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", faq:"Вопросы", contact:"Контакты", cta:"Оставить заявку" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
       title:'Мы не учим <mark>пользоваться ИИ</mark> Мы учим <mark>мыслить</mark>',
@@ -139,8 +139,27 @@ const translations = {
       viewMap:"Посмотреть на карте →",
       photoCredit:"Фото здания — Google Maps"
     },
+    faq: {
+      h2:"Частые вопросы", num:"06 — Вопросы",
+      q1:"Мне нужен опыт, чтобы начать?",
+      a1:"Нет. Уровень Beginner в обоих направлениях рассчитан на полных новичков — от 14 лет, без опыта. Если не уверены, какое направление и уровень подойдут, пройдите короткий AI-тест в начале страницы.",
+      q2:"Можно сразу пойти на Intermediate или Advanced?",
+      a2:"Нет, уровни идут последовательно: Intermediate — после завершения Beginner, Advanced — после Intermediate. Так мы держим одинаковый уровень группы и не теряем в качестве практики.",
+      q3:"Нужно ли покупать платные инструменты или подписки?",
+      a3:"Нет. Все инструменты и платформы, которые используются в программе, доступны на бесплатных тарифах без привязки карты — от первого занятия до капстоун-проекта.",
+      q4:"Сколько длится один уровень?",
+      a4:"От 3 месяцев: 15 занятий по 2 часа, в группах до 12 человек, с практикой между занятиями и капстоун-проектом в конце.",
+      q5:"Что я получаю по итогам уровня?",
+      a5:"Рабочий проект, который вы соберёте и представите сами, плюс сертификационный тест — а не просто отметку о посещаемости.",
+      q6:"Сколько стоит обучение и есть ли рассрочка?",
+      a6:"Цены за месяц указаны в разделе «Цены». Точную стоимость и возможность рассрочки уточняем на бесплатной консультации — индивидуально под ваш уровень и направление.",
+      q7:"На каких языках проходят занятия?",
+      a7:"Русский, узбекский и английский — можно выбрать язык прямо на сайте вверху страницы.",
+      q8:"Где проходят занятия и как записаться?",
+      a8:"Офлайн в Ташкенте, на массиве Караташ, 2 этаж здания Korzinka. Запись начинается с бесплатной консультации — оставьте заявку в форме ниже, и мы свяжемся с вами."
+    },
     apply: {
-      h2:"Оставить заявку", num:"06 — Заявка",
+      h2:"Оставить заявку", num:"07 — Заявка",
       name:"Имя", phone:"Номер телефона", telegram:"Telegram (необязательно)", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
       hint:"Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.",
@@ -153,7 +172,7 @@ const translations = {
   },
 
   uz: {
-    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", contact:"Aloqa", cta:"Ariza qoldirish" },
+    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", cta:"Ariza qoldirish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
       title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz',
@@ -266,8 +285,27 @@ const translations = {
       viewMap:"Xaritada ko\u2018rish →",
       photoCredit:"Bino fotosi — Google Maps"
     },
+    faq: {
+      h2:"Ko‘p beriladigan savollar", num:"06 — Savollar",
+      q1:"Boshlash uchun tajriba kerakmi?",
+      a1:"Yo‘q. Ikkala yo‘nalishdagi Beginner darajasi butunlay yangi boshlovchilar uchun — 14 yoshdan, tajribasiz. Qaysi yo‘nalish va daraja sizga mosligiga ishonchingiz komil bo‘lmasa, sahifa boshidagi qisqa AI-testdan o‘ting.",
+      q2:"Darhol Intermediate yoki Advanced‘dan boshlasa bo‘ladimi?",
+      a2:"Yo‘q, darajalar ketma-ket o‘tiladi: Intermediate — Beginner‘ni tugatgandan keyin, Advanced — Intermediate‘dan keyin. Shunday qilib guruhning darajasi bir xil bo‘ladi va amaliyot sifati saqlanadi.",
+      q3:"Pullik vositalar yoki obunalar sotib olish kerakmi?",
+      a3:"Yo‘q. Dasturda ishlatiladigan barcha vositalar va platformalar bepul tarifda, kartasiz ishlaydi — birinchi darsdan capstone-loyihagacha.",
+      q4:"Bitta daraja qancha davom etadi?",
+      a4:"Kamida 3 oy: 2 soatdan 15 ta dars, 12 kishigacha guruhlarda, darslar orasida amaliyot va oxirida capstone-loyiha bilan.",
+      q5:"Daraja oxirida nima olaman?",
+      a5:"O‘zingiz yig‘gan va taqdim etgan ishchi loyiha, shuningdek sertifikatlash testi — shunchaki davomat belgisi emas.",
+      q6:"O‘qish qancha turadi va muddatli to‘lov bormi?",
+      a6:"Oylik narxlar «Narxlar» bo‘limida ko‘rsatilgan. Aniq narx va muddatli to‘lov imkoniyati yo‘nalishingiz va darajangizga qarab bepul konsultatsiyada aniqlanadi.",
+      q7:"Darslar qaysi tillarda o‘tadi?",
+      a7:"Rus, o‘zbek va ingliz tillarida — tilni sahifa yuqorisida almashtirishingiz mumkin.",
+      q8:"Darslar qayerda o‘tadi va qanday yozilaman?",
+      a8:"Toshkentda oflayn, Qorataosh massivida, «Korzinka» binosining 2-qavatida. Yozilish bepul konsultatsiyadan boshlanadi — quyidagi formada ariza qoldiring, biz bog‘lanamiz."
+    },
     apply: {
-      h2:"Ariza qoldirish", num:"06 — Ariza",
+      h2:"Ariza qoldirish", num:"07 — Ariza",
       name:"Ism", phone:"Telefon raqami", telegram:"Telegram (ixtiyoriy)", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
       hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri bizning Telegramimizga keladi — odatda bir kun ichida javob beramiz.",
@@ -280,7 +318,7 @@ const translations = {
   },
 
   en: {
-    nav: { test:"AI Test", philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", contact:"Contact", cta:"Apply now" },
+    nav: { test:"AI Test", philosophy:"Philosophy", programs:"Courses", pricing:"Pricing", process:"How it works", faq:"FAQ", contact:"Contact", cta:"Apply now" },
     hero: {
       eyebrow:"Think Like Tomorrow · A thinking academy for the AI era · Tashkent",
       title:'We don\u2019t teach you to <mark>use AI</mark> We teach you to <mark>think</mark>',
@@ -393,8 +431,27 @@ const translations = {
       viewMap:"View on map →",
       photoCredit:"Building photos — Google Maps"
     },
+    faq: {
+      h2:"Frequently asked questions", num:"06 — FAQ",
+      q1:"Do I need experience to start?",
+      a1:"No. The Beginner level in both directions is built for complete beginners — age 14+, no experience required. Not sure which direction and level fit you? Take the short AI test at the top of the page.",
+      q2:"Can I start directly at Intermediate or Advanced?",
+      a2:"No — levels run in sequence: Intermediate comes after completing Beginner, Advanced after Intermediate. This keeps every group at the same level and protects the quality of practice.",
+      q3:"Do I need to buy any paid tools or subscriptions?",
+      a3:"No. Every tool and platform used in the program runs on a free tier with no card required — from the first lesson through the capstone project.",
+      q4:"How long does one level take?",
+      a4:"At least 3 months: 15 lessons, 2 hours each, in groups of up to 12, with practice between sessions and a capstone project at the end.",
+      q5:"What do I get at the end of a level?",
+      a5:"A working project you build and present yourself, plus a certification test — not just an attendance mark.",
+      q6:"How much does it cost, and is there an installment plan?",
+      a6:"Monthly prices are listed in the Pricing section. Exact cost and installment options are confirmed individually at a free consultation, based on your direction and level.",
+      q7:"What languages are classes taught in?",
+      a7:"Russian, Uzbek, and English — you can switch the language right at the top of this page.",
+      q8:"Where are classes held, and how do I sign up?",
+      a8:"In person in Tashkent, at Qorataosh massif, 2nd floor of the Korzinka building. Signing up starts with a free consultation — leave a request in the form below and we'll reach out."
+    },
     apply: {
-      h2:"Apply now", num:"06 — Application",
+      h2:"Apply now", num:"07 — Application",
       name:"Name", phone:"Phone number", telegram:"Telegram (optional)", message:"Message (optional)",
       submit:"Send application",
       hint:"Your request goes straight to our Telegram — we usually reply within a day.",

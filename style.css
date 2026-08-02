@@ -87,9 +87,9 @@ body::before{
   letter-spacing:-0.01em;
   display:flex; align-items:center; gap:8px;
 }
-.nav-mark span.dot{
-  width:9px;height:9px;border-radius:50%;
-  background:var(--signal);
+.nav-logo{
+  height:26px;
+  width:auto;
   display:inline-block;
 }
 .nav-links{
@@ -537,7 +537,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   max-width:640px;
   height:220px;
   object-fit:cover;
-  border-radius:8px;
+  border-radius:10px;
   margin-bottom:20px;
   filter:grayscale(30%);
 }
@@ -635,7 +635,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   margin:0 auto;
   background:var(--ink);
   color:var(--paper);
-  border-radius:14px;
+  border-radius:10px;
   padding:40px 36px;
   text-align:center;
 }
@@ -649,7 +649,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   border:1px solid var(--core-line);
   color:var(--paper);
   padding:14px 18px;
-  border-radius:8px;
+  border-radius:10px;
   text-align:left;
   font-size:15px;
   cursor:pointer;
@@ -794,6 +794,46 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   margin-bottom:6px;
 }
 .step p{ color:var(--ink-soft); max-width:60ch; }
+
+/* ============================================================
+   FAQ accordion
+   ============================================================ */
+.faq-list{ max-width:760px; }
+.faq-item{
+  border-top:1px solid var(--line);
+}
+.faq-item:last-child{ border-bottom:1px solid var(--line); }
+.faq-item summary{
+  list-style:none;
+  cursor:pointer;
+  padding:22px 40px 22px 0;
+  position:relative;
+  font-family:var(--display);
+  font-size:18px;
+  font-weight:600;
+  line-height:1.4;
+}
+.faq-item summary::-webkit-details-marker{ display:none; }
+.faq-item summary::after{
+  content:"+";
+  position:absolute;
+  right:2px;
+  top:20px;
+  font-family:var(--mono);
+  font-size:20px;
+  font-weight:400;
+  color:var(--signal);
+  transition:transform .2s ease;
+}
+.faq-item[open] summary::after{ transform:rotate(45deg); }
+.faq-item summary:hover{ color:var(--signal); }
+.faq-item p{
+  padding:0 40px 24px 0;
+  color:var(--ink-soft);
+  max-width:68ch;
+  font-size:15.5px;
+  line-height:1.6;
+}
 
 /* ============================================================
    APPLY FORM
