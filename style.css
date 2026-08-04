@@ -79,6 +79,8 @@ body::before{
   display:flex; align-items:center; justify-content:space-between;
   height:72px;
   position:relative;
+  max-width:1360px;
+  gap:32px;
 }
 .nav-mark{
   font-family:var(--display);
@@ -96,11 +98,13 @@ body::before{
   .nav-logo{ height:24px; }
 }
 .nav-links{
-  display:flex; gap:28px;
+  display:flex; gap:24px;
   font-family:var(--mono);
   font-size:13px;
   text-transform:uppercase;
   letter-spacing:0.06em;
+  margin-left:auto;
+  margin-right:auto;
 }
 .nav-links a{ text-decoration:none; opacity:0.75; transition:opacity .15s; }
 .nav-links a:hover{ opacity:1; }
