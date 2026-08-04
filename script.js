@@ -42,6 +42,9 @@ const translations = {
       n3:"Мысль 03", t3a:"Мы не учим пользоваться ИИ.", t3b:"Мы учим мыслить.",
       n4:"Мысль 04", t4a:"Будущее принадлежит тем,", t4b:"кто умеет задавать вопросы."
     },
+    manifesto: {
+      text:"Инструменты меняются каждый сезон. Мышление, которое умеет с ними работать, — нет."
+    },
     about: {
       h2:"Кто такой выпускник ThinkLike AI", num:"02 — О нас",
       lead:"Мы создаём не курс, а культуру мышления — с собственной методологией, стандартами и кодексом для учеников и преподавателей.",
@@ -187,6 +190,9 @@ const translations = {
       n2:"2-fikr", t2a:"Biz odamni almashtirmaymiz.", t2b:"Biz odamni kuchaytiramiz.",
       n3:"3-fikr", t3a:"Biz sun\u2018iy intellektdan foydalanishni o\u2018rgatmaymiz.", t3b:"Biz fikrlashni o\u2018rgatamiz.",
       n4:"4-fikr", t4a:"Kelajak — savol bera oladiganlarniki", t4b:"bo\u2018ladi."
+    },
+    manifesto: {
+      text:"Vositalar har mavsum o\u2018zgaradi. Ular bilan ishlashni biladigan fikrlash — o\u2018zgarmaydi."
     },
     about: {
       h2:"ThinkLike AI bitiruvchisi kim", num:"02 — Biz haqimizda",
