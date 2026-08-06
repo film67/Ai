@@ -1554,3 +1554,77 @@ summary:focus-visible{
 /* --- СТРАХОВКА: контент не остаётся невидимым --- */
 html.rise-fallback .rise{ opacity:1 !important; transform:none !important; }
 html.rise-fallback .hero-in{ opacity:1 !important; transform:none !important; }
+
+/* ============================================================
+   18 — КНОПКИ <button> С КЛАССАМИ ССЫЛОК
+   У .btn-ghost задан только border-bottom, поэтому у <button>
+   оставались серый фон и рамка браузера по умолчанию.
+   ============================================================ */
+button.btn-ghost,
+button.btn-primary{
+  -webkit-appearance:none;
+  appearance:none;
+  background:none;
+  border:none;
+  border-radius:0;
+  font:inherit;
+  cursor:pointer;
+  color:inherit;
+}
+
+button.btn-ghost{
+  font-family:var(--mono);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  border-bottom:1px solid var(--ink);
+  padding:0 0 2px;
+  color:var(--ink);
+}
+button.btn-ghost:hover{ color:var(--signal); }
+
+/* .btn-ghost — подчёркнутая ссылка, заливка ей не нужна */
+.btn-ghost{ overflow:visible; }
+.btn-ghost::before{ display:none; }
+.btn-ghost:hover{
+  color:var(--signal);
+  border-bottom-color:var(--signal);
+  background:none;
+}
+
+/* внутри тёмной карточки квиза */
+.quiz-card button.btn-ghost,
+.quiz-card .btn-ghost{
+  color:var(--paper);
+  border-bottom:1px solid rgba(231,229,219,0.55);
+  background:none;
+}
+.quiz-card button.btn-ghost:hover,
+.quiz-card .btn-ghost:hover{
+  color:var(--paper);
+  border-bottom-color:var(--paper);
+}
+
+/* восстановленный вид основной кнопки-<button> */
+button.btn-primary{
+  background:var(--signal);
+  color:var(--paper);
+  border:1px solid var(--signal);
+  border-radius:2px;
+  padding:16px 26px;
+  font-family:var(--mono);
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+}
+.quiz-card button.btn-primary{
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--paper);
+}
+
+/* строка кнопок в результате теста — по одной базовой линии */
+.quiz-result-row{
+  align-items:center;
+  gap:20px;
+}
