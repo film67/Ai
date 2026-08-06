@@ -1,0 +1,47 @@
+name: Публикация сайта
+
+on:
+  # запуск при каждом пуше в main
+  push:
+    branches: [main]
+  # и вручную — кнопкой Run workflow во вкладке Actions
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Новый запуск отменяет предыдущий, если тот ещё не завершился.
+# Это не даёт застрявшим деплоям копиться в очереди.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Забрать код
+        uses: actions/checkout@v4
+
+      - name: Настроить Pages
+        uses: actions/configure-pages@v5
+
+      - name: Собрать артефакт
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # сайт статический — публикуем корень репозитория целиком,
+          # включая CNAME, чтобы домен не слетел
+          path: .
+
+      - name: Опубликовать
+        id: deployment
+        uses: actions/deploy-pages@v4
+
