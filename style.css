@@ -1414,3 +1414,45 @@ summary:focus-visible{
   .rise, .rise.is-up{ opacity:1; transform:none; transition:none; }
   .hero-in{ opacity:1; transform:none; animation:none; }
 }
+
+/* ============================================================
+   16 — ИСПРАВЛЕНИЯ
+   ============================================================ */
+
+/* Ссылки-кнопки строчные по умолчанию — на строчных элементах
+   overflow:hidden не работает, и заливка вылезала за границы. */
+.btn-primary,
+.btn-ghost,
+.nav-cta,
+.float-cta{
+  display:inline-block;
+}
+.btn-ghost{ display:inline-block; padding-bottom:2px; }
+
+/* Плавающая кнопка: общее правило выше перебивало position:fixed
+   и выбрасывало её в поток сразу после навигации. */
+.float-cta{
+  position:fixed !important;
+  right:20px;
+  bottom:20px;
+  left:auto;
+  top:auto;
+}
+@media (max-width:600px){
+  .float-cta{ right:14px; bottom:14px; }
+}
+
+/* Подписи полей должны стоять НАД полем, а не слева.
+   display:block затирал flex-колонку из основных стилей. */
+.apply-form label{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  position:relative;
+}
+.apply-form input,
+.apply-form textarea{ width:100%; }
+
+/* Двойной контур фокуса: outline из основных стилей + мой box-shadow */
+.apply-form input:focus,
+.apply-form textarea:focus{ outline:none; }
