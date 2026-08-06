@@ -868,3 +868,93 @@ if (applyForm) {
     history.replaceState(null, '', id);
   });
 })();
+
+/* ============================================================
+   ВСПЛЫТИЕ БЛОКОВ ПРИ СКРОЛЛЕ
+   Помечает содержательные блоки и поднимает их по очереди.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* --- Hero: появляется сразу при загрузке, сверху вниз --- */
+  const heroParts = [
+    '.hero .eyebrow',
+    '.hero h1',
+    '.hero-sub',
+    '.hero-prompt',
+    '.hero-row',
+    '.hero-meta'
+  ];
+  heroParts.forEach((sel, i) => {
+    const el = document.querySelector(sel);
+    if (!el) return;
+    el.style.setProperty('--i', i);
+    el.classList.add('hero-in');
+  });
+
+  /* --- Остальная страница: всплытие при попадании в экран --- */
+  const blocks = [
+    '.section-head',
+    '.card',
+    '.icon-card',
+    '.level',
+    '.step',
+    '.faq-item',
+    '.direction-head',
+    '.split > *',
+    '.quiz-card',
+    '.price-note',
+    '.location-card',
+    '.filter-tabs',
+    '#manifesto blockquote',
+    '#manifesto .quote-mark',
+    '.cta',
+    '.apply-form',
+    '.apply-side',
+    '.foot-grid > *'
+  ];
+
+  const targets = [];
+  blocks.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if (el.closest('.hero')) return;      // hero уже анимирован
+      if (targets.includes(el)) return;
+      targets.push(el);
+    });
+  });
+
+  // индекс внутри своей группы — для появления по очереди, а не разом
+  const seen = new Map();
+  targets.forEach(el => {
+    const parent = el.parentElement;
+    const n = seen.get(parent) || 0;
+    el.style.setProperty('--i', Math.min(n, 6));
+    seen.set(parent, n + 1);
+    el.classList.add('rise');
+  });
+
+  if (reduced || !('IntersectionObserver' in window)) {
+    targets.forEach(el => el.classList.add('is-up'));
+    return;
+  }
+
+  const riser = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-up');
+      riser.unobserve(entry.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+  targets.forEach(el => riser.observe(el));
+
+  // страховка: то, что уже в экране на момент загрузки
+  requestAnimationFrame(() => {
+    targets.forEach(el => {
+      const r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.92) el.classList.add('is-up');
+    });
+  });
+})();

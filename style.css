@@ -1339,3 +1339,78 @@ summary:focus-visible{
   .float-cta:hover,
   .filter-tab:hover{ background:var(--signal); color:var(--paper); }
 }
+
+/* ============================================================
+   14 — ВЫРАВНИВАНИЕ: блоки, которые висели криво
+   ============================================================ */
+
+/* Локация: была прижата влево (max-width без auto-полей).
+   На десктопе разворачивается в две колонки и центрируется. */
+.location-card{
+  max-width:920px;
+  margin:40px auto 0;
+}
+@media (min-width:760px){
+  .location-card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:stretch;
+  }
+  .location-card-photo{ height:100%; min-height:320px; }
+  .location-card-body{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:36px 34px;
+  }
+}
+
+/* Фото направлений: тянется на всю ширину колонки, а не обрезается на 640px */
+.direction-photo{
+  max-width:100%;
+  height:clamp(180px, 22vw, 260px);
+}
+
+/* Заметка о ценах и подзаголовки — одна ширина строки по всей странице */
+.price-note{ margin-left:0; }
+
+/* Форма: кнопка и подпись держат левый край поля */
+.apply-form button{ align-self:flex-start; }
+
+/* Футер: нижняя строка не разъезжается на средних экранах */
+@media (max-width:520px){
+  .foot-row{ flex-direction:column; align-items:flex-start; }
+}
+
+/* ============================================================
+   15 — ВСПЛЫТИЕ БЛОКОВ
+   Базовое состояние ставит JS (класс .rise), чтобы при
+   отключённом JS контент оставался видимым.
+   ============================================================ */
+.rise{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  transition-delay:calc(var(--i, 0) * 80ms);
+  will-change:opacity, transform;
+}
+.rise.is-up{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* Появление hero при загрузке — сверху вниз, по очереди */
+.hero-in{
+  opacity:0;
+  transform:translateY(16px);
+  animation:heroIn .8s var(--ease-out) forwards;
+  animation-delay:calc(var(--i, 0) * 110ms);
+}
+@keyframes heroIn{
+  to{ opacity:1; transform:translateY(0); }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .rise, .rise.is-up{ opacity:1; transform:none; transition:none; }
+  .hero-in{ opacity:1; transform:none; animation:none; }
+}
