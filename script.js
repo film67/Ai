@@ -958,3 +958,9 @@ if (applyForm) {
     });
   });
 })();
+
+/* Страховка: если что-то помешало анимации появления,
+   через 1.2 c весь контент принудительно показывается. */
+setTimeout(function () {
+  document.documentElement.classList.add('rise-fallback');
+}, 1200);

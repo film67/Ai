@@ -1456,3 +1456,101 @@ summary:focus-visible{
 /* Двойной контур фокуса: outline из основных стилей + мой box-shadow */
 .apply-form input:focus,
 .apply-form textarea:focus{ outline:none; }
+
+/* ============================================================
+   17 — ЧИТАЕМОСТЬ И СТРУКТУРА
+   ============================================================ */
+
+/* --- HERO: текст тонул в светлых местах видео --- */
+.hero-scrim{
+  opacity:1;
+  background:
+    linear-gradient(180deg,
+      var(--paper) 0%,
+      rgba(231,229,219,0.92) 40%,
+      rgba(231,229,219,0.96) 75%,
+      var(--paper) 100%);
+}
+.hero-video{ opacity:0.55; }
+
+.hero .eyebrow{
+  color:var(--ink);
+  font-weight:500;
+}
+.hero .eyebrow::before{ background:var(--signal); width:32px; height:2px; }
+
+.hero-sub{ color:var(--ink); opacity:0.86; }
+.hero-prompt{ color:var(--signal); }
+
+/* фоновые слова не должны спорить с текстом */
+.hero-word{ opacity:0.08; }
+
+/* --- КВИЗ: варианты сливались с тёмным фоном --- */
+.quiz-card{
+  padding:clamp(32px, 5vw, 48px) clamp(24px, 4vw, 40px);
+}
+.quiz-card h2{ margin-bottom:14px; }
+.quiz-card > div > p{
+  color:#D8D2C6;
+  margin:0 auto 28px;
+}
+
+.quiz-option{
+  background:rgba(231,229,219,0.10);
+  border:1px solid rgba(231,229,219,0.28);
+  color:var(--paper);
+  padding:16px 20px;
+  line-height:1.45;
+}
+.quiz-option:hover{ border-color:var(--paper); }
+
+.quiz-progress{
+  color:#D8D2C6;
+  letter-spacing:0.08em;
+  margin-bottom:18px;
+}
+#quizQText{
+  margin-bottom:24px;
+  line-height:1.35;
+}
+#quizResult p{ color:#D8D2C6; }
+.quiz-tag{
+  color:#E8A99A;
+  border-color:#E8A99A;
+}
+.quiz-card .btn-ghost{
+  border-bottom-color:var(--paper);
+  color:var(--paper);
+}
+.quiz-result-row{ margin-top:4px; }
+
+/* --- КНОПКА В КВИЗЕ: тёмный на тёмном при наведении --- */
+.quiz-card .btn-primary{
+  background:var(--paper);
+  color:var(--ink);
+  border-color:var(--paper);
+}
+.quiz-card .btn-primary::before{ background:var(--signal); }
+.quiz-card .btn-primary:hover{ color:var(--paper); background:var(--signal); border-color:var(--signal); }
+
+/* --- ОБЩАЯ ЧИТАЕМОСТЬ мелкого текста --- */
+.level p,
+.icon-card p,
+.step p,
+.faq-item p,
+.foot-brand p{ color:#4A3D31; }
+
+.level .who,
+.card .num,
+.section-num{ color:#5E5044; }
+
+/* тёмные карточки уровней */
+.level.is-core .tag,
+.level.is-core p,
+.level.is-core .tools,
+.level.is-core .who{ color:#D8D2C6; }
+.level.is-core .tools{ color:#E8A99A; }
+
+/* --- СТРАХОВКА: контент не остаётся невидимым --- */
+html.rise-fallback .rise{ opacity:1 !important; transform:none !important; }
+html.rise-fallback .hero-in{ opacity:1 !important; transform:none !important; }
