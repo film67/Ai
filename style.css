@@ -305,30 +305,38 @@ body::before{
 
 /* signature highlighter-mark treatment — раньше была сплошная плашка
    (фон-маркер + светлый текст), теперь фона нет: сама буква красится
-   в цвет маркера, а тень держит контраст поверх видео вместо плашки. */
+   в цвет маркера. Вместо одной большой размытой тени (она смазывала
+   тонкие штрихи жирного шрифта в кашу) — тонкий чёткий контур из
+   нескольких резких теней-сдвигов плюс лёгкая мягкая тень для глубины. */
 mark{
   background:transparent;
   color:var(--marker);
   padding:0;
   border-radius:0;
   text-shadow:
-    0 2px 14px rgba(0,0,0,0.55),
-    0 1px 3px rgba(0,0,0,0.45);
+    -1px -1px 0 rgba(0,0,0,0.85),
+     1px -1px 0 rgba(0,0,0,0.85),
+    -1px  1px 0 rgba(0,0,0,0.85),
+     1px  1px 0 rgba(0,0,0,0.85),
+     0 3px 8px rgba(0,0,0,0.55);
 }
 
 /* Обычный текст заголовка — раньше была сплошная светлая плашка под
    тёмными буквами; теперь фона нет вовсе — буквы сами белые/светлые
    (независимо от темы сайта, потому что должны читаться поверх одного
-   и того же видео что в светлой, что в тёмной теме), а тень держит
-   контраст вместо подложки. */
+   и того же видео что в светлой, что в тёмной теме). Тот же чёткий
+   контур вместо смазанного размытия. */
 .hero h1 .plate{
   background:transparent;
   color:#F5F1E6;
   padding:0;
   border-radius:0;
   text-shadow:
-    0 2px 14px rgba(0,0,0,0.75),
-    0 1px 3px rgba(0,0,0,0.6);
+    -1px -1px 0 rgba(0,0,0,0.8),
+     1px -1px 0 rgba(0,0,0,0.8),
+    -1px  1px 0 rgba(0,0,0,0.8),
+     1px  1px 0 rgba(0,0,0,0.8),
+     0 3px 10px rgba(0,0,0,0.6);
 }
 
 .hero-sub{
@@ -1196,10 +1204,16 @@ summary:focus-visible{
 .hero-prompt{
   font-family:var(--mono);
   font-size:clamp(15px, 2vw, 19px);
-  color:var(--ink-soft);
+  color:var(--signal);
   margin-top:18px;
   min-height:1.6em;
   letter-spacing:0.01em;
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.75),
+     1px -1px 0 rgba(0,0,0,0.75),
+    -1px  1px 0 rgba(0,0,0,0.75),
+     1px  1px 0 rgba(0,0,0,0.75),
+     0 2px 6px rgba(0,0,0,0.5);
 }
 .hero-prompt .caret{
   display:inline-block;
@@ -1679,8 +1693,11 @@ button.btn-primary{
   border-radius:0;
   width:fit-content;
   text-shadow:
-    0 2px 10px rgba(0,0,0,0.7),
-    0 1px 2px rgba(0,0,0,0.55);
+    -1px -1px 0 rgba(0,0,0,0.7),
+     1px -1px 0 rgba(0,0,0,0.7),
+    -1px  1px 0 rgba(0,0,0,0.7),
+     1px  1px 0 rgba(0,0,0,0.7),
+     0 2px 6px rgba(0,0,0,0.5);
 }
 .hero .eyebrow::before{ background:#F5F1E6; box-shadow:0 1px 4px rgba(0,0,0,0.6); }
 
@@ -1691,8 +1708,11 @@ button.btn-primary{
   width:auto;
   color:#F5F1E6;
   text-shadow:
-    0 2px 12px rgba(0,0,0,0.7),
-    0 1px 3px rgba(0,0,0,0.55);
+    -1px -1px 0 rgba(0,0,0,0.7),
+     1px -1px 0 rgba(0,0,0,0.7),
+    -1px  1px 0 rgba(0,0,0,0.7),
+     1px  1px 0 rgba(0,0,0,0.7),
+     0 2px 8px rgba(0,0,0,0.5);
 }
 
 /* Фоновые слова больше не нужны — кадр сам держит правую часть */
