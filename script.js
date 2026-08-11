@@ -26,7 +26,7 @@ if ('IntersectionObserver' in window) {
    ============================================================ */
 const translations = {
   ru: {
-    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", faq:"Вопросы", contact:"Контакты", cta:"Оставить заявку" },
+    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", faq:"Вопросы", contact:"Контакты", cta:"Оставить заявку", themeToDark:"Включить тёмную тему", themeToLight:"Включить светлую тему" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
       title:'Мы не учим <mark>пользоваться ИИ</mark> Мы учим <mark>мыслить</mark>',
@@ -175,7 +175,7 @@ const translations = {
   },
 
   uz: {
-    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", cta:"Ariza qoldirish" },
+    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", cta:"Ariza qoldirish", themeToDark:"Tungi rejimni yoqish", themeToLight:"Kunduzgi rejimni yoqish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
       title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz',
@@ -964,3 +964,52 @@ if (applyForm) {
 setTimeout(function () {
   document.documentElement.classList.add('rise-fallback');
 }, 1200);
+
+/* ============================================================
+   ТЁМНАЯ ТЕМА — переключатель
+   Светлая тема остаётся тем, чем была; тёмная — data-theme="dark"
+   на <html>, переопределения цветов лежат в style.css.
+   Тема ставится синхронно в <head> (см. index.html), здесь —
+   только переключение по клику и подписи для читалок экрана.
+   ============================================================ */
+(function initTheme() {
+  const root = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+  const icon = toggle ? toggle.querySelector('.theme-toggle-icon') : null;
+  if (!toggle) return;
+
+  function currentLang() {
+    return translations[root.lang] ? root.lang : 'ru';
+  }
+
+  function labelFor(theme) {
+    const dict = translations[currentLang()];
+    return theme === 'dark' ? dict.nav.themeToLight : dict.nav.themeToDark;
+  }
+
+  function applyTheme(theme) {
+    if (theme === 'dark') root.setAttribute('data-theme', 'dark');
+    else root.removeAttribute('data-theme');
+
+    toggle.setAttribute('aria-pressed', String(theme === 'dark'));
+    toggle.setAttribute('aria-label', labelFor(theme));
+    if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
+
+    try { localStorage.setItem('thinklike-theme', theme); } catch (e) { /* ignore */ }
+  }
+
+  let saved;
+  try { saved = localStorage.getItem('thinklike-theme'); } catch (e) { saved = null; }
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+
+  toggle.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // после смены языка подпись кнопки должна пересчитаться на новом языке
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+    });
+  });
+})();

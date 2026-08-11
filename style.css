@@ -1682,3 +1682,200 @@ button.btn-primary{
 
 /* Фоновые слова больше не нужны — кадр сам держит правую часть */
 .hero-word{ opacity:0.06; }
+
+/* ============================================================
+   20 — ТЁМНАЯ ТЕМА (переключатель)
+   Светлая тема (по умолчанию, без атрибута) не меняется ни на
+   пиксель — все переопределения ниже живут только под
+   [data-theme="dark"] на <html>. Палитра — Warm Charcoal & Gold:
+   тёплый угольный фон, кремовый текст, золото вместо Mulled Wine
+   как акцент. Токены --paper/--ink и т.д. переопределяются, поэтому
+   почти всё, что уже написано выше через var(), подхватывает тему
+   само; отдельно правится то, что было закреплено буквальными
+   hex-значениями (их когда-то подбирали именно под светлый фон).
+   ============================================================ */
+
+:root[data-theme="dark"]{
+  --paper:      #15120C; /* фон страницы — тёплый угольный, а не чистый чёрный */
+  --paper-dim:  #201A12; /* карточки чуть светлее фона — «приподнятая» поверхность */
+  --ink:        #ECE5D5; /* основной текст — тёплый кремовый */
+  --ink-soft:   #AFA28C; /* второстепенный текст — приглушённый тёплый песок */
+  --line:       #372F21; /* границы — тёмная тёплая линия, а не светлый Sandlight */
+  --marker:     #C6993D; /* акцент вместо Mulled Wine — тёплое золото */
+  --marker-ink: #14110C; /* текст на золоте — тёмный, для контраста */
+  --signal:     #C6993D;
+  --signal-2:   #9C7828; /* золото потемнее — hover-состояние */
+
+  --core-muted:  #AFA28C;
+  --core-muted2: #C9BDA4;
+}
+
+/* --- Переключатель темы: кнопка рядом с RU/UZ --- */
+.theme-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:34px;
+  height:34px;
+  flex-shrink:0;
+  border:1px solid var(--line);
+  border-radius:2px;
+  background:transparent;
+  color:var(--ink-soft);
+  cursor:pointer;
+  font-size:15px;
+  line-height:1;
+  transition:color var(--t-fast) var(--ease-out),
+             border-color var(--t-fast) var(--ease-out),
+             transform var(--t-fast) var(--ease-out);
+}
+.theme-toggle:hover{ color:var(--ink); border-color:var(--signal); }
+.theme-toggle:active{ transform:scale(.92); }
+
+/* --- Логотип: чёрный wordmark нужно осветлить на тёмном фоне --- */
+[data-theme="dark"] .nav-logo{ filter:invert(1) brightness(1.08); }
+
+/* --- Навигация: подложка была светлой rgba, не переменной --- */
+[data-theme="dark"] .nav{
+  background:rgba(21,18,12,0.86);
+}
+
+/* --- CTA-кнопка в навигации: та же задача, что у .btn-primary,
+   должна быть золотой, а не «инвертированной ink/paper» парой --- */
+[data-theme="dark"] .nav-cta{
+  background:var(--marker);
+  color:var(--marker-ink);
+}
+[data-theme="dark"] .float-cta{
+  color:var(--marker-ink);
+}
+
+/* --- Hero: подложка и видео были подобраны под светлый фон --- */
+[data-theme="dark"] .hero-video{
+  opacity:0.5;
+  filter:saturate(0.55) sepia(0.08) brightness(0.6) contrast(1.05);
+}
+[data-theme="dark"] .hero-scrim{
+  background:
+    linear-gradient(100deg,
+      rgba(21,18,12,0.97) 0%,
+      rgba(21,18,12,0.93) 30%,
+      rgba(21,18,12,0.62) 52%,
+      rgba(21,18,12,0.26) 74%,
+      rgba(21,18,12,0.18) 100%),
+    linear-gradient(180deg,
+      var(--paper) 0%,
+      rgba(21,18,12,0.10) 22%,
+      rgba(21,18,12,0.10) 72%,
+      var(--paper) 100%);
+}
+@media (max-width:900px){
+  [data-theme="dark"] .hero-scrim{
+    background:
+      linear-gradient(180deg,
+        var(--paper) 0%,
+        rgba(21,18,12,0.90) 30%,
+        rgba(21,18,12,0.94) 70%,
+        var(--paper) 100%);
+  }
+  [data-theme="dark"] .hero-video{ opacity:0.35; }
+}
+[data-theme="dark"] .hero h1{
+  text-shadow:0 1px 3px rgba(0,0,0,0.55);
+}
+[data-theme="dark"] .hero .eyebrow,
+[data-theme="dark"] .hero-sub{
+  text-shadow:0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* --- Тонкая фактура страницы: тёмные точки на тёмном фоне не видны --- */
+[data-theme="dark"] body::before{
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255,255,255,0.045) 1px, transparent 1px);
+}
+
+/* --- Читаемость мелкого текста: значения из блока 17 были
+   подобраны буквенно под светлую страницу и на тёмной сливаются
+   с фоном --- */
+[data-theme="dark"] .level p,
+[data-theme="dark"] .icon-card p,
+[data-theme="dark"] .step p,
+[data-theme="dark"] .faq-item p,
+[data-theme="dark"] .foot-brand p{
+  color:#C7BBA6;
+}
+[data-theme="dark"] .level .who,
+[data-theme="dark"] .card .num,
+[data-theme="dark"] .section-num{
+  color:#A2957F;
+}
+
+/* --- Тёмные акцентные панели (манифест, квиз, CTA, средний тариф):
+   в светлой теме это единственные «тёмные острова» на светлой
+   странице; на тёмной странице им нужно остаться темнее фона,
+   а не посветлеть вместе с --ink — иначе они потеряются или
+   перевернутся в светлые пятна. Держим их на отдельных, всегда
+   тёмных значениях. --- */
+[data-theme="dark"] #manifesto,
+[data-theme="dark"] .quiz-card,
+[data-theme="dark"] .level.is-core,
+[data-theme="dark"] .cta{
+  background:#0B0805;
+  color:#F1EAD9;
+}
+[data-theme="dark"] .level.is-core .who{
+  border-top-color:#3A2E1E;
+}
+[data-theme="dark"] .level.is-core p.objection{
+  color:#F1EAD9;
+}
+
+/* --- Внутри квиза текст/кнопки завязаны на var(--paper)/var(--ink)
+   именно как «светлый чип на тёмной панели» — при глобальной
+   перестановке токенов эта пара переворачивается и рвёт контраст,
+   поэтому чиним отдельно --- */
+[data-theme="dark"] .quiz-option{
+  color:#F1EAD9;
+}
+[data-theme="dark"] .quiz-option:hover{
+  border-color:#F1EAD9;
+}
+[data-theme="dark"] .quiz-card .btn-ghost,
+[data-theme="dark"] .quiz-card button.btn-ghost{
+  color:#F1EAD9;
+  border-bottom-color:rgba(241,234,217,0.55);
+}
+[data-theme="dark"] .quiz-card .btn-primary{
+  background:var(--marker);
+  color:var(--marker-ink);
+  border-color:var(--marker);
+}
+[data-theme="dark"] .quiz-card .btn-primary::before{
+  background:var(--signal-2);
+}
+[data-theme="dark"] .quiz-card .btn-primary:hover{
+  color:var(--marker-ink);
+  background:var(--signal-2);
+  border-color:var(--signal-2);
+}
+
+/* --- Форма заявки: фокус-свечение было подобрано под Mulled Wine --- */
+[data-theme="dark"] .apply-form input:focus,
+[data-theme="dark"] .apply-form textarea:focus{
+  box-shadow:0 0 0 3px rgba(198,153,61,0.18);
+}
+
+/* --- Тост: пусть остаётся тёмной табличкой в обеих темах, а не
+   переворачивается в светлую вместе с ink/paper --- */
+[data-theme="dark"] .toast{
+  background:#0B0805;
+  color:#F1EAD9;
+}
+[data-theme="dark"] .toast-icon{
+  background:var(--marker);
+  color:var(--marker-ink);
+}
+[data-theme="dark"] .toast.is-error .toast-icon{
+  background:#c0392b;
+  color:#fff;
+}

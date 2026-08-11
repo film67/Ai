@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script>
+/* тема ставится до отрисовки CSS, чтобы страница не мигала светлым при сохранённой тёмной теме */
+(function () {
+  try {
+    if (localStorage.getItem('thinklike-theme') === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  } catch (e) { /* ignore */ }
+})();
+</script>
 <title>ThinkLike AI — Think Like Tomorrow</title>
 <meta name="description" content="ThinkLike AI — Think Like Tomorrow. Образовательный проект в Ташкенте, который учит не пользоваться нейросетями, а мыслить вместе с ними. ИИ для автоматизации и ИИ для маркетинга — от новичка до продвинутого уровня.">
 
@@ -40,6 +50,9 @@
         <button data-lang="ru" class="lang-btn is-active">RU</button>
         <button data-lang="uz" class="lang-btn">UZ</button>
       </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
       <a class="nav-cta" href="#apply" data-i18n="nav.cta">Оставить заявку</a>
       <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
