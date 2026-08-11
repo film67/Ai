@@ -298,7 +298,7 @@ body::before{
   font-family:var(--display);
   font-weight:800;
   font-size:clamp(40px, 7.2vw, 96px);
-  line-height:1.08;
+  line-height:1.32;
   letter-spacing:-0.02em;
   max-width:18ch;
 }
