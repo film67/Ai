@@ -310,6 +310,19 @@ mark{
   -webkit-box-decoration-break:clone;
 }
 
+/* Обычный текст заголовка — та же логика плашки, что у mark, только
+   цветом страницы, а не акцентом. Нужно теперь, когда видео за
+   заголовком идёт без вуали: без своей подложки эти слова тонут в
+   светлых/тёмных участках кадра. */
+.hero h1 .plate{
+  background:var(--paper);
+  color:var(--ink);
+  padding:0.06em 0.28em 0.1em;
+  border-radius:4px;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+}
+
 .hero-sub{
   margin-top:28px;
   max-width:56ch;
@@ -1640,44 +1653,29 @@ button.btn-primary{
 }
 
 .hero-scrim{
-  opacity:1;
-  background:
-    /* горизонтальная: держит колонку текста */
-    linear-gradient(100deg,
-      rgba(231,229,219,0.97) 0%,
-      rgba(231,229,219,0.93) 30%,
-      rgba(231,229,219,0.62) 52%,
-      rgba(231,229,219,0.26) 74%,
-      rgba(231,229,219,0.18) 100%),
-    /* вертикальная: стыкует кадр с фоном страницы */
-    linear-gradient(180deg,
-      var(--paper) 0%,
-      rgba(231,229,219,0.10) 22%,
-      rgba(231,229,219,0.10) 72%,
-      var(--paper) 100%);
+  /* Слой-вуаль на всё видео убран — видео показывается как есть.
+     Вместо неё у каждого текстового блока теперь своя сплошная
+     плашка (см. .plate у h1, и сами .eyebrow/.hero-sub ниже) —
+     так текст не теряется вне зависимости от того, что в этот
+     момент происходит в кадре. */
+  opacity:0;
+  background:transparent;
 }
 
-/* На узких экранах текст занимает всю ширину — вуаль ровная */
-@media (max-width:900px){
-  .hero-scrim{
-    background:
-      linear-gradient(180deg,
-        var(--paper) 0%,
-        rgba(231,229,219,0.90) 30%,
-        rgba(231,229,219,0.94) 70%,
-        var(--paper) 100%);
-  }
-  .hero-video{ opacity:0.85; }
+.hero .eyebrow{
+  background:var(--paper);
+  color:var(--ink);
+  padding:8px 16px 8px 12px;
+  border-radius:999px;
+  width:fit-content;
 }
+.hero .eyebrow::before{ background:var(--signal); }
 
-/* Заголовок поверх открытой части кадра — лёгкая подложка,
-   чтобы буквы не спорили с деталями видео */
-.hero h1{
-  text-shadow:0 1px 0 rgba(231,229,219,0.55);
-}
-.hero .eyebrow,
 .hero-sub{
-  text-shadow:0 1px 2px rgba(231,229,219,0.7);
+  background:var(--paper);
+  padding:16px 20px;
+  border-radius:8px;
+  width:fit-content;
 }
 
 /* Фоновые слова больше не нужны — кадр сам держит правую часть */
@@ -1750,42 +1748,18 @@ button.btn-primary{
   color:var(--marker-ink);
 }
 
-/* --- Hero: подложка и видео были подобраны под светлый фон --- */
+/* --- Hero: вуаль убрана и здесь — видео идёт без слоя в обеих темах.
+   Держим лёгкое затемнение самого видео (не отдельный слой, а фильтр
+   на самом кадре). Плашки под текстом (.plate, .eyebrow, .hero-sub)
+   сами перекрашиваются через var(--paper)/var(--ink) — отдельных
+   переопределений для тёмной темы им не нужно. --- */
 [data-theme="dark"] .hero-video{
-  opacity:0.5;
-  filter:saturate(0.55) sepia(0.08) brightness(0.6) contrast(1.05);
+  opacity:0.75;
+  filter:saturate(0.6) sepia(0.08) brightness(0.68) contrast(1.05);
 }
 [data-theme="dark"] .hero-scrim{
-  background:
-    linear-gradient(100deg,
-      rgba(21,18,12,0.97) 0%,
-      rgba(21,18,12,0.93) 30%,
-      rgba(21,18,12,0.62) 52%,
-      rgba(21,18,12,0.26) 74%,
-      rgba(21,18,12,0.18) 100%),
-    linear-gradient(180deg,
-      var(--paper) 0%,
-      rgba(21,18,12,0.10) 22%,
-      rgba(21,18,12,0.10) 72%,
-      var(--paper) 100%);
-}
-@media (max-width:900px){
-  [data-theme="dark"] .hero-scrim{
-    background:
-      linear-gradient(180deg,
-        var(--paper) 0%,
-        rgba(21,18,12,0.90) 30%,
-        rgba(21,18,12,0.94) 70%,
-        var(--paper) 100%);
-  }
-  [data-theme="dark"] .hero-video{ opacity:0.35; }
-}
-[data-theme="dark"] .hero h1{
-  text-shadow:0 1px 3px rgba(0,0,0,0.55);
-}
-[data-theme="dark"] .hero .eyebrow,
-[data-theme="dark"] .hero-sub{
-  text-shadow:0 1px 3px rgba(0,0,0,0.6);
+  opacity:0;
+  background:transparent;
 }
 
 /* --- Тонкая фактура страницы: тёмные точки на тёмном фоне не видны --- */

@@ -29,7 +29,7 @@ const translations = {
     nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Как проходит", faq:"Вопросы", contact:"Контакты", cta:"Оставить заявку", themeToDark:"Включить тёмную тему", themeToLight:"Включить светлую тему" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
-      title:'Мы не учим <mark>пользоваться ИИ</mark> Мы учим <mark>мыслить</mark>',
+      title:'<span class="plate">Мы не учим</span> <mark>пользоваться ИИ</mark> <span class="plate">Мы учим</span> <mark>мыслить</mark>',
       sub:"Офлайн-курсы в Ташкенте: автоматизация и маркетинг с ИИ. От первого сценария до системы, которая работает без вас. С нуля, на русском и узбекском.",
       ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
       meta1:"направления · 6 уровней", meta2:"языки преподавания", meta3:"страха перед ИИ",
@@ -178,7 +178,7 @@ const translations = {
     nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", cta:"Ariza qoldirish", themeToDark:"Tungi rejimni yoqish", themeToLight:"Kunduzgi rejimni yoqish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
-      title:'Biz <mark>sun\u2018iy intellektdan foydalanishni</mark> emas, <mark>fikrlashni</mark> o\u2018rgatamiz',
+      title:'<span class="plate">Biz</span> <mark>sun\u2018iy intellektdan foydalanishni</mark> <span class="plate">emas,</span> <mark>fikrlashni</mark> <span class="plate">o\u2018rgatamiz</span>',
       sub:"Toshkentda oflayn kurslar: AI bilan avtomatlashtirish va marketing. Birinchi ssenariydan sizsiz ishlaydigan tizimgacha. Noldan, rus va o\u2018zbek tillarida.",
       ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
       meta1:"yo\u2018nalish · 6 daraja", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish",
