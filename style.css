@@ -298,32 +298,37 @@ body::before{
   font-family:var(--display);
   font-weight:800;
   font-size:clamp(40px, 7.2vw, 96px);
-  line-height:1.32;
+  line-height:1.18;
   letter-spacing:-0.02em;
   max-width:18ch;
 }
 
-/* signature highlighter-mark treatment */
+/* signature highlighter-mark treatment — раньше была сплошная плашка
+   (фон-маркер + светлый текст), теперь фона нет: сама буква красится
+   в цвет маркера, а тень держит контраст поверх видео вместо плашки. */
 mark{
-  background:var(--marker);
-  color:var(--marker-ink);
-  padding:0.06em 0.28em 0.1em;
-  border-radius:4px;
-  box-decoration-break:clone;
-  -webkit-box-decoration-break:clone;
+  background:transparent;
+  color:var(--marker);
+  padding:0;
+  border-radius:0;
+  text-shadow:
+    0 2px 14px rgba(0,0,0,0.55),
+    0 1px 3px rgba(0,0,0,0.45);
 }
 
-/* Обычный текст заголовка — та же логика плашки, что у mark, только
-   цветом страницы, а не акцентом. Нужно теперь, когда видео за
-   заголовком идёт без вуали: без своей подложки эти слова тонут в
-   светлых/тёмных участках кадра. */
+/* Обычный текст заголовка — раньше была сплошная светлая плашка под
+   тёмными буквами; теперь фона нет вовсе — буквы сами белые/светлые
+   (независимо от темы сайта, потому что должны читаться поверх одного
+   и того же видео что в светлой, что в тёмной теме), а тень держит
+   контраст вместо подложки. */
 .hero h1 .plate{
-  background:var(--paper);
-  color:var(--ink);
-  padding:0.06em 0.28em 0.1em;
-  border-radius:4px;
-  box-decoration-break:clone;
-  -webkit-box-decoration-break:clone;
+  background:transparent;
+  color:#F5F1E6;
+  padding:0;
+  border-radius:0;
+  text-shadow:
+    0 2px 14px rgba(0,0,0,0.75),
+    0 1px 3px rgba(0,0,0,0.6);
 }
 
 .hero-sub{
@@ -1656,29 +1661,38 @@ button.btn-primary{
 }
 
 .hero-scrim{
-  /* Слой-вуаль на всё видео убран — видео показывается как есть.
-     Вместо неё у каждого текстового блока теперь своя сплошная
-     плашка (см. .plate у h1, и сами .eyebrow/.hero-sub ниже) —
-     так текст не теряется вне зависимости от того, что в этот
-     момент происходит в кадре. */
+  /* Слой-вуаль на всё видео убран — видео показывается как есть. */
   opacity:0;
   background:transparent;
 }
 
+/* Ни у одного текстового блока в Hero больше нет сплошной плашки —
+   всё, что раньше было .plate/.eyebrow/.hero-sub с фоном, теперь
+   просто цветной текст поверх видео (тень вместо подложки держит
+   контраст). Цвет буквы фиксированный, не завязан на var(--paper)/
+   var(--ink), потому что он должен читаться поверх ОДНОГО и того же
+   видео что в светлой, что в тёмной теме сайта. */
 .hero .eyebrow{
-  background:var(--paper);
-  color:var(--ink);
-  padding:8px 16px 8px 12px;
-  border-radius:999px;
+  background:transparent;
+  color:#F5F1E6;
+  padding:0;
+  border-radius:0;
   width:fit-content;
+  text-shadow:
+    0 2px 10px rgba(0,0,0,0.7),
+    0 1px 2px rgba(0,0,0,0.55);
 }
-.hero .eyebrow::before{ background:var(--signal); }
+.hero .eyebrow::before{ background:#F5F1E6; box-shadow:0 1px 4px rgba(0,0,0,0.6); }
 
 .hero-sub{
-  background:var(--paper);
-  padding:16px 20px;
-  border-radius:8px;
-  width:fit-content;
+  background:transparent;
+  padding:0;
+  border-radius:0;
+  width:auto;
+  color:#F5F1E6;
+  text-shadow:
+    0 2px 12px rgba(0,0,0,0.7),
+    0 1px 3px rgba(0,0,0,0.55);
 }
 
 /* Фоновые слова больше не нужны — кадр сам держит правую часть */
@@ -1753,9 +1767,11 @@ button.btn-primary{
 
 /* --- Hero: вуаль убрана и здесь — видео идёт без слоя в обеих темах.
    Держим лёгкое затемнение самого видео (не отдельный слой, а фильтр
-   на самом кадре). Плашки под текстом (.plate, .eyebrow, .hero-sub)
-   сами перекрашиваются через var(--paper)/var(--ink) — отдельных
-   переопределений для тёмной темы им не нужно. --- */
+   на самом кадре). Текст в Hero (.plate, .eyebrow, .hero-sub) больше
+   не имеет фона и красится в фиксированные (не завязанные на тему)
+   цвета — им не нужны отдельные переопределения для тёмной темы,
+   кроме mark, который сознательно красится в var(--marker), чтобы
+   совпадать с акцентным золотом/бордо остального сайта. --- */
 [data-theme="dark"] .hero-video{
   opacity:0.75;
   filter:saturate(0.6) sepia(0.08) brightness(0.68) contrast(1.05);
