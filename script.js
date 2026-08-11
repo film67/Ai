@@ -381,15 +381,23 @@ const toastText = document.getElementById('toastText');
 let toastTimer = null;
 
 const TOAST_MESSAGES = {
-  ru: { sent: 'Заявка отправлена — мы скоро свяжемся с вами', error: 'Не получилось отправить — попробуйте ещё раз' },
-  uz: { sent: 'Ariza yuborildi — tez orada bog\u2018lanamiz', error: 'Yuborib bo\u2018lmadi — qayta urinib ko\u2018ring' }
+  ru: {
+    sent: 'Заявка отправлена — мы скоро свяжемся с вами',
+    error: 'Не получилось отправить — попробуйте ещё раз',
+    warning: 'Заполните обязательные поля, отмеченные красным'
+  },
+  uz: {
+    sent: 'Ariza yuborildi — tez orada bog\u2018lanamiz',
+    error: 'Yuborib bo\u2018lmadi — qayta urinib ko\u2018ring',
+    warning: 'Qizil bilan belgilangan majburiy maydonlarni to\u2018ldiring'
+  }
 };
 
 function showToast(kind, isError) {
   if (!toast || !toastText) return;
   const lang = document.documentElement.lang || 'ru';
   const msgs = TOAST_MESSAGES[lang] || TOAST_MESSAGES.ru;
-  toastText.textContent = isError ? msgs.error : msgs.sent;
+  toastText.textContent = msgs[kind] || (isError ? msgs.error : msgs.sent);
   toast.classList.toggle('is-error', !!isError);
   toast.querySelector('.toast-icon').textContent = isError ? '!' : '✓';
   toast.classList.add('is-visible');
@@ -424,10 +432,84 @@ if (phoneInput) {
   });
 }
 
+/* ============================================================
+   ФОРМА ЗАЯВКИ — валидация обязательных полей.
+   Общие для блюра-в-реальном-времени и для проверки при отправке:
+   если что-то не заполнено (или заполнено неверно), поле подсвечивается,
+   под ним появляется текст-подсказка, форма НЕ отправляется, и
+   показывается предупреждающий тост со ссылкой на первое проблемное поле.
+   ============================================================ */
+const FORM_MESSAGES = {
+  ru: {
+    name: 'Впишите имя — так мы поймём, как к вам обращаться.',
+    phone: 'Номер в формате +998 и 9 цифр.',
+    warning: 'Заполните обязательные поля, отмеченные красным'
+  },
+  uz: {
+    name: 'Ismingizni yozing — sizga qanday murojaat qilishni bilamiz.',
+    phone: 'Raqam +998 va 9 ta raqam ko‘rinishida.',
+    warning: 'Qizil bilan belgilangan majburiy maydonlarni to‘ldiring'
+  }
+};
+function formMsg() {
+  const lang = document.documentElement.lang === 'uz' ? 'uz' : 'ru';
+  return FORM_MESSAGES[lang] || FORM_MESSAGES.ru;
+}
+function showFieldError(input, text) {
+  input.classList.add('is-invalid');
+  input.setAttribute('aria-invalid', 'true');
+  let note = input.parentElement.querySelector('.field-error');
+  if (!note) {
+    note = document.createElement('span');
+    note.className = 'field-error';
+    input.parentElement.appendChild(note);
+  }
+  note.textContent = text;
+}
+function clearFieldError(input) {
+  input.classList.remove('is-invalid');
+  input.removeAttribute('aria-invalid');
+  const note = input.parentElement.querySelector('.field-error');
+  if (note) note.remove();
+}
+/* проверяет одно обязательное поле; возвращает true если валидно */
+function validateField(input) {
+  if (!input.required) return true;
+  const value = input.value.trim();
+  if (input.name === 'name') {
+    if (!value) { showFieldError(input, formMsg().name); return false; }
+  }
+  if (input.name === 'phone') {
+    if (!/^\+998\d{9}$/.test(value)) { showFieldError(input, formMsg().phone); return false; }
+  }
+  clearFieldError(input);
+  return true;
+}
+
 const applyForm = document.getElementById('applyForm');
 if (applyForm) {
+  applyForm.querySelectorAll('input, textarea').forEach(input => {
+    input.addEventListener('input', () => clearFieldError(input));
+    input.addEventListener('blur', () => validateField(input));
+  });
+
   applyForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    // проверяем все обязательные поля перед отправкой — если что-то
+    // не заполнено (или заполнено неверно), останавливаем отправку
+    const requiredFields = Array.from(applyForm.querySelectorAll('[required]'));
+    let firstInvalid = null;
+    requiredFields.forEach(input => {
+      const ok = validateField(input);
+      if (!ok && !firstInvalid) firstInvalid = input;
+    });
+
+    if (firstInvalid) {
+      firstInvalid.focus();
+      showToast('warning', true);
+      return;
+    }
 
     const data = new FormData(applyForm);
     const name = (data.get('name') || '').toString().trim();
@@ -445,7 +527,7 @@ if (applyForm) {
 
     const submitBtn = applyForm.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn ? submitBtn.textContent : '';
-    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…'; }
+    if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Отправляем…'; submitBtn.classList.add('is-busy'); }
     applyForm.classList.remove('is-sent', 'is-error');
 
     try {
@@ -467,7 +549,7 @@ if (applyForm) {
       applyForm.classList.add('is-error');
       showToast('error', true);
     } finally {
-      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; }
+      if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalBtnText; submitBtn.classList.remove('is-busy'); }
     }
   });
 }
@@ -807,51 +889,10 @@ if (applyForm) {
   });
 
   /* --------------------------------------------------------
-     09 — Форма: живая валидация и состояние отправки
+     09 — Форма: валидация обязательных полей, индикатор
+     отправки и предупреждения — см. FORM_MESSAGES /
+     validateField рядом с applyForm выше по файлу.
      -------------------------------------------------------- */
-  const form = document.getElementById('applyForm');
-  if (form) {
-    const messages = {
-      ru: { name: 'Впишите имя — так мы поймём, как к вам обращаться.', phone: 'Номер в формате +998 и 9 цифр.' },
-      uz: { name: 'Ismingizni yozing — sizga qanday murojaat qilishni bilamiz.', phone: 'Raqam +998 va 9 ta raqam ko‘rinishida.' }
-    };
-    const msg = () => messages[document.documentElement.lang === 'uz' ? 'uz' : 'ru'] || messages.ru;
-
-    function showError(input, text) {
-      input.classList.add('is-invalid');
-      let note = input.parentElement.querySelector('.field-error');
-      if (!note) {
-        note = document.createElement('span');
-        note.className = 'field-error';
-        input.parentElement.appendChild(note);
-      }
-      note.textContent = text;
-    }
-
-    function clearError(input) {
-      input.classList.remove('is-invalid');
-      const note = input.parentElement.querySelector('.field-error');
-      if (note) note.remove();
-    }
-
-    form.querySelectorAll('input, textarea').forEach(input => {
-      input.addEventListener('input', () => clearError(input));
-      input.addEventListener('blur', () => {
-        if (!input.required) return;
-        if (input.name === 'name' && !input.value.trim()) showError(input, msg().name);
-        if (input.name === 'phone' && !/^\+998\d{9}$/.test(input.value.trim())) showError(input, msg().phone);
-      });
-    });
-
-    // индикатор отправки — вешается поверх существующего обработчика
-    const submit = form.querySelector('button[type="submit"]');
-    if (submit) {
-      form.addEventListener('submit', () => {
-        submit.classList.add('is-busy');
-        setTimeout(() => submit.classList.remove('is-busy'), 4000);
-      }, true);
-    }
-  }
 
   /* --------------------------------------------------------
      10 — Плавная прокрутка по якорям
