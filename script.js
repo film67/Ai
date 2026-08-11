@@ -1004,6 +1004,8 @@ setTimeout(function () {
 
   toggle.addEventListener('click', () => {
     applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
   });
 
   // после смены языка подпись кнопки должна пересчитаться на новом языке
