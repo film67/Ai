@@ -9,10 +9,10 @@
   --ink:        #191A1E; /* Charcoal Smoke */
   --ink-soft:   #56483B; /* Woodland */
   --line:       #AD9E89; /* Sandlight */
-  --marker:     #49110B; /* Mulled Wine */
-  --marker-ink: #E7E5DB; /* Goat Milk */
-  --signal:     #49110B; /* Mulled Wine */
-  --signal-2:   #6A1D14; /* Mulled Wine, lightened for hover */
+  --marker:     #C6993D; /* тёплое золото — как в тёмной теме, вместо Mulled Wine */
+  --marker-ink: #14110C; /* тёмный текст поверх золота, для контраста */
+  --signal:     #C6993D;
+  --signal-2:   #9C7828; /* золото потемнее — hover-состояние */
 
   --display: 'Space Grotesk', 'Arial Narrow', sans-serif;
   --body:    'IBM Plex Sans', system-ui, sans-serif;
@@ -155,7 +155,7 @@ body::before{
   bottom:20px;
   z-index:200;
   background:var(--signal);
-  color:#fff;
+  color:var(--marker-ink);
   font-family:var(--mono);
   font-size:13px;
   text-transform:uppercase;
@@ -360,7 +360,7 @@ mark{
   text-transform:uppercase;
   letter-spacing:0.05em;
   background:var(--signal);
-  color:var(--paper);
+  color:var(--marker-ink);
   padding:16px 26px;
   border-radius:2px;
   text-decoration:none;
@@ -994,7 +994,7 @@ section{ position:relative; padding:clamp(56px,9vw,120px) 0; }
   height:22px;
   border-radius:50%;
   background:var(--signal);
-  color:var(--paper);
+  color:var(--marker-ink);
   font-size:13px;
   flex-shrink:0;
 }
@@ -1136,7 +1136,7 @@ footer{ padding:64px 0 40px; }
 .btn-ghost:hover,
 .nav-cta:hover,
 .float-cta:hover,
-.filter-tab:hover{ color:var(--paper); border-color:var(--signal); }
+.filter-tab:hover{ color:var(--marker-ink); border-color:var(--signal); }
 
 /* квиз-карточка тёмная — там заливка светлая */
 .quiz-option::before{ background:rgba(231,229,219,0.16); }
@@ -1387,7 +1387,7 @@ summary:focus-visible{
   .btn-ghost:hover,
   .nav-cta:hover,
   .float-cta:hover,
-  .filter-tab:hover{ background:var(--signal); color:var(--paper); }
+  .filter-tab:hover{ background:var(--signal); color:var(--marker-ink); }
 }
 
 /* ============================================================
@@ -1582,7 +1582,7 @@ summary:focus-visible{
   border-color:var(--paper);
 }
 .quiz-card .btn-primary::before{ background:var(--signal); }
-.quiz-card .btn-primary:hover{ color:var(--paper); background:var(--signal); border-color:var(--signal); }
+.quiz-card .btn-primary:hover{ color:var(--marker-ink); background:var(--signal); border-color:var(--signal); }
 
 /* --- ОБЩАЯ ЧИТАЕМОСТЬ мелкого текста --- */
 .level p,
@@ -1659,7 +1659,7 @@ button.btn-ghost:hover{ color:var(--signal); }
 /* восстановленный вид основной кнопки-<button> */
 button.btn-primary{
   background:var(--signal);
-  color:var(--paper);
+  color:var(--marker-ink);
   border:1px solid var(--signal);
   border-radius:2px;
   padding:16px 26px;
