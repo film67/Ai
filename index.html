@@ -9,7 +9,12 @@
    Если нет — подхватываем тему браузера/системы (prefers-color-scheme). */
 (function () {
   try {
-    var saved = localStorage.getItem('thinklike-theme');
+    /* старый ключ 'thinklike-theme' раньше сохранялся при КАЖДОЙ загрузке
+       страницы (даже без клика), поэтому он не годится как признак
+       "пользователь выбрал тему сам" — у всех, кто уже открывал сайт,
+       он был бы записан. Ручной выбор теперь живёт в отдельном ключе. */
+    localStorage.removeItem('thinklike-theme');
+    var saved = localStorage.getItem('thinklike-theme-manual');
     var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
     if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
   } catch (e) { /* ignore */ }

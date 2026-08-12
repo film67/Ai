@@ -1048,12 +1048,17 @@ setTimeout(function () {
     if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
 
     if (persist) {
-      try { localStorage.setItem('thinklike-theme', theme); } catch (e) { /* ignore */ }
+      try { localStorage.setItem('thinklike-theme-manual', theme); } catch (e) { /* ignore */ }
     }
   }
 
+  // старый ключ 'thinklike-theme' писался при каждой загрузке страницы ещё
+  // до этого изменения — у всех, кто уже открывал сайт, он бы ошибочно
+  // читался как "пользователь выбрал тему сам". Забываем его.
+  try { localStorage.removeItem('thinklike-theme'); } catch (e) { /* ignore */ }
+
   let saved;
-  try { saved = localStorage.getItem('thinklike-theme'); } catch (e) { saved = null; }
+  try { saved = localStorage.getItem('thinklike-theme-manual'); } catch (e) { saved = null; }
   const hasManualChoice = saved === 'dark' || saved === 'light';
   applyTheme(hasManualChoice ? saved : ((media && media.matches) ? 'dark' : 'light'), false);
 
@@ -1062,7 +1067,7 @@ setTimeout(function () {
   if (media) {
     const onSystemChange = (e) => {
       let stillAuto;
-      try { stillAuto = !localStorage.getItem('thinklike-theme'); } catch (err) { stillAuto = true; }
+      try { stillAuto = !localStorage.getItem('thinklike-theme-manual'); } catch (err) { stillAuto = true; }
       if (stillAuto) applyTheme(e.matches ? 'dark' : 'light', false);
     };
     if (media.addEventListener) media.addEventListener('change', onSystemChange);
