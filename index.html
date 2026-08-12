@@ -4,12 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <script>
-/* тема ставится до отрисовки CSS, чтобы страница не мигала светлым при сохранённой тёмной теме */
+/* тема ставится до отрисовки CSS, чтобы страница не мигала не той темой.
+   Если пользователь явно переключал тему — используем его выбор (localStorage).
+   Если нет — подхватываем тему браузера/системы (prefers-color-scheme). */
 (function () {
   try {
-    if (localStorage.getItem('thinklike-theme') === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
+    var saved = localStorage.getItem('thinklike-theme');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
   } catch (e) { /* ignore */ }
 })();
 </script>

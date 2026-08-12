@@ -1007,17 +1007,26 @@ setTimeout(function () {
 }, 1200);
 
 /* ============================================================
-   ТЁМНАЯ ТЕМА — переключатель
+   ТЁМНАЯ ТЕМА — переключатель + синхронизация с темой браузера
    Светлая тема остаётся тем, чем была; тёмная — data-theme="dark"
    на <html>, переопределения цветов лежат в style.css.
-   Тема ставится синхронно в <head> (см. index.html), здесь —
-   только переключение по клику и подписи для читалок экрана.
+   Тема ставится синхронно в <head> (см. index.html) — там же
+   решается, откуда её брать: сохранённый ручной выбор или
+   системная тема браузера (prefers-color-scheme).
+
+   Пока пользователь ни разу не нажал переключатель вручную —
+   сайт следует за темой браузера/ОС и меняется вместе с ней
+   "на лету" (слушаем matchMedia). Как только человек нажал
+   переключатель — с этого момента используется его выбор,
+   и он больше не перетирается системной темой.
    ============================================================ */
 (function initTheme() {
   const root = document.documentElement;
   const toggle = document.getElementById('themeToggle');
   const icon = toggle ? toggle.querySelector('.theme-toggle-icon') : null;
   if (!toggle) return;
+
+  const media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
 
   function currentLang() {
     return translations[root.lang] ? root.lang : 'ru';
@@ -1028,7 +1037,9 @@ setTimeout(function () {
     return theme === 'dark' ? dict.nav.themeToLight : dict.nav.themeToDark;
   }
 
-  function applyTheme(theme) {
+  // persist:true — ручное переключение (сохраняем и больше не следим за системой)
+  // persist:false — автоприменение системной темы (не трогаем localStorage)
+  function applyTheme(theme, persist) {
     if (theme === 'dark') root.setAttribute('data-theme', 'dark');
     else root.removeAttribute('data-theme');
 
@@ -1036,21 +1047,36 @@ setTimeout(function () {
     toggle.setAttribute('aria-label', labelFor(theme));
     if (icon) icon.textContent = theme === 'dark' ? '☀' : '☾';
 
-    try { localStorage.setItem('thinklike-theme', theme); } catch (e) { /* ignore */ }
+    if (persist) {
+      try { localStorage.setItem('thinklike-theme', theme); } catch (e) { /* ignore */ }
+    }
   }
 
   let saved;
   try { saved = localStorage.getItem('thinklike-theme'); } catch (e) { saved = null; }
-  applyTheme(saved === 'dark' ? 'dark' : 'light');
+  const hasManualChoice = saved === 'dark' || saved === 'light';
+  applyTheme(hasManualChoice ? saved : ((media && media.matches) ? 'dark' : 'light'), false);
+
+  // тема браузера сменилась (например, ОС переключилась по расписанию) —
+  // подхватываем это на лету, но только пока человек не выбрал тему сам
+  if (media) {
+    const onSystemChange = (e) => {
+      let stillAuto;
+      try { stillAuto = !localStorage.getItem('thinklike-theme'); } catch (err) { stillAuto = true; }
+      if (stillAuto) applyTheme(e.matches ? 'dark' : 'light', false);
+    };
+    if (media.addEventListener) media.addEventListener('change', onSystemChange);
+    else if (media.addListener) media.addListener(onSystemChange); // старые Safari
+  }
 
   toggle.addEventListener('click', () => {
-    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+    applyTheme(root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark', true);
   });
 
   // после смены языка подпись кнопки должна пересчитаться на новом языке
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
+      applyTheme(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light', false);
     });
   });
 })();
