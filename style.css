@@ -310,7 +310,7 @@ body::before{
    нескольких резких теней-сдвигов плюс лёгкая мягкая тень для глубины. */
 mark{
   background:transparent;
-  color:var(--marker);
+  color:#F5F1E6;
   padding:0;
   border-radius:0;
   text-shadow:
@@ -328,7 +328,7 @@ mark{
    контур вместо смазанного размытия. */
 .hero h1 .plate{
   background:transparent;
-  color:#F5F1E6;
+  color:var(--marker);
   padding:0;
   border-radius:0;
   text-shadow:
