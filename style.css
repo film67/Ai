@@ -386,16 +386,31 @@ mark{
   gap:clamp(24px,5vw,64px);
   font-family:var(--mono);
   font-size:13px;
-  color:var(--ink-soft);
-  border-top:1px solid var(--line);
+  /* фиксированный светлый цвет, не завязан на тему сайта — этот блок
+     лежит поверх видео в Hero и должен читаться что на светлой,
+     что на тёмной странице, как остальной текст в Hero. */
+  color:#F5F1E6;
+  border-top:1px solid rgba(245,241,230,0.35);
   padding-top:20px;
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.7),
+     1px -1px 0 rgba(0,0,0,0.7),
+    -1px  1px 0 rgba(0,0,0,0.7),
+     1px  1px 0 rgba(0,0,0,0.7),
+     0 2px 6px rgba(0,0,0,0.5);
 }
 .hero-meta b{
   display:block;
   font-family:var(--display);
   font-size:26px;
-  color:var(--ink);
+  color:#F5F1E6;
   font-weight:700;
+  text-shadow:
+    -1px -1px 0 rgba(0,0,0,0.75),
+     1px -1px 0 rgba(0,0,0,0.75),
+    -1px  1px 0 rgba(0,0,0,0.75),
+     1px  1px 0 rgba(0,0,0,0.75),
+     0 2px 8px rgba(0,0,0,0.55);
 }
 @media (max-width:600px){
   .hero-meta{ grid-template-columns:1fr 1fr; }
@@ -1204,7 +1219,7 @@ summary:focus-visible{
 .hero-prompt{
   font-family:var(--mono);
   font-size:clamp(15px, 2vw, 19px);
-  color:var(--signal);
+  color:#F5F1E6;
   margin-top:18px;
   min-height:1.6em;
   letter-spacing:0.01em;
@@ -1515,10 +1530,11 @@ summary:focus-visible{
 .hero .eyebrow::before{ background:var(--signal); width:32px; height:2px; }
 
 .hero-sub{ color:var(--ink); opacity:0.86; }
-.hero-prompt{ color:var(--signal); }
+/* .hero-prompt цвет не трогаем здесь — фиксированный светлый цвет
+   задан в базовом правиле выше, чтобы читаться поверх видео в Hero. */
 
 /* фоновые слова не должны спорить с текстом */
-.hero-word{ opacity:0.08; }
+.hero-word{ color:#F5F1E6; opacity:0.14; }
 
 /* --- КВИЗ: варианты сливались с тёмным фоном --- */
 .quiz-card{
