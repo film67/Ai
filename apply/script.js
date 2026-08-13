@@ -1,9 +1,16 @@
 const APPLY_EMAIL = 'thinklikeaiuz@gmail.com';
 const FORM_ENDPOINT = `https://formsubmit.co/ajax/${APPLY_EMAIL}`;
 
-// Set this to the same deployed Telegram-notify endpoint used on the main
-// site (see /notify-api/README.md). Leave as '' to only use email.
-const TELEGRAM_ENDPOINT = '';
+// Same Telegram bot + supergroup the main site (thinklikeai.net) posts
+// applications into — see thinklikeai.net/script.js for the reference
+// implementation this mirrors.
+// NOTE: like the main site, this token lives in public client-side code
+// (no backend on GitHub Pages) — anyone viewing page source can see it.
+// Accepted trade-off per project decision. Regenerate via @BotFather
+// (/revoke) and drop the new token in here if it's ever misused.
+const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
+const TG_CHAT_ID = '-1004462776226';
+const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
 // ---------- i18n: UZ / RU / EN ----------
 const TRANSLATIONS = {
@@ -193,19 +200,31 @@ if (applyForm) {
       method: 'POST',
       body: data,
       headers: { 'Accept': 'application/json' }
-    });
+    }).catch(() => null);
 
-    const telegramPromise = TELEGRAM_ENDPOINT
-      ? fetch(TELEGRAM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ name, contact, program, lang })
-        }).catch(() => null)
-      : Promise.resolve(null);
+    const tgLines = [
+      '📩 Новая заявка — ThinkLike AI (apply-лендинг)',
+      `Имя: ${name}`,
+      `Телефон: ${contact}`,
+      `Программа: ${program}`,
+      `Язык страницы: ${lang.toUpperCase()}`
+    ];
+
+    const telegramPromise = fetch(TG_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: tgLines.join('\n') })
+    }).catch(() => null);
 
     try {
-      const [emailRes] = await Promise.all([emailPromise, telegramPromise]);
-      if (!emailRes.ok) throw new Error('Request failed');
+      const [emailRes, telegramRes] = await Promise.all([emailPromise, telegramPromise]);
+      const emailOk = !!(emailRes && emailRes.ok);
+      const telegramOk = !!(telegramRes && telegramRes.ok);
+
+      // Success if either channel delivered — the two are redundant on
+      // purpose, so one failing (e.g. FormSubmit not yet activated for
+      // this address) shouldn't block the applicant.
+      if (!emailOk && !telegramOk) throw new Error('Request failed');
 
       applyForm.classList.add('is-sent');
       applyForm.reset();
