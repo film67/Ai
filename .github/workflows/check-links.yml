@@ -1,0 +1,32 @@
+name: Проверка ссылок
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Забрать код
+        uses: actions/checkout@v4
+
+      - name: Проверить ссылки и пути к изображениям
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # проверяем все ссылки, mailto и локальные пути (картинки, css, js)
+          # в главной странице и в apply/
+          args: >-
+            --verbose
+            --no-progress
+            --include-fragments
+            index.html
+            apply/index.html
+          # падать красным крестом, если найдена битая ссылка
+          fail: true
