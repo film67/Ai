@@ -58,7 +58,7 @@ const translations = {
       start:"Пройти AI-тест", cta:"Смотреть в ценах", restart:"Пройти заново",
       questions:[
         { text:"Что вам ближе?", options:[
-          {label:"Автоматизация процессов и AI-боты", value:"automation"},
+          {label:"Вайб-кодинг: свои приложения с ИИ", value:"automation"},
           {label:"Маркетинг, контент и продвижение", value:"marketing"}
         ]},
         { text:"Какой у вас опыт?", options:[
@@ -73,9 +73,9 @@ const translations = {
         ]}
       ],
       results:{
-        "automation-beginner":{tag:"Automation · Beginner", title:"Вам подходит: ИИ для автоматизации, уровень Beginner", desc:"С нуля — Zapier, Make и первый AI-чат-бот. Идеально, если вы ещё не пробовали автоматизацию."},
-        "automation-intermediate":{tag:"Automation · Intermediate", title:"Вам подходит: ИИ для автоматизации, уровень Intermediate", desc:"Webhooks, реальный AI-агент и протокол MCP — для тех, кто уже знаком с базовыми инструментами."},
-        "automation-advanced":{tag:"Automation · Advanced", title:"Вам подходит: ИИ для автоматизации, уровень Advanced", desc:"Свой код, автономные агенты и деплой в прод — для тех, кто готов строить production-системы."},
+        "automation-beginner":{tag:"Vibe Coding · Beginner", title:"Вам подходит: Вайб-кодинг, уровень Beginner", desc:"Replit, Lovable и первое приложение без единой строчки кода. Идеально, если вы никогда не программировали."},
+        "automation-intermediate":{tag:"Vibe Coding · Intermediate", title:"Вам подходит: Вайб-кодинг, уровень Intermediate", desc:"Claude Code, база данных и реальные платежи — для тех, кто уже собрал свой первый прототип."},
+        "automation-advanced":{tag:"Vibe Coding · Advanced", title:"Вам подходит: Вайб-кодинг, уровень Advanced", desc:"CI/CD, мульти-агентные системы и запуск SaaS — для тех, кто готов довести продукт до реальных пользователей."},
         "marketing-beginner":{tag:"Marketing · Beginner", title:"Вам подходит: ИИ для маркетинга, уровень Beginner", desc:"Промптинг, AI-контент и основы SEO — если вы делаете первые шаги в AI-маркетинге."},
         "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Вам подходит: ИИ для маркетинга, уровень Intermediate", desc:"Техническое SEO, email-кампании и AI-агенты — для тех, кто уже строит маркетинг-процессы."},
         "marketing-advanced":{tag:"Marketing · Advanced", title:"Вам подходит: ИИ для маркетинга, уровень Advanced", desc:"Агентные системы, NIST AI RMF и омниканальные стратегии — для опытных маркетологов."}
@@ -90,19 +90,19 @@ const translations = {
     },
     prog: {
       h2:"Курсы", num:"03 — Программы",
-      filterAll:"Все", filterAuto:"Автоматизация", filterMkt:"Маркетинг",
-      dir1Name:"ИИ для автоматизации", dir1Desc:"Zapier, Make, AI-агенты, MCP — от первого сценария до production-системы.",
-      a1Desc:"Научитесь поручать рутину программам: заявка с сайта сама попадает в таблицу, клиенту уходит ответ, вам приходит уведомление. Соберёте это в Zapier и Make без единой строчки кода и сделаете своего первого чат-бота.",
-      a1Tools:"Zapier · Make · AI-чат-боты",
-      a1Obj:"«У меня нет технического образования». Здесь оно и не нужно: ни одной строчки кода за весь уровень. Если вы умеете завести таблицу и написать письмо — этого достаточно.",
+      filterAll:"Все", filterAuto:"Вайб-кодинг", filterMkt:"Маркетинг",
+      dir1Name:"Вайб-кодинг", dir1Desc:"Replit, Lovable, Cursor, Claude Code — от первого приложения до запущенного продукта.",
+      a1Desc:"Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.",
+      a1Tools:"Replit · Lovable · Cursor",
+      a1Obj:"«Я никогда не программировал(а)». Здесь и не придётся: весь уровень — это разговор с ИИ на обычном языке. Если можете объяснить идею другу — этого достаточно, чтобы получить рабочее приложение.",
       a1Who:"от 3 месяцев · 15 занятий · от 14 лет · без опыта",
-      a2Desc:"Отдельные сценарии превращаются в систему. Соберёте ИИ-помощника, который сам решает, что делать дальше: проверить базу, написать письмо, позвать человека. Разберётесь, как программы обмениваются данными между собой.",
-      a2Tools:"Webhooks · AI-агенты · MCP",
-      a2Obj:"«Базы мне хватит». Хватит, пока сценариев три. Когда их станет пятнадцать и они начнут мешать друг другу, придётся либо разбираться самому, либо платить тому, кто разберётся.",
+      a2Desc:"Перейдёте от учебных прототипов к настоящим продуктам: освоите Claude Code и Cursor в режиме агента, спроектируете базу данных с несколькими связанными таблицами и подключите реальную оплату — Click.uz или Payme. Разберётесь с Git, как в настоящей команде разработки.",
+      a2Tools:"Claude Code · Cursor Agent · Click.uz / Payme",
+      a2Obj:"«Мой прототип и так работает». Работает у вас на ноутбуке, в классе. Настоящий продукт должен пережить случайного пользователя со слабым интернетом и старым телефоном — этому и учит уровень.",
       a2Who:"от 3 месяцев · 15 занятий · после Beginner",
-      a3Desc:"Доведёте свою систему до состояния, когда ей можно пользоваться всерьёз: она живёт по своему адресу в интернете, работает без вашего присмотра и не падает от нагрузки. Там, где готовых блоков не хватает, допишете код сами.",
-      a3Tools:"Python/JS · Claude Agent SDK · Деплой в прод",
-      a3Obj:"«Это дорого». Здесь вы не заказываете систему у подрядчика, а собираете её сами — и остаётесь с умением собрать следующую без чужой помощи.",
+      a3Desc:"Запустите готовый SaaS-продукт: настроите CI/CD, чтобы изменения выкатывались без вашего участия, добавите подписку с реальной оплатой и доведёте систему до состояния, когда ей пользуются настоящие люди, а не только вы на демо.",
+      a3Tools:"CI/CD · Мульти-агентные системы · SaaS-биллинг",
+      a3Obj:"«Для этого нужна команда разработчиков». После этого уровня — не нужна: вы сами спроектируете архитектуру, задеплоите и будете обслуживать продукт в одиночку.",
       a3Who:"от 3 месяцев · 15 занятий · после Intermediate",
       dir2Name:"ИИ для маркетинга", dir2Desc:"От промптинга до полной омниканальной AI-маркетинговой системы.",
       m1Desc:"Перестанете просить у чат-бота «напиши пост» и начнёте получать то, что нужно с первого раза. Научитесь готовить контент для соцсетей, рассылок и сайта, разберётесь, как люди находят вас в поиске.",
@@ -123,8 +123,8 @@ const translations = {
       note:"Цены указаны за месяц. Уровень идёт от 3 месяцев — итоговую сумму и рассрочку считаем на бесплатной консультации, под ваш уровень и направление.",
       currency:"сум / месяц",
       a1_1:"15 занятий по 2 часа", a1_2:"Группы до 12 человек", a1_3:"Капстоун-проект + тест",
-      a2_1:"15 занятий по 2 часа", a2_2:"Личная проверка работ", a2_3:"Многоинструментальная система",
-      a3_1:"15 занятий по 2 часа", a3_2:"Разбор production-кейсов", a3_3:"Деплой готовой системы",
+      a2_1:"15 занятий по 2 часа", a2_2:"Личная проверка работ", a2_3:"Full-stack продукт с оплатой",
+      a3_1:"15 занятий по 2 часа", a3_2:"Разбор production-кейсов", a3_3:"Запуск SaaS-продукта",
       m1_1:"15 занятий по 2 часа", m1_2:"Группы до 12 человек", m1_3:"Маркетинг-план + защита",
       m2_1:"15 занятий по 2 часа", m2_2:"Личная проверка работ", m2_3:"Обновлённый маркетинг-план",
       m3_1:"15 занятий по 2 часа", m3_2:"Разбор enterprise-кейсов", m3_3:"Омниканальная система",
@@ -207,7 +207,7 @@ const translations = {
       start:"AI-testdan o\u2018ting", cta:"Narxlarda ko\u2018rish", restart:"Qayta topshirish",
       questions:[
         { text:"Sizga nima yaqinroq?", options:[
-          {label:"Jarayonlarni avtomatlashtirish va AI-botlar", value:"automation"},
+          {label:"Vibe Coding: AI bilan o\u2018z ilovalaringiz", value:"automation"},
           {label:"Marketing, kontent va targ\u2018ib", value:"marketing"}
         ]},
         { text:"Tajribangiz qanday?", options:[
@@ -222,9 +222,9 @@ const translations = {
         ]}
       ],
       results:{
-        "automation-beginner":{tag:"Automation · Beginner", title:"Sizga mos: SI avtomatlashtirish, Beginner darajasi", desc:"Noldan — Zapier, Make va birinchi AI-chatbot. Avtomatlashtirishni hali sinab ko\u2018rmagan bo\u2018lsangiz, aynan shu."},
-        "automation-intermediate":{tag:"Automation · Intermediate", title:"Sizga mos: SI avtomatlashtirish, Intermediate darajasi", desc:"Webhooklar, haqiqiy AI-agent va MCP protokoli — asosiy vositalarni bilganlar uchun."},
-        "automation-advanced":{tag:"Automation · Advanced", title:"Sizga mos: SI avtomatlashtirish, Advanced darajasi", desc:"O\u2018z kodi, avtonom agentlar va production'ga joylash — production-tizim qurishga tayyor bo\u2018lganlar uchun."},
+        "automation-beginner":{tag:"Vibe Coding · Beginner", title:"Sizga mos: Vibe Coding, Beginner darajasi", desc:"Replit, Lovable va bitta ham kod yozmasdan birinchi ilova. Hech qachon dasturlashtirmagan bo\u2018lsangiz — aynan shu."},
+        "automation-intermediate":{tag:"Vibe Coding · Intermediate", title:"Sizga mos: Vibe Coding, Intermediate darajasi", desc:"Claude Code, ma\u2019lumotlar bazasi va haqiqiy to\u2018lovlar — birinchi prototipini yig\u2018ganlar uchun."},
+        "automation-advanced":{tag:"Vibe Coding · Advanced", title:"Sizga mos: Vibe Coding, Advanced darajasi", desc:"CI/CD, multi-agent tizimlar va SaaS ishga tushirish — mahsulotni haqiqiy foydalanuvchilarga yetkazishga tayyor bo\u2018lganlar uchun."},
         "marketing-beginner":{tag:"Marketing · Beginner", title:"Sizga mos: SI marketing, Beginner darajasi", desc:"Prompting, AI-kontent va SEO asoslari — AI-marketingda birinchi qadamlar uchun."},
         "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Sizga mos: SI marketing, Intermediate darajasi", desc:"Texnik SEO, email-kampaniyalar va AI-agentlar — marketing jarayonlarini quruvchilar uchun."},
         "marketing-advanced":{tag:"Marketing · Advanced", title:"Sizga mos: SI marketing, Advanced darajasi", desc:"Agentli tizimlar, NIST AI RMF va ko\u2018p kanalli strategiyalar — tajribali marketologlar uchun."}
@@ -239,19 +239,19 @@ const translations = {
     },
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
-      filterAll:"Barchasi", filterAuto:"Avtomatlashtirish", filterMkt:"Marketing",
-      dir1Name:"SI bilan avtomatlashtirish", dir1Desc:"Zapier, Make, AI-agentlar, MCP — birinchi ssenariydan production-tizimgacha.",
-      a1Desc:"Kundalik ishlarni dasturlarga topshirishni o\u2018rganasiz: saytdan kelgan ariza o\u2018zi jadvalga tushadi, mijozga javob ketadi, sizga bildirishnoma keladi. Buni Zapier va Make'da bitta ham kod yozmasdan yig\u2018asiz va birinchi chatbotingizni yaratasiz.",
-      a1Tools:"Zapier · Make · AI-chatbotlar",
-      a1Obj:"«Menda texnik ma'lumot yo\u2018q». Bu yerda u kerak emas: butun daraja davomida bitta ham kod yozilmaydi. Jadval yuritishni va xat yozishni bilsangiz — yetarli.",
+      filterAll:"Barchasi", filterAuto:"Vibe Coding", filterMkt:"Marketing",
+      dir1Name:"Vibe Coding", dir1Desc:"Replit, Lovable, Cursor, Claude Code — birinchi ilovadan ishga tushirilgan mahsulotgacha.",
+      a1Desc:"Bitta ham kod yozmasdan birinchi veb-ilovangizni yaratasiz: g\u2018oyani so\u2018z bilan tasvirlaysiz — AI Replit yoki Lovable'da ishlaydigan sahifa yig\u2018adi. Ma\u2019lumotlar bazasini ulaysiz, forma haqiqatan ham arizalarni saqlashi uchun, va saytni jonli havola orqali e\u2019lon qilasiz.",
+      a1Tools:"Replit · Lovable · Cursor",
+      a1Obj:"«Men hech qachon dasturlashtirmaganman». Bu yerda kerak ham emas: butun daraja — AI bilan oddiy tilda suhbat. G\u2018oyangizni do\u2018stingizga tushuntira olsangiz — ishlaydigan ilova olish uchun shu yetarli.",
       a1Who:"kamida 3 oy · 15 dars · 14 yoshdan · tajribasiz",
-      a2Desc:"Alohida ssenariylar tizimga aylanadi. O\u2018zi keyingi qadamni tanlaydigan AI-yordamchi yig\u2018asiz: bazani tekshirish, xat yozish, odamni chaqirish. Dasturlar bir-biri bilan ma'lumot almashishini tushunasiz.",
-      a2Tools:"Webhooklar · AI-agentlar · MCP",
-      a2Obj:"«Menga asos yetadi». Ssenariy uchta bo\u2018lguncha yetadi. Ular o\u2018n beshta bo\u2018lib, bir-biriga xalaqit bera boshlaganda — yo o\u2018zingiz tushunasiz, yo tushunadigan odamga pul to\u2018laysiz.",
+      a2Desc:"O\u2018quv prototiplaridan haqiqiy mahsulotlarga o\u2018tasiz: Claude Code va Cursor'ni agent rejimida egallaysiz, bir necha bog\u2018langan jadvalli ma\u2019lumotlar bazasini loyihalaysiz va haqiqiy to\u2018lovni ulaysiz — Click.uz yoki Payme. Haqiqiy jamoadagidek Git bilan ishlashni o\u2018rganasiz.",
+      a2Tools:"Claude Code · Cursor Agent · Click.uz / Payme",
+      a2Obj:"«Mening prototipim shunday ham ishlayapti». Noutbukingizda, sinfda ishlayapti. Haqiqiy mahsulot sekin internetli, eski telefonli tasodifiy foydalanuvchini ham chidashi kerak — daraja aynan shunga o\u2018rgatadi.",
       a2Who:"kamida 3 oy · 15 dars · Beginner'dan keyin",
-      a3Desc:"Tizimingizni jiddiy foydalanish mumkin bo\u2018lgan holatga yetkazasiz: u internetda o\u2018z manzilida yashaydi, sizsiz ishlaydi va yuklamadan yiqilmaydi. Tayyor bloklar yetmagan joyda kodni o\u2018zingiz yozasiz.",
-      a3Tools:"Python/JS · Claude Agent SDK · Production'ga joylash",
-      a3Obj:"«Bu qimmat». Bu yerda siz tizimni pudratchiga buyurtma qilmaysiz, o\u2018zingiz yig\u2018asiz — va keyingisini birovsiz yig\u2018a olish ko\u2018nikmasi bilan qolasiz.",
+      a3Desc:"Tayyor SaaS-mahsulotni ishga tushirasiz: o\u2018zgarishlar sizsiz chiqishi uchun CI/CD sozlaysiz, haqiqiy to\u2018lovli obunani qo\u2018shasiz va tizimni haqiqiy odamlar foydalanadigan holatga yetkazasiz — nafaqat demo uchun.",
+      a3Tools:"CI/CD · Multi-agent tizimlar · SaaS-billing",
+      a3Obj:"«Buning uchun dasturchilar jamoasi kerak». Bu darajadan keyin kerak emas: siz o\u2018zingiz arxitekturani loyihalaysiz, joylaysiz va mahsulotni yolg\u2018iz xizmat qilasiz.",
       a3Who:"kamida 3 oy · 15 dars · Intermediate'dan keyin",
       dir2Name:"SI marketing uchun", dir2Desc:"Promptingdan to to\u2018liq ko\u2018p kanalli AI-marketing tizimigacha.",
       m1Desc:"Chatbotdan «post yozib ber» deb so\u2018rashni bas qilasiz va birinchi urinishdayoq kerakli natijani olasiz. Ijtimoiy tarmoq, xat yuborish va sayt uchun kontent tayyorlashni o\u2018rganasiz, odamlar sizni qidiruvda qanday topishini tushunasiz.",
@@ -272,8 +272,8 @@ const translations = {
       note:"Narxlar bir oy uchun ko\u2018rsatilgan. Daraja kamida 3 oy davom etadi — yakuniy summa va muddatli to\u2018lovni bepul konsultatsiyada, yo\u2018nalish va darajangizga qarab hisoblaymiz.",
       currency:"so\u2018m / oy",
       a1_1:"15 ta 2 soatlik dars", a1_2:"12 kishigacha guruh", a1_3:"Capstone-loyiha + test",
-      a2_1:"15 ta 2 soatlik dars", a2_2:"Ishlarni shaxsiy tekshirish", a2_3:"Ko\u2018p vositali tizim",
-      a3_1:"15 ta 2 soatlik dars", a3_2:"Production-keyslarni tahlil qilish", a3_3:"Tayyor tizimni joylash",
+      a2_1:"15 ta 2 soatlik dars", a2_2:"Ishlarni shaxsiy tekshirish", a2_3:"To\u2018lovli full-stack mahsulot",
+      a3_1:"15 ta 2 soatlik dars", a3_2:"Production-keyslarni tahlil qilish", a3_3:"SaaS-mahsulotni ishga tushirish",
       m1_1:"15 ta 2 soatlik dars", m1_2:"12 kishigacha guruh", m1_3:"Marketing-reja + himoya",
       m2_1:"15 ta 2 soatlik dars", m2_2:"Ishlarni shaxsiy tekshirish", m2_3:"Yangilangan marketing-reja",
       m3_1:"15 ta 2 soatlik dars", m3_2:"Enterprise-keyslarni tahlil qilish", m3_3:"Ko\u2018p kanalli tizim",
@@ -624,7 +624,7 @@ if (applyForm) {
     resTitle.textContent = r.title;
     resDesc.textContent = r.desc;
 
-    const dataProgram = `${direction === 'automation' ? 'Automation' : 'Marketing'}-${level.charAt(0).toUpperCase() + level.slice(1)}`;
+    const dataProgram = `${direction === 'automation' ? 'VibeCoding' : 'Marketing'}-${level.charAt(0).toUpperCase() + level.slice(1)}`;
     const targetCard = document.querySelector(`#pricing [data-program="${dataProgram}"]`);
     resCta.onclick = () => {
       if (targetCard) {
