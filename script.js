@@ -91,9 +91,9 @@ const translations = {
     prog: {
       h2:"Курсы", num:"03 — Программы",
       filterAll:"Все", filterAuto:"Вайб-кодинг", filterMkt:"Маркетинг",
-      dir1Name:"Вайб-кодинг", dir1Desc:"Replit, Lovable, Cursor, Claude Code — от первого приложения до запущенного продукта.",
+      dir1Name:"Вайб-кодинг", dir1Desc:"Replit, Lovable, Claude Code — от первого приложения до запущенного продукта.",
       a1Desc:"Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.",
-      a1Tools:"Replit · Lovable · Cursor",
+      a1Tools:"Replit · Lovable · Claude Code",
       a1Obj:"«Я никогда не программировал(а)». Здесь и не придётся: весь уровень — это разговор с ИИ на обычном языке. Если можете объяснить идею другу — этого достаточно, чтобы получить рабочее приложение.",
       a1Who:"от 3 месяцев · 15 занятий · от 14 лет · без опыта",
       a2Desc:"Перейдёте от учебных прототипов к настоящим продуктам: освоите Claude Code и Cursor в режиме агента, спроектируете базу данных с несколькими связанными таблицами и подключите реальную оплату — Click.uz или Payme. Разберётесь с Git, как в настоящей команде разработки.",
@@ -240,9 +240,9 @@ const translations = {
     prog: {
       h2:"Kurslar", num:"03 — Dasturlar",
       filterAll:"Barchasi", filterAuto:"Vibe Coding", filterMkt:"Marketing",
-      dir1Name:"Vibe Coding", dir1Desc:"Replit, Lovable, Cursor, Claude Code — birinchi ilovadan ishga tushirilgan mahsulotgacha.",
+      dir1Name:"Vibe Coding", dir1Desc:"Replit, Lovable, Claude Code — birinchi ilovadan ishga tushirilgan mahsulotgacha.",
       a1Desc:"Bitta ham kod yozmasdan birinchi veb-ilovangizni yaratasiz: g\u2018oyani so\u2018z bilan tasvirlaysiz — AI Replit yoki Lovable'da ishlaydigan sahifa yig\u2018adi. Ma\u2019lumotlar bazasini ulaysiz, forma haqiqatan ham arizalarni saqlashi uchun, va saytni jonli havola orqali e\u2019lon qilasiz.",
-      a1Tools:"Replit · Lovable · Cursor",
+      a1Tools:"Replit · Lovable · Claude Code",
       a1Obj:"«Men hech qachon dasturlashtirmaganman». Bu yerda kerak ham emas: butun daraja — AI bilan oddiy tilda suhbat. G\u2018oyangizni do\u2018stingizga tushuntira olsangiz — ishlaydigan ilova olish uchun shu yetarli.",
       a1Who:"kamida 3 oy · 15 dars · 14 yoshdan · tajribasiz",
       a2Desc:"O\u2018quv prototiplaridan haqiqiy mahsulotlarga o\u2018tasiz: Claude Code va Cursor'ni agent rejimida egallaysiz, bir necha bog\u2018langan jadvalli ma\u2019lumotlar bazasini loyihalaysiz va haqiqiy to\u2018lovni ulaysiz — Click.uz yoki Payme. Haqiqiy jamoadagidek Git bilan ishlashni o\u2018rganasiz.",
