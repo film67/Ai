@@ -84,7 +84,7 @@ const translations = {
     formats: {
       h2:"Как проходит обучение", num:"03.5 — Форматы",
       f1h:"Офлайн в Ташкенте", f1p:"Занятия проходят очно, в аудитории — не запись, не самостоятельное прохождение видео.",
-      f2h:"Небольшие группы", f2p:"До 12 человек в группе — у преподавателя есть время разобрать вопрос каждого.",
+      f2h:"Небольшие группы", f2p:"До 20 человек в группе — у преподавателя есть время разобрать вопрос каждого.",
       f3h:"15 занятий по 2 часа", f3p:"Уровень идёт от 3 месяцев — без спешки, с практикой между занятиями.",
       f4h:"Капстоун + тест", f4p:"В конце уровня — свой рабочий проект и сертификационный тест, а не просто посещаемость."
     },
@@ -122,10 +122,10 @@ const translations = {
       h2:"Цены", num:"04 — Тарифы",
       note:"Цены указаны за месяц. Уровень идёт от 3 месяцев — итоговую сумму и рассрочку считаем на бесплатной консультации, под ваш уровень и направление.",
       currency:"сум / месяц",
-      a1_1:"15 занятий по 2 часа", a1_2:"Группы до 12 человек", a1_3:"Капстоун-проект + тест",
+      a1_1:"15 занятий по 2 часа", a1_2:"Группы до 20 человек", a1_3:"Капстоун-проект + тест",
       a2_1:"15 занятий по 2 часа", a2_2:"Личная проверка работ", a2_3:"Full-stack продукт с оплатой",
       a3_1:"15 занятий по 2 часа", a3_2:"Разбор production-кейсов", a3_3:"Запуск SaaS-продукта",
-      m1_1:"15 занятий по 2 часа", m1_2:"Группы до 12 человек", m1_3:"Маркетинг-план + защита",
+      m1_1:"15 занятий по 2 часа", m1_2:"Группы до 20 человек", m1_3:"Маркетинг-план + защита",
       m2_1:"15 занятий по 2 часа", m2_2:"Личная проверка работ", m2_3:"Обновлённый маркетинг-план",
       m3_1:"15 занятий по 2 часа", m3_2:"Разбор enterprise-кейсов", m3_3:"Омниканальная система",
       cta:"Записаться"
@@ -151,7 +151,7 @@ const translations = {
       q3:"Нужно ли покупать платные инструменты или подписки?",
       a3:"Нет. Все инструменты и платформы, которые используются в программе, доступны на бесплатных тарифах без привязки карты — от первого занятия до капстоун-проекта.",
       q4:"Сколько длится один уровень?",
-      a4:"От 3 месяцев: 15 занятий по 2 часа, в группах до 12 человек, с практикой между занятиями и капстоун-проектом в конце.",
+      a4:"От 3 месяцев: 15 занятий по 2 часа, в группах до 20 человек, с практикой между занятиями и капстоун-проектом в конце.",
       q5:"Что я получаю по итогам уровня?",
       a5:"Рабочий проект, который вы соберёте и представите сами, плюс сертификационный тест — а не просто отметку о посещаемости.",
       q6:"Сколько стоит обучение и есть ли рассрочка?",
@@ -233,7 +233,7 @@ const translations = {
     formats: {
       h2:"O\u2018qish qanday o\u2018tadi", num:"03.5 — Formatlar",
       f1h:"Toshkentda oflayn", f1p:"Darslar auditoriyada o\u2018tadi — video yozuv yoki mustaqil o\u2018rganish emas.",
-      f2h:"Kichik guruhlar", f2p:"Guruhda 12 kishigacha — o\u2018qituvchida har birining savolini ko\u2018rib chiqishga vaqt bor.",
+      f2h:"Kichik guruhlar", f2p:"Guruhda 20 kishigacha — o\u2018qituvchida har birining savolini ko\u2018rib chiqishga vaqt bor.",
       f3h:"2 soatdan 15 ta dars", f3p:"Daraja kamida 3 oy davom etadi — shoshilmasdan, darslar orasida amaliyot bilan.",
       f4h:"Capstone + test", f4p:"Daraja oxirida — o\u2018z ishchi loyihangiz va sertifikatlash testi, shunchaki davomat emas."
     },
@@ -271,10 +271,10 @@ const translations = {
       h2:"Narxlar", num:"04 — Tariflar",
       note:"Narxlar bir oy uchun ko\u2018rsatilgan. Daraja kamida 3 oy davom etadi — yakuniy summa va muddatli to\u2018lovni bepul konsultatsiyada, yo\u2018nalish va darajangizga qarab hisoblaymiz.",
       currency:"so\u2018m / oy",
-      a1_1:"15 ta 2 soatlik dars", a1_2:"12 kishigacha guruh", a1_3:"Capstone-loyiha + test",
+      a1_1:"15 ta 2 soatlik dars", a1_2:"20 kishigacha guruh", a1_3:"Capstone-loyiha + test",
       a2_1:"15 ta 2 soatlik dars", a2_2:"Ishlarni shaxsiy tekshirish", a2_3:"To\u2018lovli full-stack mahsulot",
       a3_1:"15 ta 2 soatlik dars", a3_2:"Production-keyslarni tahlil qilish", a3_3:"SaaS-mahsulotni ishga tushirish",
-      m1_1:"15 ta 2 soatlik dars", m1_2:"12 kishigacha guruh", m1_3:"Marketing-reja + himoya",
+      m1_1:"15 ta 2 soatlik dars", m1_2:"20 kishigacha guruh", m1_3:"Marketing-reja + himoya",
       m2_1:"15 ta 2 soatlik dars", m2_2:"Ishlarni shaxsiy tekshirish", m2_3:"Yangilangan marketing-reja",
       m3_1:"15 ta 2 soatlik dars", m3_2:"Enterprise-keyslarni tahlil qilish", m3_3:"Ko\u2018p kanalli tizim",
       cta:"Yozilish"
@@ -300,7 +300,7 @@ const translations = {
       q3:"Pullik vositalar yoki obunalar sotib olish kerakmi?",
       a3:"Yo‘q. Dasturda ishlatiladigan barcha vositalar va platformalar bepul tarifda, kartasiz ishlaydi — birinchi darsdan capstone-loyihagacha.",
       q4:"Bitta daraja qancha davom etadi?",
-      a4:"Kamida 3 oy: 2 soatdan 15 ta dars, 12 kishigacha guruhlarda, darslar orasida amaliyot va oxirida capstone-loyiha bilan.",
+      a4:"Kamida 3 oy: 2 soatdan 15 ta dars, 20 kishigacha guruhlarda, darslar orasida amaliyot va oxirida capstone-loyiha bilan.",
       q5:"Daraja oxirida nima olaman?",
       a5:"O‘zingiz yig‘gan va taqdim etgan ishchi loyiha, shuningdek sertifikatlash testi — shunchaki davomat belgisi emas.",
       q6:"O‘qish qancha turadi va muddatli to‘lov bormi?",
