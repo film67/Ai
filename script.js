@@ -372,7 +372,8 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
    and drop the new one in here.
    ============================================================ */
 const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
-const TG_CHAT_ID = '-1004462776226';
+const TG_CHAT_ID = '-1004420315034';
+const TG_THREAD_ID = 15; // топик «Заявки» в новой группе
 const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
 /* modern toast notification */
@@ -536,6 +537,7 @@ if (applyForm) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           chat_id: TG_CHAT_ID,
+          message_thread_id: TG_THREAD_ID,
           text: lines.join('\n')
         })
       });
