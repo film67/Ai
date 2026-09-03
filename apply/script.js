@@ -9,7 +9,8 @@ const FORM_ENDPOINT = `https://formsubmit.co/ajax/${APPLY_EMAIL}`;
 // Accepted trade-off per project decision. Regenerate via @BotFather
 // (/revoke) and drop the new token in here if it's ever misused.
 const TG_BOT_TOKEN = '8888868988:AAHhObZu-32BQUH0xIzDDQe5igXorOLLHNk';
-const TG_CHAT_ID = '-1004462776226';
+const TG_CHAT_ID = '-1004420315034';
+const TG_THREAD_ID = 15; // топик «Заявки» в новой группе
 const TG_ENDPOINT = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`;
 
 // ---------- i18n: UZ / RU / EN ----------
@@ -213,7 +214,11 @@ if (applyForm) {
     const telegramPromise = fetch(TG_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: tgLines.join('\n') })
+      body: JSON.stringify({
+        chat_id: TG_CHAT_ID,
+        message_thread_id: TG_THREAD_ID,
+        text: tgLines.join('\n')
+      })
     }).catch(() => null);
 
     try {
