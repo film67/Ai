@@ -26,7 +26,7 @@ if ('IntersectionObserver' in window) {
    ============================================================ */
 const translations = {
   ru: {
-    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Процесс обучения", faq:"Вопросы", contact:"Контакты", cta:"Оставить заявку", themeToDark:"Включить тёмную тему", themeToLight:"Включить светлую тему" },
+    nav: { test:"AI-тест", philosophy:"Философия", programs:"Курсы", pricing:"Цены", process:"Процесс обучения", faq:"Вопросы", contact:"Контакты", contactBtn:"Контакт", cta:"Оставить заявку", themeToDark:"Включить тёмную тему", themeToLight:"Включить светлую тему" },
     hero: {
       eyebrow:"Think Like Tomorrow · Академия мышления в эпоху ИИ · Ташкент",
       title:'<span class="plate">Мы не учим</span> <mark>пользоваться ИИ</mark> <span class="plate">Мы учим</span> <mark>мыслить</mark>',
@@ -169,13 +169,13 @@ const translations = {
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
-    contact: { emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
+    contact: { telegramLabel:"Telegram", phoneLabel:"Телефон", emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
     foot: { city:"Ташкент.", contact:"Оставить заявку", tagline:"Think Like Tomorrow · Академия мышления в эпоху ИИ", navTitle:"Навигация", contactTitle:"Контакты", address:"Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»" }
   },
 
   uz: {
-    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", cta:"Ro‘yxatdan o‘tish", themeToDark:"Tungi rejimni yoqish", themeToLight:"Kunduzgi rejimni yoqish" },
+    nav: { test:"AI-test", philosophy:"Falsafa", programs:"Kurslar", pricing:"Narxlar", process:"Jarayon", faq:"Savollar", contact:"Aloqa", contactBtn:"Aloqa", cta:"Ro‘yxatdan o‘tish", themeToDark:"Tungi rejimni yoqish", themeToLight:"Kunduzgi rejimni yoqish" },
     hero: {
       eyebrow:"Think Like Tomorrow · Sun'iy intellekt davrida fikrlash akademiyasi · Toshkent",
       title:'<span class="plate">Biz</span> <mark>sun\u2018iy intellektdan foydalanishni</mark> <span class="plate">emas,</span> <mark>fikrlashni</mark> <span class="plate">o\u2018rgatamiz</span>',
@@ -318,7 +318,7 @@ const translations = {
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
-    contact: { emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
+    contact: { telegramLabel:"Telegram", phoneLabel:"Telefon", emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" }
   }
@@ -699,6 +699,43 @@ if (applyForm) {
       links.classList.remove('is-open');
       toggle.classList.remove('is-open');
       toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+
+/* ============================================================
+   CONTACT DROPDOWN (кнопка «Контакт» в шапке — Telegram/телефон)
+   ============================================================ */
+(function initContactDropdown() {
+  document.querySelectorAll('.contact-switch').forEach(switcher => {
+    const toggle = switcher.querySelector('.contact-toggle');
+    const menu = switcher.querySelector('.contact-menu');
+    if (!toggle || !menu) return;
+
+    function close() {
+      switcher.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    function open() {
+      document.querySelectorAll('.contact-switch.is-open').forEach(other => {
+        if (other !== switcher) other.classList.remove('is-open');
+      });
+      switcher.classList.add('is-open');
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      if (switcher.classList.contains('is-open')) close(); else open();
+    });
+
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+    document.addEventListener('click', (e) => {
+      if (!switcher.contains(e.target)) close();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') close();
     });
   });
 })();

@@ -2022,4 +2022,109 @@ button.btn-primary{
   .nav-links a{ white-space:nowrap; }
   .nav-right{ gap:9px; }
   .nav-cta{ padding:10px 12px; font-size:12px; }
+  .contact-toggle{ padding:8px 10px; font-size:11px; }
+}
+
+/* ============================================================
+   22 — КНОПКА «КОНТАКТ» (Telegram / телефон) В ШАПКЕ
+   Дропдаун рядом с RU/UZ и переключателем темы: на десктопе —
+   кнопка с раскрывающимся списком, на мобиле — просто две строки
+   внутри бургер-меню (см. .nav-contact-mobile ниже).
+   ============================================================ */
+.contact-switch{ position:relative; }
+
+.contact-toggle{
+  -webkit-appearance:none;
+  appearance:none;
+  background:transparent;
+  border:1px solid var(--line);
+  border-radius:2px;
+  color:var(--ink-soft);
+  font-family:var(--mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  padding:8px 12px;
+  cursor:pointer;
+  transition:color var(--t-fast) var(--ease-out), border-color var(--t-fast) var(--ease-out);
+}
+.contact-toggle:hover{ color:var(--ink); border-color:var(--signal); }
+.contact-switch.is-open .contact-toggle{ color:var(--ink); border-color:var(--signal); }
+
+.contact-menu{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  min-width:240px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:2px;
+  box-shadow:0 12px 32px rgba(0,0,0,0.18);
+  padding:6px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-6px);
+  transition:opacity .15s ease, transform .15s ease, visibility 0s linear .15s;
+  z-index:60;
+}
+.contact-switch.is-open .contact-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+  transition:opacity .15s ease, transform .15s ease;
+}
+.contact-menu-item{
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+  padding:10px 12px;
+  border-radius:2px;
+  text-decoration:none;
+  color:var(--ink);
+  transition:background var(--t-fast) var(--ease-out);
+}
+.contact-menu-item:hover{ background:var(--line); text-decoration:none; }
+.contact-menu-label{
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
+  color:var(--ink-soft);
+}
+.contact-menu-value{ font-size:14px; }
+
+[data-theme="dark"] .contact-menu{ box-shadow:0 12px 32px rgba(0,0,0,0.45); }
+
+@media (max-width:1000px){
+  .contact-switch{ display:none; }
+}
+
+/* --- Контакты внутри мобильного меню --- */
+.nav-contact-mobile{ display:none; }
+
+@media (max-width:1000px){
+  .nav-links{ max-height:0; } /* база — расширяем только .is-open ниже */
+  .nav-links.is-open{ max-height:560px; }
+
+  .nav-contact-mobile{
+    display:flex;
+    flex-direction:column;
+    gap:2px;
+    padding:14px 24px 22px;
+  }
+  .nav-contact-mobile a{
+    padding:6px 0;
+    font-size:14px;
+    text-decoration:none;
+    color:var(--ink);
+    opacity:0.85;
+  }
+  .nav-contact-mobile a:hover{ opacity:1; }
+  .nav-contact-mobile a span{
+    font-family:var(--mono);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    color:var(--ink-soft);
+  }
 }
