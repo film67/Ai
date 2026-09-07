@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script>
+(function () {
+  try {
+    localStorage.removeItem('thinklike-theme');
+    var saved = localStorage.getItem('thinklike-theme-manual');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) { /* ignore */ }
+})();
+</script>
+<title>Политика конфиденциальности | ThinkLike AI</title>
+<meta name="description" content="Политика конфиденциальности ThinkLike AI: какие данные собирает форма заявки, куда они передаются, сколько хранятся и как их удалить.">
+<link rel="canonical" href="https://thinklikeai.net/privacy.html">
+<meta name="robots" content="noindex, follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-mark" id="logoLink" aria-label="ThinkLike AI — на главную"><img src="logo-wordmark.png" alt="ThinkLike AI" class="nav-logo"></a>
+    <div class="nav-right">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
+      <a class="nav-cta" href="index.html">← На главную</a>
+    </div>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href="index.html">Главная</a>
+      <span aria-hidden="true">/</span>
+      <span>Политика конфиденциальности</span>
+    </nav>
+    <h1>Политика конфиденциальности</h1>
+    <p class="page-lead">Что мы собираем через сайт thinklikeai.net, зачем, кому это передаётся и как попросить нас всё удалить.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="legal">
+
+      <p class="legal-meta">
+        Редакция от <span class="fillin">__.__.2026</span> · Сайт: thinklikeai.net<br>
+        Оператор данных: <span class="fillin">ООО «____________»</span>, <span class="fillin">адрес, ИНН</span><br>
+        Контакт по вопросам данных: thinklikeaiuz@gmail.com
+      </p>
+
+      <h2>1. Общие положения</h2>
+      <p>Настоящая Политика описывает, какие персональные данные обрабатывает оператор сайта thinklikeai.net (далее — «мы», «Центр»), с какой целью и на каких условиях. Политика распространяется на данные, которые вы передаёте нам через формы и каналы связи, указанные на сайте.</p>
+      <p>Используя сайт и отправляя форму заявки, вы подтверждаете, что ознакомились с настоящей Политикой и согласны с обработкой ваших данных на описанных здесь условиях.</p>
+
+      <h2>2. Какие данные мы собираем</h2>
+      <p>Через форму заявки на сайте мы собираем только то, что вы заполняете сами:</p>
+      <ul>
+        <li><strong>Имя</strong> — обязательное поле;</li>
+        <li><strong>Номер телефона</strong> — обязательное поле;</li>
+        <li><strong>Ник в Telegram</strong> — по желанию;</li>
+        <li><strong>Комментарий</strong> — по желанию, произвольный текст.</li>
+      </ul>
+      <p>Мы не запрашиваем и не собираем через сайт паспортные данные, номера банковских карт, данные о здоровье и иные специальные категории персональных данных. Просим не указывать такие сведения в поле «Комментарий».</p>
+
+      <h3>2.1. Данные, которые сохраняются в вашем браузере</h3>
+      <p>Сайт сохраняет в локальном хранилище вашего браузера (<code>localStorage</code>) две технические настройки: выбранную вами тему оформления (светлая или тёмная) и выбранный язык интерфейса (русский или узбекский). Эти данные остаются только на вашем устройстве, не передаются нам и не позволяют вас идентифицировать. Их можно удалить, очистив данные сайта в настройках браузера.</p>
+      <p>Рекламные и трекинговые cookie-файлы сторонних сетей сайт не устанавливает.</p>
+
+      <h2>3. Цели обработки</h2>
+      <ul>
+        <li>связаться с вами по оставленной заявке и провести бесплатную консультацию;</li>
+        <li>подобрать направление и уровень обучения, ответить на ваши вопросы;</li>
+        <li>записать вас в группу и организовать обучение;</li>
+        <li>вести внутренний учёт обращений.</li>
+      </ul>
+      <p>Мы не используем ваши данные для рассылок, не связанных с вашим обращением, и не передаём их третьим лицам в рекламных целях.</p>
+
+      <h2>4. Правовое основание</h2>
+      <p>Обработка осуществляется на основании вашего согласия, которое вы даёте, отправляя форму заявки или обращаясь к нам через указанные на сайте каналы связи, а также в объёме, необходимом для оказания образовательных услуг и исполнения договора.</p>
+
+      <h2>5. Кому передаются данные</h2>
+      <p>Данные из формы заявки передаются в наш рабочий чат в мессенджере <strong>Telegram</strong> через официальный программный интерфейс Telegram Bot API. Это означает, что содержимое вашей заявки проходит через инфраструктуру Telegram Messenger и подпадает под условия и политику конфиденциальности Telegram.</p>
+      <p>Доступ к заявкам имеют только сотрудники Центра, которым он нужен для работы с обращениями. Государственным органам данные передаются только в случаях, прямо предусмотренных законодательством Республики Узбекистан.</p>
+
+      <h2>6. Сроки хранения</h2>
+      <p>Заявки хранятся в нашем рабочем чате и внутреннем учёте в течение срока, необходимого для обработки обращения и оказания услуг, но не дольше <span class="fillin">__ месяцев</span> с момента последнего контакта с вами. По вашему запросу данные удаляются раньше — см. раздел 8.</p>
+
+      <h2>7. Безопасность</h2>
+      <p>Мы ограничиваем круг сотрудников, имеющих доступ к обращениям, и принимаем разумные организационные меры для защиты данных от несанкционированного доступа. Обратите внимание: передача данных через мессенджеры и интернет не может быть гарантированно защищена на всём пути следования.</p>
+
+      <h2>8. Ваши права</h2>
+      <p>Вы вправе:</p>
+      <ul>
+        <li>узнать, какие ваши данные у нас есть;</li>
+        <li>потребовать исправить неточные данные;</li>
+        <li>отозвать согласие и потребовать удалить ваши данные;</li>
+        <li>возразить против обработки.</li>
+      </ul>
+      <p>Для этого напишите на <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a> или в Telegram <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">@ThinkLikeAI_manager</a>. Мы ответим в течение <span class="fillin">__ рабочих дней</span>. Отзыв согласия не влияет на законность обработки, которая была до отзыва.</p>
+
+      <h2>9. Дети и подростки</h2>
+      <p>На курсы принимаются учащиеся от 14 лет. Если заявку оставляет несовершеннолетний, мы исходим из того, что обучение согласовано с его родителем или законным представителем, и вправе запросить подтверждение до заключения договора.</p>
+
+      <h2>10. Изменения политики</h2>
+      <p>Мы можем обновлять эту Политику. Актуальная редакция всегда доступна по адресу thinklikeai.net/privacy.html, дата редакции указана в начале документа.</p>
+
+      <h2>11. Контакты</h2>
+      <p>
+        Почта: <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a><br>
+        Telegram: <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">@ThinkLikeAI_manager</a><br>
+        Телефон: <a href="tel:+998947125115">+998 94 712 51 15</a><br>
+        Адрес: массив Караташ, 2, Шайхантахурский район, Ташкент — 2 этаж здания «Korzinka»
+      </p>
+
+    </div>
+
+    <div class="page-cta">
+      <div>
+        <h2>Остались вопросы по данным?</h2>
+        <p>Напишите нам — ответим и при необходимости удалим всё, что у нас есть.</p>
+      </div>
+      <div class="hero-row">
+        <a class="btn-primary" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">Написать в Telegram</a>
+        <a class="btn-ghost" href="index.html#apply">На главную</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-row">
+      <span>© <span id="year"></span> ThinkLike AI. Ташкент.</span>
+      <a class="foot-apply" href="offer.html">Публичная оферта</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

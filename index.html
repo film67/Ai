@@ -23,9 +23,12 @@
 <title>ThinkLike AI — Think Like Tomorrow</title>
 <meta name="description" content="ThinkLike AI — Think Like Tomorrow. Образовательный проект в Ташкенте, который учит не пользоваться нейросетями, а мыслить вместе с ними. ИИ для автоматизации и ИИ для маркетинга — от новичка до продвинутого уровня.">
 
+<link rel="canonical" href="https://thinklikeai.net/">
+
 <meta property="og:title" content="ThinkLike AI — Think Like Tomorrow">
 <meta property="og:description" content="Мы не учим пользоваться ИИ. Мы учим мыслить.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://thinklikeai.net/">
 
 <script type="application/ld+json">
 {
@@ -183,7 +186,7 @@
       <a href="#philosophy" data-i18n="nav.philosophy">Философия</a>
       <a href="#programs" data-i18n="nav.programs">Курсы</a>
       <a href="#pricing" data-i18n="nav.pricing">Цены</a>
-      <a href="#process" data-i18n="nav.process">Как проходит</a>
+      <a href="#process" data-i18n="nav.process">Процесс обучения</a>
       <a href="#faq" data-i18n="nav.faq">Вопросы</a>
       <a href="#apply" data-i18n="nav.contact">Контакты</a>
       <div class="nav-contact-mobile">
@@ -199,19 +202,6 @@
       <div class="lang-switch" role="group" aria-label="Language">
         <button data-lang="ru" class="lang-btn is-active">RU</button>
         <button data-lang="uz" class="lang-btn">UZ</button>
-      </div>
-      <div class="contact-switch">
-        <button class="contact-toggle" type="button" aria-haspopup="true" aria-expanded="false" data-i18n="nav.contactBtn">Контакт</button>
-        <div class="contact-menu" role="menu">
-          <a class="contact-menu-item" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener" role="menuitem">
-            <span class="contact-menu-label" data-i18n="contact.telegramLabel">Telegram</span>
-            <span class="contact-menu-value">@ThinkLikeAI_manager</span>
-          </a>
-          <a class="contact-menu-item" href="tel:+998947125115" role="menuitem">
-            <span class="contact-menu-label" data-i18n="contact.phoneLabel">Телефон</span>
-            <span class="contact-menu-value">+998 94 712 51 15</span>
-          </a>
-        </div>
       </div>
       <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
         <span class="theme-toggle-icon" aria-hidden="true">☾</span>
@@ -359,26 +349,24 @@
       <div class="levels">
         <div class="level">
           <span class="tag">Beginner</span>
-          <p data-i18n="prog.a1Desc">Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.</p>
+          <p data-i18n="prog.a1Short">Первое веб-приложение без единой строки кода: описываете идею словами — ИИ собирает рабочую страницу, вы подключаете базу и публикуете по живой ссылке.</p>
           <div class="tools" data-i18n="prog.a1Tools">Replit · Lovable · Claude Code</div>
-          <p class="objection" data-i18n="prog.a1Obj">«Я никогда не программировал(а)». Здесь и не придётся: весь уровень — это разговор с ИИ на обычном языке. Если можете объяснить идею другу — этого достаточно, чтобы получить рабочее приложение.</p>
           <div class="who" data-i18n="prog.a1Who">от 3 месяцев · 15 занятий · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
           <span class="tag">Intermediate</span>
-          <p data-i18n="prog.a2Desc">Перейдёте от учебных прототипов к настоящим продуктам: освоите Claude Code и Cursor в режиме агента, спроектируете базу данных с несколькими связанными таблицами и подключите реальную оплату — Click.uz или Payme. Разберётесь с Git, как в настоящей команде разработки.</p>
+          <p data-i18n="prog.a2Short">От учебных прототипов к настоящим продуктам: агентный режим Claude Code и Cursor, база данных со связями, реальная оплата и работа с Git.</p>
           <div class="tools" data-i18n="prog.a2Tools">Claude Code · Cursor Agent · Click.uz / Payme</div>
-          <p class="objection" data-i18n="prog.a2Obj">«Мой прототип и так работает». Работает у вас на ноутбуке, в классе. Настоящий продукт должен пережить случайного пользователя со слабым интернетом и старым телефоном — этому и учит уровень.</p>
           <div class="who" data-i18n="prog.a2Who">от 3 месяцев · 15 занятий · после Beginner</div>
         </div>
         <div class="level">
           <span class="tag">Advanced</span>
-          <p data-i18n="prog.a3Desc">Запустите готовый SaaS-продукт: настроите CI/CD, чтобы изменения выкатывались без вашего участия, добавите подписку с реальной оплатой и доведёте систему до состояния, когда ей пользуются настоящие люди, а не только вы на демо.</p>
+          <p data-i18n="prog.a3Short">Запуск SaaS-продукта: CI/CD, подписка с оплатой и система, которой пользуются настоящие люди, а не только вы на демо.</p>
           <div class="tools" data-i18n="prog.a3Tools">CI/CD · Мульти-агентные системы · SaaS-биллинг</div>
-          <p class="objection" data-i18n="prog.a3Obj">«Для этого нужна команда разработчиков». После этого уровня — не нужна: вы сами спроектируете архитектуру, задеплоите и будете обслуживать продукт в одиночку.</p>
           <div class="who" data-i18n="prog.a3Who">от 3 месяцев · 15 занятий · после Intermediate</div>
         </div>
       </div>
+      <a class="btn-ghost direction-more" href="course-vibe-coding.html" data-i18n="prog.more">Подробнее о курсе →</a>
     </div>
 
     <div class="direction reveal" data-track="marketing">
@@ -390,27 +378,70 @@
       <div class="levels">
         <div class="level">
           <span class="tag">Beginner</span>
-          <p data-i18n="prog.m1Desc">Перестанете просить у чат-бота «напиши пост» и начнёте получать то, что нужно с первого раза. Научитесь готовить контент для соцсетей, рассылок и сайта, разберётесь, как люди находят вас в поиске.</p>
+          <p data-i18n="prog.m1Short">Промптинг, который даёт нужный результат с первого раза: контент для соцсетей, рассылок и сайта плюс основы того, как вас находят в поиске.</p>
           <div class="tools" data-i18n="prog.m1Tools">Промптинг · AI-контент · SEO основы</div>
-          <p class="objection" data-i18n="prog.m1Obj">«Я уже пользуюсь ChatGPT». Пользоваться и получать нужный результат — разное. Здесь вы уйдёте с планом продвижения для своего проекта, а не с папкой текстов, которые никуда не идут.</p>
           <div class="who" data-i18n="prog.m1Who">от 3 месяцев · 15 занятий · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
           <span class="tag">Intermediate</span>
-          <p data-i18n="prog.m2Desc">Научитесь считать, а не угадывать: какая рассылка принесла деньги, какой канал тратит впустую. Настроите сайт так, чтобы вас находил не только Google, но и ИИ-поисковики, которыми уже пользуются ваши клиенты.</p>
+          <p data-i18n="prog.m2Short">Считать, а не угадывать: какой канал принёс деньги, а какой тратит впустую. Плюс сайт, который находят и Google, и ИИ-поисковики.</p>
           <div class="tools" data-i18n="prog.m2Tools">Техническое SEO · Email-кампании · AI-агенты</div>
-          <p class="objection" data-i18n="prog.m2Obj">«Через полгода всё устареет». Инструменты — да. Умение понять, что именно принесло деньги, и повторить это — нет. Мы учим второму, инструменты меняем по ходу.</p>
           <div class="who" data-i18n="prog.m2Who">от 3 месяцев · 15 занятий · после Beginner</div>
         </div>
         <div class="level">
           <span class="tag">Advanced</span>
-          <p data-i18n="prog.m3Desc">Соберёте маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы контролируете риски — от неточных данных до репутации бренда.</p>
+          <p data-i18n="prog.m3Short">Маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы держите риски под контролем.</p>
           <div class="tools" data-i18n="prog.m3Tools">MCP для martech · NIST AI RMF · Омниканальные системы</div>
-          <p class="objection" data-i18n="prog.m3Obj">«У меня нет технической команды». После этого уровня она и не понадобится: вы сами соберёте систему и сами будете ей управлять.</p>
           <div class="who" data-i18n="prog.m3Who">от 3 месяцев · 15 занятий · после Intermediate</div>
         </div>
       </div>
+      <a class="btn-ghost direction-more" href="course-marketing.html" data-i18n="prog.more">Подробнее о курсе →</a>
     </div>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="tools.h2">Инструменты, с которыми работаем</h2>
+      <span class="section-num" data-i18n="tools.num">03.6 — Инструменты</span>
+    </div>
+
+    <div class="tool-groups">
+      <div class="tool-card reveal">
+        <h3 data-i18n="prog.dir1Name">Вайб-кодинг</h3>
+        <p data-i18n="tools.d1">От первого прототипа до продукта, который платит за себя.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">Replit</span>
+          <span class="tool-chip">Lovable</span>
+          <span class="tool-chip">Claude Code</span>
+          <span class="tool-chip">Cursor</span>
+          <span class="tool-chip">Git</span>
+          <span class="tool-chip" data-i18n="tools.db">Базы данных</span>
+          <span class="tool-chip">Click.uz</span>
+          <span class="tool-chip">Payme</span>
+          <span class="tool-chip">CI/CD</span>
+          <span class="tool-chip" data-i18n="tools.billing">SaaS-биллинг</span>
+        </div>
+      </div>
+      <div class="tool-card reveal">
+        <h3 data-i18n="prog.dir2Name">ИИ для маркетинга</h3>
+        <p data-i18n="tools.d2">От первого промпта до системы, которая ведёт клиента сама.</p>
+        <div class="tool-chips">
+          <span class="tool-chip" data-i18n="tools.prompting">Промптинг</span>
+          <span class="tool-chip" data-i18n="tools.aiContent">AI-контент</span>
+          <span class="tool-chip">SEO</span>
+          <span class="tool-chip" data-i18n="tools.techSeo">Техническое SEO</span>
+          <span class="tool-chip" data-i18n="tools.email">Email-кампании</span>
+          <span class="tool-chip" data-i18n="tools.agents">AI-агенты</span>
+          <span class="tool-chip">MCP</span>
+          <span class="tool-chip">NIST AI RMF</span>
+          <span class="tool-chip" data-i18n="tools.omni">Омниканальные системы</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="tools-note" data-i18n="tools.note">Инструменты обновляются каждый набор: если завтра появится сервис, который делает то же самое лучше, вы разберётесь в нём за вечер — потому что понимаете, что именно он должен делать.</p>
   </div>
 </section>
 
@@ -523,6 +554,32 @@
           </ul>
           <a class="btn-ghost" href="#apply" data-program="Marketing-Advanced" data-i18n="price.cta">Записаться</a>
         </div>
+      </div>
+    </div>
+
+    <div class="pay-grid">
+      <div class="pay-card reveal">
+        <h4 data-i18n="pay.onlineTitle">Онлайн-оплата</h4>
+        <div class="pay-badges">
+          <span class="pay-badge">Payme</span>
+          <span class="pay-badge">Click</span>
+        </div>
+        <p data-i18n="pay.onlineDesc">Переводом через привычные приложения — квитанция остаётся у вас в истории платежей.</p>
+      </div>
+      <div class="pay-card reveal">
+        <h4 data-i18n="pay.cardTitle">Картой и переводом</h4>
+        <div class="pay-badges">
+          <span class="pay-badge">Uzcard</span>
+          <span class="pay-badge">Humo</span>
+        </div>
+        <p data-i18n="pay.cardDesc">Перевод на карту центра или оплата картой — реквизиты даём на консультации.</p>
+      </div>
+      <div class="pay-card reveal">
+        <h4 data-i18n="pay.cashTitle">Наличными в центре</h4>
+        <div class="pay-badges">
+          <span class="pay-badge" data-i18n="pay.cashBadge">Наличные</span>
+        </div>
+        <p data-i18n="pay.cashDesc">На месте, на Караташе — можно оплачивать помесячно, за каждый месяц уровня отдельно.</p>
       </div>
     </div>
   </div>
@@ -656,24 +713,24 @@
       <div class="apply-side reveal">
         <p class="lead" data-i18n="apply.sideLead">Оставьте заявку — мы свяжемся с вами сами.</p>
 
-        <ul class="contact-list">
-          <li>
-            <span class="contact-k" data-i18n="contact.telegramLabel">Telegram</span>
-            <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">@ThinkLikeAI_manager</a>
-          </li>
-          <li>
-            <span class="contact-k" data-i18n="contact.phoneLabel">Телефон</span>
-            <a href="tel:+998947125115">+998 94 712 51 15</a>
-          </li>
-          <li>
-            <span class="contact-k" data-i18n="contact.emailLabel">Почта</span>
-            <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a>
-          </li>
-          <li>
-            <span class="contact-k" data-i18n="contact.addressLabel">Адрес</span>
-            <span data-i18n="contact.address">массив Караташ, 2, Шайхантахурский р-н, Ташкент (м. «Дружба народов»)</span>
-          </li>
-        </ul>
+        <div class="contact-tiles">
+          <a class="contact-tile is-primary" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">
+            <span class="ct-k" data-i18n="contact.telegramLabel">Telegram</span>
+            <span class="ct-v">@ThinkLikeAI_manager</span>
+          </a>
+          <a class="contact-tile" href="tel:+998947125115">
+            <span class="ct-k" data-i18n="contact.phoneLabel">Телефон</span>
+            <span class="ct-v">+998 94 712 51 15</span>
+          </a>
+          <a class="contact-tile" href="mailto:thinklikeaiuz@gmail.com">
+            <span class="ct-k" data-i18n="contact.emailLabel">Почта</span>
+            <span class="ct-v">thinklikeaiuz@gmail.com</span>
+          </a>
+          <a class="contact-tile" href="https://www.google.com/maps?q=41.3162672,69.2329414" target="_blank" rel="noopener">
+            <span class="ct-k" data-i18n="contact.addressLabel">Адрес</span>
+            <span class="ct-v" data-i18n="contact.addressShort">массив Караташ, 2 — 2 этаж «Korzinka», Ташкент</span>
+          </a>
+        </div>
 
         <p class="apply-note" data-i18n="apply.note">Отвечаем в течение дня в будни.</p>
       </div>
@@ -691,8 +748,14 @@
       <div class="foot-col">
         <h5 data-i18n="foot.navTitle">Навигация</h5>
         <a href="#philosophy" data-i18n="nav.philosophy">Философия</a>
-        <a href="#programs" data-i18n="nav.programs">Курсы</a>
+        <a href="course-vibe-coding.html" data-i18n="prog.dir1Name">Вайб-кодинг</a>
+        <a href="course-marketing.html" data-i18n="prog.dir2Name">ИИ для маркетинга</a>
         <a href="#pricing" data-i18n="nav.pricing">Цены</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.legalTitle">Документы</h5>
+        <a href="offer.html" data-i18n="foot.offer">Публичная оферта</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Политика конфиденциальности</a>
       </div>
       <div class="foot-col">
         <h5 data-i18n="foot.contactTitle">Контакты</h5>

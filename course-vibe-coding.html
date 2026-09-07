@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script>
+/* тема ставится до отрисовки CSS, чтобы страница не мигала не той темой */
+(function () {
+  try {
+    localStorage.removeItem('thinklike-theme');
+    var saved = localStorage.getItem('thinklike-theme-manual');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) { /* ignore */ }
+})();
+</script>
+<title>Вайб-кодинг с ИИ — курс в Ташкенте | ThinkLike AI</title>
+<meta name="description" content="Курс вайб-кодинга в Ташкенте: Replit, Lovable, Claude Code, Cursor. Три уровня от первого приложения без кода до запущенного SaaS-продукта. Офлайн, группы до 20 человек, на русском и узбекском.">
+<link rel="canonical" href="https://thinklikeai.net/course-vibe-coding.html">
+
+<meta property="og:title" content="Вайб-кодинг с ИИ — курс в Ташкенте | ThinkLike AI">
+<meta property="og:description" content="От первого приложения, собранного словами, до SaaS-продукта, которым пользуются настоящие люди.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thinklikeai.net/course-vibe-coding.html">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Вайб-кодинг с ИИ",
+  "description": "Три уровня: от первого веб-приложения без кода до запущенного SaaS-продукта. Replit, Lovable, Claude Code, Cursor, Click.uz и Payme.",
+  "url": "https://thinklikeai.net/course-vibe-coding.html",
+  "inLanguage": ["ru", "uz"],
+  "educationalLevel": "Beginner, Intermediate, Advanced",
+  "teaches": "Разработка веб-приложений с помощью ИИ без опыта программирования",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "ThinkLike AI",
+    "url": "https://thinklikeai.net/"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "onsite",
+    "courseWorkload": "P3M",
+    "location": {
+      "@type": "Place",
+      "name": "ThinkLike AI",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "массив Караташ, 2, 2 этаж «Korzinka»",
+        "addressLocality": "Ташкент",
+        "addressCountry": "UZ"
+      }
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "1200000",
+    "priceCurrency": "UZS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://thinklikeai.net/#pricing"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="index.html" class="nav-mark" id="logoLink" aria-label="ThinkLike AI — на главную"><img src="logo-wordmark.png" alt="ThinkLike AI" class="nav-logo"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#philosophy" data-i18n="nav.philosophy">Философия</a>
+      <a href="index.html#programs" data-i18n="nav.programs">Курсы</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing">Цены</a>
+      <a href="index.html#process" data-i18n="nav.process">Процесс обучения</a>
+      <a href="index.html#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="index.html#apply" data-i18n="nav.contact">Контакты</a>
+      <div class="nav-contact-mobile">
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">
+          <span data-i18n="contact.telegramLabel">Telegram</span> — @ThinkLikeAI_manager
+        </a>
+        <a href="tel:+998947125115">
+          <span data-i18n="contact.phoneLabel">Телефон</span> — +998 94 712 51 15
+        </a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="ru" class="lang-btn is-active">RU</button>
+        <button data-lang="uz" class="lang-btn">UZ</button>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
+      <a class="nav-cta" href="index.html#apply" data-i18n="nav.cta">Оставить заявку</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<a href="index.html#apply" class="float-cta" data-i18n="nav.cta">Оставить заявку</a>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href="index.html" data-i18n="page.home">Главная</a>
+      <span aria-hidden="true">/</span>
+      <a href="index.html#programs" data-i18n="page.courses">Курсы</a>
+      <span aria-hidden="true">/</span>
+      <span data-i18n="prog.dir1Name">Вайб-кодинг</span>
+    </nav>
+    <h1 data-i18n="vc.title">Вайб-кодинг: приложения и продукты с ИИ</h1>
+    <p class="page-lead" data-i18n="vc.lead">Три уровня: от первого приложения, собранного словами, до SaaS-продукта, которым пользуются настоящие люди. Без опыта программирования — на русском и узбекском, офлайн в Ташкенте.</p>
+    <div class="page-facts">
+      <span class="page-fact" data-i18n="vc.f1">3 уровня · 45 занятий</span>
+      <span class="page-fact" data-i18n="vc.f2">от 3 месяцев на уровень</span>
+      <span class="page-fact" data-i18n="vc.f3">группы до 20 человек</span>
+      <span class="page-fact" data-i18n="vc.f4">от 14 лет, без опыта</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="page.levelsTitle">Уровни курса</h2>
+      <span class="section-num" data-i18n="page.levelsNum">01 — Программа</span>
+    </div>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag">Beginner</span>
+        <h3 data-i18n="vc.l1Name">Первое рабочее приложение</h3>
+      </div>
+      <p data-i18n="vc.l1Desc">Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l1i1">Как объяснить идею ИИ так, чтобы он собрал именно то, что вы хотели</li>
+        <li data-i18n="vc.l1i2">Сборка страницы в Replit и Lovable — от пустого экрана до рабочего интерфейса</li>
+        <li data-i18n="vc.l1i3">Подключение базы данных: форма сохраняет заявки, а не теряет их</li>
+        <li data-i18n="vc.l1i4">Публикация по живой ссылке, которую можно отправить клиенту</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l1Obj">«Я никогда не программировал(а)». Здесь и не придётся: весь уровень — это разговор с ИИ на обычном языке. Если можете объяснить идею другу — этого достаточно, чтобы получить рабочее приложение.</p>
+      <div class="module-foot">
+        <span data-i18n="prog.a1Tools">Replit · Lovable · Claude Code</span>
+        <span data-i18n="prog.a1Who">от 3 месяцев · 15 занятий · от 14 лет · без опыта</span>
+      </div>
+    </article>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag">Intermediate</span>
+        <h3 data-i18n="vc.l2Name">Настоящий продукт с оплатой</h3>
+      </div>
+      <p data-i18n="vc.l2Desc">Перейдёте от учебных прототипов к настоящим продуктам: освоите Claude Code и Cursor в режиме агента, спроектируете базу данных с несколькими связанными таблицами и подключите реальную оплату — Click.uz или Payme. Разберётесь с Git, как в настоящей команде разработки.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l2i1">Агентный режим: ИИ работает с целым проектом, а не с одним файлом</li>
+        <li data-i18n="vc.l2i2">Проектирование базы: несколько таблиц и связи между ними</li>
+        <li data-i18n="vc.l2i3">Реальная оплата в приложении — Click.uz и Payme</li>
+        <li data-i18n="vc.l2i4">Git и командная работа: ветки, история, откат изменений</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l2Obj">«Мой прототип и так работает». Работает у вас на ноутбуке, в классе. Настоящий продукт должен пережить случайного пользователя со слабым интернетом и старым телефоном — этому и учит уровень.</p>
+      <div class="module-foot">
+        <span data-i18n="prog.a2Tools">Claude Code · Cursor Agent · Click.uz / Payme</span>
+        <span data-i18n="prog.a2Who">от 3 месяцев · 15 занятий · после Beginner</span>
+      </div>
+    </article>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag">Advanced</span>
+        <h3 data-i18n="vc.l3Name">Свой SaaS в проде</h3>
+      </div>
+      <p data-i18n="vc.l3Desc">Запустите готовый SaaS-продукт: настроите CI/CD, чтобы изменения выкатывались без вашего участия, добавите подписку с реальной оплатой и доведёте систему до состояния, когда ей пользуются настоящие люди, а не только вы на демо.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l3i1">CI/CD: изменения уезжают в продакшн сами, без ручного деплоя</li>
+        <li data-i18n="vc.l3i2">Мульти-агентные системы: несколько ИИ-агентов в одном продукте</li>
+        <li data-i18n="vc.l3i3">Подписочная модель и биллинг</li>
+        <li data-i18n="vc.l3i4">Что делать, когда продукт сломался у живого пользователя</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l3Obj">«Для этого нужна команда разработчиков». После этого уровня — не нужна: вы сами спроектируете архитектуру, задеплоите и будете обслуживать продукт в одиночку.</p>
+      <div class="module-foot">
+        <span data-i18n="prog.a3Tools">CI/CD · Мульти-агентные системы · SaaS-биллинг</span>
+        <span data-i18n="prog.a3Who">от 3 месяцев · 15 занятий · после Intermediate</span>
+      </div>
+    </article>
+
+    <a class="btn-ghost direction-more" href="index.html#pricing" data-i18n="page.pricesLink">Цены и рассрочка →</a>
+
+    <div class="page-cta">
+      <div>
+        <h2 data-i18n="page.ctaTitle">Начните с бесплатной консультации</h2>
+        <p data-i18n="page.ctaText">Разберём ваш уровень и цель, подберём направление и посчитаем итоговую сумму.</p>
+      </div>
+      <div class="hero-row">
+        <a class="btn-primary" href="index.html#apply" data-i18n="page.ctaBtn">Оставить заявку</a>
+        <a class="btn-ghost" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener" data-i18n="page.ctaTg">Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo">ThinkLike AI</span>
+        <p data-i18n="foot.tagline">Think Like Tomorrow · Академия мышления в эпоху ИИ</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.navTitle">Навигация</h5>
+        <a href="index.html#philosophy" data-i18n="nav.philosophy">Философия</a>
+        <a href="course-vibe-coding.html" data-i18n="prog.dir1Name">Вайб-кодинг</a>
+        <a href="course-marketing.html" data-i18n="prog.dir2Name">ИИ для маркетинга</a>
+        <a href="index.html#pricing" data-i18n="nav.pricing">Цены</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.legalTitle">Документы</h5>
+        <a href="offer.html" data-i18n="foot.offer">Публичная оферта</a>
+        <a href="privacy.html" data-i18n="foot.privacy">Политика конфиденциальности</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.contactTitle">Контакты</h5>
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">Telegram: @ThinkLikeAI_manager</a>
+        <a href="tel:+998947125115">+998 94 712 51 15</a>
+        <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a>
+        <span data-i18n="foot.address">Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»</span>
+      </div>
+    </div>
+    <div class="foot-row">
+      <span>© <span id="year"></span> ThinkLike AI. <span data-i18n="foot.city">Ташкент.</span></span>
+      <a class="foot-apply" href="index.html#apply" data-i18n="foot.contact">Оставить заявку</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

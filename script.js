@@ -116,7 +116,14 @@ const translations = {
       m3Desc:"Соберёте маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы контролируете риски — от неточных данных до репутации бренда.",
       m3Tools:"MCP для martech · NIST AI RMF · Омниканальные системы",
       m3Obj:"«У меня нет технической команды». После этого уровня она и не понадобится: вы сами соберёте систему и сами будете ей управлять.",
-      m3Who:"от 3 месяцев · 15 занятий · после Intermediate"
+      m3Who:"от 3 месяцев · 15 занятий · после Intermediate",
+      more:"Подробнее о курсе →",
+      a1Short:"Первое веб-приложение без единой строки кода: описываете идею словами — ИИ собирает рабочую страницу, вы подключаете базу и публикуете по живой ссылке.",
+      a2Short:"От учебных прототипов к настоящим продуктам: агентный режим Claude Code и Cursor, база данных со связями, реальная оплата и работа с Git.",
+      a3Short:"Запуск SaaS-продукта: CI/CD, подписка с оплатой и система, которой пользуются настоящие люди, а не только вы на демо.",
+      m1Short:"Промптинг, который даёт нужный результат с первого раза: контент для соцсетей, рассылок и сайта плюс основы того, как вас находят в поиске.",
+      m2Short:"Считать, а не угадывать: какой канал принёс деньги, а какой тратит впустую. Плюс сайт, который находят и Google, и ИИ-поисковики.",
+      m3Short:"Маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы держите риски под контролем."
     },
     price: {
       h2:"Цены", num:"04 — Тарифы",
@@ -169,9 +176,96 @@ const translations = {
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
-    contact: { telegramLabel:"Telegram", phoneLabel:"Телефон", emailLabel:"Почта", addressLabel:"Адрес", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
+    contact: { telegramLabel:"Telegram", phoneLabel:"Телефон", emailLabel:"Почта", addressLabel:"Адрес", addressShort:"массив Караташ, 2 — 2 этаж «Korzinka», Ташкент", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
-    foot: { city:"Ташкент.", contact:"Оставить заявку", tagline:"Think Like Tomorrow · Академия мышления в эпоху ИИ", navTitle:"Навигация", contactTitle:"Контакты", address:"Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»" }
+    foot: { city:"Ташкент.", contact:"Оставить заявку", tagline:"Think Like Tomorrow · Академия мышления в эпоху ИИ", navTitle:"Навигация", contactTitle:"Контакты", legalTitle:"Документы", offer:"Публичная оферта", privacy:"Политика конфиденциальности", address:"Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»" },
+
+    tools: {
+      h2:"Инструменты, с которыми работаем", num:"03.6 — Инструменты",
+      d1:"От первого прототипа до продукта, который платит за себя.",
+      d2:"От первого промпта до системы, которая ведёт клиента сама.",
+      db:"Базы данных", billing:"SaaS-биллинг",
+      prompting:"Промптинг", aiContent:"AI-контент", techSeo:"Техническое SEO",
+      email:"Email-кампании", agents:"AI-агенты", omni:"Омниканальные системы",
+      note:"Инструменты обновляются каждый набор: если завтра появится сервис, который делает то же самое лучше, вы разберётесь в нём за вечер — потому что понимаете, что именно он должен делать."
+    },
+
+    pay: {
+      onlineTitle:"Онлайн-оплата",
+      onlineDesc:"Переводом через привычные приложения — квитанция остаётся у вас в истории платежей.",
+      cardTitle:"Картой и переводом",
+      cardDesc:"Перевод на карту центра или оплата картой — реквизиты даём на консультации.",
+      cashTitle:"Наличными в центре",
+      cashBadge:"Наличные",
+      cashDesc:"На месте, на Караташе — можно оплачивать помесячно, за каждый месяц уровня отдельно."
+    },
+
+    page: {
+      home:"Главная", courses:"Курсы", back:"← На главную",
+      ctaTitle:"Начните с бесплатной консультации",
+      ctaText:"Разберём ваш уровень и цель, подберём направление и посчитаем итоговую сумму.",
+      ctaBtn:"Оставить заявку",
+      ctaTg:"Написать в Telegram",
+      pricesLink:"Цены и рассрочка →",
+      levelsTitle:"Уровни курса", levelsNum:"01 — Программа",
+      toolsTitle:"Инструменты уровня", resultTitle:"Что будет на выходе", objectionTitle:"Частое сомнение"
+    },
+
+    vc: {
+      title:"Вайб-кодинг: приложения и продукты с ИИ",
+      l1Name:"Первое рабочее приложение", l2Name:"Настоящий продукт с оплатой", l3Name:"Свой SaaS в проде",
+      lead:"Три уровня: от первого приложения, собранного словами, до SaaS-продукта, которым пользуются настоящие люди. Без опыта программирования — на русском и узбекском, офлайн в Ташкенте.",
+      f1:"3 уровня · 45 занятий", f2:"от 3 месяцев на уровень", f3:"группы до 20 человек", f4:"от 14 лет, без опыта",
+      l1Desc:"Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.",
+      l1i1:"Как объяснить идею ИИ так, чтобы он собрал именно то, что вы хотели",
+      l1i2:"Сборка страницы в Replit и Lovable — от пустого экрана до рабочего интерфейса",
+      l1i3:"Подключение базы данных: форма сохраняет заявки, а не теряет их",
+      l1i4:"Публикация по живой ссылке, которую можно отправить клиенту",
+      l1Obj:"«Я никогда не программировал(а)». Здесь и не придётся: весь уровень — это разговор с ИИ на обычном языке. Если можете объяснить идею другу — этого достаточно, чтобы получить рабочее приложение.",
+      l1Res:"Опубликованное веб-приложение с работающей формой и базой данных + сертификационный тест уровня.",
+      l2Desc:"Перейдёте от учебных прототипов к настоящим продуктам: освоите Claude Code и Cursor в режиме агента, спроектируете базу данных с несколькими связанными таблицами и подключите реальную оплату — Click.uz или Payme. Разберётесь с Git, как в настоящей команде разработки.",
+      l2i1:"Агентный режим: ИИ работает с целым проектом, а не с одним файлом",
+      l2i2:"Проектирование базы: несколько таблиц и связи между ними",
+      l2i3:"Реальная оплата в приложении — Click.uz и Payme",
+      l2i4:"Git и командная работа: ветки, история, откат изменений",
+      l2Obj:"«Мой прототип и так работает». Работает у вас на ноутбуке, в классе. Настоящий продукт должен пережить случайного пользователя со слабым интернетом и старым телефоном — этому и учит уровень.",
+      l2Res:"Full-stack продукт с подключённой оплатой и историей изменений в Git + сертификационный тест уровня.",
+      l3Desc:"Запустите готовый SaaS-продукт: настроите CI/CD, чтобы изменения выкатывались без вашего участия, добавите подписку с реальной оплатой и доведёте систему до состояния, когда ей пользуются настоящие люди, а не только вы на демо.",
+      l3i1:"CI/CD: изменения уезжают в продакшн сами, без ручного деплоя",
+      l3i2:"Мульти-агентные системы: несколько ИИ-агентов в одном продукте",
+      l3i3:"Подписочная модель и биллинг",
+      l3i4:"Что делать, когда продукт сломался у живого пользователя",
+      l3Obj:"«Для этого нужна команда разработчиков». После этого уровня — не нужна: вы сами спроектируете архитектуру, задеплоите и будете обслуживать продукт в одиночку.",
+      l3Res:"Работающий SaaS-продукт с подпиской, автодеплоем и живыми пользователями + сертификационный тест уровня."
+    },
+
+    mk: {
+      title:"ИИ для маркетинга: от промпта до системы",
+      l1Name:"Контент, который работает", l2Name:"Маркетинг, который считается", l3Name:"Система, которая ведёт клиента",
+      lead:"Три уровня: от контента, который получается с первого раза, до омниканальной системы, где ИИ ведёт клиента от первого касания до покупки. Офлайн в Ташкенте, на русском и узбекском.",
+      f1:"3 уровня · 45 занятий", f2:"от 3 месяцев на уровень", f3:"группы до 20 человек", f4:"от 14 лет, без опыта",
+      l1Desc:"Перестанете просить у чат-бота «напиши пост» и начнёте получать то, что нужно с первого раза. Научитесь готовить контент для соцсетей, рассылок и сайта, разберётесь, как люди находят вас в поиске.",
+      l1i1:"Промптинг, который даёт нужный результат, а не «ещё один текст»",
+      l1i2:"Контент для соцсетей, рассылок и сайта — пачками, а не по одному",
+      l1i3:"Основы SEO: почему вас находят или не находят в поиске",
+      l1i4:"План продвижения для своего проекта, а не абстрактная теория",
+      l1Obj:"«Я уже пользуюсь ChatGPT». Пользоваться и получать нужный результат — разное. Здесь вы уйдёте с планом продвижения для своего проекта, а не с папкой текстов, которые никуда не идут.",
+      l1Res:"Готовый маркетинг-план вашего проекта с защитой перед группой + сертификационный тест уровня.",
+      l2Desc:"Научитесь считать, а не угадывать: какая рассылка принесла деньги, какой канал тратит впустую. Настроите сайт так, чтобы вас находил не только Google, но и ИИ-поисковики, которыми уже пользуются ваши клиенты.",
+      l2i1:"Аналитика: какой канал принёс деньги, а какой только тратил бюджет",
+      l2i2:"Техническое SEO — и отдельно то, как вас видят ИИ-поисковики",
+      l2i3:"Email-кампании, которые читают и по которым переходят",
+      l2i4:"Первые AI-агенты в маркетинге: что им можно доверить, а что нет",
+      l2Obj:"«Через полгода всё устареет». Инструменты — да. Умение понять, что именно принесло деньги, и повторить это — нет. Мы учим второму, инструменты меняем по ходу.",
+      l2Res:"Обновлённый маркетинг-план с цифрами по каналам + сертификационный тест уровня.",
+      l3Desc:"Соберёте маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы контролируете риски — от неточных данных до репутации бренда.",
+      l3i1:"Омниканальная система: соцсети, рассылки и сайт в одной логике",
+      l3i2:"MCP для martech: ИИ работает с вашими реальными данными",
+      l3i3:"Управление рисками по NIST AI RMF — что делать, когда ИИ ошибается",
+      l3i4:"Разбор enterprise-кейсов: где такие системы ломаются на практике",
+      l3Obj:"«У меня нет технической команды». После этого уровня она и не понадобится: вы сами соберёте систему и сами будете ей управлять.",
+      l3Res:"Работающая омниканальная система с контролем рисков + сертификационный тест уровня."
+    }
   },
 
   uz: {
@@ -265,7 +359,14 @@ const translations = {
       m3Desc:"Barcha kanallar birgalikda ishlaydigan marketing yig\u2018asiz: AI mijozni birinchi aloqadan xaridgacha olib boradi, siz esa xatarlarni nazorat qilasiz — noto\u2018g\u2018ri ma'lumotdan brend obro\u2018sigacha.",
       m3Tools:"Martech uchun MCP · NIST AI RMF · Ko\u2018p kanalli tizimlar",
       m3Obj:"«Menda texnik jamoa yo\u2018q». Bu darajadan keyin u kerak ham bo\u2018lmaydi: tizimni o\u2018zingiz yig\u2018asiz va o\u2018zingiz boshqarasiz.",
-      m3Who:"kamida 3 oy · 15 dars · Intermediate'dan keyin"
+      m3Who:"kamida 3 oy · 15 dars · Intermediate'dan keyin",
+      more:"Kurs haqida batafsil →",
+      a1Short:"Bitta ham kod yozmasdan birinchi veb-ilova: g‘oyani so‘z bilan tasvirlaysiz — AI ishlaydigan sahifa yig‘adi, siz baza ulaysiz va jonli havola bilan e’lon qilasiz.",
+      a2Short:"O‘quv prototiplaridan haqiqiy mahsulotlarga: Claude Code va Cursor agent rejimida, bog‘langan jadvalli baza, haqiqiy to‘lov va Git bilan ishlash.",
+      a3Short:"SaaS-mahsulotni ishga tushirish: CI/CD, to‘lovli obuna va haqiqiy odamlar foydalanadigan tizim — faqat demo emas.",
+      m1Short:"Birinchi urinishdayoq kerakli natija beradigan prompting: ijtimoiy tarmoq, xat yuborish va sayt uchun kontent hamda qidiruvda topilish asoslari.",
+      m2Short:"Taxmin qilish emas, hisoblash: qaysi kanal pul keltirdi, qaysi biri behuda sarfladi. Va Google ham, AI-qidiruvlar ham topadigan sayt.",
+      m3Short:"Barcha kanallar birgalikda ishlaydigan marketing: AI mijozni birinchi aloqadan xaridgacha olib boradi, siz xatarlarni nazorat qilasiz."
     },
     price: {
       h2:"Narxlar", num:"04 — Tariflar",
@@ -318,9 +419,96 @@ const translations = {
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
-    contact: { telegramLabel:"Telegram", phoneLabel:"Telefon", emailLabel:"Pochta", addressLabel:"Manzil", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
+    contact: { telegramLabel:"Telegram", phoneLabel:"Telefon", emailLabel:"Pochta", addressLabel:"Manzil", addressShort:"Qorataosh massivi, 2 — «Korzinka» binosi 2-qavat, Toshkent", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
-    foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" }
+    foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", legalTitle:"Hujjatlar", offer:"Ommaviy oferta", privacy:"Maxfiylik siyosati", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" },
+
+    tools: {
+      h2:"Biz ishlaydigan vositalar", num:"03.6 — Vositalar",
+      d1:"Birinchi prototipdan o‘zini oqlaydigan mahsulotgacha.",
+      d2:"Birinchi promptdan mijozni o‘zi yetaklaydigan tizimgacha.",
+      db:"Ma’lumotlar bazasi", billing:"SaaS-billing",
+      prompting:"Prompting", aiContent:"AI-kontent", techSeo:"Texnik SEO",
+      email:"Email-kampaniyalar", agents:"AI-agentlar", omni:"Ko‘p kanalli tizimlar",
+      note:"Vositalar har bir guruhda yangilanadi: ertaga xuddi shuni yaxshiroq qiladigan servis chiqsa, siz uni bir kechada o‘zlashtirasiz — chunki u aynan nima qilishi kerakligini tushunasiz."
+    },
+
+    pay: {
+      onlineTitle:"Onlayn to‘lov",
+      onlineDesc:"Odatdagi ilovalar orqali o‘tkazma — kvitansiya to‘lovlar tarixingizda qoladi.",
+      cardTitle:"Karta va o‘tkazma",
+      cardDesc:"Markaz kartasiga o‘tkazma yoki karta bilan to‘lov — rekvizitlarni konsultatsiyada beramiz.",
+      cashTitle:"Markazda naqd pul",
+      cashBadge:"Naqd pul",
+      cashDesc:"Qorataoshda, joyida — daraja har bir oyi uchun alohida, oylik to‘lash mumkin."
+    },
+
+    page: {
+      home:"Bosh sahifa", courses:"Kurslar", back:"← Bosh sahifaga",
+      ctaTitle:"Bepul konsultatsiyadan boshlang",
+      ctaText:"Darajangiz va maqsadingizni aniqlaymiz, yo‘nalish tanlaymiz va yakuniy summani hisoblaymiz.",
+      ctaBtn:"Ariza qoldirish",
+      ctaTg:"Telegramga yozish",
+      pricesLink:"Narxlar va muddatli to‘lov →",
+      levelsTitle:"Kurs darajalari", levelsNum:"01 — Dastur",
+      toolsTitle:"Daraja vositalari", resultTitle:"Natijada nima bo‘ladi", objectionTitle:"Ko‘p uchraydigan shubha"
+    },
+
+    vc: {
+      title:"Vibe Coding: AI bilan ilova va mahsulotlar",
+      l1Name:"Birinchi ishlaydigan ilova", l2Name:"To‘lovli haqiqiy mahsulot", l3Name:"O‘z SaaS mahsulotingiz produksiyada",
+      lead:"Uch daraja: so‘z bilan yig‘ilgan birinchi ilovadan haqiqiy odamlar foydalanadigan SaaS-mahsulotgacha. Dasturlash tajribasisiz — rus va o‘zbek tillarida, Toshkentda oflayn.",
+      f1:"3 daraja · 45 dars", f2:"daraja kamida 3 oy", f3:"20 kishigacha guruh", f4:"14 yoshdan, tajribasiz",
+      l1Desc:"Bitta ham kod yozmasdan birinchi veb-ilovangizni yaratasiz: g‘oyani so‘z bilan tasvirlaysiz — AI Replit yoki Lovable’da ishlaydigan sahifa yig‘adi. Ma’lumotlar bazasini ulaysiz, forma haqiqatan arizalarni saqlaydi, va saytni jonli havola orqali e’lon qilasiz.",
+      l1i1:"G‘oyani AI’ga qanday tushuntirish kerak, u aynan siz istagan narsani yig‘ishi uchun",
+      l1i2:"Replit va Lovable’da sahifa yig‘ish — bo‘sh ekrandan ishlaydigan interfeysgacha",
+      l1i3:"Ma’lumotlar bazasini ulash: forma arizalarni yo‘qotmaydi, saqlaydi",
+      l1i4:"Mijozga yuborish mumkin bo‘lgan jonli havola bilan e’lon qilish",
+      l1Obj:"«Men hech qachon dasturlashtirmaganman». Bu yerda kerak ham emas: butun daraja — AI bilan oddiy tilda suhbat. G‘oyangizni do‘stingizga tushuntira olsangiz — ishlaydigan ilova olish uchun shu yetarli.",
+      l1Res:"Ishlaydigan forma va ma’lumotlar bazasi bilan e’lon qilingan veb-ilova + daraja sertifikatlash testi.",
+      l2Desc:"O‘quv prototiplaridan haqiqiy mahsulotlarga o‘tasiz: Claude Code va Cursor’ni agent rejimida egallaysiz, bir necha bog‘langan jadvalli ma’lumotlar bazasini loyihalaysiz va haqiqiy to‘lovni ulaysiz — Click.uz yoki Payme. Haqiqiy jamoadagidek Git bilan ishlashni o‘rganasiz.",
+      l2i1:"Agent rejimi: AI bitta fayl bilan emas, butun loyiha bilan ishlaydi",
+      l2i2:"Bazani loyihalash: bir necha jadval va ular orasidagi bog‘lanishlar",
+      l2i3:"Ilovada haqiqiy to‘lov — Click.uz va Payme",
+      l2i4:"Git va jamoaviy ish: branchlar, tarix, o‘zgarishlarni qaytarish",
+      l2Obj:"«Mening prototipim shunday ham ishlayapti». Noutbukingizda, sinfda ishlayapti. Haqiqiy mahsulot sekin internetli, eski telefonli tasodifiy foydalanuvchini ham chidashi kerak — daraja aynan shunga o‘rgatadi.",
+      l2Res:"To‘lov ulangan va Git’da o‘zgarishlar tarixi bo‘lgan full-stack mahsulot + daraja sertifikatlash testi.",
+      l3Desc:"Tayyor SaaS-mahsulotni ishga tushirasiz: o‘zgarishlar sizsiz chiqishi uchun CI/CD sozlaysiz, haqiqiy to‘lovli obunani qo‘shasiz va tizimni haqiqiy odamlar foydalanadigan holatga yetkazasiz — nafaqat demo uchun.",
+      l3i1:"CI/CD: o‘zgarishlar qo‘lda deploysiz o‘zi produksiyaga chiqadi",
+      l3i2:"Multi-agent tizimlar: bitta mahsulotda bir necha AI-agent",
+      l3i3:"Obuna modeli va billing",
+      l3i4:"Mahsulot jonli foydalanuvchida buzilganda nima qilish kerak",
+      l3Obj:"«Buning uchun dasturchilar jamoasi kerak». Bu darajadan keyin kerak emas: siz o‘zingiz arxitekturani loyihalaysiz, joylaysiz va mahsulotni yolg‘iz xizmat qilasiz.",
+      l3Res:"Obuna, avtomatik deploy va jonli foydalanuvchilari bo‘lgan ishlaydigan SaaS-mahsulot + daraja sertifikatlash testi."
+    },
+
+    mk: {
+      title:"Marketing uchun AI: promptdan tizimgacha",
+      l1Name:"Ishlaydigan kontent", l2Name:"Hisoblanadigan marketing", l3Name:"Mijozni o‘zi yetaklaydigan tizim",
+      lead:"Uch daraja: birinchi urinishdayoq chiqadigan kontentdan AI mijozni birinchi aloqadan xaridgacha olib boradigan ko‘p kanalli tizimgacha. Toshkentda oflayn, rus va o‘zbek tillarida.",
+      f1:"3 daraja · 45 dars", f2:"daraja kamida 3 oy", f3:"20 kishigacha guruh", f4:"14 yoshdan, tajribasiz",
+      l1Desc:"Chatbotdan «post yozib ber» deb so‘rashni bas qilasiz va birinchi urinishdayoq kerakli natijani olasiz. Ijtimoiy tarmoq, xat yuborish va sayt uchun kontent tayyorlashni o‘rganasiz, odamlar sizni qidiruvda qanday topishini tushunasiz.",
+      l1i1:"Kerakli natija beradigan prompting — «yana bitta matn» emas",
+      l1i2:"Ijtimoiy tarmoq, xat yuborish va sayt uchun kontent — bittalab emas, to‘plam bilan",
+      l1i3:"SEO asoslari: nega sizni qidiruvda topishadi yoki topishmaydi",
+      l1i4:"Mavhum nazariya emas, o‘z loyihangiz uchun targ‘ibot rejasi",
+      l1Obj:"«Men allaqachon ChatGPT’dan foydalanaman». Foydalanish va kerakli natijani olish — boshqa-boshqa narsa. Bu yerdan hech qayerga ketmaydigan matnlar papkasi bilan emas, o‘z loyihangiz uchun targ‘ibot rejasi bilan chiqasiz.",
+      l1Res:"Guruh oldida himoya qilingan tayyor marketing-reja + daraja sertifikatlash testi.",
+      l2Desc:"Taxmin qilishni emas, hisoblashni o‘rganasiz: qaysi xat yuborish pul keltirdi, qaysi kanal behuda sarflaydi. Saytni shunday sozlaysizki, sizni faqat Google emas, mijozlaringiz allaqachon foydalanayotgan AI-qidiruvlar ham topsin.",
+      l2i1:"Analitika: qaysi kanal pul keltirdi, qaysi biri faqat byudjet sarfladi",
+      l2i2:"Texnik SEO — va alohida, AI-qidiruvlar sizni qanday ko‘radi",
+      l2i3:"O‘qiladigan va bosiladigan email-kampaniyalar",
+      l2i4:"Marketingda birinchi AI-agentlar: nimani ishonib topshirish mumkin, nimani yo‘q",
+      l2Obj:"«Yarim yildan keyin hammasi eskiradi». Vositalar — ha. Aynan nima pul keltirganini tushunish va uni takrorlash ko‘nikmasi — yo‘q. Biz ikkinchisini o‘rgatamiz, vositalarni yo‘l-yo‘lakay yangilaymiz.",
+      l2Res:"Kanallar bo‘yicha raqamlari bilan yangilangan marketing-reja + daraja sertifikatlash testi.",
+      l3Desc:"Barcha kanallar birgalikda ishlaydigan marketing yig‘asiz: AI mijozni birinchi aloqadan xaridgacha olib boradi, siz esa xatarlarni nazorat qilasiz — noto‘g‘ri ma’lumotdan brend obro‘sigacha.",
+      l3i1:"Ko‘p kanalli tizim: ijtimoiy tarmoq, xat yuborish va sayt bitta mantiqda",
+      l3i2:"Martech uchun MCP: AI sizning haqiqiy ma’lumotlaringiz bilan ishlaydi",
+      l3i3:"NIST AI RMF bo‘yicha xatarlarni boshqarish — AI xato qilganda nima qilish kerak",
+      l3i4:"Enterprise-keyslar tahlili: bunday tizimlar amalda qayerda buziladi",
+      l3Obj:"«Menda texnik jamoa yo‘q». Bu darajadan keyin u kerak ham bo‘lmaydi: tizimni o‘zingiz yig‘asiz va o‘zingiz boshqarasiz.",
+      l3Res:"Xatarlar nazorati bilan ishlaydigan ko‘p kanalli tizim + daraja sertifikatlash testi."
+    }
   }
 };
 
@@ -1132,6 +1320,10 @@ setTimeout(function () {
   const logo = document.getElementById('logoLink');
   if (!logo) return;
   logo.addEventListener('click', (e) => {
+    /* на подстраницах логотип — обычная ссылка на главную,
+       перехватываем клик только когда это якорь «наверх» */
+    const href = logo.getAttribute('href') || '';
+    if (href !== '#' && href !== '') return;
     e.preventDefault();
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
