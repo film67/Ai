@@ -120,6 +120,45 @@
             "url": "https://thinklikeai.net/#pricing",
             "itemOffered": {
               "@type": "Course",
+              "name": "ИИ для автоматизации — Beginner",
+              "description": "Первая автоматизация без кода: Make.com, Zapier и Telegram-бот.",
+              "provider": { "@id": "https://thinklikeai.net/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "1500000",
+            "priceCurrency": "UZS",
+            "availability": "https://schema.org/InStock",
+            "url": "https://thinklikeai.net/#pricing",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "ИИ для автоматизации — Intermediate",
+              "description": "Вебхуки, AI-агенты, Claude Desktop и оплата через Click.uz или Payme.",
+              "provider": { "@id": "https://thinklikeai.net/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "1800000",
+            "priceCurrency": "UZS",
+            "availability": "https://schema.org/InStock",
+            "url": "https://thinklikeai.net/#pricing",
+            "itemOffered": {
+              "@type": "Course",
+              "name": "ИИ для автоматизации — Advanced",
+              "description": "Flowise, n8n и омниканальная система с еженедельными автоотчётами.",
+              "provider": { "@id": "https://thinklikeai.net/#organization" }
+            }
+          },
+          {
+            "@type": "Offer",
+            "price": "1200000",
+            "priceCurrency": "UZS",
+            "availability": "https://schema.org/InStock",
+            "url": "https://thinklikeai.net/#pricing",
+            "itemOffered": {
+              "@type": "Course",
               "name": "ИИ для маркетинга — Beginner",
               "description": "AI-контент для соцсетей, рассылок и сайта, основы SEO.",
               "provider": { "@id": "https://thinklikeai.net/#organization" }
@@ -239,7 +278,7 @@
     </div>
 
     <div class="hero-meta">
-      <div><b>2</b><span data-i18n="hero.meta1">направления · 6 уровней</span></div>
+      <div><b>3</b><span data-i18n="hero.meta1">направления · 9 уровней</span></div>
       <div><b>RU / UZ</b><span data-i18n="hero.meta2">языки преподавания</span></div>
       <div><b>0</b><span data-i18n="hero.meta3">страха перед ИИ</span></div>
     </div>
@@ -336,37 +375,69 @@
 
     <div class="filter-tabs" role="group" aria-label="Course filter">
       <button class="filter-tab is-active" data-filter="all" data-i18n="prog.filterAll">Все</button>
-      <button class="filter-tab" data-filter="automation" data-i18n="prog.filterAuto">Вайб-кодинг</button>
+      <button class="filter-tab" data-filter="vibecoding" data-i18n="prog.filterAuto">Вайб-кодинг</button>
+      <button class="filter-tab" data-filter="automation" data-i18n="prog.filterFlow">Автоматизация</button>
       <button class="filter-tab" data-filter="marketing" data-i18n="prog.filterMkt">Маркетинг</button>
     </div>
 
-    <div class="direction reveal" data-track="automation">
+    <div class="direction reveal" data-track="vibecoding">
       <div class="direction-head">
         <img class="direction-photo" src="direction-automation.jpg" alt="Ноутбук со светящейся золотой схемой AI-агента, который пишет код, на тёмном экране">
         <h3 data-i18n="prog.dir1Name">Вайб-кодинг</h3>
-        <p data-i18n="prog.dir1Desc">Replit, Lovable, Claude Code — от первого приложения до запущенного продукта.</p>
+        <p data-i18n="prog.dir1Desc">Replit, Cursor, Claude Code — свой продукт: от идеи словами до запущенного SaaS. Код пишет ИИ, вы ставите задачу и защищаете результат.</p>
       </div>
       <div class="levels">
         <div class="level">
           <span class="tag">Beginner</span>
-          <p data-i18n="prog.a1Short">Первое веб-приложение без единой строки кода: описываете идею словами — ИИ собирает рабочую страницу, вы подключаете базу и публикуете по живой ссылке.</p>
-          <div class="tools" data-i18n="prog.a1Tools">Replit · Lovable · Claude Code</div>
-          <div class="who" data-i18n="prog.a1Who">от 3 месяцев · 15 занятий · от 14 лет · без опыта</div>
+          <p data-i18n="prog.a1Short">Первое приложение прямо в браузере: описываете идею словами — ИИ собирает рабочую страницу. База данных, вход по аккаунту и правила доступа. Устанавливать не нужно ничего.</p>
+          <div class="tools" data-i18n="prog.a1Tools">Replit · Lovable · Bolt</div>
+          <div class="who" data-i18n="prog.a1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
           <span class="tag">Intermediate</span>
-          <p data-i18n="prog.a2Short">От учебных прототипов к настоящим продуктам: агентный режим Claude Code и Cursor, база данных со связями, реальная оплата и работа с Git.</p>
-          <div class="tools" data-i18n="prog.a2Tools">Claude Code · Cursor Agent · Click.uz / Payme</div>
-          <div class="who" data-i18n="prog.a2Who">от 3 месяцев · 15 занятий · после Beginner</div>
+          <p data-i18n="prog.a2Short">Инструменты переезжают на ваш компьютер: Cursor и Claude Code, схемы базы, серверная логика, оплата Click и Payme с проверкой на сервере, роли, тесты и Git.</p>
+          <div class="tools" data-i18n="prog.a2Tools">Cursor · Claude Code · Click / Payme / Eskiz</div>
+          <div class="who" data-i18n="prog.a2Who">15 занятий по 2 часа · после Beginner</div>
         </div>
         <div class="level">
           <span class="tag">Advanced</span>
-          <p data-i18n="prog.a3Short">Запуск SaaS-продукта: CI/CD, подписка с оплатой и система, которой пользуются настоящие люди, а не только вы на демо.</p>
-          <div class="tools" data-i18n="prog.a3Tools">CI/CD · Мульти-агентные системы · SaaS-биллинг</div>
-          <div class="who" data-i18n="prog.a3Who">от 3 месяцев · 15 занятий · после Intermediate</div>
+          <p data-i18n="prog.a3Short">Запуск и защита: CI/CD с проверками безопасности, аудит собственного продукта глазами атакующего, подписки и биллинг — и продажа навыка как услуги.</p>
+          <div class="tools" data-i18n="prog.a3Tools">CI/CD · Security-аудит · SaaS-биллинг</div>
+          <div class="who" data-i18n="prog.a3Who">15 занятий по 2 часа · после Intermediate</div>
         </div>
       </div>
       <a class="btn-ghost direction-more" href="course-vibe-coding.html" data-i18n="prog.more">Подробнее о курсе →</a>
+    </div>
+
+    <div class="direction reveal" data-track="automation">
+      <div class="direction-head direction-head--noimg">
+        <div class="direction-band" aria-hidden="true">
+          <span>45</span><span data-i18n="prog.dir3Band">занятий без кода</span><span data-i18n="vc.f3">группы до 20 человек</span>
+        </div>
+        <h3 data-i18n="prog.dir3Name">ИИ для автоматизации</h3>
+        <p data-i18n="prog.dir3Desc">Make, n8n, Telegram-боты — рутину забирают роботы. Без единой строчки кода.</p>
+      </div>
+      <div class="levels">
+        <div class="level">
+          <span class="tag">Beginner</span>
+          <p data-i18n="prog.n1Short">Первая связка без кода: клиент заполнил форму — данные в таблице, а вам уже пришло уведомление в Telegram. Плюс бот, отвечающий на частые вопросы.</p>
+          <div class="tools" data-i18n="prog.n1Tools">Make.com · Zapier · Telegram-боты</div>
+          <div class="who" data-i18n="prog.n1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
+        </div>
+        <div class="level is-core">
+          <span class="tag">Intermediate</span>
+          <p data-i18n="prog.n2Short">Отдельные сценарии превращаются в систему: вебхуки, AI-агент по вашему каталогу и оплата через Click или Payme, которая запускает всё остальное.</p>
+          <div class="tools" data-i18n="prog.n2Tools">Вебхуки · AI-агенты · Claude Desktop · Airtable</div>
+          <div class="who" data-i18n="prog.n2Who">15 занятий по 2 часа · после Beginner</div>
+        </div>
+        <div class="level">
+          <span class="tag">Advanced</span>
+          <p data-i18n="prog.n3Short">Омниканальная система: Telegram, почта и Instagram в одном потоке, агент на Flowise с памятью и автоотчёт каждый понедельник.</p>
+          <div class="tools" data-i18n="prog.n3Tools">Flowise · n8n · Airtable · Glide</div>
+          <div class="who" data-i18n="prog.n3Who">15 занятий по 2 часа · после Intermediate</div>
+        </div>
+      </div>
+      <a class="btn-ghost direction-more" href="course-automation.html" data-i18n="prog.more">Подробнее о курсе →</a>
     </div>
 
     <div class="direction reveal" data-track="marketing">
@@ -380,19 +451,19 @@
           <span class="tag">Beginner</span>
           <p data-i18n="prog.m1Short">Промптинг, который даёт нужный результат с первого раза: контент для соцсетей, рассылок и сайта плюс основы того, как вас находят в поиске.</p>
           <div class="tools" data-i18n="prog.m1Tools">Промптинг · AI-контент · SEO основы</div>
-          <div class="who" data-i18n="prog.m1Who">от 3 месяцев · 15 занятий · от 14 лет · без опыта</div>
+          <div class="who" data-i18n="prog.m1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
           <span class="tag">Intermediate</span>
           <p data-i18n="prog.m2Short">Считать, а не угадывать: какой канал принёс деньги, а какой тратит впустую. Плюс сайт, который находят и Google, и ИИ-поисковики.</p>
           <div class="tools" data-i18n="prog.m2Tools">Техническое SEO · Email-кампании · AI-агенты</div>
-          <div class="who" data-i18n="prog.m2Who">от 3 месяцев · 15 занятий · после Beginner</div>
+          <div class="who" data-i18n="prog.m2Who">15 занятий по 2 часа · после Beginner</div>
         </div>
         <div class="level">
           <span class="tag">Advanced</span>
           <p data-i18n="prog.m3Short">Маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы держите риски под контролем.</p>
           <div class="tools" data-i18n="prog.m3Tools">MCP для martech · NIST AI RMF · Омниканальные системы</div>
-          <div class="who" data-i18n="prog.m3Who">от 3 месяцев · 15 занятий · после Intermediate</div>
+          <div class="who" data-i18n="prog.m3Who">15 занятий по 2 часа · после Intermediate</div>
         </div>
       </div>
       <a class="btn-ghost direction-more" href="course-marketing.html" data-i18n="prog.more">Подробнее о курсе →</a>
@@ -414,14 +485,32 @@
         <div class="tool-chips">
           <span class="tool-chip">Replit</span>
           <span class="tool-chip">Lovable</span>
-          <span class="tool-chip">Claude Code</span>
+          <span class="tool-chip">Bolt</span>
           <span class="tool-chip">Cursor</span>
-          <span class="tool-chip">Git</span>
+          <span class="tool-chip">Claude Code</span>
           <span class="tool-chip" data-i18n="tools.db">Базы данных</span>
+          <span class="tool-chip">Git</span>
           <span class="tool-chip">Click.uz</span>
           <span class="tool-chip">Payme</span>
+          <span class="tool-chip">Eskiz</span>
           <span class="tool-chip">CI/CD</span>
-          <span class="tool-chip" data-i18n="tools.billing">SaaS-биллинг</span>
+          <span class="tool-chip" data-i18n="tools.security">Безопасность</span>
+        </div>
+      </div>
+      <div class="tool-card reveal">
+        <h3 data-i18n="prog.dir3Name">ИИ для автоматизации</h3>
+        <p data-i18n="tools.d3">От первой связки двух приложений до системы, которая работает без вас.</p>
+        <div class="tool-chips">
+          <span class="tool-chip">Make.com</span>
+          <span class="tool-chip">Zapier</span>
+          <span class="tool-chip">n8n</span>
+          <span class="tool-chip">Flowise</span>
+          <span class="tool-chip" data-i18n="tools.tgBots">Telegram-боты</span>
+          <span class="tool-chip" data-i18n="tools.sheets">Google Таблицы</span>
+          <span class="tool-chip">Airtable</span>
+          <span class="tool-chip">Claude Desktop</span>
+          <span class="tool-chip" data-i18n="tools.webhooks">Вебхуки</span>
+          <span class="tool-chip">Glide</span>
         </div>
       </div>
       <div class="tool-card reveal">
@@ -465,7 +554,7 @@
       <div class="icon-card reveal">
         <span class="icon-mark">03</span>
         <h4 data-i18n="formats.f3h">15 занятий по 2 часа</h4>
-        <p data-i18n="formats.f3p">Уровень идёт от 3 месяцев — без спешки, с практикой между занятиями.</p>
+        <p data-i18n="formats.f3p">Уровень — это 15 занятий, между ними практика, а в конце капстоун-проект.</p>
       </div>
       <div class="icon-card reveal">
         <span class="icon-mark">04</span>
@@ -483,7 +572,7 @@
       <span class="section-num" data-i18n="price.num">04 — Тарифы</span>
     </div>
 
-    <p class="price-note reveal" data-i18n="price.note">Цены указаны за месяц. Уровень идёт от 3 месяцев — итоговую сумму и рассрочку считаем на бесплатной консультации, под ваш уровень и направление.</p>
+    <p class="price-note reveal" data-i18n="price.note">Цены указаны за месяц обучения. Уровень — это 15 занятий по 2 часа; итоговую сумму и график оплаты считаем на бесплатной консультации, под ваш уровень и направление. Первое занятие на уровне Beginner — бесплатное.</p>
 
     <div class="direction reveal">
       <div class="direction-head"><h3 data-i18n="prog.dir1Name">Вайб-кодинг</h3></div>
@@ -496,6 +585,7 @@
             <li data-i18n="price.a1_2">Группы до 20 человек</li>
             <li data-i18n="price.a1_3">Капстоун-проект + тест</li>
           </ul>
+          <p class="price-free" data-i18n="price.freeFirst">1-е занятие бесплатно</p>
           <a class="btn-ghost" href="#apply" data-program="VibeCoding-Beginner" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level is-core">
@@ -517,6 +607,42 @@
             <li data-i18n="price.a3_3">Запуск SaaS-продукта</li>
           </ul>
           <a class="btn-ghost" href="#apply" data-program="VibeCoding-Advanced" data-i18n="price.cta">Записаться</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="direction reveal">
+      <div class="direction-head"><h3 data-i18n="prog.dir3Name">ИИ для автоматизации</h3></div>
+      <div class="levels price-grid">
+        <div class="level">
+          <span class="tag">Beginner</span>
+          <div class="price"><span class="price-num">1 200 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
+          <ul class="price-list">
+            <li data-i18n="price.n1_1">15 занятий по 2 часа</li>
+            <li data-i18n="price.n1_2">Группы до 20 человек</li>
+            <li data-i18n="price.n1_3">Рабочая автоматизация + тест</li>
+          </ul>
+          <a class="btn-ghost" href="#apply" data-program="Automation-Beginner" data-i18n="price.cta">Записаться</a>
+        </div>
+        <div class="level is-core">
+          <span class="tag">Intermediate</span>
+          <div class="price"><span class="price-num">1 500 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
+          <ul class="price-list">
+            <li data-i18n="price.n2_1">15 занятий по 2 часа</li>
+            <li data-i18n="price.n2_2">Личная проверка работ</li>
+            <li data-i18n="price.n2_3">AI-агент с оплатой</li>
+          </ul>
+          <a class="btn-primary" href="#apply" data-program="Automation-Intermediate" data-i18n="price.cta">Записаться</a>
+        </div>
+        <div class="level">
+          <span class="tag">Advanced</span>
+          <div class="price"><span class="price-num">1 800 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
+          <ul class="price-list">
+            <li data-i18n="price.n3_1">15 занятий по 2 часа</li>
+            <li data-i18n="price.n3_2">Разбор реальных систем</li>
+            <li data-i18n="price.n3_3">Омниканальная система</li>
+          </ul>
+          <a class="btn-ghost" href="#apply" data-program="Automation-Advanced" data-i18n="price.cta">Записаться</a>
         </div>
       </div>
     </div>
@@ -647,7 +773,7 @@
       </details>
       <details class="faq-item reveal">
         <summary data-i18n="faq.q4">Сколько длится один уровень?</summary>
-        <p data-i18n="faq.a4">От 3 месяцев: 15 занятий по 2 часа, в группах до 20 человек, с практикой между занятиями и капстоун-проектом в конце.</p>
+        <p data-i18n="faq.a4">Уровень — это 15 занятий по 2 часа, в группах до 20 человек, с практикой между занятиями и капстоун-проектом в конце. Обычно 2–3 занятия в неделю; точный график зависит от набора.</p>
       </details>
       <details class="faq-item reveal">
         <summary data-i18n="faq.q5">Что я получаю по итогам уровня?</summary>
@@ -655,7 +781,7 @@
       </details>
       <details class="faq-item reveal">
         <summary data-i18n="faq.q6">Сколько стоит обучение и есть ли рассрочка?</summary>
-        <p data-i18n="faq.a6">В разделе «Цены» указана стоимость месяца обучения. Уровень идёт от 3 месяцев, поэтому итоговую сумму считаем вместе на бесплатной консультации — там же обсуждаем рассрочку.</p>
+        <p data-i18n="faq.a6">В разделе «Цены» указана стоимость месяца обучения. Уровень — это 15 занятий по 2 часа, поэтому итоговую сумму считаем вместе на бесплатной консультации — там же обсуждаем рассрочку. Первое занятие на уровне Beginner бесплатное: можно прийти и посмотреть до всякой оплаты.</p>
       </details>
       <details class="faq-item reveal">
         <summary data-i18n="faq.q7">На каких языках проходят занятия?</summary>
@@ -749,6 +875,7 @@
         <h5 data-i18n="foot.navTitle">Навигация</h5>
         <a href="#philosophy" data-i18n="nav.philosophy">Философия</a>
         <a href="course-vibe-coding.html" data-i18n="prog.dir1Name">Вайб-кодинг</a>
+        <a href="course-automation.html" data-i18n="prog.dir3Name">ИИ для автоматизации</a>
         <a href="course-marketing.html" data-i18n="prog.dir2Name">ИИ для маркетинга</a>
         <a href="#pricing" data-i18n="nav.pricing">Цены</a>
       </div>

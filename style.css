@@ -2789,3 +2789,173 @@ footer{ border-top:1px solid var(--edge); }
   font-size:15px;
   line-height:1.55;
 }
+
+/* ============================================================
+   24 — НАПРАВЛЕНИЕ БЕЗ ФОТО
+   У третьего направления пока нет своей фотографии. Чтобы блок
+   не выглядел «недоделанным» рядом с двумя фотографическими,
+   место снимка занимает полоса с фактами — это читается как
+   осознанное решение, а не как отсутствующая картинка.
+   ============================================================ */
+.direction-head--noimg .direction-band{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px 22px;
+  max-width:640px;
+  margin-bottom:20px;
+  padding:20px 24px;
+  border:1px solid var(--edge);
+  border-radius:var(--r-md);
+  box-shadow:var(--sh-1);
+  background:
+    radial-gradient(120% 180% at 0% 0%, color-mix(in srgb, var(--signal) 14%, transparent) 0%, transparent 62%),
+    var(--surface);
+  font-family:var(--mono);
+  font-size:12.5px;
+  color:var(--ink-soft);
+}
+.direction-head--noimg .direction-band span:first-child{
+  font-family:var(--display);
+  font-size:30px;
+  font-weight:700;
+  line-height:1;
+  color:var(--signal-2);
+}
+.direction-head--noimg .direction-band span + span{
+  position:relative;
+  padding-left:22px;
+}
+.direction-head--noimg .direction-band span + span::before{
+  content:"";
+  position:absolute;
+  left:0; top:50%;
+  width:1px; height:14px;
+  margin-top:-7px;
+  background:var(--edge);
+}
+@media (max-width:560px){
+  .direction-head--noimg .direction-band{ padding:16px 18px; gap:8px 14px; }
+  .direction-head--noimg .direction-band span + span{ padding-left:0; }
+  .direction-head--noimg .direction-band span + span::before{ display:none; }
+}
+
+/* три карточки инструментов вместо двух */
+.tool-groups{ grid-template-columns:repeat(3,1fr); }
+@media (max-width:1100px){ .tool-groups{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:760px){ .tool-groups{ grid-template-columns:1fr; } }
+
+/* ============================================================
+   25 — ПРОГРАММА v2: результат уровня, безопасность,
+        различие направлений, бесплатное первое занятие
+   ============================================================ */
+
+/* «Что будет на выходе» под каждым уровнем */
+.module-result{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  margin:0 0 16px;
+  padding:14px 18px;
+  border-radius:var(--r-sm);
+  border:1px solid var(--edge);
+  background:var(--paper);
+}
+.module-result .mr-k{
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:var(--ink-soft);
+}
+.module-result p{ margin:0; font-size:15px; line-height:1.5; }
+
+/* бейджи «бесплатно» */
+.tag--free,
+.page-fact.is-free,
+.price-free{
+  background:color-mix(in srgb, var(--signal) 20%, transparent);
+  border:1px solid color-mix(in srgb, var(--signal) 45%, transparent);
+  color:var(--signal-2);
+}
+.tag--free{
+  display:inline-block;
+  border-radius:var(--r-pill);
+  padding:5px 12px;
+  font-family:var(--mono);
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+.price-free{
+  margin:-4px 0 16px;
+  padding:9px 14px;
+  border-radius:var(--r-sm);
+  font-family:var(--mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.05em;
+  text-align:center;
+}
+.level.is-core .price-free{
+  background:color-mix(in srgb, var(--signal) 26%, transparent);
+  color:#F1EAD9;
+}
+
+/* блок безопасности */
+.security{ margin-top:clamp(36px,5vw,64px); }
+.security-lead{
+  max-width:70ch;
+  color:var(--ink-soft);
+  margin-bottom:22px;
+}
+.security-list{ list-style:none; margin:0; }
+.security-list li{
+  display:grid;
+  grid-template-columns:minmax(200px,0.9fr) 1.6fr;
+  gap:8px 26px;
+  align-items:baseline;
+  padding:16px 18px;
+  border:1px solid var(--edge);
+  border-radius:var(--r-md);
+  background:var(--surface);
+  box-shadow:var(--sh-1);
+  margin-bottom:10px;
+  transition:border-color var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out);
+}
+.security-list li:hover{
+  border-color:color-mix(in srgb, var(--signal) 45%, transparent);
+  box-shadow:var(--sh-2);
+}
+.security-list .sec-l{
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.03em;
+  color:var(--signal-2);
+}
+.security-list .sec-r{ font-size:15.5px; line-height:1.45; }
+@media (max-width:700px){
+  .security-list li{ grid-template-columns:1fr; }
+}
+
+/* «чем отличается от соседнего направления» */
+.vs-card{
+  margin-top:clamp(32px,4.5vw,56px);
+  padding:clamp(24px,3.5vw,34px);
+  border:1px dashed color-mix(in srgb, var(--signal) 45%, transparent);
+  border-radius:var(--r-md);
+  background:
+    radial-gradient(110% 160% at 100% 0%, color-mix(in srgb, var(--signal) 10%, transparent) 0%, transparent 60%),
+    var(--surface);
+}
+.vs-card h3{
+  font-family:var(--display);
+  font-size:19px;
+  font-weight:700;
+  margin-bottom:8px;
+}
+.vs-card p{
+  color:var(--ink-soft);
+  max-width:72ch;
+  margin-bottom:16px;
+}
