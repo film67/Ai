@@ -280,7 +280,7 @@
     <div class="hero-meta">
       <div><b>3</b><span data-i18n="hero.meta1">направления · 9 уровней</span></div>
       <div><b>RU / UZ</b><span data-i18n="hero.meta2">языки преподавания</span></div>
-      <div><b>0</b><span data-i18n="hero.meta3">страха перед ИИ</span></div>
+      <div><b>0</b><span data-i18n="hero.meta3">занятий в каждом направлении</span></div>
     </div>
   </div>
 </header>
@@ -290,22 +290,31 @@
     <div class="quiz-card reveal">
       <div id="quizIntro">
         <h2 data-i18n="quiz.h2">Не знаете, с чего начать?</h2>
-        <p data-i18n="quiz.p">Короткий тест из 3 вопросов — подскажем, какое направление и уровень подойдут именно вам.</p>
+        <p data-i18n="quiz.p">Пять коротких вопросов — подберём направление и уровень, с которого вам стоит начинать.</p>
         <button class="btn-primary" id="quizStart" data-i18n="quiz.start">Пройти AI-тест</button>
       </div>
       <div id="quizBody" hidden>
-        <div class="quiz-progress"><span id="quizStep">1</span>/3</div>
+        <div class="quiz-bar" aria-hidden="true"><span id="quizBar"></span></div>
+        <div class="quiz-progress">
+          <span id="quizStepWord">Вопрос</span>
+          <b id="quizStep">1</b>
+          <span id="quizOfWord">из</span>
+          <b id="quizTotal">5</b>
+        </div>
         <h3 id="quizQText"></h3>
         <div class="quiz-options" id="quizOptions"></div>
+        <button type="button" class="quiz-back" id="quizBack" hidden>← Назад</button>
       </div>
       <div id="quizResult" hidden>
+        <p class="quiz-result-lead" data-i18n="quiz.resultLead">По вашим ответам подходит:</p>
         <span class="quiz-tag" id="quizResultTag"></span>
         <h3 id="quizResultTitle"></h3>
         <p id="quizResultDesc"></p>
         <div class="quiz-result-row">
-          <a class="btn-primary" id="quizResultCta" href="#pricing" data-i18n="quiz.cta">Смотреть в ценах</a>
-          <button class="btn-ghost" id="quizRestart" data-i18n="quiz.restart">Пройти заново</button>
+          <a class="btn-primary" href="#apply" data-i18n="quiz.ctaApply">Оставить заявку</a>
+          <a class="btn-ghost" id="quizResultCourse" href="course-vibe-coding.html" data-i18n="quiz.ctaCourse">Программа курса →</a>
         </div>
+        <button type="button" class="quiz-restart" id="quizRestart" data-i18n="quiz.restart">Пройти заново</button>
       </div>
     </div>
   </div>
@@ -315,7 +324,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="phil.h2">Во что мы верим</h2>
-      <span class="section-num" data-i18n="phil.num">01 — Философия</span>
+      <span class="section-num" data-i18n="phil.num">Почему мы учим именно так</span>
     </div>
 
     <div class="cards">
@@ -350,7 +359,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="about.h2">Кто такой выпускник ThinkLike AI</h2>
-      <span class="section-num" data-i18n="about.num">02 — О нас</span>
+      <span class="section-num" data-i18n="about.num">Чему учится выпускник</span>
     </div>
 
     <div class="split">
@@ -370,7 +379,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="prog.h2">Курсы</h2>
-      <span class="section-num" data-i18n="prog.num">03 — Программы</span>
+      <span class="section-num" data-i18n="prog.num">Три направления, в каждом три уровня</span>
     </div>
 
     <div class="filter-tabs" role="group" aria-label="Course filter">
@@ -388,19 +397,19 @@
       </div>
       <div class="levels">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <p data-i18n="prog.a1Short">Первое приложение прямо в браузере: описываете идею словами — ИИ собирает рабочую страницу. База данных, вход по аккаунту и правила доступа. Устанавливать не нужно ничего.</p>
           <div class="tools" data-i18n="prog.a1Tools">Replit · Lovable · Bolt</div>
           <div class="who" data-i18n="prog.a1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <p data-i18n="prog.a2Short">Инструменты переезжают на ваш компьютер: Cursor и Claude Code, схемы базы, серверная логика, оплата Click и Payme с проверкой на сервере, роли, тесты и Git.</p>
           <div class="tools" data-i18n="prog.a2Tools">Cursor · Claude Code · Click / Payme / Eskiz</div>
           <div class="who" data-i18n="prog.a2Who">15 занятий по 2 часа · после Beginner</div>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <p data-i18n="prog.a3Short">Запуск и защита: CI/CD с проверками безопасности, аудит собственного продукта глазами атакующего, подписки и биллинг — и продажа навыка как услуги.</p>
           <div class="tools" data-i18n="prog.a3Tools">CI/CD · Security-аудит · SaaS-биллинг</div>
           <div class="who" data-i18n="prog.a3Who">15 занятий по 2 часа · после Intermediate</div>
@@ -419,19 +428,19 @@
       </div>
       <div class="levels">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <p data-i18n="prog.n1Short">Первая связка без кода: клиент заполнил форму — данные в таблице, а вам уже пришло уведомление в Telegram. Плюс бот, отвечающий на частые вопросы.</p>
           <div class="tools" data-i18n="prog.n1Tools">Make.com · Zapier · Telegram-боты</div>
           <div class="who" data-i18n="prog.n1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <p data-i18n="prog.n2Short">Отдельные сценарии превращаются в систему: вебхуки, AI-агент по вашему каталогу и оплата через Click или Payme, которая запускает всё остальное.</p>
           <div class="tools" data-i18n="prog.n2Tools">Вебхуки · AI-агенты · Claude Desktop · Airtable</div>
           <div class="who" data-i18n="prog.n2Who">15 занятий по 2 часа · после Beginner</div>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <p data-i18n="prog.n3Short">Омниканальная система: Telegram, почта и Instagram в одном потоке, агент на Flowise с памятью и автоотчёт каждый понедельник.</p>
           <div class="tools" data-i18n="prog.n3Tools">Flowise · n8n · Airtable · Glide</div>
           <div class="who" data-i18n="prog.n3Who">15 занятий по 2 часа · после Intermediate</div>
@@ -448,19 +457,19 @@
       </div>
       <div class="levels">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <p data-i18n="prog.m1Short">Промптинг, который даёт нужный результат с первого раза: контент для соцсетей, рассылок и сайта плюс основы того, как вас находят в поиске.</p>
           <div class="tools" data-i18n="prog.m1Tools">Промптинг · AI-контент · SEO основы</div>
           <div class="who" data-i18n="prog.m1Who">15 занятий по 2 часа · от 14 лет · без опыта</div>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <p data-i18n="prog.m2Short">Считать, а не угадывать: какой канал принёс деньги, а какой тратит впустую. Плюс сайт, который находят и Google, и ИИ-поисковики.</p>
           <div class="tools" data-i18n="prog.m2Tools">Техническое SEO · Email-кампании · AI-агенты</div>
           <div class="who" data-i18n="prog.m2Who">15 занятий по 2 часа · после Beginner</div>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <p data-i18n="prog.m3Short">Маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы держите риски под контролем.</p>
           <div class="tools" data-i18n="prog.m3Tools">MCP для martech · NIST AI RMF · Омниканальные системы</div>
           <div class="who" data-i18n="prog.m3Who">15 занятий по 2 часа · после Intermediate</div>
@@ -475,7 +484,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="tools.h2">Инструменты, с которыми работаем</h2>
-      <span class="section-num" data-i18n="tools.num">03.6 — Инструменты</span>
+      <span class="section-num" data-i18n="tools.num">Что вы будете использовать</span>
     </div>
 
     <div class="tool-groups">
@@ -538,7 +547,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="formats.h2">Как проходит обучение</h2>
-      <span class="section-num" data-i18n="formats.num">03.5 — Форматы</span>
+      <span class="section-num" data-i18n="formats.num">Как устроены занятия</span>
     </div>
     <div class="icon-grid">
       <div class="icon-card reveal">
@@ -569,7 +578,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="price.h2">Цены</h2>
-      <span class="section-num" data-i18n="price.num">04 — Тарифы</span>
+      <span class="section-num" data-i18n="price.num">За месяц обучения</span>
     </div>
 
     <p class="price-note reveal" data-i18n="price.note">Цены указаны за месяц обучения. Уровень — это 15 занятий по 2 часа; итоговую сумму и график оплаты считаем на бесплатной консультации, под ваш уровень и направление. Первое занятие на уровне Beginner — бесплатное.</p>
@@ -578,7 +587,7 @@
       <div class="direction-head"><h3 data-i18n="prog.dir1Name">Вайб-кодинг</h3></div>
       <div class="levels price-grid">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <div class="price"><span class="price-num">1 200 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.a1_1">15 занятий по 2 часа</li>
@@ -589,7 +598,7 @@
           <a class="btn-ghost" href="#apply" data-program="VibeCoding-Beginner" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <div class="price"><span class="price-num">1 500 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.a2_1">15 занятий по 2 часа</li>
@@ -599,7 +608,7 @@
           <a class="btn-primary" href="#apply" data-program="VibeCoding-Intermediate" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <div class="price"><span class="price-num">1 800 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.a3_1">15 занятий по 2 часа</li>
@@ -615,7 +624,7 @@
       <div class="direction-head"><h3 data-i18n="prog.dir3Name">ИИ для автоматизации</h3></div>
       <div class="levels price-grid">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <div class="price"><span class="price-num">1 200 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.n1_1">15 занятий по 2 часа</li>
@@ -625,7 +634,7 @@
           <a class="btn-ghost" href="#apply" data-program="Automation-Beginner" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <div class="price"><span class="price-num">1 500 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.n2_1">15 занятий по 2 часа</li>
@@ -635,7 +644,7 @@
           <a class="btn-primary" href="#apply" data-program="Automation-Intermediate" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <div class="price"><span class="price-num">1 800 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.n3_1">15 занятий по 2 часа</li>
@@ -651,7 +660,7 @@
       <div class="direction-head"><h3 data-i18n="prog.dir2Name">ИИ для маркетинга</h3></div>
       <div class="levels price-grid">
         <div class="level">
-          <span class="tag">Beginner</span>
+          <span class="tag">Beginner <em class="tag-ru" data-i18n="level.b">начальный</em></span>
           <div class="price"><span class="price-num">1 200 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.m1_1">15 занятий по 2 часа</li>
@@ -661,7 +670,7 @@
           <a class="btn-ghost" href="#apply" data-program="Marketing-Beginner" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level is-core">
-          <span class="tag">Intermediate</span>
+          <span class="tag">Intermediate <em class="tag-ru" data-i18n="level.i">средний</em></span>
           <div class="price"><span class="price-num">1 500 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.m2_1">15 занятий по 2 часа</li>
@@ -671,7 +680,7 @@
           <a class="btn-primary" href="#apply" data-program="Marketing-Intermediate" data-i18n="price.cta">Записаться</a>
         </div>
         <div class="level">
-          <span class="tag">Advanced</span>
+          <span class="tag">Advanced <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
           <div class="price"><span class="price-num">1 800 000</span><span class="price-cur" data-i18n="price.currency">сум / месяц</span></div>
           <ul class="price-list">
             <li data-i18n="price.m3_1">15 занятий по 2 часа</li>
@@ -715,7 +724,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="proc.h2">Как проходит обучение</h2>
-      <span class="section-num" data-i18n="proc.num">05 — Процесс</span>
+      <span class="section-num" data-i18n="proc.num">От заявки до диплома</span>
     </div>
 
     <div class="steps">
@@ -755,7 +764,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="faq.h2">Частые вопросы</h2>
-      <span class="section-num" data-i18n="faq.num">06 — Вопросы</span>
+      <span class="section-num" data-i18n="faq.num">Коротко о главном</span>
     </div>
 
     <div class="faq-list">
@@ -800,7 +809,7 @@
   <div class="wrap">
     <div class="section-head">
       <h2 data-i18n="apply.h2">Оставить заявку</h2>
-      <span class="section-num" data-i18n="apply.num">07 — Заявка</span>
+      <span class="section-num" data-i18n="apply.num">Ответим в течение дня</span>
     </div>
 
     <div class="cta reveal" id="contact">

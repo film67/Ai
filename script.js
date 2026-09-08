@@ -32,11 +32,11 @@ const translations = {
       title:'<span class="plate">Мы не учим</span> <mark>пользоваться ИИ</mark> <span class="plate">Мы учим</span> <mark>мыслить</mark>',
       sub:"Офлайн-курсы в Ташкенте: автоматизация и маркетинг с ИИ. От первого сценария до системы, которая работает без вас. С нуля, на русском и узбекском.",
       ctaPrimary:"Записаться на курс", ctaGhost:"Наша философия ↓",
-      meta1:"направления · 9 уровней", meta2:"языки преподавания", meta3:"страха перед ИИ",
+      meta1:"направления · 9 уровней", meta2:"языки преподавания", meta3:"занятий в каждом направлении",
       word1:"почему?", word2:"как?", word3:"зачем?", word4:"что если?", word5:"а если иначе?"
     },
     phil: {
-      h2:"Во что мы верим", num:"01 — Философия",
+      h2:"Во что мы верим", num:"Почему мы учим именно так",
       n1:"Мысль 01", t1a:"Не бойся искусственного интеллекта.", t1b:"Бойся остаться без навыков.",
       n2:"Мысль 02", t2a:"Мы не заменяем человека.", t2b:"Мы усиливаем человека.",
       n3:"Мысль 03", t3a:"Мы не учим пользоваться ИИ.", t3b:"Мы учим мыслить.",
@@ -46,7 +46,7 @@ const translations = {
       text:"Инструменты меняются каждый сезон. Мышление, которое умеет с ними работать, — нет."
     },
     about: {
-      h2:"Кто такой выпускник ThinkLike AI", num:"02 — О нас",
+      h2:"Кто такой выпускник ThinkLike AI", num:"Чему учится выпускник",
       lead:"Мы создаём не курс, а культуру мышления — с собственной методологией, стандартами и кодексом для учеников и преподавателей.",
       b1:"Проверяет за ИИ", d1:". Видит, где модель придумала факт, и не несёт это клиенту.",
       b2:"Не привязан к одному сервису", d2:". Если Zapier закроется, соберёт то же самое в другом.",
@@ -54,46 +54,58 @@ const translations = {
       b4:"Считает результат", d4:". Знает, сколько времени или денег сэкономила его система."
     },
     quiz: {
-      h2:"Не знаете, с чего начать?", p:"Короткий тест из 3 вопросов — подскажем, какое направление и уровень подойдут именно вам.",
-      start:"Пройти AI-тест", cta:"Смотреть в ценах", restart:"Пройти заново",
+      h2:"Не знаете, с чего начать?", p:"Пять коротких вопросов — подберём направление и уровень, с которого вам стоит начинать.",
+      start:"Пройти AI-тест", cta:"Смотреть в ценах", ctaCourse:"Программа курса →", ctaApply:"Оставить заявку", restart:"Пройти заново",
+      step:"Вопрос", of:"из", back:"← Назад",
+      resultLead:"По вашим ответам подходит:",
       questions:[
-        { text:"Что вам ближе?", options:[
-          {label:"Вайб-кодинг: свои приложения с ИИ", value:"vibecoding"},
-          {label:"Автоматизация: рутину делают роботы", value:"automation"},
-          {label:"Маркетинг, контент и продвижение", value:"marketing"}
+        { text:"С чем вы хотите работать?", options:[
+          {label:"Своё приложение или продукт — хочу его построить", value:"vibecoding"},
+          {label:"Рутина в бизнесе — хочу, чтобы она шла сама", value:"automation"},
+          {label:"Клиенты и продвижение — хочу, чтобы о нас узнали", value:"marketing"}
         ]},
-        { text:"Какой у вас опыт?", options:[
-          {label:"Совсем новичок, ещё не пробовал(а)", value:"beginner"},
-          {label:"Пробовал(а) базовые вещи (ChatGPT, простые сценарии)", value:"intermediate"},
-          {label:"Работал(а) с API, кодом, интеграциями", value:"advanced"}
+        { text:"Насколько вы уже знакомы с ИИ?", options:[
+          {label:"Почти не пользовался(ась)", value:"beginner"},
+          {label:"Пользуюсь ChatGPT и подобным для текстов", value:"intermediate"},
+          {label:"Собирал(а) что-то сам: боты, сценарии, код", value:"advanced"}
         ]},
-        { text:"Что хотите получить в результате?", options:[
-          {label:"Первый рабочий проект с нуля", value:"beginner"},
-          {label:"Систему из нескольких инструментов", value:"intermediate"},
-          {label:"Готовое production-решение", value:"advanced"}
+        { text:"Что хотите получить к концу уровня?", options:[
+          {label:"Первый работающий результат, который можно показать", value:"beginner"},
+          {label:"Систему из нескольких инструментов, которая работает сама", value:"intermediate"},
+          {label:"Готовое решение, которым пользуются другие люди", value:"advanced"}
+        ]},
+        { text:"Как вы относитесь к технической стороне?", options:[
+          {label:"Хочу вообще не видеть код", value:"beginner"},
+          {label:"Готов(а) разбираться, если объяснят по-человечески", value:"intermediate"},
+          {label:"Спокойно читаю логи, схемы и настройки", value:"advanced"}
+        ]},
+        { text:"Сколько у вас уже сделано?", options:[
+          {label:"Пока только идея", value:"beginner"},
+          {label:"Есть что-то простое: таблица, бот, страница", value:"intermediate"},
+          {label:"Есть работающий проект или клиенты", value:"advanced"}
         ]}
       ],
       results:{
-        "vibecoding-beginner":{tag:"Vibe Coding · Beginner", title:"Вам подходит: Вайб-кодинг, уровень Beginner", desc:"Replit, Lovable и первое приложение без единой строчки кода. Идеально, если вы никогда не программировали."},
-        "vibecoding-intermediate":{tag:"Vibe Coding · Intermediate", title:"Вам подходит: Вайб-кодинг, уровень Intermediate", desc:"Claude Code, база данных и реальные платежи — для тех, кто уже собрал свой первый прототип."},
-        "vibecoding-advanced":{tag:"Vibe Coding · Advanced", title:"Вам подходит: Вайб-кодинг, уровень Advanced", desc:"CI/CD, мульти-агентные системы и запуск SaaS — для тех, кто готов довести продукт до реальных пользователей."},
-        "automation-beginner":{tag:"Automation · Beginner", title:"Вам подходит: ИИ для автоматизации, уровень Beginner", desc:"Make.com и Telegram-бот, который отвечает клиентам сам. Без кода — если умеете пользоваться таблицами, справитесь."},
-        "automation-intermediate":{tag:"Automation · Intermediate", title:"Вам подходит: ИИ для автоматизации, уровень Intermediate", desc:"Вебхуки, AI-агенты и оплата через Click или Payme — для тех, у кого первые сценарии уже работают."},
-        "automation-advanced":{tag:"Automation · Advanced", title:"Вам подходит: ИИ для автоматизации, уровень Advanced", desc:"Flowise, n8n и омниканальная система с автоотчётами — для тех, кому нужна система уровня агентства без агентства."},
-        "marketing-beginner":{tag:"Marketing · Beginner", title:"Вам подходит: ИИ для маркетинга, уровень Beginner", desc:"Промптинг, AI-контент и основы SEO — если вы делаете первые шаги в AI-маркетинге."},
-        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Вам подходит: ИИ для маркетинга, уровень Intermediate", desc:"Техническое SEO, email-кампании и AI-агенты — для тех, кто уже строит маркетинг-процессы."},
-        "marketing-advanced":{tag:"Marketing · Advanced", title:"Вам подходит: ИИ для маркетинга, уровень Advanced", desc:"Агентные системы, NIST AI RMF и омниканальные стратегии — для опытных маркетологов."}
+        "vibecoding-beginner":{tag:"Вайб-кодинг · Beginner", title:"Вайб-кодинг, уровень Beginner", desc:"Replit, Lovable и первое приложение без единой строчки кода — всё в браузере, устанавливать ничего не нужно. Первое занятие бесплатное: можно прийти и проверить."},
+        "vibecoding-intermediate":{tag:"Вайб-кодинг · Intermediate", title:"Вайб-кодинг, уровень Intermediate", desc:"Cursor и Claude Code на вашем компьютере, база данных со связями, оплата Click и Payme с проверкой на сервере — для тех, у кого первый прототип уже собран."},
+        "vibecoding-advanced":{tag:"Вайб-кодинг · Advanced", title:"Вайб-кодинг, уровень Advanced", desc:"CI/CD, аудит собственного продукта глазами атакующего и запуск SaaS — для тех, кто готов довести продукт до реальных пользователей и защитить его."},
+        "automation-beginner":{tag:"Автоматизация · Beginner", title:"ИИ для автоматизации, уровень Beginner", desc:"Make.com и Telegram-бот, который отвечает клиентам сам. Без кода — если умеете пользоваться таблицами, справитесь."},
+        "automation-intermediate":{tag:"Автоматизация · Intermediate", title:"ИИ для автоматизации, уровень Intermediate", desc:"Вебхуки, AI-агенты и оплата через Click или Payme — для тех, у кого первые сценарии уже работают."},
+        "automation-advanced":{tag:"Автоматизация · Advanced", title:"ИИ для автоматизации, уровень Advanced", desc:"Flowise, n8n и омниканальная система с автоотчётами — для тех, кому нужна система уровня агентства без агентства."},
+        "marketing-beginner":{tag:"Маркетинг · Beginner", title:"ИИ для маркетинга, уровень Beginner", desc:"Промптинг, AI-контент и основы SEO — если вы делаете первые шаги в AI-маркетинге."},
+        "marketing-intermediate":{tag:"Маркетинг · Intermediate", title:"ИИ для маркетинга, уровень Intermediate", desc:"Техническое SEO, email-кампании и AI-агенты — для тех, кто уже строит маркетинг-процессы."},
+        "marketing-advanced":{tag:"Маркетинг · Advanced", title:"ИИ для маркетинга, уровень Advanced", desc:"Омниканальные системы, MCP для martech и управление рисками по NIST AI RMF — для опытных маркетологов."}
       }
     },
     formats: {
-      h2:"Как проходит обучение", num:"03.5 — Форматы",
+      h2:"Как проходит обучение", num:"Как устроены занятия",
       f1h:"Офлайн в Ташкенте", f1p:"Занятия проходят очно, в аудитории — не запись, не самостоятельное прохождение видео.",
       f2h:"Небольшие группы", f2p:"До 20 человек в группе — у преподавателя есть время разобрать вопрос каждого.",
       f3h:"15 занятий по 2 часа", f3p:"Уровень — это 15 занятий, между ними практика, а в конце капстоун-проект.",
       f4h:"Капстоун + тест", f4p:"В конце уровня — свой рабочий проект и сертификационный тест, а не просто посещаемость."
     },
     prog: {
-      h2:"Курсы", num:"03 — Программы",
+      h2:"Курсы", num:"Три направления, в каждом три уровня",
       filterAll:"Все", filterAuto:"Вайб-кодинг", filterMkt:"Маркетинг",
       dir1Name:"Вайб-кодинг", dir1Desc:"Replit, Cursor, Claude Code — свой продукт: от идеи словами до запущенного SaaS. Код пишет ИИ, вы ставите задачу и защищаете результат.",
       a1Desc:"Соберёте своё первое веб-приложение, ни разу не написав код: опишете идею словами — ИИ соберёт рабочую страницу в Replit или Lovable. Подключите базу данных, чтобы форма реально сохраняла заявки, и опубликуете сайт по живой ссылке.",
@@ -143,7 +155,7 @@ const translations = {
       m3Short:"Маркетинг, где все каналы работают согласованно: ИИ ведёт клиента от первого касания до покупки, а вы держите риски под контролем."
     },
     price: {
-      h2:"Цены", num:"04 — Тарифы",
+      h2:"Цены", num:"За месяц обучения",
       note:"Цены указаны за месяц обучения. Уровень — это 15 занятий по 2 часа; итоговую сумму и график оплаты считаем на бесплатной консультации, под ваш уровень и направление. Первое занятие на уровне Beginner — бесплатное.",
       currency:"сум / месяц",
       a1_1:"15 занятий по 2 часа", a1_2:"Группы до 20 человек", a1_3:"Капстоун-проект + тест",
@@ -159,7 +171,7 @@ const translations = {
       cta:"Записаться"
     },
     proc: {
-      h2:"Как проходит обучение", num:"05 — Процесс",
+      h2:"Как проходит обучение", num:"От заявки до диплома",
       s1h:"Бесплатная консультация", s1p:"Рассказываем о направлениях и уровнях, помогаем понять, с какого уровня начать.",
       s2h:"Практические занятия", s2p:"Разбираем инструменты и задачи на практике, каждое занятие закрепляется домашним заданием.",
       s3h:"Обратная связь", s3p:"Преподаватель проверяет каждую работу лично и помогает разобраться со сложными местами.",
@@ -171,7 +183,7 @@ const translations = {
       photoCredit:"Фото здания — Google Maps"
     },
     faq: {
-      h2:"Частые вопросы", num:"06 — Вопросы",
+      h2:"Частые вопросы", num:"Коротко о главном",
       q1:"Мне нужен опыт, чтобы начать?",
       a1:"Нет. Уровень Beginner в обоих направлениях рассчитан на полных новичков — от 14 лет, без опыта. Если не уверены, какое направление и уровень подойдут, пройдите короткий AI-тест в начале страницы.",
       q2:"Можно сразу пойти на Intermediate или Advanced?",
@@ -190,19 +202,20 @@ const translations = {
       a8:"Офлайн в Ташкенте, на массиве Караташ, 2 этаж здания Korzinka. Запись начинается с бесплатной консультации — оставьте заявку в форме ниже, и мы свяжемся с вами."
     },
     apply: {
-      h2:"Оставить заявку", num:"07 — Заявка",
+      h2:"Оставить заявку", num:"Ответим в течение дня",
       name:"Имя", phone:"Номер телефона", telegram:"Telegram (необязательно)", message:"Комментарий (необязательно)",
       submit:"Отправить заявку",
       hint:"Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.",
       sideLead:"Оставьте заявку — мы свяжемся с вами сами.",
       note:"Отвечаем в течение дня в будни."
     },
+    level: { b:"начальный", i:"средний", a:"продвинутый" },
     contact: { telegramLabel:"Telegram", phoneLabel:"Телефон", emailLabel:"Почта", addressLabel:"Адрес", addressShort:"массив Караташ, 2 — 2 этаж «Korzinka», Ташкент", address:"массив Караташ, 2, Шайхантахурский р-н, Ташкент (2 этаж, здание «Korzinka», напротив «Самарканд Дарвоза»)" },
     cta: { h2:"Начни думать иначе — уже на этой неделе.", btn:"Оставить заявку выше ↑" },
     foot: { city:"Ташкент.", contact:"Оставить заявку", tagline:"Think Like Tomorrow · Академия мышления в эпоху ИИ", navTitle:"Навигация", contactTitle:"Контакты", legalTitle:"Документы", offer:"Публичная оферта", privacy:"Политика конфиденциальности", address:"Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»" },
 
     tools: {
-      h2:"Инструменты, с которыми работаем", num:"03.6 — Инструменты",
+      h2:"Инструменты, с которыми работаем", num:"Что вы будете использовать",
       d1:"От первого прототипа до продукта, который платит за себя.",
       d2:"От первого промпта до системы, которая ведёт клиента сама.",
       d3:"От первой связки двух приложений до системы, которая работает без вас.",
@@ -230,7 +243,7 @@ const translations = {
       ctaBtn:"Оставить заявку",
       ctaTg:"Написать в Telegram",
       pricesLink:"Цены и рассрочка →",
-      levelsTitle:"Уровни курса", levelsNum:"01 — Программа",
+      levelsTitle:"Уровни курса", levelsNum:"Три уровня, 45 занятий",
       toolsTitle:"Инструменты уровня", resultTitle:"Что будет на выходе", objectionTitle:"Частое сомнение"
     },
 
@@ -299,7 +312,7 @@ const translations = {
       l3Obj:"«Для этого нужна команда». После этого уровня — не нужна: вы проектируете, деплоите, атакуете сами себя, чините и защищаете результат письменно.",
       l3Res:"Живой SaaS с реальными пользователями, письменный отчёт по безопасности, мониторинг и проверенное восстановление из бэкапа.",
       secTitle:"Безопасность — не модуль, а привычка",
-      secNum:"02 — Безопасность",
+      secNum:"5 занятий целиком + привычка в каждом",
       secLead:"ИИ пишет код быстро — и повторяет одни и те же уязвимости. Поэтому в каждом из 45 занятий есть строка «привычка безопасности», пять занятий посвящены ей целиком, и каждый капстоун оценивается в том числе по ней.",
       secL1:"Beginner 9 · Секреты и ключи", secR1:"Ничто, что вас опознаёт, не лежит в коде",
       secL2:"Beginner 11 · Правила доступа", secR2:"Экран входа — это ещё не защита",
@@ -347,11 +360,11 @@ const translations = {
       title:'<span class="plate">Biz</span> <mark>sun\u2018iy intellektdan foydalanishni</mark> <span class="plate">emas,</span> <mark>fikrlashni</mark> <span class="plate">o\u2018rgatamiz</span>',
       sub:"Toshkentda oflayn kurslar: AI bilan avtomatlashtirish va marketing. Birinchi ssenariydan sizsiz ishlaydigan tizimgacha. Noldan, rus va o\u2018zbek tillarida.",
       ctaPrimary:"Kursga yozilish", ctaGhost:"Bizning falsafamiz ↓",
-      meta1:"yo\u2018nalish · 9 daraja", meta2:"dars tillari", meta3:"sun\u2018iy intellektdan qo\u2018rqish",
+      meta1:"yo\u2018nalish · 9 daraja", meta2:"dars tillari", meta3:"har bir yo‘nalishda dars",
       word1:"nega?", word2:"qanday?", word3:"nima uchun?", word4:"agar-chi?", word5:"boshqacha bo\u2018lsa-chi?"
     },
     phil: {
-      h2:"Biz nimaga ishonamiz", num:"01 — Falsafa",
+      h2:"Biz nimaga ishonamiz", num:"Nega aynan shunday o‘rgatamiz",
       n1:"1-fikr", t1a:"Sun'iy intellektdan qo\u2018rqma.", t1b:"Ko\u2018nikmasiz qolishdan qo\u2018rq.",
       n2:"2-fikr", t2a:"Biz odamni almashtirmaymiz.", t2b:"Biz odamni kuchaytiramiz.",
       n3:"3-fikr", t3a:"Biz sun\u2018iy intellektdan foydalanishni o\u2018rgatmaymiz.", t3b:"Biz fikrlashni o\u2018rgatamiz.",
@@ -361,7 +374,7 @@ const translations = {
       text:"Vositalar har mavsum o\u2018zgaradi. Ular bilan ishlashni biladigan fikrlash — o\u2018zgarmaydi."
     },
     about: {
-      h2:"ThinkLike AI bitiruvchisi kim", num:"02 — Biz haqimizda",
+      h2:"ThinkLike AI bitiruvchisi kim", num:"Bitiruvchi nimani o‘rganadi",
       lead:"Biz shunchaki kurs emas, balki fikrlash madaniyatini yaratamiz — o\u2018z metodologiyamiz, standartlarimiz va o\u2018quvchi/o\u2018qituvchi kodeksi bilan.",
       b1:"AI\u2018dan keyin tekshiradi", d1:". Model qayerda fakt o\u2018ylab topganini ko\u2018radi va uni mijozga olib bormaydi.",
       b2:"Bitta xizmatga bog\u2018lanmagan", d2:". Zapier yopilsa, xuddi shuni boshqasida yig\u2018adi.",
@@ -369,46 +382,58 @@ const translations = {
       b4:"Natijani hisoblaydi", d4:". Tizimi qancha vaqt yoki pul tejaganini biladi."
     },
     quiz: {
-      h2:"Qayerdan boshlashni bilmayapsizmi?", p:"3 ta savoldan iborat qisqa test — qaysi yo\u2018nalish va daraja sizga mos kelishini aytamiz.",
-      start:"AI-testdan o\u2018ting", cta:"Narxlarda ko\u2018rish", restart:"Qayta topshirish",
+      h2:"Qayerdan boshlashni bilmayapsizmi?", p:"Beshta qisqa savol — sizga mos yo‘nalish va qaysi darajadan boshlash kerakligini aytamiz.",
+      start:"AI-testdan o‘ting", cta:"Narxlarda ko‘rish", ctaCourse:"Kurs dasturi →", ctaApply:"Ariza qoldirish", restart:"Qayta topshirish",
+      step:"Savol", of:"/", back:"← Orqaga",
+      resultLead:"Javoblaringizga ko‘ra mos keladi:",
       questions:[
-        { text:"Sizga nima yaqinroq?", options:[
-          {label:"Vibe Coding: AI bilan o\u2018z ilovalaringiz", value:"vibecoding"},
-          {label:"Avtomatlashtirish: rutinani robotlar bajaradi", value:"automation"},
-          {label:"Marketing, kontent va targ\u2018ib", value:"marketing"}
+        { text:"Nima bilan ishlamoqchisiz?", options:[
+          {label:"O‘z ilovam yoki mahsulotim — uni qurmoqchiman", value:"vibecoding"},
+          {label:"Biznesdagi rutina — u o‘zi ketishini xohlayman", value:"automation"},
+          {label:"Mijozlar va targ‘ib — bizni bilishlarini xohlayman", value:"marketing"}
         ]},
-        { text:"Tajribangiz qanday?", options:[
-          {label:"Butunlay yangiman, hali urinib ko\u2018rmaganman", value:"beginner"},
-          {label:"Asosiy narsalarni sinab ko\u2018rganman (ChatGPT, oddiy ssenariylar)", value:"intermediate"},
-          {label:"API, kod, integratsiyalar bilan ishlaganman", value:"advanced"}
+        { text:"AI bilan qanchalik tanishsiz?", options:[
+          {label:"Deyarli foydalanmaganman", value:"beginner"},
+          {label:"Matnlar uchun ChatGPT va shunga o‘xshashlardan foydalanaman", value:"intermediate"},
+          {label:"O‘zim biror narsa yig‘ganman: botlar, ssenariylar, kod", value:"advanced"}
         ]},
-        { text:"Natijada nima olishni xohlaysiz?", options:[
-          {label:"Noldan birinchi ishchi loyiha", value:"beginner"},
-          {label:"Bir nechta vositadan iborat tizim", value:"intermediate"},
-          {label:"Tayyor production-yechim", value:"advanced"}
+        { text:"Daraja oxirida nima olishni xohlaysiz?", options:[
+          {label:"Ko‘rsatsa bo‘ladigan birinchi ishlaydigan natija", value:"beginner"},
+          {label:"O‘zi ishlaydigan, bir nechta vositadan iborat tizim", value:"intermediate"},
+          {label:"Boshqa odamlar foydalanadigan tayyor yechim", value:"advanced"}
+        ]},
+        { text:"Texnik tomoniga qanday qaraysiz?", options:[
+          {label:"Kodni umuman ko‘rmasligni xohlayman", value:"beginner"},
+          {label:"Odamcha tushuntirilsa, o‘rganishga tayyorman", value:"intermediate"},
+          {label:"Loglar, sxemalar va sozlamalarni bemalol o‘qiyman", value:"advanced"}
+        ]},
+        { text:"Hozircha nima qilingan?", options:[
+          {label:"Hozircha faqat g‘oya", value:"beginner"},
+          {label:"Oddiy narsa bor: jadval, bot, sahifa", value:"intermediate"},
+          {label:"Ishlaydigan loyiha yoki mijozlar bor", value:"advanced"}
         ]}
       ],
       results:{
-        "vibecoding-beginner":{tag:"Vibe Coding · Beginner", title:"Sizga mos: Vibe Coding, Beginner darajasi", desc:"Replit, Lovable va bitta ham kod yozmasdan birinchi ilova. Hech qachon dasturlashtirmagan bo\u2018lsangiz — aynan shu."},
-        "vibecoding-intermediate":{tag:"Vibe Coding · Intermediate", title:"Sizga mos: Vibe Coding, Intermediate darajasi", desc:"Claude Code, ma\u2019lumotlar bazasi va haqiqiy to\u2018lovlar — birinchi prototipini yig\u2018ganlar uchun."},
-        "vibecoding-advanced":{tag:"Vibe Coding · Advanced", title:"Sizga mos: Vibe Coding, Advanced darajasi", desc:"CI/CD, multi-agent tizimlar va SaaS ishga tushirish — mahsulotni haqiqiy foydalanuvchilarga yetkazishga tayyor bo\u2018lganlar uchun."},
-        "automation-beginner":{tag:"Automation · Beginner", title:"Sizga mos: Avtomatlashtirish uchun AI, Beginner darajasi", desc:"Make.com va mijozlarga o‘zi javob beradigan Telegram-bot. Kodsiz — jadvallardan foydalana olsangiz, uddalaysiz."},
-        "automation-intermediate":{tag:"Automation · Intermediate", title:"Sizga mos: Avtomatlashtirish uchun AI, Intermediate darajasi", desc:"Vebhuklar, AI-agentlar va Click yoki Payme orqali to‘lov — birinchi ssenariylari allaqachon ishlayotganlar uchun."},
-        "automation-advanced":{tag:"Automation · Advanced", title:"Sizga mos: Avtomatlashtirish uchun AI, Advanced darajasi", desc:"Flowise, n8n va avtohisobotli ko‘p kanalli tizim — agentliksiz agentlik darajasidagi tizim kerak bo‘lganlar uchun."},
-        "marketing-beginner":{tag:"Marketing · Beginner", title:"Sizga mos: SI marketing, Beginner darajasi", desc:"Prompting, AI-kontent va SEO asoslari — AI-marketingda birinchi qadamlar uchun."},
-        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Sizga mos: SI marketing, Intermediate darajasi", desc:"Texnik SEO, email-kampaniyalar va AI-agentlar — marketing jarayonlarini quruvchilar uchun."},
-        "marketing-advanced":{tag:"Marketing · Advanced", title:"Sizga mos: SI marketing, Advanced darajasi", desc:"Agentli tizimlar, NIST AI RMF va ko\u2018p kanalli strategiyalar — tajribali marketologlar uchun."}
+        "vibecoding-beginner":{tag:"Vibe Coding · Beginner", title:"Vibe Coding, Beginner darajasi", desc:"Replit, Lovable va bitta ham kod yozmasdan birinchi ilova — hammasi brauzerda, hech narsa o‘rnatish kerak emas. Birinchi dars bepul: kelib tekshirish mumkin."},
+        "vibecoding-intermediate":{tag:"Vibe Coding · Intermediate", title:"Vibe Coding, Intermediate darajasi", desc:"Kompyuteringizdagi Cursor va Claude Code, bog‘langan jadvalli baza, serverda tekshiriladigan Click va Payme to‘lovi — birinchi prototipi tayyor bo‘lganlar uchun."},
+        "vibecoding-advanced":{tag:"Vibe Coding · Advanced", title:"Vibe Coding, Advanced darajasi", desc:"CI/CD, o‘z mahsulotini hujumchi ko‘zi bilan audit qilish va SaaS ishga tushirish — mahsulotni haqiqiy foydalanuvchilarga yetkazib, himoya qilishga tayyor bo‘lganlar uchun."},
+        "automation-beginner":{tag:"Avtomatlashtirish · Beginner", title:"Avtomatlashtirish uchun AI, Beginner darajasi", desc:"Make.com va mijozlarga o‘zi javob beradigan Telegram-bot. Kodsiz — jadvallardan foydalana olsangiz, uddalaysiz."},
+        "automation-intermediate":{tag:"Avtomatlashtirish · Intermediate", title:"Avtomatlashtirish uchun AI, Intermediate darajasi", desc:"Vebhuklar, AI-agentlar va Click yoki Payme orqali to‘lov — birinchi ssenariylari allaqachon ishlayotganlar uchun."},
+        "automation-advanced":{tag:"Avtomatlashtirish · Advanced", title:"Avtomatlashtirish uchun AI, Advanced darajasi", desc:"Flowise, n8n va avtohisobotli ko‘p kanalli tizim — agentliksiz agentlik darajasidagi tizim kerak bo‘lganlar uchun."},
+        "marketing-beginner":{tag:"Marketing · Beginner", title:"Marketing uchun AI, Beginner darajasi", desc:"Prompting, AI-kontent va SEO asoslari — AI-marketingda birinchi qadamlarni qo‘yayotganlar uchun."},
+        "marketing-intermediate":{tag:"Marketing · Intermediate", title:"Marketing uchun AI, Intermediate darajasi", desc:"Texnik SEO, email-kampaniyalar va AI-agentlar — marketing jarayonlarini allaqachon quryotganlar uchun."},
+        "marketing-advanced":{tag:"Marketing · Advanced", title:"Marketing uchun AI, Advanced darajasi", desc:"Ko‘p kanalli tizimlar, martech uchun MCP va NIST AI RMF bo‘yicha xatarlarni boshqarish — tajribali marketologlar uchun."}
       }
     },
     formats: {
-      h2:"O\u2018qish qanday o\u2018tadi", num:"03.5 — Formatlar",
+      h2:"O\u2018qish qanday o\u2018tadi", num:"Darslar qanday tashkil etilgan",
       f1h:"Toshkentda oflayn", f1p:"Darslar auditoriyada o\u2018tadi — video yozuv yoki mustaqil o\u2018rganish emas.",
       f2h:"Kichik guruhlar", f2p:"Guruhda 20 kishigacha — o\u2018qituvchida har birining savolini ko\u2018rib chiqishga vaqt bor.",
       f3h:"2 soatdan 15 ta dars", f3p:"Daraja — 15 ta dars, ular orasida amaliyot, oxirida esa capstone-loyiha.",
       f4h:"Capstone + test", f4p:"Daraja oxirida — o\u2018z ishchi loyihangiz va sertifikatlash testi, shunchaki davomat emas."
     },
     prog: {
-      h2:"Kurslar", num:"03 — Dasturlar",
+      h2:"Kurslar", num:"Uch yo‘nalish, har birida uch daraja",
       filterAll:"Barchasi", filterAuto:"Vibe Coding", filterMkt:"Marketing",
       dir1Name:"Vibe Coding", dir1Desc:"Replit, Cursor, Claude Code — o‘z mahsulotingiz: so‘z bilan aytilgan g‘oyadan ishga tushirilgan SaaS gacha. Kodni AI yozadi, siz vazifa qo‘yasiz va natijani himoya qilasiz.",
       a1Desc:"Bitta ham kod yozmasdan birinchi veb-ilovangizni yaratasiz: g\u2018oyani so\u2018z bilan tasvirlaysiz — AI Replit yoki Lovable'da ishlaydigan sahifa yig\u2018adi. Ma\u2019lumotlar bazasini ulaysiz, forma haqiqatan ham arizalarni saqlashi uchun, va saytni jonli havola orqali e\u2019lon qilasiz.",
@@ -458,7 +483,7 @@ const translations = {
       m3Short:"Barcha kanallar birgalikda ishlaydigan marketing: AI mijozni birinchi aloqadan xaridgacha olib boradi, siz xatarlarni nazorat qilasiz."
     },
     price: {
-      h2:"Narxlar", num:"04 — Tariflar",
+      h2:"Narxlar", num:"Bir oylik o‘qish uchun",
       note:"Narxlar bir oylik o‘qish uchun ko‘rsatilgan. Daraja — 2 soatdan 15 ta dars; yakuniy summa va to‘lov grafigini yo‘nalish va darajangizga qarab bepul konsultatsiyada hisoblaymiz. Beginner darajasining birinchi darsi — bepul.",
       currency:"so\u2018m / oy",
       a1_1:"15 ta 2 soatlik dars", a1_2:"20 kishigacha guruh", a1_3:"Capstone-loyiha + test",
@@ -474,7 +499,7 @@ const translations = {
       cta:"Yozilish"
     },
     proc: {
-      h2:"O\u2018qish qanday o\u2018tadi", num:"05 — Jarayon",
+      h2:"O\u2018qish qanday o\u2018tadi", num:"Arizadan diplomgacha",
       s1h:"Bepul konsultatsiya", s1p:"Yo\u2018nalishlar va darajalar haqida gapiramiz, qaysi darajadan boshlash kerakligini tushunishga yordam beramiz.",
       s2h:"Amaliy darslar", s2p:"Vositalar va vazifalarni amalda o\u2018rganamiz, har bir dars uyga vazifa bilan mustahkamlanadi.",
       s3h:"Fikr-mulohaza", s3p:"O\u2018qituvchi har bir ishni shaxsan tekshiradi va qiyin joylarni tushuntiradi.",
@@ -486,7 +511,7 @@ const translations = {
       photoCredit:"Bino fotosi — Google Maps"
     },
     faq: {
-      h2:"Ko‘p beriladigan savollar", num:"06 — Savollar",
+      h2:"Ko‘p beriladigan savollar", num:"Qisqacha asosiy narsalar",
       q1:"Boshlash uchun tajriba kerakmi?",
       a1:"Yo‘q. Ikkala yo‘nalishdagi Beginner darajasi butunlay yangi boshlovchilar uchun — 14 yoshdan, tajribasiz. Qaysi yo‘nalish va daraja sizga mosligiga ishonchingiz komil bo‘lmasa, sahifa boshidagi qisqa AI-testdan o‘ting.",
       q2:"Darhol Intermediate yoki Advanced‘dan boshlasa bo‘ladimi?",
@@ -505,19 +530,20 @@ const translations = {
       a8:"Toshkentda oflayn, Qorataosh massivida, «Korzinka» binosining 2-qavatida. Yozilish bepul konsultatsiyadan boshlanadi — quyidagi formada ariza qoldiring, biz bog‘lanamiz."
     },
     apply: {
-      h2:"Ariza qoldirish", num:"07 — Ariza",
+      h2:"Ariza qoldirish", num:"Kun davomida javob beramiz",
       name:"Ism", phone:"Telefon raqami", telegram:"Telegram (ixtiyoriy)", message:"Izoh (ixtiyoriy)",
       submit:"Arizani yuborish",
       hint:"Ariza to\u2018g\u2018ridan-to\u2018g\u2018ri bizning Telegramimizga keladi — odatda bir kun ichida javob beramiz.",
       sideLead:"Ariza qoldiring — biz o\u2018zimiz bog\u2018lanamiz.",
       note:"Ish kunlari davomida javob beramiz."
     },
+    level: { b:"boshlang‘ich", i:"o‘rta", a:"yuqori" },
     contact: { telegramLabel:"Telegram", phoneLabel:"Telefon", emailLabel:"Pochta", addressLabel:"Manzil", addressShort:"Qorataosh massivi, 2 — «Korzinka» binosi 2-qavat, Toshkent", address:"Qorataosh massivi, 2-uy, Shayxontohur tumani, Toshkent («Korzinka» binosi, 2-qavat, «Samarqand Darvoza» ro\u2018parasida)" },
     cta: { h2:"Boshqacha fikrlashni hoziroq boshla.", btn:"Yuqoridagi arizani to\u2018ldiring ↑" },
     foot: { city:"Toshkent.", contact:"Ariza qoldirish", tagline:"Think Like Tomorrow · Sun\u2018iy intellekt davrida fikrlash akademiyasi", navTitle:"Navigatsiya", contactTitle:"Aloqa", legalTitle:"Hujjatlar", offer:"Ommaviy oferta", privacy:"Maxfiylik siyosati", address:"Toshkent, Shayxontohur t., Qorataosh massivi 2, «Korzinka» binosi 2-qavat" },
 
     tools: {
-      h2:"Biz ishlaydigan vositalar", num:"03.6 — Vositalar",
+      h2:"Biz ishlaydigan vositalar", num:"Nimalardan foydalanasiz",
       d1:"Birinchi prototipdan o‘zini oqlaydigan mahsulotgacha.",
       d2:"Birinchi promptdan mijozni o‘zi yetaklaydigan tizimgacha.",
       d3:"Ikki ilovaning birinchi bog‘lanishidan sizsiz ishlaydigan tizimgacha.",
@@ -545,7 +571,7 @@ const translations = {
       ctaBtn:"Ariza qoldirish",
       ctaTg:"Telegramga yozish",
       pricesLink:"Narxlar va muddatli to‘lov →",
-      levelsTitle:"Kurs darajalari", levelsNum:"01 — Dastur",
+      levelsTitle:"Kurs darajalari", levelsNum:"Uch daraja, 45 dars",
       toolsTitle:"Daraja vositalari", resultTitle:"Natijada nima bo‘ladi", objectionTitle:"Ko‘p uchraydigan shubha"
     },
 
@@ -614,7 +640,7 @@ const translations = {
       l3Obj:"«Buning uchun jamoa kerak». Bu darajadan keyin kerak emas: siz loyihalaysiz, joylaysiz, o‘zingizga hujum qilasiz, tuzatasiz va natijani yozma himoya qilasiz.",
       l3Res:"Haqiqiy foydalanuvchilari bo‘lgan jonli SaaS, yozma xavfsizlik hisoboti, monitoring va tekshirilgan zaxiradan tiklash.",
       secTitle:"Xavfsizlik — modul emas, odat",
-      secNum:"02 — Xavfsizlik",
+      secNum:"5 ta dars to‘liq + har birida odat",
       secLead:"AI kodni tez yozadi — va bir xil zaifliklarni takrorlaydi. Shuning uchun 45 darsning har birida «xavfsizlik odati» qatori bor, beshta dars unga to‘liq bag‘ishlangan, va har bir capstone shu bo‘yicha ham baholanadi.",
       secL1:"Beginner 9 · Sirlar va kalitlar", secR1:"Sizni tanitadigan hech narsa kodda yotmaydi",
       secL2:"Beginner 11 · Kirish qoidalari", secR2:"Kirish ekrani — bu hali himoya emas",
@@ -900,96 +926,132 @@ if (applyForm) {
   const result = document.getElementById('quizResult');
   const startBtn = document.getElementById('quizStart');
   const restartBtn = document.getElementById('quizRestart');
+  const backBtn = document.getElementById('quizBack');
   const stepEl = document.getElementById('quizStep');
+  const totalEl = document.getElementById('quizTotal');
+  const stepWord = document.getElementById('quizStepWord');
+  const ofWord = document.getElementById('quizOfWord');
+  const barEl = document.getElementById('quizBar');
   const qText = document.getElementById('quizQText');
   const qOptions = document.getElementById('quizOptions');
   const resTag = document.getElementById('quizResultTag');
   const resTitle = document.getElementById('quizResultTitle');
   const resDesc = document.getElementById('quizResultDesc');
-  const resCta = document.getElementById('quizResultCta');
+  const resCourse = document.getElementById('quizResultCourse');
   if (!intro || !startBtn) return;
 
-  const levelRank = { beginner: 1, intermediate: 2, advanced: 3 };
-  let step = 0;
-  let direction = null;
-  let levelVotes = [];
+  /* каждый ответ про уровень стоит очки; итог — сумма, а не «максимум».
+     Раньше один продвинутый ответ сразу выкидывал человека на Advanced,
+     из-за чего рекомендация получалась неправдоподобной. */
+  const levelPoints = { beginner: 1, intermediate: 2, advanced: 3 };
+  const TRACKS = {
+    vibecoding: { program: 'VibeCoding', page: 'course-vibe-coding.html' },
+    automation: { program: 'Automation', page: 'course-automation.html' },
+    marketing:  { program: 'Marketing',  page: 'course-marketing.html' }
+  };
+
+  let answers = [];
 
   function currentLang() {
     return document.documentElement.lang && translations[document.documentElement.lang]
       ? document.documentElement.lang : 'ru';
   }
+  function questions() { return translations[currentLang()].quiz.questions; }
 
   function renderQuestion() {
     const dict = translations[currentLang()];
-    const q = dict.quiz.questions[step];
+    const qs = dict.quiz.questions;
+    const step = answers.length;
+    const q = qs[step];
+    if (stepWord) stepWord.textContent = dict.quiz.step;
+    if (ofWord) ofWord.textContent = dict.quiz.of;
+    if (totalEl) totalEl.textContent = String(qs.length);
     stepEl.textContent = String(step + 1);
+    if (barEl) barEl.style.width = ((step / qs.length) * 100) + '%';
+    if (backBtn) {
+      backBtn.hidden = step === 0;
+      backBtn.textContent = dict.quiz.back;
+    }
     qText.textContent = q.text;
     qOptions.innerHTML = '';
     q.options.forEach(opt => {
       const btn = document.createElement('button');
       btn.type = 'button';
       btn.className = 'quiz-option';
-      btn.textContent = opt.label;
+      const dot = document.createElement('span');
+      dot.className = 'quiz-dot';
+      dot.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('span');
+      label.className = 'quiz-label';
+      label.textContent = opt.label;
+      btn.appendChild(dot);
+      btn.appendChild(label);
       btn.addEventListener('click', () => answer(opt.value));
       qOptions.appendChild(btn);
     });
   }
 
   function answer(value) {
-    if (step === 0) {
-      direction = value; // 'automation' | 'marketing'
-    } else {
-      levelVotes.push(value);
-    }
-    step++;
-    if (step >= 3) {
-      showResult();
-    } else {
-      renderQuestion();
-    }
+    answers.push(value);
+    if (answers.length >= questions().length) showResult();
+    else renderQuestion();
   }
 
   function showResult() {
     const dict = translations[currentLang()];
-    const level = levelVotes.reduce((best, v) => (levelRank[v] > levelRank[best] ? v : best), 'beginner');
-    const key = `${direction}-${level}`;
-    const r = dict.quiz.results[key];
+    const direction = answers[0];
+    const levelAnswers = answers.slice(1);
+    const score = levelAnswers.reduce((sum, v) => sum + (levelPoints[v] || 1), 0);
+    const max = levelAnswers.length * 3;
+    const share = max ? score / max : 0;
+    const level = share <= 0.5 ? 'beginner' : (share < 0.8 ? 'intermediate' : 'advanced');
+
+    const track = TRACKS[direction] || TRACKS.vibecoding;
+    const r = dict.quiz.results[`${direction}-${level}`];
+    if (!r) return;
     resTag.textContent = r.tag;
     resTitle.textContent = r.title;
     resDesc.textContent = r.desc;
+    if (barEl) barEl.style.width = '100%';
 
-    const dataProgram = `${direction === 'automation' ? 'VibeCoding' : 'Marketing'}-${level.charAt(0).toUpperCase() + level.slice(1)}`;
-    const targetCard = document.querySelector(`#pricing [data-program="${dataProgram}"]`);
-    resCta.onclick = () => {
-      if (targetCard) {
-        setTimeout(() => {
-          const card = targetCard.closest('.level');
-          if (card) {
-            card.style.outline = '2px solid var(--marker)';
-            card.style.outlineOffset = '2px';
-            setTimeout(() => { card.style.outline = ''; card.style.outlineOffset = ''; }, 2000);
-          }
-        }, 400);
-      }
-    };
+    if (resCourse) {
+      resCourse.setAttribute('href', track.page);
+      resCourse.textContent = dict.quiz.ctaCourse;
+    }
+
+    /* подсвечиваем именно тот тариф, который выпал по тесту */
+    const program = `${track.program}-${level.charAt(0).toUpperCase() + level.slice(1)}`;
+    document.querySelectorAll('#pricing .level.is-suggested').forEach(el => el.classList.remove('is-suggested'));
+    const target = document.querySelector(`#pricing [data-program="${program}"]`);
+    if (target) {
+      const card = target.closest('.level');
+      if (card) card.classList.add('is-suggested');
+    }
 
     body.hidden = true;
     result.hidden = false;
   }
 
-  startBtn.addEventListener('click', () => {
-    step = 0; direction = null; levelVotes = [];
+  function startQuiz() {
+    answers = [];
     intro.hidden = true;
+    result.hidden = true;
     body.hidden = false;
     renderQuestion();
+  }
+
+  startBtn.addEventListener('click', startQuiz);
+  if (restartBtn) restartBtn.addEventListener('click', startQuiz);
+  if (backBtn) backBtn.addEventListener('click', () => {
+    if (answers.length) { answers.pop(); renderQuestion(); }
   });
 
-  if (restartBtn) {
-    restartBtn.addEventListener('click', () => {
-      result.hidden = true;
-      intro.hidden = false;
+  /* при смене языка перерисовываем текущий вопрос */
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!body.hidden) setTimeout(renderQuestion, 0);
     });
-  }
+  });
 })();
 
 /* ============================================================

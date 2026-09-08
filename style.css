@@ -2959,3 +2959,156 @@ footer{ border-top:1px solid var(--edge); }
   max-width:72ch;
   margin-bottom:16px;
 }
+
+/* ============================================================
+   26 — AI-ТЕСТ КРУПНЕЕ И ПОНЯТНЕЕ + ЯСНОСТЬ ИНТЕРФЕЙСА
+   ============================================================ */
+
+/* карточка теста была маленькой и терялась в пустоте */
+.quiz-card{
+  max-width:860px;
+  padding:clamp(36px,5vw,60px) clamp(24px,4.5vw,56px);
+  text-align:left;
+}
+.quiz-card h2{
+  font-size:clamp(26px,3.4vw,40px);
+  letter-spacing:-0.02em;
+  margin-bottom:12px;
+}
+.quiz-card > div > p{
+  margin:0 0 28px;
+  max-width:56ch;
+  font-size:clamp(15px,1.5vw,17.5px);
+}
+#quizQText{
+  font-family:var(--display);
+  font-size:clamp(21px,2.6vw,30px);
+  font-weight:700;
+  letter-spacing:-0.015em;
+  line-height:1.25;
+  margin-bottom:26px;
+}
+
+/* полоса прогресса */
+.quiz-bar{
+  height:4px;
+  border-radius:var(--r-pill);
+  background:rgba(231,229,219,.16);
+  overflow:hidden;
+  margin-bottom:18px;
+}
+.quiz-bar span{
+  display:block;
+  height:100%;
+  width:0;
+  border-radius:var(--r-pill);
+  background:var(--signal);
+  transition:width .35s var(--ease-out);
+}
+.quiz-progress{
+  display:flex;
+  align-items:baseline;
+  gap:6px;
+  font-family:var(--mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#C7BBA6;
+  margin-bottom:16px;
+}
+.quiz-progress b{ color:var(--signal); font-weight:500; }
+
+/* варианты ответа — крупные кликабельные строки */
+.quiz-options{
+  display:grid;
+  gap:12px;
+  margin-bottom:20px;
+}
+.quiz-option{
+  width:100%;
+  text-align:left;
+  font-size:clamp(15px,1.5vw,17px);
+  padding:18px 22px;
+  border-radius:var(--r-md);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+/* ВАЖНО: ::before у .quiz-option уже занят эффектом заливки от курсора
+   (секция 16). Поэтому кружок-маркер — отдельный элемент .quiz-dot,
+   который создаёт скрипт, иначе заливка ломается и кружок уезжает
+   к позиции курсора посреди строки. */
+.quiz-dot{
+  flex:0 0 auto;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  border:1.5px solid rgba(231,229,219,.45);
+  transition:border-color var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease-out);
+}
+.quiz-option:hover .quiz-dot{
+  border-color:var(--paper);
+  box-shadow:inset 0 0 0 4px var(--paper);
+}
+.quiz-label{ flex:1 1 auto; }
+
+.quiz-back,
+.quiz-restart{
+  -webkit-appearance:none;
+  appearance:none;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font-family:var(--mono);
+  font-size:12.5px;
+  letter-spacing:.05em;
+  color:#C7BBA6;
+  padding:6px 0;
+}
+.quiz-back:hover,
+.quiz-restart:hover{ color:var(--paper); }
+.quiz-restart{ margin-top:18px; text-transform:uppercase; }
+
+.quiz-result-lead{
+  font-family:var(--mono);
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+  color:#C7BBA6;
+  margin-bottom:14px !important;
+}
+#quizResultTitle{
+  font-family:var(--display);
+  font-size:clamp(22px,2.8vw,32px);
+  font-weight:700;
+  letter-spacing:-0.02em;
+  margin:14px 0 12px;
+}
+#quizResultDesc{ font-size:clamp(15px,1.5vw,17px); max-width:62ch; margin-bottom:26px; }
+.quiz-result-row{ justify-content:flex-start; }
+
+/* подсветка тарифа, который выпал по тесту */
+#pricing .level.is-suggested{
+  border-color:var(--signal);
+  box-shadow:0 0 0 3px color-mix(in srgb, var(--signal) 22%, transparent), var(--sh-2);
+}
+
+/* --- понятность: русское название уровня рядом с английским --- */
+.tag-ru{
+  font-style:normal;
+  opacity:.72;
+  font-size:.92em;
+}
+
+/* --- понятность: подпись секции вместо кода вроде «03.6» --- */
+.section-num{
+  max-width:34ch;
+  text-align:right;
+  line-height:1.35;
+  font-size:12.5px;
+}
+@media (max-width:700px){
+  .section-head{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .section-num{ text-align:left; max-width:none; }
+}
