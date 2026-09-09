@@ -945,9 +945,9 @@ if (applyForm) {
      из-за чего рекомендация получалась неправдоподобной. */
   const levelPoints = { beginner: 1, intermediate: 2, advanced: 3 };
   const TRACKS = {
-    vibecoding: { program: 'VibeCoding', page: 'course-vibe-coding.html' },
-    automation: { program: 'Automation', page: 'course-automation.html' },
-    marketing:  { program: 'Marketing',  page: 'course-marketing.html' }
+    vibecoding: { program: 'VibeCoding', page: 'course-vibe-coding' },
+    automation: { program: 'Automation', page: 'course-automation' },
+    marketing:  { program: 'Marketing',  page: 'course-marketing' }
   };
 
   let answers = [];
