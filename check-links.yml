@@ -1,0 +1,50 @@
+name: Проверка ссылок
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Забрать код
+        uses: actions/checkout@v4
+
+      - name: Проверить ссылки и пути к изображениям
+        uses: lycheeverse/lychee-action@v2
+        with:
+          # Ссылки на страницы записаны без .html («course-automation», «offer»),
+          # потому что GitHub Pages отдаёт их и так. Локально такого файла нет,
+          # поэтому:
+          #   --fallback-extensions html   ищет course-automation.html
+          #   --remap …                    превращает ссылку на главную «./#apply»
+          #                                в index.html#apply, иначе фрагмент
+          #                                ищется в каталоге и не находится
+          #
+          # --exclude 'https://thinklikeai\.net' — это canonical и og:url,
+          # которые каждая страница ставит сама на себя. Пока новая страница
+          # ещё не задеплоена, такая ссылка отдаёт 404 и роняет проверку,
+          # хотя ошибки нет. Локальные пути это не отключает.
+          args: >-
+            --verbose
+            --no-progress
+            --include-fragments
+            --fallback-extensions html
+            --remap '^(file://[^#]*/[^./#]*)#(.*)$ $1/index.html#$2'
+            --exclude 'https://thinklikeai\.net'
+            index.html
+            course-vibe-coding.html
+            course-automation.html
+            course-marketing.html
+            offer.html
+            privacy.html
+            apply/index.html
+          # падать красным крестом, если найдена битая ссылка
+          fail: true
