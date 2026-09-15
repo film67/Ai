@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script>
+/* тема ставится до отрисовки CSS, чтобы страница не мигала не той темой */
+(function () {
+  try {
+    localStorage.removeItem('thinklike-theme');
+    var saved = localStorage.getItem('thinklike-theme-manual');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) { /* ignore */ }
+})();
+</script>
+<title>Вайб-кодинг с ИИ — курс в Ташкенте, первое занятие бесплатно | ThinkLike AI</title>
+<meta name="description" content="Курс вайб-кодинга в Ташкенте: Replit, Lovable, Bolt, Cursor, Claude Code. 36 занятий от первого приложения в браузере до запущенного SaaS — с безопасностью в каждом занятии. Первое занятие бесплатное. Офлайн, группы 17–18 человек, RU и UZ.">
+<link rel="canonical" href="https://thinklikeai.net/course-vibe-coding">
+
+<meta property="og:title" content="Вайб-кодинг с ИИ — курс в Ташкенте | ThinkLike AI">
+<meta property="og:description" content="36 занятий: от первого приложения в браузере до запущенного SaaS, который вы умеете защитить. Первое занятие бесплатное.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://thinklikeai.net/course-vibe-coding">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Вайб-кодинг с ИИ",
+  "description": "36 занятий в трёх уровнях: от первого приложения в браузере до запущенного SaaS с письменным отчётом по безопасности. Replit, Lovable, Bolt, Cursor, Claude Code, Click.uz, Payme, Eskiz.",
+  "url": "https://thinklikeai.net/course-vibe-coding",
+  "inLanguage": ["ru", "uz"],
+  "educationalLevel": "CODE (Beginner), BUILD (Intermediate), LAUNCH (Advanced)",
+  "teaches": "Разработка и защита веб-приложений с помощью ИИ без опыта программирования",
+  "provider": {
+    "@type": "EducationalOrganization",
+    "name": "ThinkLike AI",
+    "url": "https://thinklikeai.net/"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "onsite",
+    "courseWorkload": "PT18H",
+    "location": {
+      "@type": "Place",
+      "name": "ThinkLike AI",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "массив Караташ, 2, 2 этаж «Korzinka»",
+        "addressLocality": "Ташкент",
+        "addressCountry": "UZ"
+      }
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "1200000",
+    "priceCurrency": "UZS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://thinklikeai.net/#pricing"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="./" class="nav-mark" id="logoLink" aria-label="ThinkLike AI — на главную"><img src="logo-wordmark.png" alt="ThinkLike AI" class="nav-logo"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="./#philosophy" data-i18n="nav.philosophy">Философия</a>
+      <a href="./#programs" data-i18n="nav.programs">Курсы</a>
+      <a href="./#pricing" data-i18n="nav.pricing">Цены</a>
+      <a href="./#process" data-i18n="nav.process">Процесс обучения</a>
+      <a href="./#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="./#apply" data-i18n="nav.contact">Контакты</a>
+      <div class="nav-contact-mobile">
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">
+          <span data-i18n="contact.telegramLabel">Telegram</span> — @ThinkLikeAI_manager
+        </a>
+        <a href="tel:+998947125115">
+          <span data-i18n="contact.phoneLabel">Телефон</span> — +998 94 712 51 15
+        </a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="ru" class="lang-btn is-active">RU</button>
+        <button data-lang="uz" class="lang-btn">UZ</button>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
+      <a class="nav-cta" href="./#apply" data-i18n="nav.cta">Оставить заявку</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<a href="./#apply" class="float-cta" data-i18n="nav.cta">Оставить заявку</a>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href="./" data-i18n="page.home">Главная</a>
+      <span aria-hidden="true">/</span>
+      <a href="./#programs" data-i18n="page.courses">Курсы</a>
+      <span aria-hidden="true">/</span>
+      <span data-i18n="prog.dir1Name">Вайб-кодинг</span>
+    </nav>
+    <h1 data-i18n="vc.title">Вайб-кодинг: собрать продукт с ИИ и защитить его</h1>
+    <p class="page-lead" data-i18n="vc.lead">Три уровня и 36 занятий: от первого приложения, собранного словами прямо в браузере, до запущенного SaaS с живыми пользователями и письменным отчётом по безопасности. Первое занятие — бесплатное и открыто для всех.</p>
+    <div class="page-facts">
+      <span class="page-fact" data-i18n="vc.f1">3 уровня · 36 занятий</span>
+      <span class="page-fact" data-i18n="vc.f2">2–3 занятия в неделю</span>
+      <span class="page-fact" data-i18n="vc.f3">группы 17–18 человек</span>
+      <span class="page-fact is-free" data-i18n="vc.f4">первое занятие бесплатно</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="page.levelsTitle">Уровни курса</h2>
+      <span class="section-num" data-i18n="page.levelsNum">Три уровня, 36 занятий</span>
+    </div>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag"><b class="tag-en" data-i18n="lvl.a1">CODE</b> <em class="tag-ru" data-i18n="level.b">начальный</em></span>
+        <span class="tag tag--free" data-i18n="vc.freeBadge">1-е занятие бесплатно</span>
+        <h3 data-i18n="vc.l1Name">От нуля до живого и безопасного приложения</h3>
+      </div>
+      <p data-i18n="vc.l1Desc">Начинаем с того, что такое ИИ на самом деле и почему он вдруг умеет собирать программы. Дальше — первое приложение в браузере, многостраничный сайт по живой ссылке, база данных, вход по аккаунту и правила доступа. Весь уровень проходит в браузере: устанавливать не нужно ничего.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l1i1">Промпт как техзадание: объяснить ИИ так, чтобы получилось то, что вы хотели</li>
+        <li data-i18n="vc.l1i2">Replit, Lovable и Bolt — рабочий сайт по живой ссылке уже с третьего занятия</li>
+        <li data-i18n="vc.l1i3">База данных за два занятия: форма, которая действительно сохраняет</li>
+        <li data-i18n="vc.l1i4">Аккаунты, вход и правила доступа — кто что видит</li>
+        <li data-i18n="vc.l1i5">Ключи и секреты: что никогда не должно лежать в коде</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l1Obj">«Я никогда не программировал(а)». Первое занятие бесплатное и открыто для всех — придите и проверьте. Весь уровень идёт в браузере: код пишет ИИ, вы объясняете, что нужно.</p>
+      <div class="module-result">
+        <span class="mr-k" data-i18n="page.resultTitle">Что будет на выходе</span>
+        <p data-i18n="vc.l1Res">Опубликованное приложение: данные сохраняются, вход работает, правила доступа проверены на двух аккаунтах, секретов в коде нет.</p>
+      </div>
+      <div class="module-foot">
+        <span data-i18n="prog.a1Tools">Replit · Lovable · Bolt</span>
+        <span data-i18n="prog.a1Who">12 занятий по 1,5 часа · от 15 лет · без опыта</span>
+      </div>
+    </article>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag"><b class="tag-en" data-i18n="lvl.a2">BUILD</b> <em class="tag-ru" data-i18n="level.i">средний</em></span>
+        <h3 data-i18n="vc.l2Name">Full-stack продукт, который переживёт живых пользователей</h3>
+      </div>
+      <p data-i18n="vc.l2Desc">Первый уровень, где инструменты появляются на вашем компьютере: Cursor и терминал — аккуратно, с нуля. Дальше схемы базы данных, серверная логика, реальные оплаты Click и Payme, SMS через Eskiz в песочнице, роли и права, тесты и Git, как в настоящей команде.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l2i1">Cursor и Claude Code: агент работает с целым проектом, вы читаете diff</li>
+        <li data-i18n="vc.l2i2">Спецификация и архитектура до промпта, а не после</li>
+        <li data-i18n="vc.l2i3">Click, Payme и Eskiz в песочнице — с проверкой платежа на сервере, а не в браузере</li>
+        <li data-i18n="vc.l2i4">Роли, права и чужие персональные данные</li>
+        <li data-i18n="vc.l2i5">Тесты на код, который написал ИИ, — включая ваши правила безопасности</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l2Obj">«Мой прототип и так работает». Работает у вас в классе. Этот уровень — про то, чтобы всё, что касается денег и прав доступа, проверялось на сервере, и чтобы это доказывал автотест.</p>
+      <div class="module-result">
+        <span class="mr-k" data-i18n="page.resultTitle">Что будет на выходе</span>
+        <p data-i18n="vc.l2Res">Full-stack продукт, где всё про деньги и доступ проверяется на сервере, и автотест, который это доказывает.</p>
+      </div>
+      <div class="module-foot">
+        <span data-i18n="prog.a2Tools">Cursor · Claude Code · Click / Payme / Eskiz</span>
+        <span data-i18n="prog.a2Who">12 занятий по 1,5 часа · после CODE</span>
+      </div>
+    </article>
+
+    <article class="module reveal">
+      <div class="module-head">
+        <span class="tag"><b class="tag-en" data-i18n="lvl.a3">LAUNCH</b> <em class="tag-ru" data-i18n="level.a">продвинутый</em></span>
+        <h3 data-i18n="vc.l3Name">Запустить, защитить, продать</h3>
+      </div>
+      <p data-i18n="vc.l3Desc">Архитектура до промптов, несколько агентов в одной кодовой базе, CI/CD со встроенными проверками безопасности. Потом аудит собственного продукта глазами атакующего, устранение находок и письменный отчёт. И запуск: подписки, биллинг, мониторинг, план на инцидент — и продажа этого же навыка как услуги.</p>
+      <ul class="module-list">
+        <li data-i18n="vc.l3i1">Мульти-агентная разработка и работа с кодом, который писали не вы</li>
+        <li data-i18n="vc.l3i2">CI/CD с проверками безопасности прямо в пайплайне</li>
+        <li data-i18n="vc.l3i3">Аудит своего продукта по чек-листу атакующего и письменный отчёт</li>
+        <li data-i18n="vc.l3i4">Мульти-тенантный SaaS: подписки, биллинг и изоляция клиентов</li>
+        <li data-i18n="vc.l3i5">Запуск, цены и продажа навыка: фриланс, агентство, свои клиенты</li>
+      </ul>
+      <p class="objection" data-i18n="vc.l3Obj">«Для этого нужна команда». После этого уровня — не нужна: вы проектируете, деплоите, атакуете сами себя, чините и защищаете результат письменно.</p>
+      <div class="module-result">
+        <span class="mr-k" data-i18n="page.resultTitle">Что будет на выходе</span>
+        <p data-i18n="vc.l3Res">Живой SaaS с реальными пользователями, письменный отчёт по безопасности, мониторинг и проверенное восстановление из бэкапа.</p>
+      </div>
+      <div class="module-foot">
+        <span data-i18n="prog.a3Tools">CI/CD · Security-аудит · SaaS-биллинг</span>
+        <span data-i18n="prog.a3Who">12 занятий по 1,5 часа · после BUILD</span>
+      </div>
+    </article>
+
+    <a class="btn-ghost direction-more" href="./#pricing" data-i18n="page.pricesLink">Цены и рассрочка →</a>
+
+    <div class="security" id="security">
+      <div class="section-head">
+        <h2 data-i18n="vc.secTitle">Безопасность — не модуль, а привычка</h2>
+        <span class="section-num" data-i18n="vc.secNum">5 занятий целиком + привычка в каждом</span>
+      </div>
+      <p class="security-lead" data-i18n="vc.secLead">ИИ пишет код быстро — и повторяет одни и те же уязвимости. Поэтому в каждом из 36 занятий есть строка «привычка безопасности», пять занятий посвящены ей целиком, и каждый капстоун оценивается в том числе по ней.</p>
+      <ul class="security-list">
+        <li><span class="sec-l" data-i18n="vc.secL1">CODE 8 · Секреты и ключи</span><span class="sec-r" data-i18n="vc.secR1">Ничто, что вас опознаёт, не лежит в коде</span></li>
+        <li><span class="sec-l" data-i18n="vc.secL2">CODE 10 · Правила доступа</span><span class="sec-r" data-i18n="vc.secR2">Экран входа — это ещё не защита</span></li>
+        <li><span class="sec-l" data-i18n="vc.secL3">BUILD 8 · Безопасность денег</span><span class="sec-r" data-i18n="vc.secR3">Проверь каждый платёжный колбэк, прежде чем ему верить</span></li>
+        <li><span class="sec-l" data-i18n="vc.secL4">LAUNCH 5 · Мыслить как атакующий</span><span class="sec-r" data-i18n="vc.secR4">Проверь свой продукт по чек-листу атакующего</span></li>
+        <li><span class="sec-l" data-i18n="vc.secL5">LAUNCH 6 · Починить, укрепить, доказать</span><span class="sec-r" data-i18n="vc.secR5">Состязательное тестирование и письменный отчёт</span></li>
+      </ul>
+    </div>
+
+    <aside class="vs-card">
+      <h3 data-i18n="vc.vsTitle">Чем это отличается от автоматизации</h3>
+      <p data-i18n="vc.vsText">Здесь вы строите собственный продукт: код пишет ИИ, а вы ставите задачу, проверяете и защищаете результат. Если нужно не строить своё, а связать уже готовые сервисы, чтобы рутина шла сама, — это соседнее направление.</p>
+      <a class="btn-ghost" href="course-automation" data-i18n="vc.vsLink">ИИ для автоматизации →</a>
+    </aside>
+
+    <div class="page-cta">
+      <div>
+        <h2 data-i18n="page.ctaTitle">Начните с бесплатной консультации</h2>
+        <p data-i18n="page.ctaText">Разберём ваш уровень и цель, подберём направление и посчитаем итоговую сумму.</p>
+      </div>
+      <div class="hero-row">
+        <a class="btn-primary" href="./#apply" data-i18n="page.ctaBtn">Оставить заявку</a>
+        <a class="btn-ghost" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener" data-i18n="page.ctaTg">Написать в Telegram</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo">ThinkLike AI</span>
+        <p data-i18n="foot.tagline">Think Like Tomorrow · Академия мышления в эпоху ИИ</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.navTitle">Навигация</h5>
+        <a href="./#philosophy" data-i18n="nav.philosophy">Философия</a>
+        <a href="course-vibe-coding" data-i18n="prog.dir1Name">Вайб-кодинг</a>
+        <a href="course-automation" data-i18n="prog.dir3Name">ИИ для автоматизации</a>
+        <a href="course-marketing" data-i18n="prog.dir2Name">ИИ для маркетинга</a>
+        <a href="ai-consulting" data-i18n="nav.consulting">Для бизнеса</a>
+        <a href="./#pricing" data-i18n="nav.pricing">Цены</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.legalTitle">Документы</h5>
+        <a href="offer" data-i18n="foot.offer">Публичная оферта</a>
+        <a href="privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.contactTitle">Контакты</h5>
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">Telegram: @ThinkLikeAI_manager</a>
+        <a href="tel:+998947125115">+998 94 712 51 15</a>
+        <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a>
+        <span data-i18n="foot.address">Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»</span>
+      </div>
+    </div>
+    <div class="foot-row">
+      <span>© <span id="year"></span> ThinkLike AI. <span data-i18n="foot.city">Ташкент.</span></span>
+      <a class="foot-apply" href="./#apply" data-i18n="foot.contact">Оставить заявку</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

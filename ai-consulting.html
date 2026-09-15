@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script>
+/* тема ставится до отрисовки CSS, чтобы страница не мигала не той темой */
+(function () {
+  try {
+    localStorage.removeItem('thinklike-theme');
+    var saved = localStorage.getItem('thinklike-theme-manual');
+    var isDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (isDark) document.documentElement.setAttribute('data-theme', 'dark');
+  } catch (e) { /* ignore */ }
+})();
+</script>
+<title>Внедрение ИИ в бизнес в Ташкенте — консалтинг ThinkLike AI</title>
+<meta name="description" content="Внедряем ИИ и автоматизацию в бизнес в Ташкенте: разбор процессов, Telegram-боты, Make и n8n, приём оплат Click и Payme, отчёты. Бесплатная диагностика, обучение команды, сопровождение после запуска.">
+<link rel="canonical" href="https://thinklikeai.net/ai-consulting">
+
+<meta property="og:title" content="Внедрение ИИ в бизнес — консалтинг ThinkLike AI">
+<meta property="og:description" content="Разбираем процессы, показываем, где ИИ экономит время и деньги, и внедряем своими руками. Диагностика — бесплатно.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thinklikeai.net/ai-consulting">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Внедрение ИИ и автоматизации в бизнес",
+  "serviceType": "Консалтинг по внедрению искусственного интеллекта",
+  "description": "Аудит процессов, карта автоматизации и смета, внедрение Telegram-ботов, сценариев Make и n8n, интеграций с Click.uz и Payme, обучение команды заказчика и сопровождение после запуска.",
+  "url": "https://thinklikeai.net/ai-consulting",
+  "availableLanguage": ["ru", "uz"],
+  "areaServed": {
+    "@type": "City",
+    "name": "Ташкент"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "ThinkLike AI",
+    "url": "https://thinklikeai.net/",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "массив Караташ, 2, 2 этаж «Korzinka»",
+      "addressLocality": "Ташкент",
+      "addressCountry": "UZ"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "description": "Стоимость определяется после бесплатной диагностики процессов",
+    "priceCurrency": "UZS",
+    "availability": "https://schema.org/InStock",
+    "url": "https://thinklikeai.net/ai-consulting#apply"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a href="./" class="nav-mark" id="logoLink" aria-label="ThinkLike AI — на главную"><img src="logo-wordmark.png" alt="ThinkLike AI" class="nav-logo"></a>
+    <div class="nav-links" id="navLinks">
+      <a href="./#philosophy" data-i18n="nav.philosophy">Философия</a>
+      <a href="./#programs" data-i18n="nav.programs">Курсы</a>
+      <a href="ai-consulting" data-i18n="nav.consulting">Для бизнеса</a>
+      <a href="./#pricing" data-i18n="nav.pricing">Цены</a>
+      <a href="./#faq" data-i18n="nav.faq">Вопросы</a>
+      <a href="#apply" data-i18n="nav.contact">Контакты</a>
+      <div class="nav-contact-mobile">
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">
+          <span data-i18n="contact.telegramLabel">Telegram</span> — @ThinkLikeAI_manager
+        </a>
+        <a href="tel:+998947125115">
+          <span data-i18n="contact.phoneLabel">Телефон</span> — +998 94 712 51 15
+        </a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Language">
+        <button data-lang="ru" class="lang-btn is-active">RU</button>
+        <button data-lang="uz" class="lang-btn">UZ</button>
+      </div>
+      <button id="themeToggle" class="theme-toggle" type="button" aria-pressed="false">
+        <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+      </button>
+      <a class="nav-cta" href="#apply" data-i18n="cons.ctaShort">Запросить диагностику</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<a href="#apply" class="float-cta" data-i18n="cons.ctaShort">Запросить диагностику</a>
+
+<header class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="breadcrumb">
+      <a href="./" data-i18n="page.home">Главная</a>
+      <span aria-hidden="true">/</span>
+      <span data-i18n="cons.crumb">Внедрение ИИ в бизнес</span>
+    </nav>
+    <h1 data-i18n="cons.title">Внедрение ИИ в бизнес</h1>
+    <p class="page-lead" data-i18n="cons.lead">Это не курс. Мы разбираем ваши процессы, показываем, где ИИ действительно экономит время и деньги, и внедряем сами — с обучением вашей команды и поддержкой после запуска.</p>
+    <div class="page-facts">
+      <span class="page-fact is-free" data-i18n="cons.f1">диагностика бесплатно</span>
+      <span class="page-fact" data-i18n="cons.f2">офлайн в Ташкенте</span>
+      <span class="page-fact" data-i18n="cons.f3">оплата по этапам</span>
+      <span class="page-fact" data-i18n="cons.f4">сопровождение после запуска</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="cons.whoTitle">Кому это подходит</h2>
+      <span class="section-num" data-i18n="cons.whoNum">Три ситуации, с которыми приходят чаще всего</span>
+    </div>
+
+    <div class="outcome-grid reveal">
+      <div class="outcome-card">
+        <span class="oc-n">01</span>
+        <h4 data-i18n="cons.w1h">Малый и средний бизнес</h4>
+        <p data-i18n="cons.w1p">Заявки теряются в переписке, заказы переписываются в тетрадь, отчёт собирается вручную по вечерам. Здесь автоматизация окупается быстрее всего.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="oc-n">02</span>
+        <h4 data-i18n="cons.w2h">Отделы продаж и поддержки</h4>
+        <p data-i18n="cons.w2p">Одни и те же вопросы клиентов по кругу, ручная сортировка заявок, сводка по понедельникам, которую кто-то собирает полдня.</p>
+      </div>
+      <div class="outcome-card">
+        <span class="oc-n">03</span>
+        <h4 data-i18n="cons.w3h">Те, кто уже пробовал</h4>
+        <p data-i18n="cons.w3p">Бот или пара сценариев есть, но они периодически ломаются и никто не знает почему. Приводим в рабочее состояние и оставляем документацию.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="cons.howTitle">Как мы работаем</h2>
+      <span class="section-num" data-i18n="cons.howNum">От диагностики до сопровождения</span>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal">
+        <span class="n">01</span>
+        <div><h4 data-i18n="cons.s1h">Бесплатная диагностика</h4><p data-i18n="cons.s1p">Час разговора: разбираем процессы и считаем, сколько времени уходит на повторяющуюся работу. По итогам честно говорим, есть ли здесь место для ИИ — и если нет, так и скажем.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">02</span>
+        <div><h4 data-i18n="cons.s2h">Карта автоматизации и смета</h4><p data-i18n="cons.s2p">Письменный документ: что автоматизируем и в каком порядке, что это даёт в часах и суммах, сколько стоит и сколько занимает по времени.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">03</span>
+        <div><h4 data-i18n="cons.s3h">Внедрение</h4><p data-i18n="cons.s3p">Собираем и запускаем на ваших данных и ваших аккаунтах. Ничего не остаётся «у подрядчика»: доступы ваши, всё работает без нас.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">04</span>
+        <div><h4 data-i18n="cons.s4h">Обучение вашей команды</h4><p data-i18n="cons.s4p">Показываем, как это работает и что делать, если сломается. Оставляем инструкцию на русском или узбекском, написанную для не-технаря.</p></div>
+      </div>
+      <div class="step reveal">
+        <span class="n">05</span>
+        <div><h4 data-i18n="cons.s5h">Сопровождение</h4><p data-i18n="cons.s5p">Следим за ошибками, чиним сбои и дорабатываем по мере роста. Объём и срок — по договорённости, отдельно от внедрения.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="security" id="what">
+      <div class="section-head">
+        <h2 data-i18n="cons.whatTitle">Что именно внедряем</h2>
+        <span class="section-num" data-i18n="cons.whatNum">Всё на бесплатных или недорогих тарифах</span>
+      </div>
+      <p class="security-lead" data-i18n="cons.whatLead">Берём не «ИИ ради ИИ», а те задачи, где видно результат в часах и деньгах. Обычно это одно-два направления на старте, а не всё сразу.</p>
+      <ul class="security-list">
+        <li><span class="sec-l" data-i18n="cons.i1l">Telegram-бот для клиентов</span><span class="sec-r" data-i18n="cons.i1r">Отвечает на вопросы о цене, доставке, адресе и статусе заказа — и передаёт человеку, когда не знает</span></li>
+        <li><span class="sec-l" data-i18n="cons.i2l">Заявки в одном месте</span><span class="sec-r" data-i18n="cons.i2r">Форма на сайте, Instagram и Telegram сводятся в одну таблицу или базу, с уведомлением за секунды</span></li>
+        <li><span class="sec-l" data-i18n="cons.i3l">Приём оплат</span><span class="sec-r" data-i18n="cons.i3r">Click.uz и Payme с проверкой платежа на сервере, автоматическим чеком и записью в базу</span></li>
+        <li><span class="sec-l" data-i18n="cons.i4l">Квалификация заявок</span><span class="sec-r" data-i18n="cons.i4r">ИИ задаёт три вопроса и передаёт менеджеру только тех, кто готов покупать</span></li>
+        <li><span class="sec-l" data-i18n="cons.i5l">Отчёты без таблиц</span><span class="sec-r" data-i18n="cons.i5r">Сводка за неделю приходит в Telegram сама — в понедельник утром, без чьего-либо участия</span></li>
+        <li><span class="sec-l" data-i18n="cons.i6l">ИИ поверх ваших данных</span><span class="sec-r" data-i18n="cons.i6r">Ответы на вопросы по вашим же таблицам и документам, на русском и узбекском</span></li>
+      </ul>
+    </div>
+
+    <aside class="vs-card">
+      <h3 data-i18n="cons.vsTitle">Чем это отличается от курса автоматизации</h3>
+      <p data-i18n="cons.vsText">На курсе вы учитесь строить такие системы сами: дешевле, дольше, но навык остаётся с вами навсегда. Здесь мы строим их за вас: быстрее, но платите за результат. Часто берут и то и другое — внедрение сейчас, обучение сотрудника параллельно.</p>
+      <a class="btn-ghost" href="course-automation" data-i18n="cons.vsLink">Курс «ИИ для автоматизации» →</a>
+    </aside>
+
+    <p class="price-note reveal" data-i18n="cons.priceNote">Стоимость называем после бесплатной диагностики — она зависит от числа процессов и интеграций. Назвать честную цифру, не посмотрев на ваши процессы, невозможно, поэтому прайса на этой странице нет.</p>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 data-i18n="cons.applyTitle">Запросить диагностику</h2>
+      <span class="section-num" data-i18n="apply.num">Ответим в течение дня</span>
+    </div>
+
+    <div class="apply-grid">
+      <form id="applyForm" class="apply-form" data-kind="consulting" novalidate>
+        <label>
+          <span data-i18n="apply.name">Имя</span>
+          <input type="text" name="name" required autocomplete="name">
+        </label>
+
+        <label>
+          <span data-i18n="cons.company">Компания и сфера</span>
+          <input type="text" name="company" autocomplete="organization">
+        </label>
+
+        <label>
+          <span data-i18n="apply.phone">Номер телефона</span>
+          <input type="tel" name="phone" id="phoneInput" required inputmode="numeric"
+                 pattern="\+998[0-9]{9}" maxlength="13"
+                 autocomplete="tel" placeholder="+998 ·· ··· ·· ··" value="+998">
+        </label>
+
+        <label>
+          <span data-i18n="apply.telegram">Telegram (необязательно)</span>
+          <input type="text" name="telegram" autocomplete="off" placeholder="@username">
+        </label>
+
+        <label>
+          <span data-i18n="cons.task">Какую задачу хотите закрыть</span>
+          <textarea name="message" rows="3"></textarea>
+        </label>
+
+        <button type="submit" class="btn-primary" data-i18n="cons.submit">Отправить запрос</button>
+
+        <p class="apply-hint" data-i18n="apply.hint">Заявка приходит нам напрямую в Telegram — обычно отвечаем в течение дня.</p>
+      </form>
+
+      <div class="apply-side reveal">
+        <p class="lead" data-i18n="cons.sideLead">Опишите задачу в двух словах — на диагностике разберём подробно. Она ни к чему не обязывает.</p>
+
+        <div class="contact-tiles">
+          <a class="contact-tile is-primary" href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">
+            <span class="ct-k" data-i18n="contact.telegramLabel">Telegram</span>
+            <span class="ct-v">@ThinkLikeAI_manager</span>
+          </a>
+          <a class="contact-tile" href="tel:+998947125115">
+            <span class="ct-k" data-i18n="contact.phoneLabel">Телефон</span>
+            <span class="ct-v">+998 94 712 51 15</span>
+          </a>
+          <a class="contact-tile" href="mailto:thinklikeaiuz@gmail.com">
+            <span class="ct-k" data-i18n="contact.emailLabel">Почта</span>
+            <span class="ct-v">thinklikeaiuz@gmail.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo">ThinkLike AI</span>
+        <p data-i18n="foot.tagline">Think Like Tomorrow · Академия мышления в эпоху ИИ</p>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.navTitle">Навигация</h5>
+        <a href="./#philosophy" data-i18n="nav.philosophy">Философия</a>
+        <a href="course-vibe-coding" data-i18n="prog.dir1Name">Вайб-кодинг</a>
+        <a href="course-automation" data-i18n="prog.dir3Name">ИИ для автоматизации</a>
+        <a href="course-marketing" data-i18n="prog.dir2Name">ИИ для маркетинга</a>
+        <a href="ai-consulting" data-i18n="nav.consulting">Для бизнеса</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.legalTitle">Документы</h5>
+        <a href="offer" data-i18n="foot.offer">Публичная оферта</a>
+        <a href="privacy" data-i18n="foot.privacy">Политика конфиденциальности</a>
+      </div>
+      <div class="foot-col">
+        <h5 data-i18n="foot.contactTitle">Контакты</h5>
+        <a href="https://t.me/ThinkLikeAI_manager" target="_blank" rel="noopener">Telegram: @ThinkLikeAI_manager</a>
+        <a href="tel:+998947125115">+998 94 712 51 15</a>
+        <a href="mailto:thinklikeaiuz@gmail.com">thinklikeaiuz@gmail.com</a>
+        <span data-i18n="foot.address">Ташкент, Шайхантахурский р-н, массив Караташ 2, 2 этаж «Korzinka»</span>
+      </div>
+    </div>
+    <div class="foot-row">
+      <span>© <span id="year"></span> ThinkLike AI. <span data-i18n="foot.city">Ташкент.</span></span>
+      <a class="foot-apply" href="#apply" data-i18n="cons.ctaShort">Запросить диагностику</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
