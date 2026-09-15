@@ -20,13 +20,19 @@ jobs:
       - name: Проверить ссылки и пути к изображениям
         uses: lycheeverse/lychee-action@v2
         with:
-          # проверяем все ссылки, mailto и локальные пути (картинки, css, js)
-          # в главной странице и в apply/
           args: >-
             --verbose
             --no-progress
             --include-fragments
+            --fallback-extensions html
+            --remap '^(file://[^#]*/[^./#]*)#(.*)$ $1/index.html#$2'
+            --exclude 'https://thinklikeai\.net'
             index.html
+            course-vibe-coding.html
+            course-automation.html
+            course-marketing.html
+            ai-consulting.html
+            offer.html
+            privacy.html
             apply/index.html
-          # падать красным крестом, если найдена битая ссылка
           fail: true
